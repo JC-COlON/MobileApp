@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.Paso1Page"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <!-- Identificador de formularios multipasos -->
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Paso 1 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center" 
+           FontSize="Medium" TextColor="White"/>
+                </Frame>
+
+                <!-- Línea -->
+                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
+     VerticalOptions="Center"/>
+
+
+                <!-- Paso 2 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+       HeightRequest="40" WidthRequest="40">
+                    <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" 
+           FontSize="Medium" TextColor="Black"/>
+                </Frame>
+
+                <!-- Línea -->
+                <BoxView BackgroundColor="Black" HeightRequest="2" WidthRequest="90" 
+         VerticalOptions="Center"/>
+
+                <!-- Paso 3 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+       HeightRequest="40" WidthRequest="40">
+                    <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center" 
+           FontSize="Medium" TextColor="Black"/>
+                </Frame>
+            </StackLayout>
+
+
+
+            <!-- Título del formulario -->
+            <Label 
+            Text="Información Personal"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="Start" 
+            Margin="0,40,0,10"
+            FontAttributes="Bold"
+            FontFamily="poppins-bold.ttf"/>
+
+            <StackLayout Padding="10">
+
+                <Label Text="Cedula"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" Keyboard="Numeric" />
+                </Frame>
+
+                <Label Text="Nombres" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="5" Grid.Column="0"  Margin="0,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="6" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="15" WidthRequest="325" TranslationY="10" Margin="0,-25,0,-19" />
+                </Frame>
+
+                <Label Text="Apellido"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="15" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                </Frame>
+
+                <Label Text="Telefono" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="5" Grid.Column="0"  Margin="0,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="6" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="15" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" Keyboard="Telephone"/>
+                </Frame>
+
+
+                <Label Text="Correo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="5" Grid.Column="0"  Margin="0,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="6" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="15" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" Keyboard="Email" />
+                </Frame>
+
+              
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20">
+                <!-- Botón Atrás -->
+                <Button 
+                Text="Atrás"
+                BackgroundColor="Gray" 
+                TextColor="White"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                WidthRequest="150"
+                HorizontalOptions="StartAndExpand"
+                Clicked="IrAtras"/>     
+
+                <!-- Botón Siguiente -->
+                <Button 
+                Text="Siguiente"
+                BackgroundColor="#009C40" 
+                TextColor="White"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                WidthRequest="150"
+                HorizontalOptions="StartAndExpand"
+                Clicked="IrPaso2"/>     
+            </StackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

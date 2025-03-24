@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.SobreApp"
+             Title="SobreApp">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <!-- Acerca de la Aplicación -->
+            <Label Text="Acerca de la Aplicación" FontAttributes="Bold" FontSize="Medium" TextColor="Black" />
+            <Label Text="Nombre de la Aplicación: DIGESSET" TextColor="Black" />
+            <Label Text="Versión: 1.0.0" TextColor="Black" />
+            <Label Text="Desarrollador: Daniel y Junior" TextColor="Black" />
+            <Label Text="Fecha de lanzamiento: 10-01-2025" TextColor="Black" />
+            <Label Text="Descripción: La app tinene como fin facilitra el registro de multas en el Pias y evitar los malos entendidos." TextColor="Black" />
+
+            <!-- Espacio en blanco -->
+            <BoxView HeightRequest="20" Color="White" />
+
+            <!-- Términos y Condiciones -->
+            <Label Text="Términos y Condiciones" FontAttributes="Bold" FontSize="Medium" TextColor="Black" />
+
+            <Label TextColor="Black"  Text="1. Aceptación de los Términos" FontAttributes="Bold" />
+            <Label TextColor="Black"  Text="Al descargar, acceder o utilizar DIGESSET, aceptas estar sujeto a estos Términos y Condiciones. Si no aceptas estos términos, no deberías utilizar la aplicación." />
+
+            <Label Text="2. Licencia de Uso" FontAttributes="Bold" TextColor="Black" />
+            <Label TextColor="Black"  Text="Se otorga al usuario una licencia no exclusiva, no transferible y revocable para utilizar la aplicación para sus propósitos personales y no comerciales." />
+
+            <Label Text="3. Propiedad Intelectual" FontAttributes="Bold" TextColor="Black" />
+            <Label TextColor="Black"  Text="Todo el contenido de la aplicación, incluyendo pero no limitado a texto, gráficos, imágenes, logotipos, íconos y software, es propiedad de [Tu nombre o empresa] y está protegido por las leyes de derechos de autor." />
+
+            <Label Text="4. Política de Privacidad" FontAttributes="Bold" TextColor="Black" />
+            <Label TextColor="Black"  Text="Nos comprometemos a proteger la privacidad de nuestros usuarios. [Breve descripción de cómo se manejan los datos personales]." />
+
+            <Label Text="5. Limitación de Responsabilidad" FontAttributes="Bold" TextColor="Black" />
+            <Label TextColor="Black"  Text="[Nombre de tu app] no se hace responsable de ningún daño directo o indirecto derivado del uso de la aplicación." />
+
+            <Label Text="6. Cambios en los Términos" FontAttributes="Bold" TextColor="Black" />
+            <Label TextColor="Black"  Text="Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos inmediatamente después de su publicación en la aplicación." />
+
+            <Label Text="7. Ley Aplicable" FontAttributes="Bold" TextColor="Black" />
+            <Label Text="Estos Términos se regirán e interpretarán de acuerdo con las leyes de Republica Dominicana." TextColor="Black" />
+
+            <!-- Espacio en blanco -->
+            <BoxView HeightRequest="20" Color="White" />
+
+            <!-- Contacto -->
+            <Label Text="Contacto" FontAttributes="Bold" FontSize="Medium" TextColor="Black" />
+            <Label Text="Para cualquier pregunta o soporte relacionado con la aplicación, por favor contacta a 2019-0136@unad.edu.do." TextColor="Black" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

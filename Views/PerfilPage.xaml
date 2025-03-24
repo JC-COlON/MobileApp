@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.PerfilPage"
+             Title=""
+             BackgroundColor="White">
+
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,100,0,0">
+
+        <!-- Círculo para la foto de perfil -->
+        <Frame HeightRequest="100"  WidthRequest="100" CornerRadius="50" >
+            <Image Source="usuario.png" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
+        </Frame>
+        <!-- Nombre completo (Nombre + Apellido) -->
+        <Label x:Name="UsuarioNombreLabel" FontSize="17" HorizontalOptions="Center" Margin="0,8,0,10" TextColor="Black" />
+
+        <!-- Ciudad -->
+        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,50,45,0" CornerRadius="20" HeightRequest="60">
+            <Label x:Name="CiudadLabel" FontSize="15" TextColor="#717171" />
+        </Frame>
+
+        <!-- Cedula -->
+        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
+            <Label x:Name="CedulaLabel" FontSize="16" TextColor="#717171" />
+        </Frame>
+        <!-- Sobre app -->
+
+        <StackLayout  Orientation="Horizontal" Margin="33,70,0,0">
+            <Label Text="Sobre la app" FontSize="17" VerticalOptions="Center" TextColor="Black"  />
+            <ImageButton x:Name="IrAVErSobreApp"  Source="chevron_right" HeightRequest="30" WidthRequest="30" Margin="180,0,0,0" Clicked="IrASobreApp"/>
+        </StackLayout>
+
+
+        <!-- Salir de la app -->
+
+        <StackLayout Orientation="Horizontal" Margin="33,75,0,0">
+            <Label Text="Salir de la app" FontSize="17" VerticalOptions="Center" TextColor="Black" />
+            <ImageButton Source="salirapp"
+                 HeightRequest="30"
+                 WidthRequest="30"
+                 Margin="175,0,0,0"
+                 Clicked="SalirDeLaApp"/>
+        </StackLayout>
+
+
+
+
+
+
+
+    </StackLayout>
+
+    
+</ContentPage>

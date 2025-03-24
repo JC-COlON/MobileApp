@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.LoginPage"
+             xmlns:viewmodel="clr-namespace:DigesettAPP.ViewModel"
+              x:DataType="viewmodel:LoginViewModel"
+             BackgroundColor="White"
+             Title="">
+
+
+
+
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,80,0,100">
+
+        <StackLayout Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+
+            <Grid Grid.Row="0" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, Auto">
+
+                <!-- Logo -->
+                <Image Source="logoamet.png" Grid.Row="0" Grid.ColumnSpan="2" WidthRequest="230" HeightRequest="230" HorizontalOptions="Center" />
+
+                <!-- Entry para Usuario -->
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0">
+                    <Label Text="Usuario" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
+                    <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="user.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Entry TextColor="Black" Text="{Binding Cedula}" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <!-- Entry para Contraseña -->
+                <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
+                    <Label Text="Contraseña" FontAttributes="Bold" TextColor="Black" FontSize="16"  HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
+                    <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="passwordcandado.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Entry Text="{Binding Password}" IsPassword="True" TextColor="Black" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontFamily="poppins-light.ttf"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <!-- Olvidaste la contraseña -->
+                <Label Text="¿Olvidaste la contraseña?" TextColor="#808080" FontSize="12" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="160,10,0,0"/>
+
+                <!-- Botón Entrar -->
+                <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Entrar" Command="{Binding EntrarCommand}" FontSize="16"
+                    CornerRadius="10" WidthRequest="285" HeightRequest="45" BackgroundColor="#009C40" TextColor="White"
+                    HorizontalOptions="Center" Margin="0,50,0,0" Padding="0,5" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

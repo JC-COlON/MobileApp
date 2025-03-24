@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.Paso2Page"
+             Title="">
+
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15" >
+            <!-- Identificador de formularios multipasos -->
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Paso 1 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+           HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center" 
+               FontSize="Medium" TextColor="White"/>
+                </Frame>
+
+                <!-- Línea -->
+                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
+         VerticalOptions="Center"/>
+
+
+                <!-- Paso 2 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+           HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" 
+               FontSize="Medium" TextColor="White"/>
+                </Frame>
+
+                <!-- Línea -->
+                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
+             VerticalOptions="Center" />
+
+                <!-- Paso 3 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+           HeightRequest="40" WidthRequest="40">
+                    <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center" 
+               FontSize="Medium" TextColor="Black"/>
+                </Frame>
+            </StackLayout>
+
+
+
+            <!-- Título del formulario -->
+            <Label 
+                Text="Información de la Infraccion"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                VerticalOptions="Start" 
+                Margin="0,30,0,10"
+                FontAttributes="Bold"
+                FontFamily="poppins-bold.ttf"/>
+
+            <StackLayout Padding="10">
+
+                <Label Text="Lugar del Incidente"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
+                </Frame>
+
+                <StackLayout Padding="10">
+                    <!-- Artículo Infringido -->
+                    <Label Text="Artículo Infringido" FontSize="Medium" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BackgroundColor="White" BorderColor="#D9D0E3"  Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black"  HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                    </Frame>
+                </StackLayout>
+
+
+                <Label Text="Placa del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,-5,0,5" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
+                </Frame>
+
+                <Label Text="Modelo del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
+                </Frame>
+
+                <Label Text="Marca del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                    <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
+                </Frame>
+
+                <StackLayout Padding="10">
+                    <!-- Tipo de Vehículo -->
+                    <Label Text="Tipo de Vehículo" FontSize="Medium" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BackgroundColor="White" BorderColor="#D9D0E3"  Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
+                        <Picker x:Name="tipoVehiculoPicker" Title="Selecciona un tipo de vehículo"  BackgroundColor="White" TextColor="Black"  HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                    </Frame>
+                </StackLayout>
+
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,-5">
+                <!-- Botón Atrás -->
+                <Button 
+            Text="Atrás"
+            BackgroundColor="Gray" 
+            TextColor="White"
+            FontSize="Medium"
+            FontAttributes="Bold"
+            WidthRequest="150"
+            HorizontalOptions="StartAndExpand"
+            Clicked="IrAtras2"/>
+
+                <!-- Botón Siguiente -->
+                <Button 
+            Text="Siguiente"
+            BackgroundColor="#009C40" 
+            TextColor="White"
+            FontSize="Medium"
+            FontAttributes="Bold"
+            WidthRequest="150"
+            HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

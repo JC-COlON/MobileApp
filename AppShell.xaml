@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DigesettAPP.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:DigesettAPP.Views"
+    Shell.FlyoutBehavior="Disabled" 
+    Shell.BackgroundColor="White"
+    Shell.TabBarBackgroundColor="White"
+    Shell.TabBarForegroundColor="#009C40"  
+    Shell.TabBarUnselectedColor="Gray">
+
+
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
+
+
+    <TabBar>
+        <Tab Title="Home" Icon="homebar.svg">
+            <ShellContent
+            Title="Home"
+             ContentTemplate="{DataTemplate views:Home}"
+             Route="MainHome"
+                  />
+        </Tab>
+
+        <Tab Title="Historial" Icon="iconhistory.png">
+            <ShellContent
+            Title="Historial"
+            ContentTemplate="{DataTemplate views:Historial}"
+            Route="Historial"  />
+        </Tab>
+
+
+        <Tab Title="Perfil" Icon="userbarr.svg">
+            <ShellContent
+        Title="Perfil"
+        ContentTemplate="{DataTemplate views:PerfilPage}"
+        Route="Perfil" />   
+        </Tab>
+    </TabBar>
+
+    
+
+   
+
+    
+
+  
+    
+   
+
+</Shell>
