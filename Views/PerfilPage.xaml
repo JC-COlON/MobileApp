@@ -21,7 +21,7 @@
 
         <!-- Cedula -->
         <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
-            <Label x:Name="CedulaLabel" FontSize="16" TextColor="#717171" />
+            <Label x:Name="CedulaLabel" FontSize="16" TextColor="Black" />
         </Frame>
         <!-- Sobre app -->
 
