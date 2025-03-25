@@ -5,7 +5,7 @@
              Title=""
              BackgroundColor="White">
 
-    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,100,0,0">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,65,0,0">
 
         <!-- Círculo para la foto de perfil -->
         <Frame HeightRequest="100"  WidthRequest="100" CornerRadius="50" >
@@ -16,13 +16,20 @@
 
         <!-- Ciudad -->
         <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,50,45,0" CornerRadius="20" HeightRequest="60">
-            <Label x:Name="CiudadLabel" FontSize="15" TextColor="#717171" />
+            <Label x:Name="CiudadLabel" FontSize="15" TextColor="Black" />
         </Frame>
 
         <!-- Cedula -->
         <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
             <Label x:Name="CedulaLabel" FontSize="16" TextColor="Black" />
         </Frame>
+
+        <!-- Agente No -->
+        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
+            <Label x:Name="NoAgenteLabel" FontSize="16" TextColor="Black" />
+        </Frame>
+
+
         <!-- Sobre app -->
 
         <StackLayout  Orientation="Horizontal" Margin="33,70,0,0">

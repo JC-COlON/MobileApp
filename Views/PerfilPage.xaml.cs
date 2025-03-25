@@ -1,4 +1,4 @@
-using System.IdentityModel.Tokens.Jwt;
+ï»¿using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Maui.Storage; // Para trabajar con Preferences
 
 namespace DigesettAPP.Views
@@ -11,20 +11,23 @@ namespace DigesettAPP.Views
             MostrarInformacionUsuario();
         }
 
-        // Método para obtener la información del usuario desde el token JWT
+        // MÃ©todo para obtener la informaciÃ³n del usuario desde el token JWT
         private void MostrarInformacionUsuario()
         {
             var nombreCompleto = ObtenerNombreCompletoDesdeToken();
             var ciudad = ObtenerCiudadDesdeToken();
             var cedula = ObtenerCedulaDesdeToken();
+            var noAgente = Preferences.Get("NoAgente", "No disponible");
 
-            // Asignar la información al Label correspondiente
+            // Asignar la informaciÃ³n a los Labels
             UsuarioNombreLabel.Text = nombreCompleto;
             CiudadLabel.Text = ciudad;
             CedulaLabel.Text = cedula;
+            NoAgenteLabel.Text = $"Agente No: {noAgente}";  // âœ… Mostrar NoAgente
         }
 
-        // Método para obtener el nombre completo del usuario desde el token JWT
+
+        // MÃ©todo para obtener el nombre completo del usuario desde el token JWT
         private string ObtenerNombreCompletoDesdeToken()
         {
             var nombre = ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name");
@@ -33,26 +36,26 @@ namespace DigesettAPP.Views
             return $"{nombre} {apellido}";
         }
 
-        // Método para obtener la ciudad desde el token JWT
+        // MÃ©todo para obtener la ciudad desde el token JWT
         private string ObtenerCiudadDesdeToken()
         {
             return ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/locality");
         }
 
-        // Método para obtener la cédula desde el token JWT
+        // MÃ©todo para obtener la cÃ©dula desde el token JWT
         private string ObtenerCedulaDesdeToken()
         {
             return ObtenerClaimDesdeToken("http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber");
         }
 
-        // Método general para obtener cualquier claim desde el token
+        // MÃ©todo general para obtener cualquier claim desde el token
         private string ObtenerClaimDesdeToken(string claimType)
         {
             // Recuperar el token JWT almacenado
             string token = Preferences.Get("AuthToken", string.Empty);
 
             if (string.IsNullOrEmpty(token))
-                return "Información no disponible";
+                return "InformaciÃ³n no disponible";
 
             // Decodificar el token
             var jwtHandler = new JwtSecurityTokenHandler();
@@ -61,7 +64,7 @@ namespace DigesettAPP.Views
             // Extraer el claim del token
             var claimValue = jwtToken.Claims.FirstOrDefault(c => c.Type == claimType)?.Value;
 
-            return claimValue ?? "Información no disponible";
+            return claimValue ?? "InformaciÃ³n no disponible";
         }
 
         private async void IrASobreApp(object sender, EventArgs e)
@@ -72,13 +75,13 @@ namespace DigesettAPP.Views
         private async void SalirDeLaApp(object sender, EventArgs e)
         {
             bool confirm = await Application.Current.MainPage.DisplayAlert(
-                "Confirmación",
-                "¿Estás seguro de que deseas cerrar sesión?",
-                "Sí",
+                "ConfirmaciÃ³n",
+                "Â¿EstÃ¡s seguro de que deseas cerrar sesiÃ³n?",
+                "SÃ­",
                 "No"
             );
 
-            if (confirm) // Si el usuario elige "Sí"
+            if (confirm) // Si el usuario elige "SÃ­"
             {
                 Preferences.Clear(); // Elimina los datos almacenados
 

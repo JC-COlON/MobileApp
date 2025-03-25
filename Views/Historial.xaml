@@ -10,21 +10,36 @@
 
         <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="#009C40" Grid.Row="0" FontAttributes="Bold"/>
 
-        <ScrollView Grid.Row="1"  Margin="0,50,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+        <ScrollView Grid.Row="1"  Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
 
-            <StackLayout  HorizontalOptions="Center" Spacing="10">
+           <ListView x:Name="TicketsList" SeparatorVisibility="Default">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <!-- StackLayout para controlar el espacio entre los elementos -->
+                <StackLayout Spacing="20"> <!-- Ajusta el valor de Spacing según tus necesidades -->
+                    <Frame BackgroundColor="White" 
+                           BorderColor="#FD8402" 
+                           Padding="9" 
+                           CornerRadius="16" 
+                           HeightRequest="45" 
+                           WidthRequest="350">
+                        <Grid RowDefinitions="*,*" ColumnSpacing="12">
+                            <Label Text="{Binding FormattedInfo}" 
+                                   TextColor="black" 
+                                   FontAttributes="Bold" 
+                                   HorizontalOptions="Center"
+                                   FontSize="12"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
 
 
-                <Frame BackgroundColor="White" BorderColor="#FD8402" Padding="9" CornerRadius="16" HeightRequest="80" WidthRequest="350">
-                    <Grid RowDefinitions="*,*" ColumnSpacing="12">
-                        <Label Text="Ticket #1" Grid.Row="0" HorizontalOptions="Center" TextColor="#FD8402" FontAttributes="Bold"/>
-                        <Label Text="Daniel  --  A501280  --  Honda/Acura  --  8/15/24" TextColor="#FD8402" FontSize="12" Grid.Row="1" HorizontalOptions="Center" Margin="5,0,0,0" />
-                    </Grid>
-                </Frame>
 
-
-
-            </StackLayout>
 
         </ScrollView>
 
