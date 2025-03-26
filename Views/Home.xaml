@@ -62,7 +62,7 @@
                                 <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#FD8402" HeightRequest="181" WidthRequest="163" CornerRadius="15" BorderColor="Transparent">
                                     <Grid HorizontalOptions="Center">
                                         <Label Text="Crear usuario" TextColor="White" FontSize="14" FontAttributes="Bold"/>
-                                        <Image Source="user_plus" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="60" Margin="0,15,0,0"/>
+                                        <ImageButton Source="user_plus" Clicked="GoCrearUsuarioPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="60" Margin="0,15,0,0"/>
                                     </Grid>
                                 </Frame>
                             </Grid>

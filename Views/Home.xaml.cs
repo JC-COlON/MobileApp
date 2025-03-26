@@ -12,5 +12,9 @@ public partial class Home : ContentPage
         await Navigation.PushAsync(new Paso1Page());
     }
 
+    private async void GoCrearUsuarioPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CrearUsuarioPage());
+    }
     
 }

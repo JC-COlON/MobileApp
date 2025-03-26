@@ -18,7 +18,6 @@ namespace DigesettAPP.Views
             InitializeComponent();
             CargarHistorial();
         }
-
         private async void CargarHistorial()
         {
             string noAgente = Preferences.Get("NoAgente", string.Empty);
@@ -42,7 +41,7 @@ namespace DigesettAPP.Views
                     {
                         string json = await response.Content.ReadAsStringAsync();
 
-                        // Deserializar directamente como List<Ticket> si el JSON es un array
+                        
                         var tickets = JsonConvert.DeserializeObject<List<Ticket>>(json);
 
                         if (tickets != null && tickets.Count > 0)
@@ -56,7 +55,7 @@ namespace DigesettAPP.Views
                                         : ticket.TicketDate;
                                 }
 
-                                ticket.FormattedInfo = $"{ticket.Name} {ticket.LastName} - {ticket.LicensePlate} - {ticket.Brand}/{ticket.Model} - {ticket.TicketDate}";
+                                ticket.FormattedInfo = $"Ticket # {ticket.TicketId}\n{ticket.Name} {ticket.LastName} - {ticket.LicensePlate} - {ticket.Brand}/{ticket.Model} - {ticket.TicketDate}";
                             }
 
                             TicketsList.ItemsSource = tickets;

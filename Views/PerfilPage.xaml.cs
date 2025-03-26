@@ -83,11 +83,24 @@ namespace DigesettAPP.Views
 
             if (confirm) // Si el usuario elige "Sí"
             {
-                Preferences.Clear(); // Elimina los datos almacenados
+                // Limpiar todas las preferencias almacenadas
+                Preferences.Clear();
+
+                // Limpiar cualquier variable local si es necesario
+                LimpiarVariablesLocales();
 
                 // Redirigir al login asegurando que los campos se limpien
                 await Shell.Current.GoToAsync("//LoginPage");
             }
         }
+
+        // Método adicional para limpiar variables locales si es necesario
+        private void LimpiarVariablesLocales()
+        {
+            // Limpiar variables de sesión locales, como el nombre de usuario, si es necesario
+            // Por ejemplo:
+            // usuario = null; // Si tienes una variable global llamada 'usuario'
+        }
+
     }
 }
