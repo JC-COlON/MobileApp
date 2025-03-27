@@ -12,26 +12,41 @@
 
         <ScrollView Grid.Row="1"  Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
 
-            <ListView x:Name="TicketsList" SeparatorVisibility="Default">
+            <ListView x:Name="TicketsList" SeparatorVisibility="Default"  
+          SelectionMode="None"
+          HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <!-- StackLayout para controlar el espacio entre los elementos -->
-                            <StackLayout Spacing="20">
-                                <!-- Ajusta el valor de Spacing según tus necesidades -->
+                            <StackLayout Padding="10">
                                 <Frame BackgroundColor="White" 
                            BorderColor="#FD8402" 
-                           Padding="9" 
                            CornerRadius="16" 
-                           HeightRequest="100" 
-                                    WidthRequest="350">
-                                    <Grid RowDefinitions="Auto,Auto" ColumnSpacing="12">
-                                        <Label Text="{Binding FormattedInfo}" 
-                                   TextColor="black" 
-                                   FontAttributes="Bold" 
+                           Padding="10"
+                           WidthRequest="350"
+                           HasShadow="True">
+                                    <Grid ColumnSpacing="12">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <!-- Primera fila: Número del ticket -->
+                                        <Label Grid.Row="0"
+                                   Text="{Binding TicketNumber}"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
                                    HorizontalOptions="Center"
-                                   VerticalOptions="Center" 
-                                            FontSize="12"/>
+                                   VerticalOptions="Center"
+                                   FontSize="14"/>
+
+                                        <!-- Segunda fila: Datos de la multa -->
+                                        <Label Grid.Row="1"
+                                   Text="{Binding TicketDetails}"
+                                   TextColor="Black"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontSize="12"/>
                                     </Grid>
                                 </Frame>
                             </StackLayout>
@@ -39,6 +54,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
 
 
 

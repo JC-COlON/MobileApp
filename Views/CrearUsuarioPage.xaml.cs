@@ -27,7 +27,7 @@ namespace DigesettAPP.Views
                 lastname = ApellidoEntry.Text,
                 password = "",  // Debe enviarse como cadena vacía
                 rolId = 3,
-                email = "",  // Debe enviarse como cadena vacía
+                email = "",  // No se captura en esta página, se envía vacío
                 phone = TelefonoEntry.Text,
                 profileImg = "",  // Debe enviarse como cadena vacía
                 nacionalityId = (int?)null,
@@ -53,6 +53,20 @@ namespace DigesettAPP.Views
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Éxito", "Usuario creado correctamente.", "OK");
+
+                    // Enviar datos creados a Paso1Page
+                    var usuarioCreado = new Usuario
+                    {
+                        Cedula = CedulaEntry.Text,
+                        Name = NombreEntry.Text,
+                        LastName = ApellidoEntry.Text,
+                        Email = "",  // No se captura en esta pantalla
+                        Phone = TelefonoEntry.Text
+                    };
+
+                    // Regresar a Paso1Page con los datos del usuario creado
+                    await Navigation.PopAsync();
+                    MessagingCenter.Send(this, "UsuarioCreado", usuarioCreado);
                 }
                 else
                 {
@@ -65,6 +79,7 @@ namespace DigesettAPP.Views
                 await DisplayAlert("Error", $"Ocurrió un problema: {ex.Message}", "OK");
             }
         }
+
 
     }
 }

@@ -11,6 +11,24 @@ namespace DigesettAPP.Views
         public Paso1Page()
         {
             InitializeComponent();
+
+            // Escuchar el mensaje cuando se crea un usuario
+            MessagingCenter.Subscribe<CrearUsuarioPage, Usuario>(this, "UsuarioCreado", (sender, usuario) =>
+            {
+                CedulaEntry.Text = usuario.Cedula;
+                NombreEntry.Text = usuario.Name;
+                ApellidoEntry.Text = usuario.LastName;
+                EmailEntry.Text = usuario.Email;  // Será vacío porque no se captura en la página de registro
+                TelefonoEntry.Text = usuario.Phone;
+
+                // Deshabilitar los campos que ya tienen datos, solo dejar habilitados los vacíos
+                NombreEntry.IsEnabled = string.IsNullOrEmpty(usuario.Name);
+                ApellidoEntry.IsEnabled = string.IsNullOrEmpty(usuario.LastName);
+                EmailEntry.IsEnabled = string.IsNullOrEmpty(usuario.Email);
+                TelefonoEntry.IsEnabled = string.IsNullOrEmpty(usuario.Phone);
+
+                SiguienteButton.IsEnabled = true; // Habilitar el botón "Siguiente"
+            });
         }
 
         private async void OnCedulaChanged(object sender, TextChangedEventArgs e)
@@ -80,6 +98,7 @@ namespace DigesettAPP.Views
 
     public class Usuario
     {
+        public string Cedula { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
