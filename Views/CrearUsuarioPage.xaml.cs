@@ -25,11 +25,11 @@ namespace DigesettAPP.Views
                 cedula = CedulaEntry.Text,
                 name = NombreEntry.Text,
                 lastname = ApellidoEntry.Text,
-                password = "",  // Debe enviarse como cadena vacía
+                password = "",
                 rolId = 3,
-                email = "",  // No se captura en esta página, se envía vacío
+                email = "",
                 phone = TelefonoEntry.Text,
-                profileImg = "",  // Debe enviarse como cadena vacía
+                profileImg = "",
                 nacionalityId = (int?)null,
                 birthdate = (DateTime?)null,
                 genderId = (int?)null,
@@ -37,8 +37,8 @@ namespace DigesettAPP.Views
                 height = (double?)null,
                 workLocationId = (int?)null,
                 civilStatusId = (int?)null,
-                noAgente = "",  // Debe enviarse como cadena vacía
-                statusId = 1  // Debe ser 1 siempre
+                noAgente = "",
+                statusId = 1
             };
 
             try
@@ -50,36 +50,39 @@ namespace DigesettAPP.Views
 
                 HttpResponseMessage response = await _httpClient.PostAsync(Url, content);
 
+                string responseContent = await response.Content.ReadAsStringAsync();
+
                 if (response.IsSuccessStatusCode)
                 {
                     await DisplayAlert("Éxito", "Usuario creado correctamente.", "OK");
 
-                    // Enviar datos creados a Paso1Page
                     var usuarioCreado = new Usuario
                     {
                         Cedula = CedulaEntry.Text,
                         Name = NombreEntry.Text,
                         LastName = ApellidoEntry.Text,
-                        Email = "",  // No se captura en esta pantalla
+                        Email = "",
                         Phone = TelefonoEntry.Text
                     };
 
-                    // Regresar a Paso1Page con los datos del usuario creado
                     await Navigation.PopAsync();
                     MessagingCenter.Send(this, "UsuarioCreado", usuarioCreado);
                 }
                 else
                 {
-                    string errorMessage = await response.Content.ReadAsStringAsync();
-                    await DisplayAlert("Error", $"No se pudo crear el usuario: {errorMessage}", "OK");
+                    Console.WriteLine($"Error al crear usuario. Código: {response.StatusCode}");
+                    Console.WriteLine($"Mensaje del servidor: {responseContent}");
+
+                    await DisplayAlert("Error", $"No se pudo crear el usuario.\nCódigo: {response.StatusCode}\nMensaje: {responseContent}", "OK");
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Excepción atrapada: {ex.Message}");
+                Console.WriteLine($"StackTrace: {ex.StackTrace}");
+
                 await DisplayAlert("Error", $"Ocurrió un problema: {ex.Message}", "OK");
             }
         }
-
-
     }
 }

@@ -60,11 +60,13 @@ namespace DigesettAPP.Views
                         else
                         {
                             await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
+                            await Shell.Current.GoToAsync("//MainHome"); // 🚀 Redirige al Home
                         }
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.NotFound) // ⬅️ ✅ Manejo de error 404
                     {
                         await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
+                        await Shell.Current.GoToAsync("//MainHome"); // 🚀 Redirige al Home
                     }
                     else
                     {
@@ -82,6 +84,7 @@ namespace DigesettAPP.Views
                 await DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
             }
         }
+
 
     }
 }
