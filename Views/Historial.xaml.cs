@@ -16,6 +16,11 @@ namespace DigesettAPP.Views
         public Historial()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             CargarHistorial();
         }
 
@@ -37,16 +42,19 @@ namespace DigesettAPP.Views
                     string token = Preferences.Get("AuthToken", string.Empty);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
+                    // 🔴 Limpiar la lista antes de la nueva petición
+                    TicketsList.ItemsSource = null;
+                    TicketsList.ItemsSource = new List<Ticket>();
+
                     HttpResponseMessage response = await client.GetAsync(url);
+                    string jsonResponse = await response.Content.ReadAsStringAsync(); // 🛠 Obtener respuesta de la API
+
                     if (response.IsSuccessStatusCode)
                     {
-                        string json = await response.Content.ReadAsStringAsync();
-
-                        var tickets = JsonConvert.DeserializeObject<List<Ticket>>(json);
+                        var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
 
                         if (tickets != null && tickets.Count > 0)
                         {
-                            // Aquí ya no es necesario asignar ticket.TicketDetails manualmente
                             TicketsList.ItemsSource = tickets;
                         }
                         else
@@ -54,19 +62,26 @@ namespace DigesettAPP.Views
                             await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
                         }
                     }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound) // ⬅️ ✅ Manejo de error 404
+                    {
+                        await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
+                    }
                     else
                     {
-                        await DisplayAlert("Error", "No se pudo cargar el historial.", "OK");
+                        TicketsList.ItemsSource = new List<Ticket>(); // Asegurar que la UI se limpie
+
+                        // 🔍 Mostrar detalles del error
+                        await DisplayAlert("Error",
+                            $"No se pudo cargar el historial.\nCódigo: {response.StatusCode}\nMensaje: {jsonResponse}", "OK");
                     }
                 }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
+                TicketsList.ItemsSource = new List<Ticket>(); // Prevenir datos antiguos
+                await DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
             }
         }
-
-
 
     }
 }

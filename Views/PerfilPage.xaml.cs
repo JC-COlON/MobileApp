@@ -11,6 +11,12 @@ namespace DigesettAPP.Views
             MostrarInformacionUsuario();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MostrarInformacionUsuario(); // ⚠️ Recargar la información cada vez que la página se muestra
+        }
+
         // Método para obtener la información del usuario desde el token JWT
         private void MostrarInformacionUsuario()
         {
@@ -26,13 +32,11 @@ namespace DigesettAPP.Views
             NoAgenteLabel.Text = $"Agente No: {noAgente}";  // ✅ Mostrar NoAgente
         }
 
-
         // Método para obtener el nombre completo del usuario desde el token JWT
         private string ObtenerNombreCompletoDesdeToken()
         {
             var nombre = ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name");
             var apellido = ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname");
-
             return $"{nombre} {apellido}";
         }
 
@@ -81,26 +85,17 @@ namespace DigesettAPP.Views
                 "No"
             );
 
-            if (confirm) // Si el usuario elige "Sí"
+            if (confirm)
             {
                 // Limpiar todas las preferencias almacenadas
                 Preferences.Clear();
 
-                // Limpiar cualquier variable local si es necesario
-                LimpiarVariablesLocales();
+                // ⚠️ Asegurar que el usuario actual en memoria también se borre
+                App.user = null;
 
-                // Redirigir al login asegurando que los campos se limpien
+                // ⚠️ Forzar una recarga de la aplicación o navegación para evitar datos en caché
                 await Shell.Current.GoToAsync("//LoginPage");
             }
         }
-
-        // Método adicional para limpiar variables locales si es necesario
-        private void LimpiarVariablesLocales()
-        {
-            // Limpiar variables de sesión locales, como el nombre de usuario, si es necesario
-            // Por ejemplo:
-            // usuario = null; // Si tienes una variable global llamada 'usuario'
-        }
-
     }
 }
