@@ -2,9 +2,9 @@ namespace DigesettAPP.Views;
 
 public partial class Paso2Page : ContentPage
 {
-	public Paso2Page()
-	{
-		InitializeComponent();
+    public Paso2Page()
+    {
+        InitializeComponent();
 
         // Definir las opciones del Picker para tipo de vehículo
         tipoVehiculoPicker.ItemsSource = new List<string>
@@ -16,7 +16,7 @@ public partial class Paso2Page : ContentPage
                 "Otros"
             };
 
-   
+
 
         // Definir las opciones del Picker para artículo infringido
         articuloInfringidoPicker.ItemsSource = new List<string>
@@ -70,3 +70,6 @@ public partial class Paso2Page : ContentPage
         await Navigation.PopAsync();
     }
 }
+
+
+
