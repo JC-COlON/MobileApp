@@ -29,4 +29,16 @@ public partial class LoginPage : ContentPage
     }
 
 
+    //private async void OnForgotPasswordTapped(object sender, EventArgs e)
+    //{
+    //    await Shell.Current.GoToAsync("//RecuperarContrasenaPage");
+    //}
+
+
+    private async void OnForgotPasswordTapped(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new OlvidelaContrasenaPage());
+    }
+
+
 }

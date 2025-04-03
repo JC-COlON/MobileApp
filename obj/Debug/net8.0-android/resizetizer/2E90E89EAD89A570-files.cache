@@ -18,6 +18,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\usuario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\vistodos.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_leftgreen.png
@@ -45,6 +46,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_leftgreen.png
@@ -72,6 +74,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_leftgreen.png
@@ -99,6 +102,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_leftgreen.png
@@ -126,6 +130,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_leftgreen.png

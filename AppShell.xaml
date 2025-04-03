@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="DigesettAPP.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -10,44 +9,33 @@
     Shell.TabBarForegroundColor="#009C40"  
     Shell.TabBarUnselectedColor="Gray">
 
-
+    <!-- Páginas sin TabBar -->
     <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
     <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
+    <ShellContent Route="RecuperarContrasenaPage" ContentTemplate="{DataTemplate views:OlvidelaContrasenaPage}" />
 
-
+    <!-- Tabs -->
     <TabBar>
         <Tab Title="Home" Icon="homebar.svg">
             <ShellContent
-            Title="Home"
-             ContentTemplate="{DataTemplate views:Home}"
-             Route="MainHome"
-                  />
+                Title="Home"
+                ContentTemplate="{DataTemplate views:Home}"
+                Route="MainHome" />
         </Tab>
 
         <Tab Title="Historial" Icon="iconhistory.png">
             <ShellContent
-            Title="Historial"
-            ContentTemplate="{DataTemplate views:Historial}"
-            Route="Historial"  />
+                Title="Historial"
+                ContentTemplate="{DataTemplate views:Historial}"
+                Route="Historial" />
         </Tab>
-
 
         <Tab Title="Perfil" Icon="userbarr.svg">
             <ShellContent
-        Title="Perfil"
-        ContentTemplate="{DataTemplate views:PerfilPage}"
-        Route="Perfil" />   
+                Title="Perfil"
+                ContentTemplate="{DataTemplate views:PerfilPage}"
+                Route="Perfil" />
         </Tab>
     </TabBar>
-
-    
-
-   
-
-    
-
-  
-    
-   
 
 </Shell>

@@ -46,7 +46,7 @@
 		<MauiIcon Include="Resources\AppIcon\logo.png" ForegroundScale="0.60" Color="White" />
 
 		<!-- Splash Screen -->
-    <MauiSplashScreen Include="Resources\Splash\logosplash.png" Color="White" BaseSize="128,128" />
+    <MauiSplashScreen Include="Resources\Splash\logosplash.png" Color="White" BaseSize="250,250" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -80,6 +80,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\OlvidelaContrasenaPage.xaml.cs">
+	    <DependentUpon>OlvidelaContrasenaPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\CambiarLaContrasena.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CrearUsuarioPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -99,6 +108,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PerfilPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\OlvidelaContrasenaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SobreApp.xaml">

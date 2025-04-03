@@ -4,8 +4,8 @@
              x:Class="DigesettAPP.Views.Paso1Page"
              Title="">
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+        <VerticalStackLayout Padding="20" >
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" >
                 <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
                        HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
                     <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center" 
@@ -28,45 +28,48 @@
             </StackLayout>
             <Label Text="Información Personal" FontSize="Large" HorizontalOptions="Center"
                    VerticalOptions="Start" Margin="0,40,0,10" FontAttributes="Bold"/>
+            
+            
+            
             <StackLayout Padding="10">
-                <Label Text="Cedula" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" 
-                       Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text="Cedula" TextColor="Black" FontSize="Small" HorizontalOptions="Start" 
+                       Margin="0,5,0,0" FontAttributes="Bold"/>
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="CedulaEntry" TextColor="Black" FontSize="16" WidthRequest="325" 
                            TranslationY="10" Margin="0,-30,0,-19" Keyboard="Numeric"
                            TextChanged="OnCedulaChanged" />
                 </Frame>
-                <Label Text="Nombres" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" 
-                       Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text="Nombre" TextColor="Black" FontSize="Small" HorizontalOptions="Start" 
+                       Margin="0,5,0,0" FontAttributes="Bold"/>
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="NombreEntry" TextColor="Black" FontSize="15" WidthRequest="325" 
                            TranslationY="10" Margin="0,-25,0,-19" IsEnabled="False" />
                 </Frame>
-                <Label Text="Apellido" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" 
-                       Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text="Apellido" TextColor="Black" FontSize="Small" HorizontalOptions="Start" 
+                       Margin="0,5,0,0" FontAttributes="Bold"/>
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="ApellidoEntry" TextColor="Black" FontSize="15" WidthRequest="325" 
                            TranslationY="10" Margin="0,-30,0,-19" IsEnabled="False" />
                 </Frame>
-                <Label Text="Telefono" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" 
-                       Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text="Telefono" TextColor="Black" FontSize="Small" HorizontalOptions="Start" 
+                       Margin="0,5,0,0" FontAttributes="Bold"/>
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="TelefonoEntry" TextColor="Black" FontSize="15" WidthRequest="325" 
                            TranslationY="10" Margin="0,-30,0,-19" Keyboard="Telephone" IsEnabled="False" />
                 </Frame>
-                <Label Text="Correo" TextColor="Black" FontSize="Medium" HorizontalOptions="Start" 
-                       Margin="0,20,0,0" FontAttributes="Bold"/>
+                <Label Text="Correo" TextColor="Black" FontSize="Small" HorizontalOptions="Start" 
+                       Margin="0,5,0,0" FontAttributes="Bold"/>
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="EmailEntry" TextColor="Black" FontSize="15" WidthRequest="325" 
                            TranslationY="10" Margin="0,-30,0,-19" Keyboard="Email" IsEnabled="False" />
                 </Frame>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,8">
                 <Button Text="Atrás" BackgroundColor="Gray" TextColor="White" FontSize="Medium"
                         FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand"
                         Clicked="IrAtras"/>

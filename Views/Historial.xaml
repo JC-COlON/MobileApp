@@ -8,7 +8,7 @@
 
         <Image Source="ametlogoo" HorizontalOptions="Start" Margin="20,0,0,0" Grid.Column="0" HeightRequest="50" WidthRequest="50" Grid.Row="0" />
 
-        <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="#009C40" Grid.Row="0" FontAttributes="Bold"/>
+        <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" Grid.Row="0" FontAttributes="Bold"/>
 
         <ScrollView Grid.Row="1"  Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
 
@@ -46,7 +46,7 @@
                                    TextColor="Black"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center"
-                                   FontSize="12"/>
+                                   FontSize="11"/>
                                     </Grid>
                                 </Frame>
                             </StackLayout>

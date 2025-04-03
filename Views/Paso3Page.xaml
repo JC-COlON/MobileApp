@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.Paso3Page"
+             >
+    <ScrollView>
+        <VerticalStackLayout Padding="15">
+            <!-- Identificador de formularios multipasos -->
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- Paso 1 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center" 
+                           FontSize="Medium" TextColor="White"/>
+                </Frame>
+                <!-- Línea -->
+                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
+                         VerticalOptions="Center"/>
+                <!-- Paso 2 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" 
+                           FontSize="Medium" TextColor="White"/>
+                </Frame>
+                <!-- Línea -->
+                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
+                         VerticalOptions="Center"/>
+                <!-- Paso 3 -->
+                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                    <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center" 
+                           FontSize="Medium" TextColor="White"/>
+                </Frame>
+            </StackLayout>
+
+            <!-- Título del formulario -->
+            <Label 
+      Text="Confirmación"
+      FontSize="Medium"
+      HorizontalOptions="Center"
+      VerticalOptions="Start" 
+      Margin="0,30,0,10"
+      FontAttributes="Bold"
+      FontFamily="poppins-bold.ttf"/>
+
+            <!-- Información del usuario -->
+            <VerticalStackLayout Padding="10">
+
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Zone: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="First Name: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Last Name: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Phone: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Email: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Identification: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Vehicle Type ID: 0" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Vehicle Plate: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Brand: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Model: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Infringed Article: 0" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Incident Location: string" FontSize="Medium"/>
+                </Frame>
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Observations: string" FontSize="Medium"/>
+                </Frame>
+
+                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                    <Label Text="Agent Number: string" FontSize="Medium"/>
+                </Frame>
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20,0,0">
+                    <!-- Botón Atrás -->
+                    <Button 
+                  Text="Atrás"
+                  BackgroundColor="Gray" 
+                  TextColor="White"
+                  FontSize="Medium"
+                  FontAttributes="Bold"
+                  WidthRequest="150"
+                  HorizontalOptions="StartAndExpand"
+                  Clicked="IrAtras"/>        
+
+                    <!-- Botón Siguiente -->
+                    <Button 
+                  Text="Enviar"
+                  BackgroundColor="#009C40" 
+                  TextColor="White"
+                  FontSize="Medium"
+                  FontAttributes="Bold"
+                  WidthRequest="150"
+                  HorizontalOptions="StartAndExpand"
+                  />    
+                </StackLayout>
+
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

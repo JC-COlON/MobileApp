@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.CambiarLaContrasena"
+             >
+
+
+
+    <!-- Contenedor para centrar el card -->
+    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Frame que simula el card, personalizado en tamaño y ubicación -->
+        <Frame BorderColor="#FD8402" BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True"
+            WidthRequest="350" HeightRequest="450" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-50,0,0">
+
+            <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+
+                <!-- Imagen arriba del formulario -->
+
+                <Image Source="candado.png"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" />
+
+                <!-- Título del formulario -->
+                <Label 
+                 Text="Restablecer Contraseña"
+                 FontSize="22"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Start" 
+                 FontAttributes="Bold"
+                 FontFamily="poppins-bold.ttf"
+                 Margin="0,0,0,20"/>
+
+                <!-- Texto debajo del título -->
+
+
+                <!-- Campo de entrada del correo con borde -->
+                <Frame BorderColor="#FD8402" CornerRadius="10" Padding="5" HasShadow="False"
+                      WidthRequest="295" HeightRequest="50">
+
+                    <Entry x:Name="NuevaContraseñaEntry" 
+        Placeholder="Nueva Contraseña" 
+        Keyboard="Email" 
+        Margin="5,-5,0,-14"
+        WidthRequest="270"
+        BackgroundColor="Transparent"
+                FontSize="16"
+                        
+         />
+                </Frame>
+
+
+                <Frame BorderColor="#FD8402" CornerRadius="10" Padding="5" HasShadow="False"
+                WidthRequest="295" HeightRequest="50">
+
+                    <Entry x:Name="ConfirmarContraseñaEntry" 
+  Placeholder="Confirmar Nueva Contraseña" 
+  Keyboard="Email" 
+  Margin="5,-5,0,-14"
+  WidthRequest="270"
+  BackgroundColor="Transparent"
+          FontSize="16"
+                  
+   />
+                </Frame>
+
+
+
+                <!-- Botón para enviar las instrucciones -->
+                <Button Text="Restablecer "
+                     BackgroundColor="#FD8402" 
+                     TextColor="White"
+                     CornerRadius="10"
+                     Padding="10, 0"
+                     WidthRequest="270"
+                     FontAttributes="Bold"
+                     Margin="0,25,0,0"
+                     FontSize="18"
+                    />
+
+                <!-- Texto de reenviar correo -->
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                           
+                            <Span Text="Cancelar"
+               TextColor="#FD8402"
+               FontAttributes="Bold"
+                                  FontSize="14">
+                               
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </VerticalStackLayout>
+
+
+        </Frame>
+    </Grid>
+
+</ContentPage>

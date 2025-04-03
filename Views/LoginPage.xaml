@@ -42,8 +42,18 @@
                     </Frame>
                 </StackLayout>
 
-                <!-- Olvidaste la contraseña -->
-                <Label Text="¿Olvidaste la contraseña?" TextColor="#808080" FontSize="12" Grid.Row="3" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="160,10,0,0"/>
+                <Label Text="¿Olvidaste la contraseña?" 
+       TextColor="#808080" 
+       FontSize="12" 
+       Grid.Row="3" 
+       Grid.ColumnSpan="2" 
+       HorizontalOptions="Center" 
+       Margin="160,10,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
 
                 <!-- Botón Entrar -->
                 <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Entrar" Command="{Binding EntrarCommand}" FontSize="16"

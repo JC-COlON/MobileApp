@@ -48,7 +48,7 @@
             <!-- Título del formulario -->
             <Label 
                 Text="Información de la Infraccion"
-                FontSize="Large"
+                FontSize="Medium"
                 HorizontalOptions="Center"
                 VerticalOptions="Start" 
                 Margin="0,30,0,10"
@@ -57,38 +57,38 @@
 
             <StackLayout Padding="10">
 
-                <Label Text="Lugar del Incidente"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Label Text="Lugar del Incidente"  TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
                 </Frame>
 
                 <StackLayout Padding="10">
                     <!-- Artículo Infringido -->
-                    <Label Text="Artículo Infringido" FontSize="Medium" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Label Text="Artículo Infringido" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="White" BorderColor="#D9D0E3"  Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black"  HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black"  HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center" Margin="0,0,0,0"/>
                     </Frame>
                 </StackLayout>
 
 
-                <Label Text="Placa del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,-5,0,5" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Label Text="Placa del Vehiculo"  TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,5,0,5" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
                 </Frame>
 
-                <Label Text="Modelo del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Label Text="Modelo del Vehiculo"  TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
                 </Frame>
 
-                <Label Text="Marca del Vehiculo"  TextColor="Black" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+                <Label Text="Marca del Vehiculo"  TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry   TextColor="Black" FontSize="16"  WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  />
                 </Frame>
 
                 <StackLayout Padding="10">
                     <!-- Tipo de Vehículo -->
-                    <Label Text="Tipo de Vehículo" FontSize="Medium" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Label Text="Tipo de Vehículo" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="White" BorderColor="#D9D0E3"  Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                         <Picker x:Name="tipoVehiculoPicker" Title="Selecciona un tipo de vehículo"  BackgroundColor="White" TextColor="Black"  HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center"/>
                     </Frame>
@@ -118,7 +118,8 @@
             FontSize="Medium"
             FontAttributes="Bold"
             WidthRequest="150"
-            HorizontalOptions="StartAndExpand"/>
+            HorizontalOptions="StartAndExpand"
+            Clicked="IrPaso3"/>
             </StackLayout>
 
 

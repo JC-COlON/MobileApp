@@ -69,6 +69,11 @@ public partial class Paso2Page : ContentPage
     {
         await Navigation.PopAsync();
     }
+
+    private async void IrPaso3(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Paso3Page());
+    }
 }
 
 
