@@ -112,7 +112,8 @@
                 <!-- Botones -->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20,0,0">
                     <Button Text="Atrás" BackgroundColor="Gray" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="IrAtras"/>
-                    <Button Text="Enviar" BackgroundColor="#009C40" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
+                    <Button Text="Enviar" BackgroundColor="#009C40" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="EnviarMulta"/>
+
                 </StackLayout>
             </VerticalStackLayout>
         </VerticalStackLayout>

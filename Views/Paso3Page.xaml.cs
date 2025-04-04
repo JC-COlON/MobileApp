@@ -1,4 +1,7 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using DigesettAPP.Models;
+using Newtonsoft.Json;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace DigesettAPP.Views;
 
@@ -92,5 +95,120 @@ public partial class Paso3Page : ContentPage
             Navigation.PopAsync();
         }
     }
+
+
+    private async void EnviarMulta(object sender, EventArgs e)
+    {
+        // Obtener los datos de las preferencias
+        var userId = Preferences.Get("UserId", "No disponible");
+        var zone = Preferences.Get("LugarIncidente", "No especificado");
+        var firstName = Preferences.Get("Nombre", "No especificado");
+        var lastName = Preferences.Get("Apellido", "No especificado");
+        var phone = Preferences.Get("Telefono", "No especificado");
+        var email = Preferences.Get("Email", "No especificado");
+        var identification = Preferences.Get("Cedula", "No especificado");
+        var vehicleType = Preferences.Get("TipoVehiculo", "No especificado");
+        var vehiclePlate = Preferences.Get("PlacaVehiculo", "No especificado");
+        var brand = Preferences.Get("MarcaVehiculo", "No especificado");
+        var model = Preferences.Get("ModeloVehiculo", "No especificado");
+        var infringedArticle = Preferences.Get("ArticuloInfringido", "No especificado");
+        var observations = Preferences.Get("Observaciones", "No especificado");
+        var agentNumber = Preferences.Get("NoAgente", "No disponible");
+
+        // Obtener el userId del agente (de un claim del token)
+        var userIdAgente = Preferences.Get("UserIdAgente", "No disponible");
+
+        // Convertir el tipo de vehículo a ID (si está guardado como texto)
+        var tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
+
+        // Convertir el artículo infringido a ID (si está guardado como texto)
+        var articuloInfringidoId = DataPicker.articuloInfringidoMap.ContainsKey(infringedArticle) ? DataPicker.articuloInfringidoMap[infringedArticle] : -1;
+
+        // Construir el mensaje para el alerta, mostrando solo los valores con ID
+        var mensaje = $"ID del Usuario: {userId}\n" +
+                      $"Zona del Incidente: {zone}\n" +
+                      $"Nombre: {firstName}\n" +
+                      $"Apellido: {lastName}\n" +
+                      $"Teléfono: {phone}\n" +
+                      $"Email: {email}\n" +
+                      $"Cédula: {identification}\n" +
+                      $"Tipo de Vehículo (ID): {tipoVehiculoId}\n" +
+                      $"Placa del Vehículo: {vehiclePlate}\n" +
+                      $"Marca del Vehículo: {brand}\n" +
+                      $"Modelo del Vehículo: {model}\n" +
+                      $"Artículo Infringido (ID): {articuloInfringidoId}\n" +
+                      $"Observaciones: {observations}\n" +
+                      $"Número de Agente: {agentNumber}\n" +
+                      $"ID del Agente: {userIdAgente}\n\n" +
+                      $"¿Estás seguro de que deseas enviar esta multa?";
+
+        // Mostrar el mensaje en un alerta de confirmación
+        bool respuesta = await DisplayAlert(
+            "Confirmación de Envío",
+            mensaje,
+            "Enviar",
+            "Cancelar");
+
+        // Si el usuario hace clic en "Enviar", proceder con el envío
+        if (respuesta)
+        {
+            // Construir el objeto Multa que se enviará a la API
+            var multa = new
+            {
+                userId = userId, // ID del usuario (agente o administrador)
+                zone = zone, // Zona
+                firstName = firstName,
+                lastName = lastName,
+                phone = phone,
+                email = email,
+                identification = identification,
+                vehicleTypeId = tipoVehiculoId, // Solo el ID del tipo de vehículo
+                vehiclePlate = vehiclePlate,
+                brand = brand,
+                model = model,
+                infringedArticle = articuloInfringidoId, // Solo el ID del artículo infringido
+                incidentLocation = zone, // Ubicación del incidente
+                observations = observations,
+                photoUrl = "", // Si tienes una foto para enviar, se puede incluir aquí
+                agentNumber = agentNumber,
+                status = "", // Aquí puedes agregar el estado de la multa si corresponde
+                agentId = userIdAgente // El ID del agente (del claim)
+            };
+
+            // Enviar la solicitud POST a la API
+            try
+            {
+                var client = new HttpClient();
+                var jsonContent = JsonConvert.SerializeObject(multa);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMulta", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // La multa se registró correctamente
+                    Console.WriteLine("La multa se registró correctamente.");
+                    await DisplayAlert("Éxito", "La multa se ha registrado exitosamente.", "Aceptar");
+                }
+                else
+                {
+                    // Hubo un error al registrar la multa
+                    var errorMessage = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Error al registrar la multa: {errorMessage}");
+                    await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores en caso de que falle la conexión o la solicitud
+                Console.WriteLine($"Error de conexión: {ex.Message}");
+                await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+            }
+        }
+    }
+
+
+
+
 
 }
