@@ -9,9 +9,11 @@ namespace DigesettAPP.Views
 {
     public partial class Paso1Page : ContentPage
     {
+        
         public Paso1Page()
         {
             InitializeComponent();
+            
 
             // Cargar datos guardados si existen
             CargarDatosGuardados();
@@ -81,15 +83,30 @@ namespace DigesettAPP.Views
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<Usuario>(json);
+                    var usuario = JsonConvert.DeserializeObject<Usuario>(json);
+
+                    // Guardar UserId en Preferences
+                    Preferences.Set("UserId", usuario.UserId.ToString());
+
+                    return usuario;
                 }
             }
             return null;
         }
 
+
         private async void IrPaso2(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Paso2Page());
+            var multa = new Multa
+            {
+                Identification = CedulaEntry.Text,
+                FirstName = NombreEntry.Text,
+                LastName = ApellidoEntry.Text,
+                Phone = TelefonoEntry.Text,
+                Email = EmailEntry.Text
+            };
+
+            await Navigation.PushAsync(new Paso2Page(multa));
         }
 
         private async void IrAtras(object sender, EventArgs e)
@@ -100,11 +117,12 @@ namespace DigesettAPP.Views
         private void GuardarDatosTemporalmente(Usuario usuario)
         {
             Preferences.Set("Cedula", usuario.Cedula);
-            Preferences.Set("Nombre", usuario.Name);
-            Preferences.Set("Apellido", usuario.LastName);
-            Preferences.Set("Telefono", usuario.Phone);
-            Preferences.Set("Email", usuario.Email);
+            Preferences.Set("Nombre", usuario.Name);  // Guarda el nombre
+            Preferences.Set("Apellido", usuario.LastName);  // Guarda el apellido
+            Preferences.Set("Telefono", usuario.Phone);  // Guarda el teléfono
+            Preferences.Set("Email", usuario.Email);  // Guarda el correo electrónico
         }
+
 
         private void CargarDatosGuardados()
         {
@@ -129,10 +147,13 @@ namespace DigesettAPP.Views
 
     public class Usuario
     {
+        public int UserId { get; set; }
         public string Cedula { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
     }
+
+   
 }

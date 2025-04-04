@@ -2,25 +2,26 @@ namespace DigesettAPP.Views;
 
 public partial class Paso2Page : ContentPage
 {
-    public Paso2Page()
+    private Multa _multa;
+
+    public Paso2Page(Multa multa)
     {
         InitializeComponent();
+        _multa = multa;
 
         // Definir las opciones del Picker para tipo de vehículo
         tipoVehiculoPicker.ItemsSource = new List<string>
-            {
-                "Motocicleta",
-                "Automóvil",
-                "Camioneta",
-                "Autobús",
-                "Otros"
-            };
-
-
+        {
+            "Motocicleta",
+            "Automóvil",
+            "Camioneta",
+            "Autobús",
+            "Otros"
+        };
 
         // Definir las opciones del Picker para artículo infringido
         articuloInfringidoPicker.ItemsSource = new List<string>
-            {
+        {
             "ART 29 : Sin licencia",
             "ART 40-41 : Licencia vencida",
             "ART 47-7 : No portar licencia",
@@ -61,20 +62,47 @@ public partial class Paso2Page : ContentPage
             "ART 96-B-1 : Luz roja",
             "ART 1 LEY 143-01 : Uso del celular",
             "ART 106 : Niños menores en el asiento delantero"
-            };
+        };
+
+        // Cargar los datos guardados, si existen
+        CargarDatosGuardadosPaso2();
     }
 
+    private void GuardarDatosPaso2()
+    {
+        // Guardar los datos del paso 2 en las preferencias
+        Preferences.Set("LugarIncidente", lugarIncidenteEntry.Text);
+        Preferences.Set("ArticuloInfringido", articuloInfringidoPicker.SelectedItem?.ToString());
+        Preferences.Set("PlacaVehiculo", placaVehiculoEntry.Text);
+        Preferences.Set("ModeloVehiculo", modeloVehiculoEntry.Text);
+        Preferences.Set("MarcaVehiculo", marcaVehiculoEntry.Text);
+        Preferences.Set("TipoVehiculo", tipoVehiculoPicker.SelectedItem?.ToString());
+        Preferences.Set("Observaciones", ObservacionesEntry.Text);
+    }
+
+    private void CargarDatosGuardadosPaso2()
+    {
+        // Cargar los datos guardados en los controles de la página
+        lugarIncidenteEntry.Text = Preferences.Get("LugarIncidente", string.Empty);
+        articuloInfringidoPicker.SelectedItem = Preferences.Get("ArticuloInfringido", string.Empty);
+        placaVehiculoEntry.Text = Preferences.Get("PlacaVehiculo", string.Empty);
+        modeloVehiculoEntry.Text = Preferences.Get("ModeloVehiculo", string.Empty);
+        marcaVehiculoEntry.Text = Preferences.Get("MarcaVehiculo", string.Empty);
+        tipoVehiculoPicker.SelectedItem = Preferences.Get("TipoVehiculo", string.Empty);
+        ObservacionesEntry.Text = Preferences.Get("Observaciones", string.Empty);
+    }
 
     private async void IrAtras2(object sender, EventArgs e)
     {
+        // Guardar los datos antes de retroceder
+        GuardarDatosPaso2();
         await Navigation.PopAsync();
     }
 
     private async void IrPaso3(object sender, EventArgs e)
     {
+        // Guardar los datos antes de continuar al paso 3
+        GuardarDatosPaso2();
         await Navigation.PushAsync(new Paso3Page());
     }
 }
-
-
-

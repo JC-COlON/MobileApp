@@ -25,6 +25,9 @@ namespace DigesettAPP.Views
             var cedula = ObtenerCedulaDesdeToken();
             var noAgente = Preferences.Get("NoAgente", "No disponible");
 
+
+
+
             // Asignar la información a los Labels
             UsuarioNombreLabel.Text = nombreCompleto;
             CiudadLabel.Text = ciudad;
@@ -51,6 +54,11 @@ namespace DigesettAPP.Views
         {
             return ObtenerClaimDesdeToken("http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber");
         }
+
+
+
+
+
 
         // Método general para obtener cualquier claim desde el token
         private string ObtenerClaimDesdeToken(string claimType)

@@ -67,7 +67,7 @@
                         Clicked="OnEnviarClicked"/>
 
                 <!-- Texto de reenviar correo -->
-                <Label HorizontalOptions="Center">
+                <!--<Label HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="¿No recibiste ningún correo? " />
@@ -80,7 +80,7 @@
                             </Span>
                         </FormattedString>
                     </Label.FormattedText>
-                </Label>
+                </Label>-->
 
             </VerticalStackLayout>
             

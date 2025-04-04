@@ -1,7 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<application android:allowBackup="true" android:icon="@mipmap/logo" android:supportsRtl="true" android:usesCleartextTraffic="true"></application>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-  
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tuapp.multaapp">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+        
+        <activity android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            
+            <!-- Configuración de Deep Link -->
+            <intent-filter>
+                <data android:scheme="multaapp" android:host="reset-password" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            
+        </activity>
+    </application>
+
 </manifest>

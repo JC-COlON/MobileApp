@@ -8,6 +8,8 @@ public partial class OlvidelaContrasenaPage : ContentPage
 {
 
     private const string BaseUrl = "https://digesett.somee.com/api/forgot-password";
+    //private const string BaseUrl = " https://localhost:7277/api/User/forgot-passwordApp";
+    //private const string BaseUrl = " https://192.168.2.109:7277/api/User/forgot-passwordApp";
     public OlvidelaContrasenaPage()
 	{
 		InitializeComponent();
@@ -26,7 +28,7 @@ public partial class OlvidelaContrasenaPage : ContentPage
         var request = new
         {
             emailAddress = email,
-            clientURL = "https://tuapp.com" // Asegúrate de que esta URL sea la de tu aplicación
+            clientURL = "https://tuapp.com"
         };
 
         try
@@ -51,13 +53,6 @@ public partial class OlvidelaContrasenaPage : ContentPage
         {
             await DisplayAlert("Error", $"Error de conexión: {ex.Message}", "OK");
         }
-    }
-
-
-    private async void OnReenviarTapped(object sender, EventArgs e)
-    {
-        // Aquí puedes volver a llamar la lógica de reenvío de correo
-        await DisplayAlert("Reenviar", "Se ha enviado un nuevo correo de recuperación.", "OK");
     }
 
 

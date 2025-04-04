@@ -1,6 +1,6 @@
 ﻿namespace DigesettAPP.Views
 {
-    internal class Multa
+    public class Multa
     {
         public object Zone { get; set; }
         public object FirstName { get; set; }
