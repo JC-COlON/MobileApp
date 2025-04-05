@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gMqrD5C0xro=",
+  "dgSpecHash": "INYTkm+Wagc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Junior Colon\\Desktop\\Web\\DigesettAPP\\DigesettAPP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\communitytoolkit.maui\\8.0.1\\communitytoolkit.maui.8.0.1.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\communitytoolkit.maui.core\\8.0.1\\communitytoolkit.maui.core.8.0.1.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\microsoft.bcl.memory\\9.0.0\\microsoft.bcl.memory.9.0.0.nupkg.sha512",
@@ -117,6 +119,7 @@
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.security.cryptography.openssl\\4.3.0\\system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\system.security.cryptography.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\system.speech\\8.0.0\\system.speech.8.0.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",

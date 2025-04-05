@@ -3,6 +3,8 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "DigesettAPP.dll" comes first in this list. */
 		"DigesettAPP.dll",
+		"CommunityToolkit.Maui.dll",
+		"CommunityToolkit.Maui.Core.dll",
 		"CommunityToolkit.Mvvm.dll",
 		"GoogleGson.dll",
 		"Microsoft.Bcl.Memory.dll",

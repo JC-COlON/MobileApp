@@ -1,4 +1,5 @@
-﻿using DigesettAPP.Models;
+﻿using CommunityToolkit.Maui.Views;
+using DigesettAPP.Models;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -35,12 +36,11 @@ public partial class Paso3Page : ContentPage
         modelLabel.Text = Preferences.Get("ModeloVehiculo", "No especificado");
         infringedArticleLabel.Text = Preferences.Get("ArticuloInfringido", "No especificado");
         observationsLabel.Text = Preferences.Get("Observaciones", "No especificado");
-        agentNumberLabel.Text = Preferences.Get("NoAgente", "No disponible");
 
         // 🚀 NUEVOS CAMPOS: Mostrar AgentId y UserId
-        userIdLabelAGENTE.Text = Preferences.Get("UserIdAgente", "No disponible");
+        //userIdLabelAGENTE.Text = Preferences.Get("UserIdAgente", "No disponible");
 
-        userIdLabel.Text = Preferences.Get("UserId", "No disponible");
+        //userIdLabel.Text = Preferences.Get("UserId", "No disponible");
     }
 
 
@@ -186,9 +186,29 @@ public partial class Paso3Page : ContentPage
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // La multa se registró correctamente
-                    Console.WriteLine("La multa se registró correctamente.");
-                    await DisplayAlert("Éxito", "La multa se ha registrado exitosamente.", "Aceptar");
+                    
+                   
+
+                    // Limpiar los datos guardados en Preferences
+                    Preferences.Remove("UserId");
+                    Preferences.Remove("LugarIncidente");
+                    Preferences.Remove("Nombre");
+                    Preferences.Remove("Apellido");
+                    Preferences.Remove("Telefono");
+                    Preferences.Remove("Email");
+                    Preferences.Remove("Cedula");
+                    Preferences.Remove("TipoVehiculo");
+                    Preferences.Remove("PlacaVehiculo");
+                    Preferences.Remove("MarcaVehiculo");
+                    Preferences.Remove("ModeloVehiculo");
+                    Preferences.Remove("ArticuloInfringido");
+                    Preferences.Remove("Observaciones");
+                    Preferences.Remove("NoAgente");
+                    Preferences.Remove("UserIdAgente");
+
+                    // Mostrar el pop-up
+                    var popup = new PopupPage();
+                    await Application.Current.MainPage.ShowPopupAsync(popup);
                 }
                 else
                 {
@@ -206,7 +226,6 @@ public partial class Paso3Page : ContentPage
             }
         }
     }
-
 
 
 

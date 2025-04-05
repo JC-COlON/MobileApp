@@ -1,8 +1,10 @@
-﻿using DigesettAPP;
+﻿using CommunityToolkit.Maui;
+using DigesettAPP;
 using DigesettAPP.Service;
 using DigesettAPP.ViewModel;
 using DigesettAPP.Views;
 using Microsoft.Extensions.Logging;
+
 
 public static class MauiProgram
 {
@@ -11,6 +13,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+          .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

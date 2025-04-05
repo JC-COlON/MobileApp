@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Views;
+
 namespace DigesettAPP.Views;
 
 public partial class Home : ContentPage
@@ -12,9 +14,13 @@ public partial class Home : ContentPage
         await Navigation.PushAsync(new Paso1Page());
     }
 
+    //private async void GoCrearUsuarioPage(object sender, EventArgs e)
+    //{
+    //    await Navigation.PushAsync(new CrearUsuarioPage());
+    //}
+
     private async void GoCrearUsuarioPage(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CrearUsuarioPage());
+        this.ShowPopup(new PopupPage());
     }
-    
 }

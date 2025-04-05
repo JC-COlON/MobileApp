@@ -61,11 +61,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Remove="Views\PopupPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Images\passwordmaui.png" />
 	  <None Remove="Images\usermaui.png" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -111,6 +116,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\OlvidelaContrasenaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PopupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SobreApp.xaml">
