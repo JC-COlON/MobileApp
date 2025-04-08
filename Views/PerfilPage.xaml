@@ -3,51 +3,138 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.PerfilPage"
              Title=""
-             BackgroundColor="White">
+             BackgroundColor="#f5f5f5">
+    
+    
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,65,0,0">
 
+       
+        <!-- Cuadro de color (25% de la página) -->
+        <Frame BackgroundColor="#009C40" HeightRequest="150" WidthRequest="415" Margin="0,-70,0,10" CornerRadius="25">
+            
+            <!-- Ícono de configuración en la parte superior izquierda -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,0,0,0">
+                <Label Text="Perfil" TextColor="White" FontSize="20" Margin="143,125,0,0" FontAttributes="Bold"></Label>
+                <Image Source="ametlogo.png" Margin="-250,0,0,0" WidthRequest="200" HeightRequest="140" ></Image>
+            </StackLayout>
+
+    
+
+            <!-- Puedes poner un contenido dentro de este cuadro si es necesario -->
+        </Frame>
+
+   
+
         <!-- Círculo para la foto de perfil -->
-        <Frame HeightRequest="100"  WidthRequest="100" CornerRadius="50" >
-            <Image Source="usuario.png" HeightRequest="100" WidthRequest="100" Aspect="AspectFill"/>
-        </Frame>
+       
+            <Image Source="usuario.png" HeightRequest="150" WidthRequest="150" Aspect="AspectFill" Margin="0,-90,0,0"/>
+        
         <!-- Nombre completo (Nombre + Apellido) -->
-        <Label x:Name="UsuarioNombreLabel" FontSize="17" HorizontalOptions="Center" Margin="0,8,0,10" TextColor="Black" />
+        <Label x:Name="UsuarioNombreLabel" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,20" TextColor="Black" FontAttributes="Bold"/>
 
-        <!-- Ciudad -->
-        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,40,45,0" CornerRadius="20" HeightRequest="60">
-            <Label x:Name="CiudadLabel" FontSize="14" TextColor="Black" />
+        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,-10,45,0" CornerRadius="25" HeightRequest="300" WidthRequest="400">
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
+
+                <!-- Primer campo: Agente No y su dato -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
+                    <Image Source="placa.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Agente No:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Label x:Name="NoAgenteLabel" Text="{Binding NoAgente}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" />
+                </StackLayout>
+
+                <!-- Segundo campo: Cédula y su dato -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
+                    <Image Source="cedula.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Cédula:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Label x:Name="CedulaLabel" Text="{Binding Cedula}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" />
+                </StackLayout>
+                
+
+
+                <!-- Tercer campo: Lugar de trabajo y su dato -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
+                    <Image Source="telefono.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Telefono:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Label x:Name="telefonolabel" Text="{Binding Telefono}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+
+                <!-- Tercer campo: Lugar de trabajo y su dato -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
+                    <Image Source="correo.png"  HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Email:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Label x:Name="emaillabel" Text="{Binding Email}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+
+
+                <!-- Tercer campo: Lugar de trabajo y su dato -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
+                    <Image Source="lugartrabajo.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Lugar de Trabajo:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Label x:Name="CiudadLabel" Text="{Binding Ciudad}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+
+            </StackLayout>
+
         </Frame>
 
-        <!-- Cedula -->
-        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
-            <Label x:Name="CedulaLabel" FontSize="14" TextColor="Black"  />
-        </Frame>
 
-        <!-- Agente No -->
-        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,30,45,0" CornerRadius="20" HeightRequest="60">
-            <Label x:Name="NoAgenteLabel" FontSize="14" TextColor="Black" />
-        </Frame>
+
+
+
 
 
         <!-- Sobre app -->
 
-        <StackLayout  Orientation="Horizontal" Margin="33,50,0,0">
+        <!--<StackLayout  Orientation="Horizontal" Margin="33,50,0,0">
             <Label Text="Sobre la app" FontSize="17" VerticalOptions="Center" TextColor="Black"  />
             <ImageButton x:Name="IrAVErSobreApp"  Source="chevron_right" HeightRequest="30" WidthRequest="30" Margin="180,0,0,0" Clicked="IrASobreApp"/>
-        </StackLayout>
+        </StackLayout>-->
 
 
-        <!-- Salir de la app -->
 
-        <StackLayout Orientation="Horizontal" Margin="33,65,0,0">
-            <Label Text="Salir de la app" FontSize="17" VerticalOptions="Center" TextColor="Black" />
-            <ImageButton Source="salirapp"
-                 HeightRequest="30"
-                 WidthRequest="30"
-                 Margin="175,0,0,0"
-                 Clicked="SalirDeLaApp"/>
-        </StackLayout>
+        <!-- Card contenedor -->
+        <Frame CornerRadius="20" BackgroundColor="Transparent" Padding="20" HasShadow="True" BorderColor="Transparent">
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Opción 1 -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
+                    <Image Source="change.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Cambiar Contrasena" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0"/>
+                    <Image Source="flecha.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" VerticalOptions="Center"/>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="IrAChangePassword"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+                <!-- Opción 2 -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
+                    <Image Source="about.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Sobre la APP" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0"/>
+                    <Image Source="flecha.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" VerticalOptions="Center"/>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="IrASobreApp" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+                <!-- Opción 3 -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
+                    <Image Source="salirrrr.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                    <Label Text="Salir" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0" TextColor="Red"/>
+                    <Image Source="flechroja.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" VerticalOptions="Center"/>
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SalirDeLaApp" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+             
+
+            </VerticalStackLayout>
+        </Frame>
+
 
 
 

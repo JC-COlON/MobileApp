@@ -36,11 +36,9 @@ public partial class Paso3Page : ContentPage
         modelLabel.Text = Preferences.Get("ModeloVehiculo", "No especificado");
         infringedArticleLabel.Text = Preferences.Get("ArticuloInfringido", "No especificado");
         observationsLabel.Text = Preferences.Get("Observaciones", "No especificado");
+        agentNumberLabel.Text = Preferences.Get("NoAgente", "No especificado");
 
-        // 🚀 NUEVOS CAMPOS: Mostrar AgentId y UserId
-        //userIdLabelAGENTE.Text = Preferences.Get("UserIdAgente", "No disponible");
-
-        //userIdLabel.Text = Preferences.Get("UserId", "No disponible");
+   
     }
 
 
@@ -60,8 +58,7 @@ public partial class Paso3Page : ContentPage
         var userIdAgente = ObtenerUserIdDesdeToken(); // Obtener el userId del token
         Preferences.Set("UserIdAgente", userIdAgente); // Guardar el userId en las preferencias
 
-        // Verificación en consola (o en un punto de depuración)
-        Console.WriteLine($"🚀 userIdAgente guardado en Preferences: {userIdAgente}");
+
 
 
     }

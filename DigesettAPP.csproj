@@ -43,6 +43,7 @@
 		<!-- App Icon -->
 		<MauiImage Include="Images\passwordmaui.png" />
 		<MauiImage Include="Images\usermaui.png" />
+		<MauiImage Include="Images\phone.svg" />
 		<MauiIcon Include="Resources\AppIcon\logo.png" ForegroundScale="0.60" Color="White" />
 
 		<!-- Splash Screen -->
@@ -66,6 +67,7 @@
 
 	<ItemGroup>
 	  <None Remove="Images\passwordmaui.png" />
+	  <None Remove="Images\phone.svg" />
 	  <None Remove="Images\usermaui.png" />
 	</ItemGroup>
 
@@ -94,6 +96,9 @@
 	  <MauiXaml Update="Views\CambiarLaContrasena.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ChangePassword.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CrearUsuarioPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -119,6 +124,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PopupPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PoputCambiarContrasena.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SobreApp.xaml">

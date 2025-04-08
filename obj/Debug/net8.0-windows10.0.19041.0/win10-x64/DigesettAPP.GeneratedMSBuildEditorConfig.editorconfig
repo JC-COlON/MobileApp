@@ -63,6 +63,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.CambiarL
 build_metadata.AdditionalFiles.TargetPath = Views\CambiarLaContrasena.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CambiarLaContrasena.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/ChangePassword.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.ChangePassword.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChangePassword.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChangePassword.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/CrearUsuarioPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.CrearUsuarioPage.xaml
@@ -122,6 +128,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.PopupPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\PopupPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PopupPage.xaml
+
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/PoputCambiarContrasena.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.PoputCambiarContrasena.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PoputCambiarContrasena.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PoputCambiarContrasena.xaml
 
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/SobreApp.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

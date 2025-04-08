@@ -24,7 +24,8 @@ namespace DigesettAPP.Views
             var ciudad = ObtenerCiudadDesdeToken();
             var cedula = ObtenerCedulaDesdeToken();
             var noAgente = Preferences.Get("NoAgente", "No disponible");
-
+            var email = ObtenerEmailDesdeToken();
+            var telefono = ObtenerTelefonoDesdeToken();
 
 
 
@@ -32,7 +33,9 @@ namespace DigesettAPP.Views
             UsuarioNombreLabel.Text = nombreCompleto;
             CiudadLabel.Text = ciudad;
             CedulaLabel.Text = cedula;
-            NoAgenteLabel.Text = $"Agente No: {noAgente}";  // ✅ Mostrar NoAgente
+            NoAgenteLabel.Text = noAgente;   // ✅ Mostrar NoAgente
+            emaillabel.Text = email;
+            telefonolabel.Text = telefono;
         }
 
         // Método para obtener el nombre completo del usuario desde el token JWT
@@ -55,7 +58,15 @@ namespace DigesettAPP.Views
             return ObtenerClaimDesdeToken("http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber");
         }
 
+        private string ObtenerEmailDesdeToken()
+        {
+            return ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
+        }
 
+        private string ObtenerTelefonoDesdeToken()
+        {
+            return ObtenerClaimDesdeToken("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/homephone");
+        }
 
 
 
@@ -82,6 +93,11 @@ namespace DigesettAPP.Views
         private async void IrASobreApp(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SobreApp());
+        }
+
+        private async void IrAChangePassword(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ChangePassword());
         }
 
         private async void SalirDeLaApp(object sender, EventArgs e)
