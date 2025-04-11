@@ -57,6 +57,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Resources.Styl
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/BuscarMultaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.BuscarMultaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\BuscarMultaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\BuscarMultaPage.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/CambiarLaContrasena.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.CambiarLaContrasena.xaml

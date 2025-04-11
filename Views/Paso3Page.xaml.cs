@@ -179,13 +179,12 @@ public partial class Paso3Page : ContentPage
                 var jsonContent = JsonConvert.SerializeObject(multa);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMulta", content);
+                var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+
+                //var response = await client.PostAsync("https://localhost:7277/api/Ticket/CreateMultaEnviar", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    
-                   
-
                     // Limpiar los datos guardados en Preferences
                     Preferences.Remove("UserId");
                     Preferences.Remove("LugarIncidente");
@@ -222,7 +221,13 @@ public partial class Paso3Page : ContentPage
                 await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
             }
         }
+        else
+        {
+            // Si el usuario presiona "Cancelar", regresa a la página anterior
+            await Navigation.PopAsync();
+        }
     }
+
 
 
 

@@ -65,7 +65,7 @@
                     <!-- Artículo Infringido -->
                     <Label Text="Artículo Infringido" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black" HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center" Margin="0,0,0,0"/>
+                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black" HeightRequest="40" HorizontalOptions="Fill" VerticalOptions="Center" Margin="0,0,0,0"/>
                     </Frame>
                 </StackLayout>
 
@@ -90,7 +90,7 @@
                     <!-- Tipo de Vehículo -->
                     <Label Text="Tipo de Vehículo" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                        <Picker x:Name="tipoVehiculoPicker" Title="Selecciona un tipo de vehículo" BackgroundColor="White" TextColor="Black" HeightRequest="35" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                        <Picker x:Name="tipoVehiculoPicker" Title="Selecciona un tipo de vehículo" BackgroundColor="White" TextColor="Black" HeightRequest="40" HorizontalOptions="Fill" VerticalOptions="Center" Margin="0,0,0,0"/>
                     </Frame>
                 </StackLayout>
 

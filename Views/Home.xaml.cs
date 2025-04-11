@@ -19,5 +19,10 @@ public partial class Home : ContentPage
         await Navigation.PushAsync(new CrearUsuarioPage());
     }
 
+    private async void GoBuscarMultaPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new BuscarMultaPage());
+    }
+
 
 }

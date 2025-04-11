@@ -40,26 +40,86 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-100.png">
-      <PackagePath>logosplashSplashScreen.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-100.png">
+      <PackagePath>about.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-125.png">
-      <PackagePath>logosplashSplashScreen.scale-125.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-125.png">
+      <PackagePath>about.scale-125.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-150.png">
-      <PackagePath>logosplashSplashScreen.scale-150.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-150.png">
+      <PackagePath>about.scale-150.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-200.png">
-      <PackagePath>logosplashSplashScreen.scale-200.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-200.png">
+      <PackagePath>about.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-400.png">
-      <PackagePath>logosplashSplashScreen.scale-400.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-400.png">
+      <PackagePath>about.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-100.png">
+      <PackagePath>adduser.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-125.png">
+      <PackagePath>adduser.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-150.png">
+      <PackagePath>adduser.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-200.png">
+      <PackagePath>adduser.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-400.png">
+      <PackagePath>adduser.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-100.png">
+      <PackagePath>agregaruser.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-125.png">
+      <PackagePath>agregaruser.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-150.png">
+      <PackagePath>agregaruser.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-200.png">
+      <PackagePath>agregaruser.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-400.png">
+      <PackagePath>agregaruser.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ametlogo.scale-100.png">
       <PackagePath>ametlogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-100.png">
+      <PackagePath>badge.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-125.png">
+      <PackagePath>badge.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-150.png">
+      <PackagePath>badge.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-200.png">
+      <PackagePath>badge.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-400.png">
+      <PackagePath>badge.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\blackcard.scale-100.png">
       <PackagePath>blackcard.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-100.png">
+      <PackagePath>buscarmultapage.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-125.png">
+      <PackagePath>buscarmultapage.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-150.png">
+      <PackagePath>buscarmultapage.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-200.png">
+      <PackagePath>buscarmultapage.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-400.png">
+      <PackagePath>buscarmultapage.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-100.png">
       <PackagePath>card_add.scale-100.png</PackagePath>
@@ -105,6 +165,36 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-400.png">
       <PackagePath>carta.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-100.png">
+      <PackagePath>cedula.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-125.png">
+      <PackagePath>cedula.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-150.png">
+      <PackagePath>cedula.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-200.png">
+      <PackagePath>cedula.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-400.png">
+      <PackagePath>cedula.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-100.png">
+      <PackagePath>change.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-125.png">
+      <PackagePath>change.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-150.png">
+      <PackagePath>change.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-200.png">
+      <PackagePath>change.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-400.png">
+      <PackagePath>change.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-100.png">
       <PackagePath>chevron_down.scale-100.png</PackagePath>
@@ -181,6 +271,36 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-400.png">
       <PackagePath>chevron_up.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-100.png">
+      <PackagePath>configuracion.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-125.png">
+      <PackagePath>configuracion.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-150.png">
+      <PackagePath>configuracion.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-200.png">
+      <PackagePath>configuracion.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-400.png">
+      <PackagePath>configuracion.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-100.png">
+      <PackagePath>correo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-125.png">
+      <PackagePath>correo.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-150.png">
+      <PackagePath>correo.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-200.png">
+      <PackagePath>correo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-400.png">
+      <PackagePath>correo.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-100.png">
       <PackagePath>documenticon.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -195,6 +315,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-400.png">
       <PackagePath>documenticon.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-100.png">
+      <PackagePath>email.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-125.png">
+      <PackagePath>email.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-150.png">
+      <PackagePath>email.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-200.png">
+      <PackagePath>email.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-400.png">
+      <PackagePath>email.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-100.png">
       <PackagePath>exitundraw.scale-100.png</PackagePath>
@@ -213,6 +348,54 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\femenina.scale-100.png">
       <PackagePath>femenina.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-100.png">
+      <PackagePath>flecha.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-125.png">
+      <PackagePath>flecha.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-150.png">
+      <PackagePath>flecha.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-200.png">
+      <PackagePath>flecha.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-400.png">
+      <PackagePath>flecha.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-100.png">
+      <PackagePath>flecha2.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-125.png">
+      <PackagePath>flecha2.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-150.png">
+      <PackagePath>flecha2.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-200.png">
+      <PackagePath>flecha2.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-400.png">
+      <PackagePath>flecha2.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-100.png">
+      <PackagePath>flechroja.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-125.png">
+      <PackagePath>flechroja.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-150.png">
+      <PackagePath>flechroja.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-200.png">
+      <PackagePath>flechroja.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-400.png">
+      <PackagePath>flechroja.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo2.scale-100.png">
+      <PackagePath>fondo2.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historial.scale-100.png">
       <PackagePath>historial.scale-100.png</PackagePath>
@@ -268,11 +451,56 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\iconhistory.scale-100.png">
       <PackagePath>iconhistory.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-100.png">
+      <PackagePath>identification.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-125.png">
+      <PackagePath>identification.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-150.png">
+      <PackagePath>identification.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-200.png">
+      <PackagePath>identification.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-400.png">
+      <PackagePath>identification.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\imagencard.scale-100.gif">
       <PackagePath>imagencard.scale-100.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\imagenuno.scale-100.jpg">
       <PackagePath>imagenuno.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-100.png">
+      <PackagePath>lapiz.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-125.png">
+      <PackagePath>lapiz.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-150.png">
+      <PackagePath>lapiz.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-200.png">
+      <PackagePath>lapiz.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-400.png">
+      <PackagePath>lapiz.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-100.png">
+      <PackagePath>location.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-125.png">
+      <PackagePath>location.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-150.png">
+      <PackagePath>location.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-200.png">
+      <PackagePath>location.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-400.png">
+      <PackagePath>location.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.ico">
       <PackagePath>logo.ico</PackagePath>
@@ -415,6 +643,21 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-400.png">
       <PackagePath>logoWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-100.png">
+      <PackagePath>lugartrabajo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-125.png">
+      <PackagePath>lugartrabajo.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-150.png">
+      <PackagePath>lugartrabajo.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-200.png">
+      <PackagePath>lugartrabajo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-400.png">
+      <PackagePath>lugartrabajo.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-100.png">
       <PackagePath>mastercard.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -475,14 +718,74 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-400.png">
       <PackagePath>notificationss.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-100.png">
+      <PackagePath>nuevacontrasena.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-125.png">
+      <PackagePath>nuevacontrasena.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-150.png">
+      <PackagePath>nuevacontrasena.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-200.png">
+      <PackagePath>nuevacontrasena.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-400.png">
+      <PackagePath>nuevacontrasena.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\passwordcandado.scale-100.png">
       <PackagePath>passwordcandado.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\passwordmaui.scale-100.png">
       <PackagePath>passwordmaui.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-100.png">
+      <PackagePath>pen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-125.png">
+      <PackagePath>pen.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-150.png">
+      <PackagePath>pen.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-200.png">
+      <PackagePath>pen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-400.png">
+      <PackagePath>pen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\perfil.scale-100.jpg">
       <PackagePath>perfil.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-100.png">
+      <PackagePath>phone.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-125.png">
+      <PackagePath>phone.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-150.png">
+      <PackagePath>phone.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-200.png">
+      <PackagePath>phone.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-400.png">
+      <PackagePath>phone.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-100.png">
+      <PackagePath>placa.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-125.png">
+      <PackagePath>placa.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-150.png">
+      <PackagePath>placa.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-200.png">
+      <PackagePath>placa.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-400.png">
+      <PackagePath>placa.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-100.png">
       <PackagePath>profile.scale-100.png</PackagePath>
@@ -513,6 +816,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-400.png">
       <PackagePath>salirapp.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-100.png">
+      <PackagePath>salirrrr.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-125.png">
+      <PackagePath>salirrrr.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-150.png">
+      <PackagePath>salirrrr.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-200.png">
+      <PackagePath>salirrrr.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-400.png">
+      <PackagePath>salirrrr.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-100.png">
       <PackagePath>scan.scale-100.png</PackagePath>
@@ -589,6 +907,21 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-400.png">
       <PackagePath>scan_line.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-100.png">
+      <PackagePath>search.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-125.png">
+      <PackagePath>search.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-150.png">
+      <PackagePath>search.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-200.png">
+      <PackagePath>search.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-400.png">
+      <PackagePath>search.scale-400.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-100.png">
       <PackagePath>searchbar.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -618,6 +951,36 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-400.png">
       <PackagePath>sendmensaje.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-100.png">
+      <PackagePath>setting.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-125.png">
+      <PackagePath>setting.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-150.png">
+      <PackagePath>setting.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-200.png">
+      <PackagePath>setting.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-400.png">
+      <PackagePath>setting.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-100.png">
+      <PackagePath>telefono.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-125.png">
+      <PackagePath>telefono.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-150.png">
+      <PackagePath>telefono.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-200.png">
+      <PackagePath>telefono.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-400.png">
+      <PackagePath>telefono.scale-400.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undrawaccess.scale-100.png">
       <PackagePath>undrawaccess.scale-100.png</PackagePath>
@@ -675,6 +1038,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.54\lib\net8.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\communitytoolkit.maui\8.0.1\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.dll">
+      <PackagePath>CommunityToolkit.Maui.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\communitytoolkit.maui.core\8.0.1\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.Core.dll">
+      <PackagePath>CommunityToolkit.Maui.Core.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\communitytoolkit.mvvm\8.4.0\lib\net8.0-windows10.0.17763\CommunityToolkit.Mvvm.dll">
       <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
@@ -816,6 +1185,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\system.identitymodel.tokens.jwt\8.6.1\lib\net8.0\System.IdentityModel.Tokens.Jwt.dll">
       <PackagePath>System.IdentityModel.Tokens.Jwt.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\system.speech\8.0.0\runtimes\win\lib\net8.0\System.Speech.dll">
+      <PackagePath>System.Speech.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\microsoft.maui.controls.core\8.0.83\lib\net8.0-windows10.0.19041\ar\Microsoft.Maui.Controls.resources.dll">
       <PackagePath>ar\Microsoft.Maui.Controls.resources.dll</PackagePath>

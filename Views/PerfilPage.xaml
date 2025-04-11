@@ -10,10 +10,10 @@
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Margin="0,65,0,0">
 
        
-        <!-- Cuadro de color (25% de la página) -->
+        <!-- Cuadro de color (25% de la página) --><!--
         <Frame BackgroundColor="#009C40" HeightRequest="150" WidthRequest="415" Margin="0,-70,0,10" CornerRadius="25">
             
-            <!-- Ícono de configuración en la parte superior izquierda -->
+            --><!-- Ícono de configuración en la parte superior izquierda --><!--
             <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,0,0,0">
                 <Label Text="Perfil" TextColor="White" FontSize="20" Margin="143,125,0,0" FontAttributes="Bold"></Label>
                 <Image Source="ametlogo.png" Margin="-250,0,0,0" WidthRequest="200" HeightRequest="140" ></Image>
@@ -21,19 +21,19 @@
 
     
 
-            <!-- Puedes poner un contenido dentro de este cuadro si es necesario -->
-        </Frame>
+            --><!-- Puedes poner un contenido dentro de este cuadro si es necesario --><!--
+        </Frame>-->
 
    
 
         <!-- Círculo para la foto de perfil -->
        
-            <Image Source="usuario.png" HeightRequest="150" WidthRequest="150" Aspect="AspectFill" Margin="0,-90,0,0"/>
+            <Image Source="usuario.png" HeightRequest="150" WidthRequest="150" Aspect="AspectFill" Margin="0,-25,0,0"/>
         
         <!-- Nombre completo (Nombre + Apellido) -->
         <Label x:Name="UsuarioNombreLabel" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,20" TextColor="Black" FontAttributes="Bold"/>
 
-        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,-10,45,0" CornerRadius="25" HeightRequest="300" WidthRequest="400">
+        <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,-10,45,0" CornerRadius="12" HeightRequest="300" WidthRequest="400">
             <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
 
                 <!-- Primer campo: Agente No y su dato -->

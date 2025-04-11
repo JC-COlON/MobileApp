@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.Views.BuscarMultaPage"
+             Title="Buscar Multa">
+
+    <VerticalStackLayout Padding="20" Spacing="15" >
+
+        <Frame HeightRequest="50" Margin="20,5" Padding="10" CornerRadius="10" BackgroundColor="#F0F0F0" HasShadow="False" WidthRequest="350" >
+            <Grid ColumnDefinitions="Auto, *" VerticalOptions="Center">
+
+                <!-- Ícono de búsqueda -->
+                <Image Source="buscarmultapage.png"
+               HeightRequest="24"
+               WidthRequest="24"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"
+               Margin="0,0,10,0"/>
+
+                <!-- Campo de entrada -->
+                <Entry x:Name="CedulaEntry"
+               Placeholder="Ingrese la cédula"
+               Keyboard="Numeric"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"
+               BackgroundColor="Transparent"
+               FontSize="16"
+               TextColor="Black"
+               PlaceholderColor="Gray"
+               Grid.Column="1"
+               Margin="0,-19,0,-20"
+               FontAttributes="Bold"
+               MaxLength="11"
+               TextChanged="CedulaEntry_TextChanged"/>
+            </Grid>
+        </Frame>
+
+
+
+        <!-- Lista de resultados -->
+        <CollectionView x:Name="MultasCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#eeeeee" CornerRadius="10" Padding="10" Margin="0,5">
+                        <StackLayout>
+                            <Label Text="{Binding Fecha}" FontAttributes="Bold" />
+                            <Label Text="{Binding Articulo}" />
+                            <Label Text="{Binding Zona}" TextColor="Gray"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </VerticalStackLayout>
+</ContentPage>

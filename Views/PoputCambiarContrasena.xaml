@@ -11,7 +11,7 @@
         <!-- Título del pop-up -->
         <Label Text="¡Contraseña Actualizada  Exitosamente!"
                HorizontalTextAlignment="Center"
-               FontSize="Large"/>
+               FontSize="Medium"/>
 
         <!-- Imagen en el Pop-up -->
 

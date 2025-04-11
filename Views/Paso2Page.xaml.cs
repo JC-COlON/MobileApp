@@ -102,18 +102,59 @@ namespace DigesettAPP.Views
             ObservacionesEntry.Text = Preferences.Get("Observaciones", string.Empty);
         }
 
+        // Método de validación
+        private bool ValidarFormulario()
+        {
+            // Comprobar los campos obligatorios
+            if (string.IsNullOrEmpty(lugarIncidenteEntry.Text))
+            {
+                DisplayAlert("Error", "'Zona / Lugar del Incidente' obligatorio", "OK");
+                return false;
+            }
+            else if (articuloInfringidoPicker.SelectedIndex == -1)
+            {
+                DisplayAlert("Error", "'Artículo Infringido' obligatorio", "OK");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(placaVehiculoEntry.Text))
+            {
+                DisplayAlert("Error", "'Placa del Vehículo' obligatorio", "OK");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(marcaVehiculoEntry.Text))
+            {
+                DisplayAlert("Error", "'Marca del Vehículo' obligatorio", "OK");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(tipoVehiculoPicker.SelectedItem?.ToString()))
+            {
+                DisplayAlert("Error", "'Tipo de Vehículo' obligatorio", "OK");
+                return false;
+            }
+
+            return true;
+        }
+
         private async void IrAtras2(object sender, EventArgs e)
         {
-            // Guardar los datos antes de retroceder
-            GuardarDatosPaso2();
-            await Navigation.PopAsync();
+            // Validar el formulario antes de retroceder
+            if (ValidarFormulario())
+            {
+                // Guardar los datos antes de retroceder
+                GuardarDatosPaso2();
+                await Navigation.PopAsync();
+            }
         }
 
         private async void IrPaso3(object sender, EventArgs e)
         {
-            // Guardar los datos antes de continuar al paso 3
-            GuardarDatosPaso2();
-            await Navigation.PushAsync(new Paso3Page());
+            // Validar el formulario antes de continuar al paso 3
+            if (ValidarFormulario())
+            {
+                // Guardar los datos antes de continuar al paso 3
+                GuardarDatosPaso2();
+                await Navigation.PushAsync(new Paso3Page());
+            }
         }
     }
 }

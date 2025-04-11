@@ -7,7 +7,8 @@
     Shell.BackgroundColor="White"
     Shell.TabBarBackgroundColor="White"
     Shell.TabBarForegroundColor="#009C40"  
-    Shell.TabBarUnselectedColor="Gray">
+    Shell.TabBarUnselectedColor="Gray"
+    Shell.TabBarTitleColor="#009C40">
 
     <!-- Páginas sin TabBar -->
     <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />

@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.Home"
              Title=""
-             BackgroundColor="White">
+             BackgroundColor="#f5f5f5">
 
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <!-- Contenido principal -->
@@ -13,67 +12,75 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        <Frame BackgroundColor="#009C40" Margin="0,-10,0,0" WidthRequest="460" CornerRadius="65" HeightRequest="180">
+
+        </Frame>
         <!-- Encabezado con imagen y título -->
         <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start" Margin="30,25,0,0" >
-            <Image Source="ametlogo.png" WidthRequest="65" HeightRequest="65" VerticalOptions="Center" Margin="20,0,0,0" />
-            <Label Text="DIGESETT" FontSize="24" VerticalOptions="Center" Margin="75,0,0,0" />
+            <Image Source="ametlogo.png" WidthRequest="150" HeightRequest="150" VerticalOptions="Center" Margin="90,-10,0,0" />
         </StackLayout>
 
         <!-- Contenido central -->
         <ScrollView Grid.Row="1">
             <StackLayout HorizontalOptions="Center">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
-                    <Label FontFamily="SfProTextRegular" Text="NOTICIAS..." TextColor="Black" FontSize="17" Margin="10,60,0,5" FontAttributes="Bold" Grid.Row="1" />
-                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Grid.Row="2" Margin="15,10,0,0">
-                        <StackLayout Orientation="Horizontal" Spacing="8">
+                    <Label FontFamily="SfProTextRegular" Text="NOTICIAS" TextColor="Black" FontSize="17" Margin="10,45,0,5" FontAttributes="Bold" Grid.Row="1" />
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Grid.Row="2" Margin="15,15,0,0">
+                        <HorizontalStackLayout Spacing="8">
                             <!-- Image Frames -->
-                            <Frame BackgroundColor="Black" HeightRequest="120" WidthRequest="220" CornerRadius="15" Grid.Column="0" BorderColor="Transparent">
-                                <ImageButton Source="https://listindiario.com/files/vertical_main_image/uploads/2024/05/02/663437c674b82.jpeg" Aspect="AspectFill" WidthRequest="220" HeightRequest="125" />
+                            <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
+                                <ImageButton Source="https://listindiario.com/files/vertical_main_image/uploads/2024/05/02/663437c674b82.jpeg" Aspect="AspectFill" WidthRequest="220" HeightRequest="150" />
                             </Frame>
-                            <Frame BackgroundColor="Black" HeightRequest="120" WidthRequest="220" CornerRadius="15" BorderColor="Transparent">
-                                <ImageButton x:Name="segundaimagencarusell" HeightRequest="125" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2022/09/19/imagen-faride-raful-d12d0c7d-focus-0.1-0.37-895-573-focus-0-0-896-504.jpg" />
+                            <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
+                                <ImageButton x:Name="segundaimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2022/09/19/imagen-faride-raful-d12d0c7d-focus-0.1-0.37-895-573-focus-0-0-896-504.jpg" />
                             </Frame>
-                            <Frame BackgroundColor="Black" HeightRequest="120" WidthRequest="220" CornerRadius="15" BorderColor="Transparent">
-                                <ImageButton x:Name="terceraimagencarusell" HeightRequest="125" WidthRequest="220" Aspect="AspectFill" Source="https://mip.gob.do/wp-content/uploads/2023/11/POLICIA-NACIONAL-1080x675.jpeg" />
+                            <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
+                                <ImageButton x:Name="terceraimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://mip.gob.do/wp-content/uploads/2023/11/POLICIA-NACIONAL-1080x675.jpeg" />
                             </Frame>
-                            <Frame BackgroundColor="Black" HeightRequest="120" WidthRequest="220" CornerRadius="15" BorderColor="Transparent">
-                                <ImageButton x:Name="cuartaimagencarusell" HeightRequest="125" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2024/07/25/imagen-abinader-en-desacuerdo-con-aprobacion-del-codigo-penal-que-estudian-focus-0-0-896-504-focus-0-0-896-504.jpg" />
+                            <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
+                                <ImageButton x:Name="cuartaimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2024/07/25/imagen-abinader-en-desacuerdo-con-aprobacion-del-codigo-penal-que-estudian-focus-0-0-896-504-focus-0-0-896-504.jpg" />
                             </Frame>
-                        </StackLayout>
+                        </HorizontalStackLayout>
                     </ScrollView>
+
                     <!--SERVICIOS-->
-                    <Grid RowSpacing="10" RowDefinitions="Auto,Auto" HorizontalOptions="Center" Grid.Row="3" Margin="0,90,0,0">
-                        <Label FontFamily="SfProTextRegular" Text="Servicios" TextColor="Black" FontSize="17" Margin="0,0,0,10" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Start"/>
+                    <Grid RowSpacing="10" RowDefinitions="Auto,Auto" HorizontalOptions="Center" Grid.Row="3" Margin="0,50,0,0">
+                        <Label FontFamily="SfProTextRegular" Text="SERVICIOS" TextColor="Black" FontSize="17" Margin="0,0,0,10" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Start"/>
                         <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-                            <Grid ColumnDefinitions="*,*" ColumnSpacing="20" RowDefinitions="Auto" VerticalOptions="Center">
-                                
-                                
-                                <Frame BackgroundColor="#009C40" Grid.Row="1"  HeightRequest="181" WidthRequest="163" CornerRadius="15" Grid.Column="0" BorderColor="Transparent">
-
+                            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="20" RowDefinitions="Auto" VerticalOptions="Center">
+                                <!-- Frame 1 -->
+                                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#009C40" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
                                     <Grid HorizontalOptions="Center">
-                                        <Label Text="Registrar Multa" TextColor="White"  FontSize="14" FontAttributes="Bold"/>
-                                        <ImageButton x:Name="GotoCrearMultas" Clicked="GotoCrearMultas_Clicked"  Source="pen" VerticalOptions="Center" HorizontalOptions="Center"  WidthRequest="60" Margin="0,15,0,0" />
-
-                                    </Grid>
-
-                                </Frame>
-                                
-                                
-                                <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="#FD8402" HeightRequest="181" WidthRequest="163" CornerRadius="15" BorderColor="Transparent">
-                                    <Grid HorizontalOptions="Center">
-                                        <Label Text="Crear usuario" TextColor="White" FontSize="14" FontAttributes="Bold"/>
-                                        <ImageButton Source="user_plus" Clicked="GoCrearUsuarioPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="60" Margin="0,15,0,0"/>
+                                        <Label Text="" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                                        <ImageButton Source="lapiz.png" x:Name="GotoCrearMultas" Clicked="GotoCrearMultas_Clicked" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,4,0" />
                                     </Grid>
                                 </Frame>
+
+                                <!-- Frame 2 -->
+                                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FD8402" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
+                                    <Grid HorizontalOptions="Center">
+                                        <Label Text="" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                                        <ImageButton Source="agregaruser.png" Clicked="GoCrearUsuarioPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,-10,0"/>
+                                    </Grid>
+                                </Frame>
+                              
+
+                                <!-- Frame 3 -->
+                                <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="Black" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
+                                    <Grid HorizontalOptions="Center">
+                                      
+                                        <ImageButton Source="search.png" Clicked="GoBuscarMultaPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,0,0"/>
+                                        
+                                    </Grid>
+                                </Frame>
+                                
+
                             </Grid>
+
                         </VerticalStackLayout>
                     </Grid>
                 </Grid>
             </StackLayout>
         </ScrollView>
-
     </Grid>
-
-
-
 </ContentPage>

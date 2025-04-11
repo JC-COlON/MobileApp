@@ -18,7 +18,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\usermaui.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\usuario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\vistodos.jpg
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\about.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\adduser.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\badge.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_dos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\carta.png
@@ -41,6 +44,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\historywhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\homebar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\identification.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\mastercard.png
@@ -48,6 +52,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\placa.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\profile.png
@@ -58,6 +63,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scandos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scansolo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scansoloafuera.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\scan_line.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\search.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\searchbar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\sendmensaje.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\setting.png
@@ -65,7 +71,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\telefono.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\about.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\adduser.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\badge.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_dos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\carta.png
@@ -88,6 +97,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\historywhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\homebar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\identification.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\mastercard.png
@@ -95,6 +105,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\placa.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\profile.png
@@ -105,6 +116,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scandos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scansolo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scansoloafuera.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\scan_line.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\search.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\searchbar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\sendmensaje.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\setting.png
@@ -112,7 +124,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\telefono.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\about.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\adduser.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\badge.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_dos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\carta.png
@@ -135,6 +150,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\historywhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\homebar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\identification.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\mastercard.png
@@ -142,6 +158,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\placa.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\profile.png
@@ -152,6 +169,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scandos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scansolo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scansoloafuera.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\scan_line.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\search.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\searchbar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\sendmensaje.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\setting.png
@@ -159,7 +177,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\telefono.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\about.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\adduser.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\badge.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_dos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\carta.png
@@ -182,6 +203,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\historywhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\homebar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\identification.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\mastercard.png
@@ -189,6 +211,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\placa.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\profile.png
@@ -199,6 +222,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scandos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scansolo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scansoloafuera.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\scan_line.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\search.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\searchbar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\sendmensaje.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\setting.png
@@ -206,7 +230,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\telefono.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\undraw_login.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\userbarr.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\about.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\adduser.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\badge.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_dos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\carta.png
@@ -229,6 +256,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\historywhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\homebar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\identification.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\mastercard.png
@@ -236,6 +264,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\placa.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\profile.png
@@ -246,6 +275,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\scandos.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\scansolo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\scansoloafuera.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\scan_line.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\search.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\searchbar.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\sendmensaje.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\setting.png
