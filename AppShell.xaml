@@ -15,6 +15,11 @@
     <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
     <ShellContent Route="RecuperarContrasenaPage" ContentTemplate="{DataTemplate views:OlvidelaContrasenaPage}" />
 
+    <!-- Registra las rutas de los pasos -->
+    <ShellContent Route="Paso1Page" ContentTemplate="{DataTemplate views:Paso1Page}" />
+    <ShellContent Route="Paso2Page" ContentTemplate="{DataTemplate views:Paso2Page}" />
+    <ShellContent Route="Paso3Page" ContentTemplate="{DataTemplate views:Paso3Page}" />
+
     <!-- Tabs -->
     <TabBar>
         <Tab Title="Home" Icon="homebar.svg">
@@ -38,5 +43,4 @@
                 Route="Perfil" />
         </Tab>
     </TabBar>
-
 </Shell>

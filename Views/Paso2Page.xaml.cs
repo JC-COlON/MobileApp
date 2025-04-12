@@ -142,7 +142,7 @@ namespace DigesettAPP.Views
             {
                 // Guardar los datos antes de retroceder
                 GuardarDatosPaso2();
-                await Navigation.PopAsync();
+                await Shell.Current.GoToAsync(nameof(Paso3Page));
             }
         }
 

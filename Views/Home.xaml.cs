@@ -11,18 +11,19 @@ public partial class Home : ContentPage
 
     private async void GotoCrearMultas_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Paso1Page());
+        await Shell.Current.GoToAsync(nameof(Paso1Page));
     }
 
     private async void GoCrearUsuarioPage(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CrearUsuarioPage());
+        await Shell.Current.GoToAsync(nameof(CrearUsuarioPage));
     }
 
     private async void GoBuscarMultaPage(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new BuscarMultaPage());
+        await Shell.Current.GoToAsync(nameof(BuscarMultaPage));
     }
+
 
 
 }
