@@ -41,34 +41,34 @@
                             <!-- Noticia 2 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
                                 <ImageButton 
-                                Source="https://resources.diariolibre.com/images/2022/09/19/imagen-faride-raful-d12d0c7d-focus-0.1-0.37-895-573-focus-0-0-896-504.jpg" 
+                                Source="https://cdn.deultimominuto.net/wp-content/uploads/2025/04/Post-de-Instagram-Feliz-Cumpleanos-Sencillo-Minimalista-Azul-1000-x-500-px-2025-04-14T124734.615.jpg" 
                                 Aspect="AspectFill" 
                                 WidthRequest="220" 
                                 HeightRequest="150"
                                 Clicked="AbrirNoticia_Clicked"
-                                CommandParameter="https://www.diariolibre.com/actualidad/2022/09/19/noticia-faride-raful/2058382" />
+                                CommandParameter="https://deultimominuto.net/nacionales/revisan-mejoras-en-el-transito/" />
                             </Frame>
 
                             <!-- Noticia 3 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
                                 <ImageButton 
-                                Source="https://mip.gob.do/wp-content/uploads/2023/11/POLICIA-NACIONAL-1080x675.jpeg" 
+                                Source="https://cdn.deultimominuto.net/wp-content/uploads/2025/04/Parque-vehicular-4-1.jpg" 
                                 Aspect="AspectFill" 
                                 WidthRequest="220" 
                                 HeightRequest="150"
                                 Clicked="AbrirNoticia_Clicked"
-                                CommandParameter="https://mip.gob.do/noticias/policia-nacional-acciones-2023/" />
+                                CommandParameter="https://deultimominuto.net/nacionales/transito-urbano-en-jaque-por-aumento-del-parque-vehicular/" />
                             </Frame>
 
                             <!-- Noticia 4 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
                                 <ImageButton 
-                            Source="https://resources.diariolibre.com/images/2024/07/25/imagen-abinader-en-desacuerdo-con-aprobacion-del-codigo-penal-que-estudian-focus-0-0-896-504-focus-0-0-896-504.jpg" 
+                            Source="https://cdn.deultimominuto.net/wp-content/uploads/2025/04/Post-de-Instagram-Feliz-Cumpleanos-Sencillo-Minimalista-Azul-1000-x-500-px-2025-04-12T151745.214.jpg" 
                             Aspect="AspectFill" 
                             WidthRequest="220" 
                             HeightRequest="150"
                             Clicked="AbrirNoticia_Clicked"
-                            CommandParameter="https://www.diariolibre.com/actualidad/politica/2024/07/25/abinader-en-desacuerdo-con-codigo-penal/2801498" />
+                            CommandParameter="https://deultimominuto.net/nacionales/no-se-podra-girar-en-churchill/" />
                             </Frame>
                         </HorizontalStackLayout>
                     </ScrollView>
