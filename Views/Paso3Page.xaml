@@ -105,6 +105,7 @@
                     <Button Text="Atrás" BackgroundColor="Gray" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="IrAtras"/>
                     <Button Text="Enviar" BackgroundColor="#009C40" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="EnviarMulta"/>
 
+                    <ActivityIndicator x:Name="loadingIndicator" IsVisible="False" IsRunning="False" />
                 </StackLayout>
             </VerticalStackLayout>
         </VerticalStackLayout>

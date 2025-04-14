@@ -20,23 +20,34 @@ namespace DigesettAPP.Views
         // Método para obtener la información del usuario desde el token JWT
         private void MostrarInformacionUsuario()
         {
-            var nombreCompleto = ObtenerNombreCompletoDesdeToken();
-            var ciudad = ObtenerCiudadDesdeToken();
-            var cedula = ObtenerCedulaDesdeToken();
-            var noAgente = Preferences.Get("NoAgente", "No disponible");
-            var email = ObtenerEmailDesdeToken();
-            var telefono = ObtenerTelefonoDesdeToken();
+            LoadingOverlay.IsVisible = true;
 
+            try
+            {
+                var nombreCompleto = ObtenerNombreCompletoDesdeToken();
+                var ciudad = ObtenerCiudadDesdeToken();
+                var cedula = ObtenerCedulaDesdeToken();
+                var noAgente = Preferences.Get("NoAgente", "No disponible");
+                var email = ObtenerEmailDesdeToken();
+                var telefono = ObtenerTelefonoDesdeToken();
 
-
-            // Asignar la información a los Labels
-            UsuarioNombreLabel.Text = nombreCompleto;
-            CiudadLabel.Text = ciudad;
-            CedulaLabel.Text = cedula;
-            NoAgenteLabel.Text = noAgente;   // ✅ Mostrar NoAgente
-            emaillabel.Text = email;
-            telefonolabel.Text = telefono;
+                UsuarioNombreLabel.Text = nombreCompleto;
+                CiudadLabel.Text = ciudad;
+                CedulaLabel.Text = cedula;
+                NoAgenteLabel.Text = noAgente;
+                emaillabel.Text = email;
+                telefonolabel.Text = telefono;
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Error", $"No se pudo cargar la información del perfil: {ex.Message}", "OK");
+            }
+            finally
+            {
+                LoadingOverlay.IsVisible = false;
+            }
         }
+
 
         // Método para obtener el nombre completo del usuario desde el token JWT
         private string ObtenerNombreCompletoDesdeToken()

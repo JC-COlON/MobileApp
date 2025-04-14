@@ -20,6 +20,9 @@ namespace DigesettAPP.Views;
 
     private async Task BuscarMultasPorCedula(string cedula)
     {
+        LoadingPanel.IsVisible = true;
+        MultasCollectionView.ItemsSource = null; // Opcional: limpia resultados previos
+
         try
         {
             string url = $"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending&Hidden=0";
@@ -31,15 +34,13 @@ namespace DigesettAPP.Views;
 
             if (!response.IsSuccessStatusCode)
             {
-                // Si el código es 404 y el mensaje indica que no hay resultados, lo manejamos como caso válido
-                if (response.StatusCode == System.Net.HttpStatusCode.NotFound && responseBody.Contains("No se encontraron multas"))
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound &&
+                    responseBody.Contains("No se encontraron multas"))
                 {
                     await DisplayAlert("Sin resultados", "No se encontraron multas para esta cédula.", "OK");
-                    MultasCollectionView.ItemsSource = null;
                     return;
                 }
 
-                // Si es otro tipo de error, lo mostramos como error
                 await DisplayAlert("Error", $"Error al buscar las multas. Código: {response.StatusCode}", "OK");
                 return;
             }
@@ -60,14 +61,18 @@ namespace DigesettAPP.Views;
             else
             {
                 await DisplayAlert("Sin resultados", "No se encontraron multas para esta cédula.", "OK");
-                MultasCollectionView.ItemsSource = null;
             }
         }
         catch (Exception ex)
         {
             await DisplayAlert("Error", $"Ocurrió un error al buscar las multas:\n{ex.Message}", "OK");
         }
+        finally
+        {
+            LoadingPanel.IsVisible = false;
+        }
     }
+
 
 
 

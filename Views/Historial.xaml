@@ -10,6 +10,15 @@
 
         <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" Grid.Row="0" FontAttributes="Bold"/>
 
+
+        <!-- 🌀 Loading logo + Spinner -->
+        <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="False" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <Image Source="loadinglogo.png" WidthRequest="80" HeightRequest="80"/>
+                <ActivityIndicator x:Name="LoadingSpinner" IsRunning="True" Color="#009C40" />
+            </StackLayout>
+        </Grid>
+
         <ScrollView Grid.Row="1"  Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
 
             <ListView x:Name="TicketsList" SeparatorVisibility="Default"  

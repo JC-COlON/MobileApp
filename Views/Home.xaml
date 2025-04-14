@@ -27,18 +27,48 @@
                     <Label FontFamily="SfProTextRegular" Text="NOTICIAS" TextColor="Black" FontSize="17" Margin="10,45,0,5" FontAttributes="Bold" Grid.Row="1" />
                     <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" Grid.Row="2" Margin="15,15,0,0">
                         <HorizontalStackLayout Spacing="8">
-                            <!-- Image Frames -->
+                            <!-- Noticia 1 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
-                                <ImageButton Source="https://listindiario.com/files/vertical_main_image/uploads/2024/05/02/663437c674b82.jpeg" Aspect="AspectFill" WidthRequest="220" HeightRequest="150" />
+                                <ImageButton 
+                                Source="https://cdn.deultimominuto.net/wp-content/uploads/2025/04/22570_1744408227_large.jpg" 
+                                Aspect="AspectFill" 
+                                WidthRequest="220" 
+                                HeightRequest="150"
+                                Clicked="AbrirNoticia_Clicked"
+                                CommandParameter="https://deultimominuto.net/nacionales/abinader-asistira-a-misa-en-haina/" />
                             </Frame>
+
+                            <!-- Noticia 2 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
-                                <ImageButton x:Name="segundaimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2022/09/19/imagen-faride-raful-d12d0c7d-focus-0.1-0.37-895-573-focus-0-0-896-504.jpg" />
+                                <ImageButton 
+                                Source="https://resources.diariolibre.com/images/2022/09/19/imagen-faride-raful-d12d0c7d-focus-0.1-0.37-895-573-focus-0-0-896-504.jpg" 
+                                Aspect="AspectFill" 
+                                WidthRequest="220" 
+                                HeightRequest="150"
+                                Clicked="AbrirNoticia_Clicked"
+                                CommandParameter="https://www.diariolibre.com/actualidad/2022/09/19/noticia-faride-raful/2058382" />
                             </Frame>
+
+                            <!-- Noticia 3 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
-                                <ImageButton x:Name="terceraimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://mip.gob.do/wp-content/uploads/2023/11/POLICIA-NACIONAL-1080x675.jpeg" />
+                                <ImageButton 
+                                Source="https://mip.gob.do/wp-content/uploads/2023/11/POLICIA-NACIONAL-1080x675.jpeg" 
+                                Aspect="AspectFill" 
+                                WidthRequest="220" 
+                                HeightRequest="150"
+                                Clicked="AbrirNoticia_Clicked"
+                                CommandParameter="https://mip.gob.do/noticias/policia-nacional-acciones-2023/" />
                             </Frame>
+
+                            <!-- Noticia 4 -->
                             <Frame BackgroundColor="Black" HeightRequest="150" WidthRequest="220" CornerRadius="10" BorderColor="Transparent">
-                                <ImageButton x:Name="cuartaimagencarusell" HeightRequest="150" WidthRequest="220" Aspect="AspectFill" Source="https://resources.diariolibre.com/images/2024/07/25/imagen-abinader-en-desacuerdo-con-aprobacion-del-codigo-penal-que-estudian-focus-0-0-896-504-focus-0-0-896-504.jpg" />
+                                <ImageButton 
+                            Source="https://resources.diariolibre.com/images/2024/07/25/imagen-abinader-en-desacuerdo-con-aprobacion-del-codigo-penal-que-estudian-focus-0-0-896-504-focus-0-0-896-504.jpg" 
+                            Aspect="AspectFill" 
+                            WidthRequest="220" 
+                            HeightRequest="150"
+                            Clicked="AbrirNoticia_Clicked"
+                            CommandParameter="https://www.diariolibre.com/actualidad/politica/2024/07/25/abinader-en-desacuerdo-con-codigo-penal/2801498" />
                             </Frame>
                         </HorizontalStackLayout>
                     </ScrollView>

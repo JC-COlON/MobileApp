@@ -25,5 +25,21 @@ public partial class Home : ContentPage
     }
 
 
+    private async void AbrirNoticia_Clicked(object sender, EventArgs e)
+    {
+        if (sender is ImageButton imageButton && imageButton.CommandParameter is string url)
+        {
+            try
+            {
+                await Launcher.Default.OpenAsync(url);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"No se pudo abrir la noticia: {ex.Message}", "OK");
+            }
+        }
+    }
+
+
 
 }

@@ -26,7 +26,7 @@
                         <StackLayout Orientation="Horizontal">
                             <Image Source="user.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
                             <Entry TextColor="Black" Text="{Binding Cedula}" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center"
-                                   HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" />
+                                   HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" MaxLength="11" />
                         </StackLayout>
                     </Frame>
                 </StackLayout>

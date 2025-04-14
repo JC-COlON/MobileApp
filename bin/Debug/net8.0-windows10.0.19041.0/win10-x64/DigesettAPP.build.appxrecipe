@@ -40,6 +40,30 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-100.png">
+      <PackagePath>logosplashSplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-125.png">
+      <PackagePath>logosplashSplashScreen.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-150.png">
+      <PackagePath>logosplashSplashScreen.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-200.png">
+      <PackagePath>logosplashSplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-400.png">
+      <PackagePath>logosplashSplashScreen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Bold.ttf">
+      <PackagePath>Poppins-Bold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Light.ttf">
+      <PackagePath>Poppins-Light.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Medium.ttf">
+      <PackagePath>Poppins-Medium.ttf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-100.png">
       <PackagePath>about.scale-100.png</PackagePath>
     </AppxPackagedFile>

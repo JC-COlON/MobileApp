@@ -96,6 +96,10 @@ public partial class Paso3Page : ContentPage
 
     private async void EnviarMulta(object sender, EventArgs e)
     {
+        // Muestra el ActivityIndicator
+        loadingIndicator.IsVisible = true;
+        loadingIndicator.IsRunning = true;
+
         // Obtener los datos de las preferencias
         var userId = Preferences.Get("UserId", "No disponible");
         var zone = Preferences.Get("LugarIncidente", "No especificado");
@@ -181,7 +185,7 @@ public partial class Paso3Page : ContentPage
 
                 var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
 
-                //var response = await client.PostAsync("https://localhost:7277/api/Ticket/CreateMultaEnviar", content);
+                
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -202,7 +206,7 @@ public partial class Paso3Page : ContentPage
                     Preferences.Remove("NoAgente");
                     Preferences.Remove("UserIdAgente");
 
-                    // Mostrar el pop-up
+                    // Mostrar el pop-up de éxito
                     var popup = new PopupPage();
                     await Application.Current.MainPage.ShowPopupAsync(popup);
                 }
@@ -226,7 +230,12 @@ public partial class Paso3Page : ContentPage
             // Si el usuario presiona "Cancelar", regresa a la página anterior
             await Navigation.PopAsync();
         }
+
+        // Ocultar el ActivityIndicator
+        loadingIndicator.IsVisible = false;
+        loadingIndicator.IsRunning = false;
     }
+
 
 
 

@@ -106,8 +106,16 @@ C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlSaveStateFile.xml
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DigesettAPP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-100.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-125.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-150.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-200.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-400.png
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauisplash.stamp
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.stamp
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Bold.ttf
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Light.ttf
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Medium.ttf
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-100.png
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-125.png
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-150.png
