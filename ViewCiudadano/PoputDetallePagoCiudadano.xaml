@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                 x:Class="DigesettAPP.ViewCiudadano.PoputDetallePagoCiudadano">
+
+
+    <Frame CornerRadius="15" BackgroundColor="White" HeightRequest="340" WidthRequest="510" >
+
+        <StackLayout HorizontalOptions="Center">
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" RowSpacing="10"  >
+
+                <Label Text="Detalle de pago" Grid.Row="0" Grid.Column="1" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+                <Label Text="x" TextColor="Black" FontSize="25"  HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" Grid.Column="0" />
+
+                <Image Source= "vistodos" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1"  Margin="0,10,0,10" HeightRequest="100" WidthRequest="100"/>
+
+
+                <Label Grid.Row="2" Grid.Column="1" Text="Precio de multa" TextColor="#8D8A8E" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" Margin="0,0,0,-10"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="$1,000" TextColor="Black" FontSize="29" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold"/>
+
+                <StackLayout Grid.Row="4" Grid.Column="1" Margin="0,20,0,0" >
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" RowSpacing="18" ColumnSpacing="15"  >
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Datos" TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="12 Junio 2024" TextColor="Black" FontSize="14" HorizontalOptions="End"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Detalle" TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="Digeset" TextColor="Black" FontSize="14"  HorizontalOptions="End" VerticalOptions="End"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Numero de Tarjeta" TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" />
+                        <Label Grid.Row="2" Grid.Column="2" Text="4222-146-446-5441" TextColor="Black" FontSize="12"  HorizontalOptions="End" />
+
+                        <Label Grid.Row="3" Grid.Column="0" Text="Cuenta" TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" />
+                        <Label Grid.Row="3" Grid.Column="2" Text="Junior Colon" TextColor="Black" FontSize="14"  HorizontalOptions="End" />
+
+                        <Label Grid.Row="4" Grid.Column="0" Text="Total" TextColor="Black" FontAttributes="Bold" FontSize="15" HorizontalOptions="Start" Margin="0,5,0,0"  />
+                        <Label Grid.Row="4" Grid.Column="2" Text="1,000" TextColor="#009C40" FontSize="15"  HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,0,0" />
+
+                    </Grid>
+
+                </StackLayout>
+
+
+                <Button Text="Listo" Margin="0,10,0,0"  CornerRadius="10"
+                         BackgroundColor="#009C40" HeightRequest="50" TextColor="White" FontSize="18"
+                         WidthRequest="260" Grid.Row="5" Grid.Column="1" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         
+                />
+
+
+            </Grid>
+
+        </StackLayout>
+
+    </Frame>
+
+</toolkit:Popup>

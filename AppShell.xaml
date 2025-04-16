@@ -3,44 +3,60 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:DigesettAPP.Views"
-    Shell.FlyoutBehavior="Disabled" 
+    xmlns:ciudadano="clr-namespace:DigesettAPP.ViewCiudadano"
+    Shell.FlyoutBehavior="Disabled"
     Shell.BackgroundColor="White"
     Shell.TabBarBackgroundColor="White"
-    Shell.TabBarForegroundColor="#009C40"  
+    Shell.TabBarForegroundColor="#009C40"
     Shell.TabBarUnselectedColor="Gray"
     Shell.TabBarTitleColor="#009C40">
 
-    <!-- Páginas sin TabBar -->
+    <!-- Páginas sin pestañas -->
     <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
-    <ShellContent Route="Home" ContentTemplate="{DataTemplate views:Home}" />
     <ShellContent Route="RecuperarContrasenaPage" ContentTemplate="{DataTemplate views:OlvidelaContrasenaPage}" />
-
-    <!-- Registra las rutas de los pasos -->
     <ShellContent Route="Paso1Page" ContentTemplate="{DataTemplate views:Paso1Page}" />
     <ShellContent Route="Paso2Page" ContentTemplate="{DataTemplate views:Paso2Page}" />
     <ShellContent Route="Paso3Page" ContentTemplate="{DataTemplate views:Paso3Page}" />
+    <ShellContent Route="RegistrarViewCiudadano" ContentTemplate="{DataTemplate ciudadano:RegistrarViewCiudadano}" />
 
-    <!-- Tabs -->
-    <TabBar>
+    <!-- ==== AGENTE: un FlyoutItem con varias Tabs ==== -->
+    <FlyoutItem Title="Agente" Route="AgenteShell" FlyoutItemIsVisible="False">
         <Tab Title="Home" Icon="homebar.svg">
             <ShellContent
-                Title="Home"
-                ContentTemplate="{DataTemplate views:Home}"
-                Route="MainHome" />
+        Title="Home"
+        ContentTemplate="{DataTemplate views:Home}"
+        Route="MainHome" />
         </Tab>
-
         <Tab Title="Historial" Icon="iconhistory.png">
             <ShellContent
-                Title="Historial"
-                ContentTemplate="{DataTemplate views:Historial}"
-                Route="Historial" />
+        Title="Historial"
+        ContentTemplate="{DataTemplate views:Historial}"
+        Route="Historial" />
+        </Tab>
+        <Tab Title="Perfil" Icon="userbarr.svg">
+            <ShellContent
+        Title="Perfil"
+        ContentTemplate="{DataTemplate views:PerfilPage}"
+        Route="Perfil" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- ==== CIUDADANO/ADMINISTRADOR: otro FlyoutItem ==== -->
+    <FlyoutItem Title="Ciudadano" Route="CiudadanoShell" FlyoutItemIsVisible="False">
+        <Tab Title="Inicio" Icon="homebar.svg">
+            <ShellContent
+            Title="Inicio"
+            ContentTemplate="{DataTemplate ciudadano:HomeViewCiudadano}"
+            Route="HomeViewCiudadano" />
         </Tab>
 
         <Tab Title="Perfil" Icon="userbarr.svg">
             <ShellContent
-                Title="Perfil"
-                ContentTemplate="{DataTemplate views:PerfilPage}"
-                Route="Perfil" />
+            Title="Perfil"
+            ContentTemplate="{DataTemplate ciudadano:PerfilPageCiudadano}"
+            Route="PerfilPageCiudadano" />
         </Tab>
-    </TabBar>
+    </FlyoutItem>
+
+
 </Shell>

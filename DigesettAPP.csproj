@@ -22,7 +22,7 @@
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 
 		<!-- Display name -->
-		<ApplicationTitle>AgenteAPP</ApplicationTitle>
+		<ApplicationTitle>DigesettAPP</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.digesettapp</ApplicationId>
@@ -93,6 +93,33 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewCiudadano\AgregarTarjetaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\HomeViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\MultaNotificacionCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PagarMultaViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PerfilPageCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupPagarCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputDetallePagoCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\RegistrarViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\BuscarMultaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

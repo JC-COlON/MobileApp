@@ -1,4 +1,6 @@
-﻿using DigesettAPP.Models;
+﻿using CommunityToolkit.Maui.Views;
+using DigesettAPP.Models;
+using DigesettAPP.ViewCiudadano;
 using DigesettAPP.Views;
 using Microsoft.Maui.Storage;
 
@@ -12,6 +14,8 @@ namespace DigesettAPP
         {
             InitializeComponent();
             MainPage = new AppShell();
+
+            Shell.Current.GoToAsync(nameof(RegistrarViewCiudadano));
         }
 
         // Este método se llama cuando la app se pone en segundo plano (o está por cerrarse)

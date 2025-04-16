@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DigesettAPP.ViewCiudadano.PopupPagarCiudadano">
+
+
+    <Frame CornerRadius="15" BackgroundColor="White" HeightRequest="600" WidthRequest="510">
+
+        <StackLayout>
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*"  RowSpacing="6">
+                <Label Text="Pago" Grid.Row="0" Grid.Column="0" FontSize="25" HorizontalOptions="Start" FontAttributes="Bold" />
+
+                <Frame BackgroundColor="Red" BorderColor="Transparent" HeightRequest="40" WidthRequest="40" CornerRadius="20" Padding="1" HorizontalOptions="End" Grid.Row="0" Grid.Column="2">
+                    <!--<Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="salirdelPopup" />
+                    </Frame.GestureRecognizers>-->
+                    <Label Text="x" TextColor="White" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+
+
+                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="92" WidthRequest="310" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Margin="0,20,0,0">
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" ColumnSpacing="15" VerticalOptions="Center" >
+                        <!--<Frame Grid.Row="0" BackgroundColor="Black" Margin="10,0,0,0" HeightRequest="25" BorderColor="Transparent" WidthRequest="42" CornerRadius="2" Padding="1" HorizontalOptions="Start" Grid.Column="0" />-->
+                        <Image  Source="blackcard" Margin="10,0,0,0" HeightRequest="25" WidthRequest="42" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Credit- MasterCard" TextColor="#8D8A8E" FontSize="15" HorizontalOptions="Start" FontAttributes="Bold"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Junior Colon" TextColor="Black" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="4412-1554-2264-554" TextColor="Black" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Frame>
+
+
+                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="85" WidthRequest="310" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Grid.Column="1" Margin="0,0,0,0">
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" ColumnSpacing="15" VerticalOptions="Center"  >
+
+                        <Image Source="userbarr" Margin="10,0,0,0" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0"  />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Usuario" TextColor="#8D8A8E" FontSize="15" HorizontalOptions="Start"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="Junior Colon" TextColor="Black" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Label Grid.Row="2" Grid.Column="1" Text="402-1234-567-1" TextColor="Black" FontSize="13" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Frame>
+
+
+                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="92" WidthRequest="310" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="3" Grid.Column="1" Margin="0,0,0,0">
+
+                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" ColumnSpacing="15" VerticalOptions="Center" >
+
+                        <Image Source="homebar" Margin="10,0,0,0" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0"  />
+                        <Label Grid.Row="0" Grid.Column="1" Text="Direccion" TextColor="#8D8A8E" FontSize="15" HorizontalOptions="Start" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="Calle # 27 Av Sanchez" TextColor="Black" FontSize="13" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                    </Grid>
+
+                </Frame>
+
+                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="85" WidthRequest="310" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="4" Grid.Column="1" Margin="0,0,0,0">
+
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,*" VerticalOptions="Center">
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Total a pagar:" TextColor="Black" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="DR 1,000" TextColor="#FD8402" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Grid>
+
+                </Frame>
+
+                <Button Text="Pagar" Margin="0,45,0,0"  TextColor="White" Command="{Binding PayTicketCommand}"
+                 BackgroundColor="#009C40" HeightRequest="50"
+                 WidthRequest="156" Grid.Row="5" Grid.Column="1" 
+                 HorizontalOptions="Center" VerticalOptions="Center" 
+                  />
+
+
+            </Grid>
+
+        </StackLayout>
+
+    </Frame>
+
+
+
+</toolkit:Popup>

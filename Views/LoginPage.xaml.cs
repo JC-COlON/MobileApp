@@ -1,5 +1,8 @@
+using CommunityToolkit.Maui.Views;
 using DigesettAPP.Service;
+using DigesettAPP.ViewCiudadano;
 using DigesettAPP.ViewModel;
+using Microsoft.Win32;
 
 
 namespace DigesettAPP.Views;
@@ -38,6 +41,17 @@ public partial class LoginPage : ContentPage
     private async void OnForgotPasswordTapped(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new OlvidelaContrasenaPage());
+    }
+
+
+    private async void GoToRegister(object sender, TappedEventArgs e)
+    {
+
+
+        await Shell.Current.GoToAsync("RegistrarViewCiudadano");
+
+
+
     }
 
 

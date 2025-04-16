@@ -1,6 +1,4 @@
-﻿
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DigesettAPP.Models;
 using DigesettAPP.Service;
@@ -30,12 +28,7 @@ namespace DigesettAPP.ViewModel
 
                     if (user != null)
                     {
-                        if (user.Rol != "Agente") // Verifica que el usuario sea un agente
-                        {
-                            await Shell.Current.DisplayAlert("Acceso Denegado", "Solo los agentes pueden acceder a esta aplicación.", "OK");
-                            return; // Sale del método sin permitir el acceso
-                        }
-
+                        // Guardar usuario en Preferences
                         if (Preferences.ContainsKey(nameof(App.user)))
                         {
                             Preferences.Remove(nameof(App.user));
@@ -43,11 +36,26 @@ namespace DigesettAPP.ViewModel
 
                         string userDetails = JsonConvert.SerializeObject(user);
                         Preferences.Set(nameof(App.user), userDetails);
-
                         App.user = user;
 
-                        // Navegar a la página principal
-                        await Shell.Current.GoToAsync("//MainHome");
+                        switch (user.Rol?.ToLower())
+                        {
+                            case "agente":
+                                await Shell.Current.GoToAsync("//MainHome"); // ← solo esto
+                                break;
+
+                            case "ciudadano":
+                            case "administrador":
+                                await Shell.Current.GoToAsync("//HomeViewCiudadano");
+                                break;
+
+                            default:
+                                await Shell.Current.DisplayAlert("Acceso Denegado", "No tiene permisos para acceder a esta aplicación.", "OK");
+                                break;
+                        }
+
+
+
                     }
                     else
                     {
@@ -65,12 +73,10 @@ namespace DigesettAPP.ViewModel
             }
         }
 
-
         public void LimpiarCampos()
         {
             Cedula = string.Empty;
             Password = string.Empty;
         }
     }
-
 }

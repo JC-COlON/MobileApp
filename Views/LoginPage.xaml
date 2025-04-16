@@ -10,7 +10,7 @@
 
 
 
-    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,80,0,100">
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,50,0,100">
 
         <StackLayout Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
 
@@ -20,7 +20,7 @@
                 <Image Source="logoamet.png" Grid.Row="0" Grid.ColumnSpan="2" WidthRequest="230" HeightRequest="230" HorizontalOptions="Center" />
 
                 <!-- Entry para Usuario -->
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0">
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
                     <Label Text="Usuario" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
@@ -58,8 +58,24 @@
                 <!-- Botón Entrar -->
                 <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Entrar" Command="{Binding EntrarCommand}" FontSize="16"
                     CornerRadius="10" WidthRequest="285" HeightRequest="45" BackgroundColor="#009C40" TextColor="White"
-                    HorizontalOptions="Center" Margin="0,50,0,0" Padding="0,5" />
+                    HorizontalOptions="Center" Margin="0,40,10,0" Padding="0,5" />
             </Grid>
         </StackLayout>
+
+        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto" Grid.Row="1" Margin="180,40,0,0" HorizontalOptions="Center">
+
+            <Label FontFamily="SfProTextRegular" Text="¿No tienes una cuenta?" TextColor="Black" FontSize="13"  Grid.Row="1" Grid.Column="0"  Margin="0,0,0,0"   />
+
+            <Label FontFamily="SfProTextRegular" FontAttributes="Bold"  Text="Crear Cuenta" TextColor="#009C40" FontSize="13" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"  VerticalOptions="End"  >
+
+                <Label.GestureRecognizers>
+              <TapGestureRecognizer Tapped="GoToRegister" />
+          </Label.GestureRecognizers>
+
+            </Label>
+
+        </Grid>
     </Grid>
+
+  
 </ContentPage>
