@@ -16,14 +16,7 @@
 
     
     
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <!-- Registrar el Converter para la flecha -->
-            <converters:BoolToArrowConverter x:Key="BoolToArrowConverter" />
-            <!-- Registrar el Converter para la altura dinámica -->
-            <converters:BoolToHeightConverter x:Key="BoolToHeightConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+
 
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowDefinitions="Auto,*,Auto" Margin="0,0,0,0">
         <!-- Cargando Overlay -->
@@ -156,7 +149,7 @@
 
                                                 <StackLayout>
                                                     <Label Text="{Binding PrecioInfo, StringFormat='RD${0}'}"
-                                           FontSize="12"
+                                           FontSize="14"
                                            FontAttributes="Bold"
                                            TextColor="Black"
                                            HorizontalOptions="Center" />
@@ -169,17 +162,16 @@
                                                 </Frame.GestureRecognizers>
                                             </Frame>
                                         </Grid>
-                                        
-                                        <control:SfRating ItemSize="25">
-                                            <control:SfRating.RatingSettings>
-                                                <control:RatingSettings RatedFill="#FD8402"
-                                                                        UnratedStroke="Black">
-                                                    
-                                                </control:RatingSettings>
-                                            </control:SfRating.RatingSettings>
 
-                                            
+                                        <control:SfRating
+                    ItemSize="25"
+                    Value="{Binding Rating, Mode=TwoWay}">
+                                            <control:SfRating.RatingSettings>
+                                                <control:RatingSettings RatedFill="#FD8402" UnratedStroke="Black"/>
+                                            </control:SfRating.RatingSettings>
                                         </control:SfRating>
+
+
                                         <!-- Comentario con botón enviar -->
                                         <Frame BackgroundColor="#F5F5F5"
                                            CornerRadius="10"
@@ -190,23 +182,25 @@
                                             <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
                                                 <!-- Entry para el comentario -->
                                                 <Entry Placeholder="Escribe un comentario..."
-                                           Text="{Binding Comentario}"
-                                           FontSize="14"
-                                           BackgroundColor="Transparent"
-                                           TextColor="Black"
-                                           PlaceholderColor="Gray"
-                                           Grid.Column="0" />
+       Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.Comentario, Mode=TwoWay}"
+       FontSize="14"
+       BackgroundColor="Transparent"
+       TextColor="Black"
+       PlaceholderColor="Gray"
+       Grid.Column="0" />
+
 
                                                 <!-- Botón de enviar -->
                                                 <ImageButton Source="enviarcomentario.png"
-                                             WidthRequest="28"
-                                             HeightRequest="28"
-                                             BackgroundColor="Transparent"
-                                             Command="{Binding EnviarComentarioCommand}"
-                                             CommandParameter="{Binding .}"
-                                             Grid.Column="1"
-                                             HorizontalOptions="End"
-                                             VerticalOptions="Center"/>
+             WidthRequest="28"
+             HeightRequest="28"
+             BackgroundColor="Transparent"
+             Command="{Binding BindingContext.EnviarComentarioCommand, Source={x:Reference TicketsCollectionView}}"
+             CommandParameter="{Binding .}"
+             Grid.Column="1"
+             HorizontalOptions="End"
+             VerticalOptions="Center"/>
+
                                             </Grid>
                                         </Frame>
 

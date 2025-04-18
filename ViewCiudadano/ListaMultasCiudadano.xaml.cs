@@ -1,5 +1,7 @@
 using Microsoft.Maui.Controls;
 using DigesettAPP.ViewModels;
+using DigesettAPP.ViewCiudadano;
+using CommunityToolkit.Maui.Views;
 
 namespace DigesettAPP.Views
 {
@@ -8,6 +10,7 @@ namespace DigesettAPP.Views
         public ListaMultasCiudadano()
         {
             InitializeComponent();
+            BindingContext = new ListaMultaViewModel();
         }
 
         protected override void OnAppearing()
@@ -19,8 +22,10 @@ namespace DigesettAPP.Views
 
         private async void OnInfoTapped(object sender, EventArgs e)
         {
-            //// Reemplaza "InfoPage" con el nombre real de tu página
-            //await Navigation.PushAsync(new InfoPage());
+            var popup = new PoputInformacionRating();
+            this.ShowPopup(popup); // <-- Requiere usar CommunityToolkit.Maui.Views
         }
+
+
     }
 }

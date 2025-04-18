@@ -16,6 +16,7 @@ namespace DigesettAPP.ViewModels
     {
         private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket";
         private ObservableCollection<Ticket> _tickets;
+
         public ObservableCollection<Ticket> Tickets
         {
             get => _tickets;
@@ -46,18 +47,53 @@ namespace DigesettAPP.ViewModels
             }
         }
 
+        private string _comentario;
+        public string Comentario
+        {
+            get => _comentario;
+            set
+            {
+                _comentario = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+        private double _calificacion;
+        public double Calificacion
+        {
+            get => _calificacion;
+            set
+            {
+                _calificacion = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+        public Command<Ticket> EnviarComentarioCommand { get; }
+        public ListaMultaViewModel()
+        {
+            ToggleExpandCommand = new Command<Ticket>(ToggleExpand);  // Cambié a Command<Ticket> para pasar el objeto actual
+            CargarMultasCommand = new Command(async () => await CargarMultas());
+
+
+
+
+            EnviarComentarioCommand = new Command<Ticket>(async (ticket) =>
+            {
+                await EnviarReview(ticket);
+            });
+
+        }
+
 
 
         public ICommand CargarMultasCommand { get; }
 
         public ICommand ToggleExpandCommand { get; }
-
-        public ListaMultaViewModel()
-        {
-            ToggleExpandCommand = new Command<Ticket>(ToggleExpand);  // Cambié a Command<Ticket> para pasar el objeto actual
-            CargarMultasCommand = new Command(async () => await CargarMultas());
-        }
-
         private void ToggleExpand(Ticket ticket)
         {
             ticket.IsExpanded = !ticket.IsExpanded;  // Cambia el estado expandido del ticket
@@ -126,6 +162,88 @@ namespace DigesettAPP.ViewModels
             }
         }
 
+        private async Task EnviarReview(Ticket ticket)
+        {
+            var review = new ReviewDTO
+            {
+                UserId = ObtenerUserIdDesdeToken(),
+                TicketId = ticket.TicketId,
+                AgentId = ticket.Agente?.UserId ?? 0,
+                Rating = (int)ticket.Rating, // ✅ Ahora viene del ticket específico                                             // de 1 a 5
+                Comment = Comentario
+            };
+
+            if (review.UserId == 0 || review.TicketId == 0 || review.AgentId == 0)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "Datos incompletos para enviar la reseña.", "OK");
+                return;
+            }
+
+            try
+            {
+                string json = JsonConvert.SerializeObject(review, Formatting.Indented);
+
+                // Mostrar el JSON que se va a enviar
+                await App.Current.MainPage.DisplayAlert("JSON a enviar", json, "OK");
+
+                using (HttpClient client = new HttpClient())
+                {
+                    string token = Preferences.Get("AuthToken", string.Empty);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync("https://digesett.somee.com/api/Reviews/AddReviewForTicket", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Éxito", "Comentario enviado correctamente.", "OK");
+                        Comentario = string.Empty;
+                        Calificacion = 0;
+                    }
+                    else
+                    {
+                        var mensajeError = await response.Content.ReadAsStringAsync();
+
+                        if (response.StatusCode == System.Net.HttpStatusCode.BadRequest &&
+                            mensajeError.Contains("ya ha sido calificada", StringComparison.OrdinalIgnoreCase))
+                        {
+                            await App.Current.MainPage.DisplayAlert("Advertencia", "Esta multa ya ha sido calificada previamente.", "OK");
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Error", $"No se pudo enviar la reseña: {mensajeError}", "OK");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", $"Error al enviar reseña: {ex.Message}", "OK");
+            }
+        }
+
+
+        private int ObtenerUserIdDesdeToken()
+        {
+            try
+            {
+                string token = Preferences.Get("AuthToken", string.Empty);
+                if (string.IsNullOrEmpty(token)) return 0;
+
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+                var userIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier");
+                return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener UserId: {ex.Message}");
+                return 0;
+            }
+        }
+
+ 
 
         // Método para obtener la cédula desde el token
         private string ObtenerCedulaDelToken()
@@ -220,6 +338,18 @@ namespace DigesettAPP.ViewModels
 
             public string PrecioInfo => $"{Articulo?.Price}";
 
+            private double _rating;
+            public double Rating
+            {
+                get => _rating;
+                set
+                {
+                    _rating = value;
+                    // Solo aplica si implementas INotifyPropertyChanged en Ticket (ideal)
+                }
+            }
+
+
         }
 
 
@@ -231,6 +361,16 @@ namespace DigesettAPP.ViewModels
             [JsonProperty("$values")]
             public Ticket[] Tickets { get; set; }
         }
+
+        public class ReviewDTO
+        {
+            public int UserId { get; set; }
+            public int Rating { get; set; }
+            public int TicketId { get; set; }
+            public int AgentId { get; set; }
+            public string Comment { get; set; }
+        }
+
 
         public ICommand PayCommand => new Command<Ticket>((ticket) =>
         {
