@@ -27,56 +27,82 @@
 
                 </StackLayout>
 
-                <!--CARD GREEEN-->
+                <!--CARD -->
                 <Border Margin="10,50,10,0" HeightRequest="193" StrokeShape="RoundRectangle 22" StrokeThickness="0">
                     <Border.Background>
                         <LinearGradientBrush>
-                            <GradientStop Color="#009C40" Offset="0.0"/>
-                            <GradientStop Color="#00431C" Offset="1.0"/>
+                            <GradientStop Color="#FD8402" Offset="0.0"/>
+                            <GradientStop Color="Black" Offset="1.0"/>
                         </LinearGradientBrush>
                     </Border.Background>
 
                     <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto" Padding="10" Margin="20,0,0,0">
 
-                        <Label FontFamily="SfProTextRegular" Grid.Row="0" Grid.Column="0" Text="Credit" VerticalOptions="Start" TextColor="White" Margin="0,15,0,0" />
+                        <Label FontFamily="SfProTextRegular"
+               Grid.Row="0" Grid.Column="0"
+               Text="Credit"
+               VerticalOptions="Start"
+               TextColor="White"
+               Margin="0,15,0,0" />
 
-                        <Label Grid.Row="1" Grid.Column="0" FontSize="22" Text="{Binding CardList[0].cardNumber, TargetNullValue='**** **** **** ****'}"
-             VerticalOptions="Start" TextColor="White" Margin="0,30,0,0" FontFamily="SfProTextRegular"/>
+                        <!-- Número de tarjeta formateado -->
+                        <Label Grid.Row="1" Grid.Column="0"
+               FontSize="22"
+               Text="{Binding FormattedCardNumber, TargetNullValue='****-****-****-****'}"
+               VerticalOptions="Start"
+               TextColor="White"
+               Margin="0,30,0,0"
+               FontFamily="SfProTextRegular"/>
 
-                        <Grid Grid.Row="2" RowDefinitions="Auto" ColumnDefinitions="Auto,Auto" Grid.Column="0" Margin="0,20,0,0">
+                        <!-- Fecha de expiración -->
+                        <Grid Grid.Row="2" RowDefinitions="Auto" ColumnDefinitions="Auto,Auto"
+              Grid.Column="0" Margin="0,20,0,0">
 
-                            <Label Grid.Row="0" Grid.Column="0" Text="Valido hasta"
-                 VerticalOptions="Start" TextColor="White" Margin="0,2,10,0" FontSize="13" FontFamily="SfProTextRegular" />
+                            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Válido hasta"
+                   VerticalOptions="Start"
+                   TextColor="White"
+                   Margin="0,2,10,0"
+                   FontSize="13"
+                   FontFamily="SfProTextRegular" />
 
-                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding CardList[0].expirationDate, TargetNullValue='MM/YY'}"
-                 VerticalOptions="Start" TextColor="White" Margin="0,0,0,0" FontSize="16" FontFamily="SfProTextBold"/>
-
+                            <Label Grid.Row="0" Grid.Column="1"
+                   Text="{Binding ExpirationDate, TargetNullValue='MM/YY'}"
+                   VerticalOptions="Start"
+                   TextColor="White"
+                   Margin="0,0,0,0"
+                   FontSize="16"
+                   FontFamily="SfProTextBold"/>
                         </Grid>
 
-                        <Image Grid.Row="3" Grid.Column="1" Source="mastercard" WidthRequest="60" HeightRequest="50"
-                   VerticalOptions="Center" HorizontalOptions="End" Margin="0,-10,20,0" />
-
+                        <Image Grid.Row="3" Grid.Column="1"
+               Source="mastercard"
+               WidthRequest="80"
+               HeightRequest="80"
+               VerticalOptions="Center"
+               HorizontalOptions="End"
+               Margin="0,-50,0,0" />
                     </Grid>
-
                 </Border>
+
 
                 <!--COLUM CENTER-->
                 <StackLayout Margin="0,40,0,30" Padding="10" >
                     <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto" ColumnSpacing="15">
                         <!-- multas -->
                         <Border HeightRequest="110" BackgroundColor="#f5f5f5" Grid.Column="0"  
-                     StrokeThickness="0" StrokeShape="RoundRectangle 12">
-                            <!--<Border.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="IrAverMultass" />
-                    </Border.GestureRecognizers>-->
+        StrokeThickness="0" StrokeShape="RoundRectangle 12">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="IrAverMultass" />
+                            </Border.GestureRecognizers>
 
-                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5"  >
-                                <ImageButton Source="document_filledgrenn" HeightRequest="45" WidthRequest="45"  />
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                                <ImageButton Source="document_filledgrenn" HeightRequest="45" WidthRequest="45" />
                                 <Label FontFamily="SfProTextRegular" Text="Multas" TextColor="#025825" HorizontalOptions="Center"
-                         VerticalOptions="Center" FontAttributes="Bold" />
+               VerticalOptions="Center" FontAttributes="Bold" />
                             </VerticalStackLayout>
-
                         </Border>
+
 
                         <!-- pagar-->
                         <Frame HeightRequest="110"  BorderColor="Transparent" BackgroundColor="#f5f5f5"  CornerRadius="15" Grid.Column="1">

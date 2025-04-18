@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "INYTkm+Wagc=",
+  "dgSpecHash": "DhJtPKgCSZA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Junior Colon\\Desktop\\Web\\DigesettAPP\\DigesettAPP.csproj",
   "expectedPackageFiles": [
@@ -87,6 +87,13 @@
     "C:\\Users\\Junior Colon\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.licensing\\29.1.38\\syncfusion.licensing.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.core\\29.1.38\\syncfusion.maui.core.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.datasource\\29.1.38\\syncfusion.maui.datasource.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.expander\\29.1.38\\syncfusion.maui.expander.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.gridcommon\\29.1.38\\syncfusion.maui.gridcommon.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.inputs\\29.1.38\\syncfusion.maui.inputs.29.1.38.nupkg.sha512",
+    "C:\\Users\\Junior Colon\\.nuget\\packages\\syncfusion.maui.listview\\29.1.38\\syncfusion.maui.listview.29.1.38.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Junior Colon\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

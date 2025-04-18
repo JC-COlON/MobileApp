@@ -65,6 +65,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\HomeViewCiudadano.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\HomeViewCiudadano.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/ListaMultasCiudadano.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.ListaMultasCiudadano.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\ListaMultasCiudadano.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\ListaMultasCiudadano.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/MultaNotificacionCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.MultaNotificacionCiudadano.xaml

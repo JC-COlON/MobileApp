@@ -1,38 +1,69 @@
-namespace DigesettAPP.ViewCiudadano;
+using DigesettAPP.ViewModels;
+using DigesettAPP.Views;
+using System;
+using System.Threading.Tasks;
 
-public partial class HomeViewCiudadano : ContentPage
+namespace DigesettAPP.ViewCiudadano
 {
-	public HomeViewCiudadano()
-	{
-		InitializeComponent();
-	}
-
-
-    private async void IrPerfilCiudadano(object sender, EventArgs e)
+    public partial class HomeViewCiudadano : ContentPage
     {
-        await Navigation.PushAsync(new PerfilPageCiudadano());
+        public HomeViewCiudadano()
+        {
+            InitializeComponent();
+
+            // Establece el ViewModel como contexto de enlace
+            BindingContext = new HomeViewModel();
+        }
+
+        private async void IrPerfilCiudadano(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(PerfilPageCiudadano));
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        {
+            var frame2 = (Frame)sender;
+
+            // Animación combinada de opacidad y escala
+            await Task.WhenAll(
+                frame2.ScaleTo(0.95, 100, Easing.CubicOut),
+                frame2.FadeTo(0.8, 100)
+            );
+
+            await Task.WhenAll(
+                frame2.ScaleTo(1, 100, Easing.CubicIn),
+                frame2.FadeTo(1, 100)
+            );
+
+            await Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
+        }
+
+        private async void IrAverMultass(object sender, TappedEventArgs e)
+        {
+            var border = sender as Border;  // Ahora estamos trabajando con Border
+
+            // Verificar si el cast fue exitoso
+            if (border != null)
+            {
+                // Animación combinada de opacidad y escala
+                await Task.WhenAll(
+                    border.ScaleTo(0.95, 100, Easing.CubicOut),
+                    border.FadeTo(0.8, 100)
+                );
+
+                await Task.WhenAll(
+                    border.ScaleTo(1, 100, Easing.CubicIn),
+                    border.FadeTo(1, 100)
+                );
+
+                // Navegar a la siguiente página
+                await Shell.Current.GoToAsync(nameof(ListaMultasCiudadano));
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("El sender no es un Border");
+            }
+        }
+
     }
-
-    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
-    {
-        var frame2 = (Frame)sender;
-
-        // Animación combinada de opacidad y escala
-        await Task.WhenAll(
-            frame2.ScaleTo(0.95, 100, Easing.CubicOut),
-            frame2.FadeTo(0.8, 100) // Reducir la opacidad al hacer clic
-        );
-
-        // Volver a la normalidad
-        await Task.WhenAll(
-            frame2.ScaleTo(1, 100, Easing.CubicIn),
-            frame2.FadeTo(1, 100) // Restaurar la opacidad
-        );
-
-        await Navigation.PushAsync(new AgregarTarjetaCiudadano());
-
-    }
-
-
-
 }

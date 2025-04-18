@@ -12,7 +12,7 @@ namespace DigesettAPP.Views
     public partial class CrearUsuarioPage : ContentPage
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string Url = "https://localhost:7277/api/UserAccess/Create";
+        private const string Url = "https://localhost:7277/api/User/Create";
         private const string CedulaValidationUrl = "https://api.digital.gob.do/v3/cedulas";
 
         public CrearUsuarioPage()
@@ -89,10 +89,9 @@ namespace DigesettAPP.Views
             TelefonoEntry.IsEnabled = false;
             CrearUsuarioButton.IsEnabled = false;
         }
-
         private async void OnCrearUsuarioClicked(object sender, EventArgs e)
         {
-            // Validar que los campos estén llenos
+            // Validación de campos (sin cambios)
             if (string.IsNullOrWhiteSpace(CedulaEntry.Text) ||
                 string.IsNullOrWhiteSpace(NombreEntry.Text) ||
                 string.IsNullOrWhiteSpace(ApellidoEntry.Text) ||
@@ -107,11 +106,11 @@ namespace DigesettAPP.Views
                 cedula = CedulaEntry.Text,
                 name = NombreEntry.Text,
                 lastname = ApellidoEntry.Text,
-                password = "",
+                password = "",                     // Cambiado a cadena vacía
                 rolId = 3,
-                email = "",
+                email = "",                         // Cambiado a cadena vacía
                 phone = TelefonoEntry.Text,
-                profileImg = "",
+                profileImg = "",                    // Cambiado a cadena vacía
                 nacionalityId = (int?)null,
                 birthdate = (DateTime?)null,
                 genderId = (int?)null,
@@ -125,13 +124,17 @@ namespace DigesettAPP.Views
 
             try
             {
-                string json = System.Text.Json.JsonSerializer.Serialize(nuevoUsuario,
-                    new JsonSerializerOptions { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
+                // Serialización para mostrar (puede usar cualquier método)
+                string jsonBonito = Newtonsoft.Json.JsonConvert.SerializeObject(nuevoUsuario, Newtonsoft.Json.Formatting.Indented);
+                await DisplayAlert("JSON enviado", jsonBonito, "OK");
+
+                // Serialización para enviar (¡esto es lo importante!)
+                string json = System.Text.Json.JsonSerializer.Serialize(nuevoUsuario);
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-
                 HttpResponseMessage response = await _httpClient.PostAsync(Url, content);
 
+                // Resto del código sin cambios...
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)
@@ -150,24 +153,31 @@ namespace DigesettAPP.Views
                     await Navigation.PopAsync();
                     MessagingCenter.Send(this, "UsuarioCreado", usuarioCreado);
                 }
-                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                {
-                    var errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(responseContent);
-                    if (errorResponse != null && !string.IsNullOrWhiteSpace(errorResponse.Error))
-                    {
-                        await DisplayAlert("Error", errorResponse.Error, "OK");
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "No se pudo crear el usuario. Intente de nuevo.", "OK");
-                    }
-                }
                 else
                 {
-                    Console.WriteLine($"Error al crear usuario. Código: {response.StatusCode}");
-                    Console.WriteLine($"Mensaje del servidor: {responseContent}");
+                    try
+                    {
+                        var apiError = JsonConvert.DeserializeObject<ApiError>(responseContent);
 
-                    await DisplayAlert("Error", $"No se pudo crear el usuario.\nCódigo: {response.StatusCode}\nMensaje: {responseContent}", "OK");
+                        if (apiError?.Errors != null && apiError.Errors.Count > 0)
+                        {
+                            var erroresFormateados = apiError.Errors
+                                .Select(kvp => $"{kvp.Key}: {string.Join(", ", kvp.Value)}")
+                                .ToList();
+
+                            string mensajeError = string.Join("\n", erroresFormateados);
+
+                            await DisplayAlert("Errores de validación", mensajeError, "OK");
+                        }
+                        else
+                        {
+                            await DisplayAlert("Error del servidor", apiError?.Title ?? "Ocurrió un error desconocido.", "OK");
+                        }
+                    }
+                    catch
+                    {
+                        await DisplayAlert("Error", $"No se pudo crear el usuario.\nMensaje del servidor:\n{responseContent}", "OK");
+                    }
                 }
             }
             catch (Exception ex)
@@ -178,6 +188,9 @@ namespace DigesettAPP.Views
                 await DisplayAlert("Error", $"Ocurrió un problema: {ex.Message}", "OK");
             }
         }
+
+
+
 
         // Clase para mapear el error de la respuesta
         public class ErrorResponse
@@ -192,5 +205,15 @@ namespace DigesettAPP.Views
             [JsonProperty("valid")]
             public bool Valid { get; set; }
         }
+
+
+        public class ApiError
+        {
+            public string Title { get; set; }
+            public int Status { get; set; }
+            public Dictionary<string, string[]> Errors { get; set; }
+            public string TraceId { get; set; }
+        }
+
     }
 }

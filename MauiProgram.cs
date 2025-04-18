@@ -4,6 +4,7 @@ using DigesettAPP.Service;
 using DigesettAPP.ViewModel;
 using DigesettAPP.Views;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 
 public static class MauiProgram
@@ -14,6 +15,7 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
           .UseMauiCommunityToolkit()
+          .ConfigureSyncfusionCore()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

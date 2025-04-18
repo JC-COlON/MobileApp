@@ -17,6 +17,9 @@
     <MauiXaml Update="ViewCiudadano\HomeViewCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ViewCiudadano\ListaMultasCiudadano.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ViewCiudadano\MultaNotificacionCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
