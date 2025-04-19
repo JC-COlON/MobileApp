@@ -104,7 +104,13 @@
 	  <MauiXaml Update="ViewCiudadano\HomeViewCiudadano.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\ListadoTarjetasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\ListaMultasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\ListaMultasParaPagar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\MultaNotificacionCiudadano.xaml">

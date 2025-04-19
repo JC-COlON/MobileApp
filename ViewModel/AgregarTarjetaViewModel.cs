@@ -87,25 +87,13 @@ namespace DigesettAPP.ViewModels
 
         private string FormatCardNumber(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                return "0000 - 0000 - 0000 - 0000";
-
-            var digits = new string(input.Where(char.IsDigit).ToArray());
-            digits = digits.PadRight(16, '0');
-
-            return $"{digits.Substring(0, 4)} - {digits.Substring(4, 4)} - {digits.Substring(8, 4)} - {digits.Substring(12, 4)}";
+            // Simplemente retorna los dígitos sin formatear
+            return string.IsNullOrWhiteSpace(input) ? "0000000000000000" : input;
         }
 
         private string FormatExpirationDate(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-                return "MM/AA";
-
-            var digits = new string(input.Where(char.IsDigit).ToArray());
-            if (digits.Length >= 4)
-                return digits.Insert(2, "/").Substring(0, 5);
-
-            return digits;
+            return string.IsNullOrWhiteSpace(input) ? "MM/AA" : input;
         }
 
         private async Task RegisterCard()
