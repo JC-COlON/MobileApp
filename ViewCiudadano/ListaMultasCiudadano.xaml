@@ -164,8 +164,8 @@
                                         </Grid>
 
                                         <control:SfRating
-                    ItemSize="25"
-                    Value="{Binding Rating, Mode=TwoWay}">
+                                            ItemSize="25"
+                                            Value="{Binding Rating, Mode=TwoWay}">  
                                             <control:SfRating.RatingSettings>
                                                 <control:RatingSettings RatedFill="#FD8402" UnratedStroke="Black"/>
                                             </control:SfRating.RatingSettings>

@@ -9,6 +9,8 @@ using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using CommunityToolkit.Maui.Views;
+using DigesettAPP.ViewCiudadano;
 
 namespace DigesettAPP.ViewModels
 {
@@ -57,6 +59,7 @@ namespace DigesettAPP.ViewModels
                 OnPropertyChanged();
             }
         }
+
 
 
 
@@ -169,7 +172,7 @@ namespace DigesettAPP.ViewModels
                 UserId = ObtenerUserIdDesdeToken(),
                 TicketId = ticket.TicketId,
                 AgentId = ticket.Agente?.UserId ?? 0,
-                Rating = (int)ticket.Rating, // ✅ Ahora viene del ticket específico                                             // de 1 a 5
+                Rating = (int)ticket.Rating + 1,
                 Comment = Comentario
             };
 
@@ -179,12 +182,16 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
+            // Confirmación
+            bool confirmar = await App.Current.MainPage.DisplayAlert("Confirmación", "¿Seguro que desea enviar la reseña?", "Sí", "No");
+            if (!confirmar)
+                return;
+
+            IsLoading = true; // Mostrar spinner
+
             try
             {
                 string json = JsonConvert.SerializeObject(review, Formatting.Indented);
-
-                // Mostrar el JSON que se va a enviar
-                await App.Current.MainPage.DisplayAlert("JSON a enviar", json, "OK");
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -196,22 +203,33 @@ namespace DigesettAPP.ViewModels
 
                     if (response.IsSuccessStatusCode)
                     {
-                        await App.Current.MainPage.DisplayAlert("Éxito", "Comentario enviado correctamente.", "OK");
                         Comentario = string.Empty;
                         Calificacion = 0;
+
+                        // Mostrar popup de éxito
+                        await App.Current.MainPage.ShowPopupAsync(new PoputExitoReview());
                     }
                     else
                     {
                         var mensajeError = await response.Content.ReadAsStringAsync();
 
-                        if (response.StatusCode == System.Net.HttpStatusCode.BadRequest &&
-                            mensajeError.Contains("ya ha sido calificada", StringComparison.OrdinalIgnoreCase))
+                        try
                         {
-                            await App.Current.MainPage.DisplayAlert("Advertencia", "Esta multa ya ha sido calificada previamente.", "OK");
+                            var error = JsonConvert.DeserializeObject<ErrorResponse>(mensajeError);
+
+                            if (response.StatusCode == System.Net.HttpStatusCode.BadRequest &&
+                                error?.mensaje?.Contains("ya ha calificado", StringComparison.OrdinalIgnoreCase) == true)
+                            {
+                                await App.Current.MainPage.DisplayAlert("Advertencia", error.mensaje, "OK");
+                            }
+                            else
+                            {
+                                await App.Current.MainPage.DisplayAlert("Error", error?.mensaje ?? "No se pudo enviar la reseña.", "OK");
+                            }
                         }
-                        else
+                        catch
                         {
-                            await App.Current.MainPage.DisplayAlert("Error", $"No se pudo enviar la reseña: {mensajeError}", "OK");
+                            await App.Current.MainPage.DisplayAlert("Error", "No se pudo enviar la reseña. Intente nuevamente.", "OK");
                         }
                     }
                 }
@@ -219,6 +237,10 @@ namespace DigesettAPP.ViewModels
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Error", $"Error al enviar reseña: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsLoading = false; // Ocultar spinner
             }
         }
 
@@ -370,6 +392,12 @@ namespace DigesettAPP.ViewModels
             public int AgentId { get; set; }
             public string Comment { get; set; }
         }
+
+        public class ErrorResponse
+        {
+            public string mensaje { get; set; }
+        }
+
 
 
         public ICommand PayCommand => new Command<Ticket>((ticket) =>
