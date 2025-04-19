@@ -98,6 +98,9 @@
 	  <MauiXaml Update="ViewCiudadano\AgregarTarjetaCiudadano.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\HistorialMultasPagadasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\HomeViewCiudadano.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -126,6 +129,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\RegistrarViewCiudadano.xaml">

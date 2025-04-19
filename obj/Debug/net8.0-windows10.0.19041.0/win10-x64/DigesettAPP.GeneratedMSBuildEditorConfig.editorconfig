@@ -63,6 +63,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\AgregarTarjetaCiudadano.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\AgregarTarjetaCiudadano.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/HistorialMultasPagadasCiudadano.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.HistorialMultasPagadasCiudadano.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\HistorialMultasPagadasCiudadano.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\HistorialMultasPagadasCiudadano.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/HomeViewCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.HomeViewCiudadano.xaml
@@ -122,6 +128,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PoputPagarMultaCiudadano.xaml
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputPagarMultaCiudadano.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputPagarMultaCiudadano.xaml
+
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PoputTarjetaAgregada.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PoputTarjetaAgregada.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputTarjetaAgregada.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputTarjetaAgregada.xaml
 
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/RegistrarViewCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

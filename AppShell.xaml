@@ -50,12 +50,21 @@
             Route="HomeViewCiudadano" />
         </Tab>
 
+        <Tab Title="Historial" Icon="iconhistory.png">
+            <ShellContent
+             Title="HistorialMultasPagadas"
+             ContentTemplate="{DataTemplate ciudadano:HistorialMultasPagadasCiudadano}"
+             Route="HistorialMultasPagadasCiudadano" />
+        </Tab>
+
         <Tab Title="Perfil" Icon="userbarr.svg">
             <ShellContent
             Title="Perfil"
             ContentTemplate="{DataTemplate ciudadano:PerfilPageCiudadano}"
             Route="PerfilPageCiudadano" />
         </Tab>
+
+       
     </FlyoutItem>
 
 

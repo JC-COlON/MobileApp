@@ -3,7 +3,6 @@
              xmlns:local="clr-namespace:DigesettAPP.ViewModels"
              x:Class="DigesettAPP.Views.ListaMultasCiudadano"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2021/maui/toolkit"
-             xmlns:converters="clr-namespace:DigesettAPP.Converters"
              Title="Mis Multas"
              BackgroundColor="White"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"

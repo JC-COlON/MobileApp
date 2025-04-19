@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-16T19:38:00.444</Modified>
+      <Modified>2025-04-19T04:28:44.124</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-04-16T19:38:00.053</Modified>
+      <Modified>2025-04-19T04:12:31.949</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DigesettAPP.runtimeconfig.json">
       <PackagePath>DigesettAPP.runtimeconfig.json</PackagePath>
-      <Modified>2025-04-16T16:02:37.156</Modified>
+      <Modified>2025-04-19T02:54:03.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DigesettAPP.dll">
       <PackagePath>DigesettAPP.dll</PackagePath>
-      <Modified>2025-04-16T19:37:57.430</Modified>
+      <Modified>2025-04-19T04:28:42.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DigesettAPP.exe</PackagePath>
-      <Modified>2025-04-16T19:37:57.493</Modified>
+      <Modified>2025-04-19T04:28:42.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -56,23 +56,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-100.png">
       <PackagePath>logosplashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:28.518</Modified>
+      <Modified>2025-04-19T02:53:51.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-125.png">
       <PackagePath>logosplashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:28.550</Modified>
+      <Modified>2025-04-19T02:53:51.556</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-150.png">
       <PackagePath>logosplashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:28.590</Modified>
+      <Modified>2025-04-19T02:53:51.597</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-200.png">
       <PackagePath>logosplashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:28.658</Modified>
+      <Modified>2025-04-19T02:53:51.663</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logosplashSplashScreen.scale-400.png">
       <PackagePath>logosplashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:28.906</Modified>
+      <Modified>2025-04-19T02:53:51.938</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\MauiMaterialAssets.ttf">
+      <PackagePath>MauiMaterialAssets.ttf</PackagePath>
+      <Modified>2025-04-14T07:53:20.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\Poppins-Bold.ttf">
       <PackagePath>Poppins-Bold.ttf</PackagePath>
@@ -88,1387 +92,1507 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-100.png">
       <PackagePath>about.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.098</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-125.png">
       <PackagePath>about.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.098</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-150.png">
       <PackagePath>about.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.097</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-200.png">
       <PackagePath>about.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.097</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\about.scale-400.png">
       <PackagePath>about.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.097</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-100.png">
       <PackagePath>adduser.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.058</Modified>
+      <Modified>2025-04-19T02:54:00.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-125.png">
       <PackagePath>adduser.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.057</Modified>
+      <Modified>2025-04-19T02:54:00.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-150.png">
       <PackagePath>adduser.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.057</Modified>
+      <Modified>2025-04-19T02:54:00.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-200.png">
       <PackagePath>adduser.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.057</Modified>
+      <Modified>2025-04-19T02:54:00.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\adduser.scale-400.png">
       <PackagePath>adduser.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.055</Modified>
+      <Modified>2025-04-19T02:54:00.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-100.png">
       <PackagePath>agregaruser.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.084</Modified>
+      <Modified>2025-04-19T02:54:00.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-125.png">
       <PackagePath>agregaruser.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.084</Modified>
+      <Modified>2025-04-19T02:54:00.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-150.png">
       <PackagePath>agregaruser.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.084</Modified>
+      <Modified>2025-04-19T02:54:00.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-200.png">
       <PackagePath>agregaruser.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.083</Modified>
+      <Modified>2025-04-19T02:54:00.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\agregaruser.scale-400.png">
       <PackagePath>agregaruser.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.083</Modified>
+      <Modified>2025-04-19T02:54:00.244</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\alert_circle.scale-100.png">
+      <PackagePath>alert_circle.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\alert_circle.scale-125.png">
+      <PackagePath>alert_circle.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\alert_circle.scale-150.png">
+      <PackagePath>alert_circle.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\alert_circle.scale-200.png">
+      <PackagePath>alert_circle.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\alert_circle.scale-400.png">
+      <PackagePath>alert_circle.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ametlogo.scale-100.png">
       <PackagePath>ametlogo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.044</Modified>
+      <Modified>2025-04-19T02:54:00.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-100.png">
       <PackagePath>badge.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.109</Modified>
+      <Modified>2025-04-19T02:54:00.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-125.png">
       <PackagePath>badge.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.109</Modified>
+      <Modified>2025-04-19T02:54:00.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-150.png">
       <PackagePath>badge.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.108</Modified>
+      <Modified>2025-04-19T02:54:00.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-200.png">
       <PackagePath>badge.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.108</Modified>
+      <Modified>2025-04-19T02:54:00.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\badge.scale-400.png">
       <PackagePath>badge.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.108</Modified>
+      <Modified>2025-04-19T02:54:00.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\blackcard.scale-100.png">
       <PackagePath>blackcard.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.034</Modified>
+      <Modified>2025-04-19T02:54:00.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-100.png">
       <PackagePath>buscarmultapage.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.102</Modified>
+      <Modified>2025-04-19T02:54:00.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-125.png">
       <PackagePath>buscarmultapage.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.102</Modified>
+      <Modified>2025-04-19T02:54:00.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-150.png">
       <PackagePath>buscarmultapage.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.101</Modified>
+      <Modified>2025-04-19T02:54:00.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-200.png">
       <PackagePath>buscarmultapage.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.101</Modified>
+      <Modified>2025-04-19T02:54:00.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\buscarmultapage.scale-400.png">
       <PackagePath>buscarmultapage.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.101</Modified>
+      <Modified>2025-04-19T02:54:00.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cardadd_greenn.scale-100.png">
       <PackagePath>cardadd_greenn.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.121</Modified>
+      <Modified>2025-04-19T02:54:00.298</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cardadd_greenn.scale-125.png">
       <PackagePath>cardadd_greenn.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.120</Modified>
+      <Modified>2025-04-19T02:54:00.298</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cardadd_greenn.scale-150.png">
       <PackagePath>cardadd_greenn.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.120</Modified>
+      <Modified>2025-04-19T02:54:00.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cardadd_greenn.scale-200.png">
       <PackagePath>cardadd_greenn.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.120</Modified>
+      <Modified>2025-04-19T02:54:00.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cardadd_greenn.scale-400.png">
       <PackagePath>cardadd_greenn.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.120</Modified>
+      <Modified>2025-04-19T02:54:00.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-100.png">
       <PackagePath>card_add.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.073</Modified>
+      <Modified>2025-04-19T02:54:00.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-125.png">
       <PackagePath>card_add.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.072</Modified>
+      <Modified>2025-04-19T02:54:00.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-150.png">
       <PackagePath>card_add.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.072</Modified>
+      <Modified>2025-04-19T02:54:00.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-200.png">
       <PackagePath>card_add.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.072</Modified>
+      <Modified>2025-04-19T02:54:00.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_add.scale-400.png">
       <PackagePath>card_add.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.072</Modified>
+      <Modified>2025-04-19T02:54:00.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_dos.scale-100.png">
       <PackagePath>card_dos.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.079</Modified>
+      <Modified>2025-04-19T02:54:00.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_dos.scale-125.png">
       <PackagePath>card_dos.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.078</Modified>
+      <Modified>2025-04-19T02:54:00.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_dos.scale-150.png">
       <PackagePath>card_dos.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.078</Modified>
+      <Modified>2025-04-19T02:54:00.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_dos.scale-200.png">
       <PackagePath>card_dos.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.078</Modified>
+      <Modified>2025-04-19T02:54:00.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\card_dos.scale-400.png">
       <PackagePath>card_dos.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.078</Modified>
+      <Modified>2025-04-19T02:54:00.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-100.png">
       <PackagePath>carta.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.124</Modified>
+      <Modified>2025-04-19T02:54:00.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-125.png">
       <PackagePath>carta.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.124</Modified>
+      <Modified>2025-04-19T02:54:00.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-150.png">
       <PackagePath>carta.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.124</Modified>
+      <Modified>2025-04-19T02:54:00.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-200.png">
       <PackagePath>carta.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.124</Modified>
+      <Modified>2025-04-19T02:54:00.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\carta.scale-400.png">
       <PackagePath>carta.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.123</Modified>
+      <Modified>2025-04-19T02:54:00.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-100.png">
       <PackagePath>cedula.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.086</Modified>
+      <Modified>2025-04-19T02:54:00.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-125.png">
       <PackagePath>cedula.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.086</Modified>
+      <Modified>2025-04-19T02:54:00.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-150.png">
       <PackagePath>cedula.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.086</Modified>
+      <Modified>2025-04-19T02:54:00.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-200.png">
       <PackagePath>cedula.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.086</Modified>
+      <Modified>2025-04-19T02:54:00.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cedula.scale-400.png">
       <PackagePath>cedula.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.086</Modified>
+      <Modified>2025-04-19T02:54:00.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-100.png">
       <PackagePath>change.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.114</Modified>
+      <Modified>2025-04-19T02:54:00.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-125.png">
       <PackagePath>change.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.114</Modified>
+      <Modified>2025-04-19T02:54:00.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-150.png">
       <PackagePath>change.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.114</Modified>
+      <Modified>2025-04-19T02:54:00.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-200.png">
       <PackagePath>change.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.113</Modified>
+      <Modified>2025-04-19T02:54:00.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\change.scale-400.png">
       <PackagePath>change.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.113</Modified>
+      <Modified>2025-04-19T02:54:00.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-100.png">
       <PackagePath>chevron_down.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.034</Modified>
+      <Modified>2025-04-19T02:54:00.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-125.png">
       <PackagePath>chevron_down.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.034</Modified>
+      <Modified>2025-04-19T02:54:00.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-150.png">
       <PackagePath>chevron_down.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.033</Modified>
+      <Modified>2025-04-19T02:54:00.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-200.png">
       <PackagePath>chevron_down.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.033</Modified>
+      <Modified>2025-04-19T02:54:00.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_down.scale-400.png">
       <PackagePath>chevron_down.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.033</Modified>
+      <Modified>2025-04-19T02:54:00.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_left.scale-100.png">
       <PackagePath>chevron_left.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.041</Modified>
+      <Modified>2025-04-19T02:54:00.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_left.scale-125.png">
       <PackagePath>chevron_left.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.041</Modified>
+      <Modified>2025-04-19T02:54:00.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_left.scale-150.png">
       <PackagePath>chevron_left.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.040</Modified>
+      <Modified>2025-04-19T02:54:00.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_left.scale-200.png">
       <PackagePath>chevron_left.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.040</Modified>
+      <Modified>2025-04-19T02:54:00.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_left.scale-400.png">
       <PackagePath>chevron_left.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.040</Modified>
+      <Modified>2025-04-19T02:54:00.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_leftgreen.scale-100.png">
       <PackagePath>chevron_leftgreen.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.044</Modified>
+      <Modified>2025-04-19T02:54:00.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_leftgreen.scale-125.png">
       <PackagePath>chevron_leftgreen.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.044</Modified>
+      <Modified>2025-04-19T02:54:00.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_leftgreen.scale-150.png">
       <PackagePath>chevron_leftgreen.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.043</Modified>
+      <Modified>2025-04-19T02:54:00.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_leftgreen.scale-200.png">
       <PackagePath>chevron_leftgreen.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.043</Modified>
+      <Modified>2025-04-19T02:54:00.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_leftgreen.scale-400.png">
       <PackagePath>chevron_leftgreen.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.043</Modified>
+      <Modified>2025-04-19T02:54:00.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_right.scale-100.png">
       <PackagePath>chevron_right.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.050</Modified>
+      <Modified>2025-04-19T02:54:00.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_right.scale-125.png">
       <PackagePath>chevron_right.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.050</Modified>
+      <Modified>2025-04-19T02:54:00.206</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_right.scale-150.png">
       <PackagePath>chevron_right.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.050</Modified>
+      <Modified>2025-04-19T02:54:00.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_right.scale-200.png">
       <PackagePath>chevron_right.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.050</Modified>
+      <Modified>2025-04-19T02:54:00.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_right.scale-400.png">
       <PackagePath>chevron_right.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.049</Modified>
+      <Modified>2025-04-19T02:54:00.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-100.png">
       <PackagePath>chevron_up.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.039</Modified>
+      <Modified>2025-04-19T02:54:00.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-125.png">
       <PackagePath>chevron_up.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.039</Modified>
+      <Modified>2025-04-19T02:54:00.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-150.png">
       <PackagePath>chevron_up.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.039</Modified>
+      <Modified>2025-04-19T02:54:00.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-200.png">
       <PackagePath>chevron_up.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.037</Modified>
+      <Modified>2025-04-19T02:54:00.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\chevron_up.scale-400.png">
       <PackagePath>chevron_up.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.037</Modified>
+      <Modified>2025-04-19T02:54:00.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-100.png">
       <PackagePath>configuracion.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.037</Modified>
+      <Modified>2025-04-19T02:54:00.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-125.png">
       <PackagePath>configuracion.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.037</Modified>
+      <Modified>2025-04-19T02:54:00.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-150.png">
       <PackagePath>configuracion.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.037</Modified>
+      <Modified>2025-04-19T02:54:00.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-200.png">
       <PackagePath>configuracion.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.036</Modified>
+      <Modified>2025-04-19T02:54:00.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\configuracion.scale-400.png">
       <PackagePath>configuracion.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.036</Modified>
+      <Modified>2025-04-19T02:54:00.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-100.png">
       <PackagePath>correo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.036</Modified>
+      <Modified>2025-04-19T02:54:00.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-125.png">
       <PackagePath>correo.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.036</Modified>
+      <Modified>2025-04-19T02:54:00.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-150.png">
       <PackagePath>correo.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.035</Modified>
+      <Modified>2025-04-19T02:54:00.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-200.png">
       <PackagePath>correo.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.035</Modified>
+      <Modified>2025-04-19T02:54:00.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\correo.scale-400.png">
       <PackagePath>correo.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.035</Modified>
+      <Modified>2025-04-19T02:54:00.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-100.png">
       <PackagePath>documenticon.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.083</Modified>
+      <Modified>2025-04-19T02:54:00.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-125.png">
       <PackagePath>documenticon.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.083</Modified>
+      <Modified>2025-04-19T02:54:00.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-150.png">
       <PackagePath>documenticon.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.082</Modified>
+      <Modified>2025-04-19T02:54:00.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-200.png">
       <PackagePath>documenticon.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.082</Modified>
+      <Modified>2025-04-19T02:54:00.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\documenticon.scale-400.png">
       <PackagePath>documenticon.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.082</Modified>
+      <Modified>2025-04-19T02:54:00.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\document_filledgrenn.scale-100.png">
       <PackagePath>document_filledgrenn.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.092</Modified>
+      <Modified>2025-04-19T02:54:00.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\document_filledgrenn.scale-125.png">
       <PackagePath>document_filledgrenn.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.092</Modified>
+      <Modified>2025-04-19T02:54:00.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\document_filledgrenn.scale-150.png">
       <PackagePath>document_filledgrenn.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.092</Modified>
+      <Modified>2025-04-19T02:54:00.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\document_filledgrenn.scale-200.png">
       <PackagePath>document_filledgrenn.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.092</Modified>
+      <Modified>2025-04-19T02:54:00.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\document_filledgrenn.scale-400.png">
       <PackagePath>document_filledgrenn.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.092</Modified>
+      <Modified>2025-04-19T02:54:00.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-100.png">
       <PackagePath>email.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.091</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-125.png">
       <PackagePath>email.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.091</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-150.png">
       <PackagePath>email.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.091</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-200.png">
       <PackagePath>email.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.091</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\email.scale-400.png">
       <PackagePath>email.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.090</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\enviarcomentario.scale-100.png">
+      <PackagePath>enviarcomentario.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.240</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\enviarcomentario.scale-125.png">
+      <PackagePath>enviarcomentario.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.239</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\enviarcomentario.scale-150.png">
+      <PackagePath>enviarcomentario.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.239</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\enviarcomentario.scale-200.png">
+      <PackagePath>enviarcomentario.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.239</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\enviarcomentario.scale-400.png">
+      <PackagePath>enviarcomentario.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-100.png">
       <PackagePath>exitundraw.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.101</Modified>
+      <Modified>2025-04-19T02:54:00.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-125.png">
       <PackagePath>exitundraw.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.100</Modified>
+      <Modified>2025-04-19T02:54:00.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-150.png">
       <PackagePath>exitundraw.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.100</Modified>
+      <Modified>2025-04-19T02:54:00.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-200.png">
       <PackagePath>exitundraw.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.100</Modified>
+      <Modified>2025-04-19T02:54:00.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\exitundraw.scale-400.png">
       <PackagePath>exitundraw.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.099</Modified>
+      <Modified>2025-04-19T02:54:00.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\femenina.scale-100.png">
       <PackagePath>femenina.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-100.png">
       <PackagePath>flecha.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.220</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-125.png">
       <PackagePath>flecha.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-150.png">
       <PackagePath>flecha.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-200.png">
       <PackagePath>flecha.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha.scale-400.png">
       <PackagePath>flecha.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.118</Modified>
+      <Modified>2025-04-19T02:54:00.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-100.png">
       <PackagePath>flecha2.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.085</Modified>
+      <Modified>2025-04-19T02:54:00.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-125.png">
       <PackagePath>flecha2.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.085</Modified>
+      <Modified>2025-04-19T02:54:00.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-150.png">
       <PackagePath>flecha2.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.085</Modified>
+      <Modified>2025-04-19T02:54:00.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-200.png">
       <PackagePath>flecha2.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.085</Modified>
+      <Modified>2025-04-19T02:54:00.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flecha2.scale-400.png">
       <PackagePath>flecha2.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.084</Modified>
+      <Modified>2025-04-19T02:54:00.284</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaabajo.scale-100.png">
+      <PackagePath>flechaabajo.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaabajo.scale-125.png">
+      <PackagePath>flechaabajo.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaabajo.scale-150.png">
+      <PackagePath>flechaabajo.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaabajo.scale-200.png">
+      <PackagePath>flechaabajo.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.276</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaabajo.scale-400.png">
+      <PackagePath>flechaabajo.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.274</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaarriba.scale-100.png">
+      <PackagePath>flechaarriba.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.293</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaarriba.scale-125.png">
+      <PackagePath>flechaarriba.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.293</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaarriba.scale-150.png">
+      <PackagePath>flechaarriba.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaarriba.scale-200.png">
+      <PackagePath>flechaarriba.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.292</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechaarriba.scale-400.png">
+      <PackagePath>flechaarriba.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-100.png">
       <PackagePath>flechroja.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.123</Modified>
+      <Modified>2025-04-19T02:54:00.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-125.png">
       <PackagePath>flechroja.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.123</Modified>
+      <Modified>2025-04-19T02:54:00.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-150.png">
       <PackagePath>flechroja.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.123</Modified>
+      <Modified>2025-04-19T02:54:00.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-200.png">
       <PackagePath>flechroja.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.122</Modified>
+      <Modified>2025-04-19T02:54:00.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\flechroja.scale-400.png">
       <PackagePath>flechroja.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.122</Modified>
+      <Modified>2025-04-19T02:54:00.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\fondo2.scale-100.png">
       <PackagePath>fondo2.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.055</Modified>
+      <Modified>2025-04-19T02:54:00.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historial.scale-100.png">
       <PackagePath>historial.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.055</Modified>
+      <Modified>2025-04-19T02:54:00.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historialatras.scale-100.png">
       <PackagePath>historialatras.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.055</Modified>
+      <Modified>2025-04-19T02:54:00.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historywhite.scale-100.png">
       <PackagePath>historywhite.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.055</Modified>
+      <Modified>2025-04-19T02:54:00.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historywhite.scale-125.png">
       <PackagePath>historywhite.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.054</Modified>
+      <Modified>2025-04-19T02:54:00.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historywhite.scale-150.png">
       <PackagePath>historywhite.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.054</Modified>
+      <Modified>2025-04-19T02:54:00.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historywhite.scale-200.png">
       <PackagePath>historywhite.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.054</Modified>
+      <Modified>2025-04-19T02:54:00.212</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\historywhite.scale-400.png">
       <PackagePath>historywhite.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.054</Modified>
+      <Modified>2025-04-19T02:54:00.212</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homebar.scale-100.png">
       <PackagePath>homebar.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.077</Modified>
+      <Modified>2025-04-19T02:54:00.212</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homebar.scale-125.png">
       <PackagePath>homebar.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.077</Modified>
+      <Modified>2025-04-19T02:54:00.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homebar.scale-150.png">
       <PackagePath>homebar.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.077</Modified>
+      <Modified>2025-04-19T02:54:00.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homebar.scale-200.png">
       <PackagePath>homebar.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.077</Modified>
+      <Modified>2025-04-19T02:54:00.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homebar.scale-400.png">
       <PackagePath>homebar.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.076</Modified>
+      <Modified>2025-04-19T02:54:00.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homeeee.scale-100.png">
       <PackagePath>homeeee.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.113</Modified>
+      <Modified>2025-04-19T02:54:00.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homeeee.scale-125.png">
       <PackagePath>homeeee.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.113</Modified>
+      <Modified>2025-04-19T02:54:00.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homeeee.scale-150.png">
       <PackagePath>homeeee.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.112</Modified>
+      <Modified>2025-04-19T02:54:00.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homeeee.scale-200.png">
       <PackagePath>homeeee.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.112</Modified>
+      <Modified>2025-04-19T02:54:00.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\homeeee.scale-400.png">
       <PackagePath>homeeee.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.112</Modified>
+      <Modified>2025-04-19T02:54:00.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\iconhistory.scale-100.png">
       <PackagePath>iconhistory.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.076</Modified>
+      <Modified>2025-04-19T02:54:00.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-100.png">
       <PackagePath>identification.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.076</Modified>
+      <Modified>2025-04-19T02:54:00.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-125.png">
       <PackagePath>identification.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.076</Modified>
+      <Modified>2025-04-19T02:54:00.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-150.png">
       <PackagePath>identification.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.076</Modified>
+      <Modified>2025-04-19T02:54:00.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-200.png">
       <PackagePath>identification.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.075</Modified>
+      <Modified>2025-04-19T02:54:00.271</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\identification.scale-400.png">
       <PackagePath>identification.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.075</Modified>
+      <Modified>2025-04-19T02:54:00.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\imagencard.scale-100.gif">
       <PackagePath>imagencard.scale-100.gif</PackagePath>
-      <Modified>2025-04-16T16:02:35.075</Modified>
+      <Modified>2025-04-19T02:54:00.192</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\imagenuno.scale-100.jpg">
       <PackagePath>imagenuno.scale-100.jpg</PackagePath>
-      <Modified>2025-04-16T16:02:35.108</Modified>
+      <Modified>2025-04-19T02:54:00.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-100.png">
+      <PackagePath>info.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-125.png">
+      <PackagePath>info.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-150.png">
+      <PackagePath>info.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-200.png">
+      <PackagePath>info.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\info.scale-400.png">
+      <PackagePath>info.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\interrogacion.scale-100.png">
+      <PackagePath>interrogacion.scale-100.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\interrogacion.scale-125.png">
+      <PackagePath>interrogacion.scale-125.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\interrogacion.scale-150.png">
+      <PackagePath>interrogacion.scale-150.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\interrogacion.scale-200.png">
+      <PackagePath>interrogacion.scale-200.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\interrogacion.scale-400.png">
+      <PackagePath>interrogacion.scale-400.png</PackagePath>
+      <Modified>2025-04-19T02:54:00.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-100.png">
       <PackagePath>lapiz.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.108</Modified>
+      <Modified>2025-04-19T02:54:00.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-125.png">
       <PackagePath>lapiz.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.107</Modified>
+      <Modified>2025-04-19T02:54:00.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-150.png">
       <PackagePath>lapiz.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.107</Modified>
+      <Modified>2025-04-19T02:54:00.196</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-200.png">
       <PackagePath>lapiz.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.107</Modified>
+      <Modified>2025-04-19T02:54:00.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lapiz.scale-400.png">
       <PackagePath>lapiz.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.107</Modified>
+      <Modified>2025-04-19T02:54:00.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-100.png">
       <PackagePath>location.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.096</Modified>
+      <Modified>2025-04-19T02:54:00.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-125.png">
       <PackagePath>location.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.096</Modified>
+      <Modified>2025-04-19T02:54:00.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-150.png">
       <PackagePath>location.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.096</Modified>
+      <Modified>2025-04-19T02:54:00.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-200.png">
       <PackagePath>location.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.096</Modified>
+      <Modified>2025-04-19T02:54:00.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\location.scale-400.png">
       <PackagePath>location.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.096</Modified>
+      <Modified>2025-04-19T02:54:00.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.ico">
       <PackagePath>logo.ico</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoamet.scale-100.png">
       <PackagePath>logoamet.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.049</Modified>
+      <Modified>2025-04-19T02:54:00.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLargeTile.scale-100.png">
       <PackagePath>logoLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.059</Modified>
+      <Modified>2025-04-19T02:54:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLargeTile.scale-125.png">
       <PackagePath>logoLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.058</Modified>
+      <Modified>2025-04-19T02:54:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLargeTile.scale-150.png">
       <PackagePath>logoLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.058</Modified>
+      <Modified>2025-04-19T02:54:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLargeTile.scale-200.png">
       <PackagePath>logoLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.058</Modified>
+      <Modified>2025-04-19T02:54:00.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLargeTile.scale-400.png">
       <PackagePath>logoLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.058</Modified>
+      <Modified>2025-04-19T02:54:00.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>logoLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>logoLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>logoLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>logoLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>logoLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-unplated_targetsize-16.png">
       <PackagePath>logoLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.066</Modified>
+      <Modified>2025-04-19T02:54:00.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-unplated_targetsize-24.png">
       <PackagePath>logoLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.066</Modified>
+      <Modified>2025-04-19T02:54:00.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-unplated_targetsize-256.png">
       <PackagePath>logoLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.066</Modified>
+      <Modified>2025-04-19T02:54:00.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-unplated_targetsize-32.png">
       <PackagePath>logoLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.066</Modified>
+      <Modified>2025-04-19T02:54:00.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.altform-unplated_targetsize-48.png">
       <PackagePath>logoLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.066</Modified>
+      <Modified>2025-04-19T02:54:00.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.scale-100.png">
       <PackagePath>logoLogo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.scale-125.png">
       <PackagePath>logoLogo.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.scale-150.png">
       <PackagePath>logoLogo.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.scale-200.png">
       <PackagePath>logoLogo.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.068</Modified>
+      <Modified>2025-04-19T02:54:00.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.scale-400.png">
       <PackagePath>logoLogo.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.068</Modified>
+      <Modified>2025-04-19T02:54:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.targetsize-16.png">
       <PackagePath>logoLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.068</Modified>
+      <Modified>2025-04-19T02:54:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.targetsize-24.png">
       <PackagePath>logoLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.068</Modified>
+      <Modified>2025-04-19T02:54:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.targetsize-256.png">
       <PackagePath>logoLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.067</Modified>
+      <Modified>2025-04-19T02:54:00.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.targetsize-32.png">
       <PackagePath>logoLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.067</Modified>
+      <Modified>2025-04-19T02:54:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoLogo.targetsize-48.png">
       <PackagePath>logoLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.067</Modified>
+      <Modified>2025-04-19T02:54:00.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoMediumTile.scale-100.png">
       <PackagePath>logoMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.062</Modified>
+      <Modified>2025-04-19T02:54:00.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoMediumTile.scale-125.png">
       <PackagePath>logoMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.060</Modified>
+      <Modified>2025-04-19T02:54:00.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoMediumTile.scale-150.png">
       <PackagePath>logoMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.060</Modified>
+      <Modified>2025-04-19T02:54:00.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoMediumTile.scale-200.png">
       <PackagePath>logoMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.060</Modified>
+      <Modified>2025-04-19T02:54:00.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoMediumTile.scale-400.png">
       <PackagePath>logoMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.060</Modified>
+      <Modified>2025-04-19T02:54:00.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoSmallTile.scale-100.png">
       <PackagePath>logoSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.063</Modified>
+      <Modified>2025-04-19T02:54:00.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoSmallTile.scale-125.png">
       <PackagePath>logoSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.062</Modified>
+      <Modified>2025-04-19T02:54:00.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoSmallTile.scale-150.png">
       <PackagePath>logoSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.062</Modified>
+      <Modified>2025-04-19T02:54:00.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoSmallTile.scale-200.png">
       <PackagePath>logoSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.062</Modified>
+      <Modified>2025-04-19T02:54:00.251</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoSmallTile.scale-400.png">
       <PackagePath>logoSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.062</Modified>
+      <Modified>2025-04-19T02:54:00.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoStoreLogo.scale-100.png">
       <PackagePath>logoStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.065</Modified>
+      <Modified>2025-04-19T02:54:00.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoStoreLogo.scale-125.png">
       <PackagePath>logoStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.063</Modified>
+      <Modified>2025-04-19T02:54:00.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoStoreLogo.scale-150.png">
       <PackagePath>logoStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.063</Modified>
+      <Modified>2025-04-19T02:54:00.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoStoreLogo.scale-200.png">
       <PackagePath>logoStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.063</Modified>
+      <Modified>2025-04-19T02:54:00.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoStoreLogo.scale-400.png">
       <PackagePath>logoStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.063</Modified>
+      <Modified>2025-04-19T02:54:00.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-100.png">
       <PackagePath>logoWideTile.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.060</Modified>
+      <Modified>2025-04-19T02:54:00.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-125.png">
       <PackagePath>logoWideTile.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.059</Modified>
+      <Modified>2025-04-19T02:54:00.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-150.png">
       <PackagePath>logoWideTile.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.059</Modified>
+      <Modified>2025-04-19T02:54:00.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-200.png">
       <PackagePath>logoWideTile.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.059</Modified>
+      <Modified>2025-04-19T02:54:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logoWideTile.scale-400.png">
       <PackagePath>logoWideTile.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.059</Modified>
+      <Modified>2025-04-19T02:54:00.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-100.png">
       <PackagePath>lugartrabajo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.049</Modified>
+      <Modified>2025-04-19T02:54:00.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-125.png">
       <PackagePath>lugartrabajo.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.049</Modified>
+      <Modified>2025-04-19T02:54:00.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-150.png">
       <PackagePath>lugartrabajo.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.048</Modified>
+      <Modified>2025-04-19T02:54:00.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-200.png">
       <PackagePath>lugartrabajo.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.048</Modified>
+      <Modified>2025-04-19T02:54:00.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\lugartrabajo.scale-400.png">
       <PackagePath>lugartrabajo.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.048</Modified>
+      <Modified>2025-04-19T02:54:00.229</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-100.png">
       <PackagePath>mastercard.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.048</Modified>
+      <Modified>2025-04-19T02:54:00.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-125.png">
       <PackagePath>mastercard.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.047</Modified>
+      <Modified>2025-04-19T02:54:00.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-150.png">
       <PackagePath>mastercard.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.047</Modified>
+      <Modified>2025-04-19T02:54:00.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-200.png">
       <PackagePath>mastercard.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.047</Modified>
+      <Modified>2025-04-19T02:54:00.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mastercard.scale-400.png">
       <PackagePath>mastercard.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.047</Modified>
+      <Modified>2025-04-19T02:54:00.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\moneysendgreen.scale-100.png">
       <PackagePath>moneysendgreen.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.071</Modified>
+      <Modified>2025-04-19T02:54:00.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\moneysendgreen.scale-125.png">
       <PackagePath>moneysendgreen.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.071</Modified>
+      <Modified>2025-04-19T02:54:00.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\moneysendgreen.scale-150.png">
       <PackagePath>moneysendgreen.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.071</Modified>
+      <Modified>2025-04-19T02:54:00.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\moneysendgreen.scale-200.png">
       <PackagePath>moneysendgreen.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.071</Modified>
+      <Modified>2025-04-19T02:54:00.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\moneysendgreen.scale-400.png">
       <PackagePath>moneysendgreen.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_send.scale-100.png">
       <PackagePath>money_send.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.033</Modified>
+      <Modified>2025-04-19T02:54:00.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_send.scale-125.png">
       <PackagePath>money_send.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.032</Modified>
+      <Modified>2025-04-19T02:54:00.281</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_send.scale-150.png">
       <PackagePath>money_send.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.032</Modified>
+      <Modified>2025-04-19T02:54:00.280</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_send.scale-200.png">
       <PackagePath>money_send.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.032</Modified>
+      <Modified>2025-04-19T02:54:00.280</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_send.scale-400.png">
       <PackagePath>money_send.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.031</Modified>
+      <Modified>2025-04-19T02:54:00.280</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_sendwhite.scale-100.png">
       <PackagePath>money_sendwhite.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.043</Modified>
+      <Modified>2025-04-19T02:54:00.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_sendwhite.scale-125.png">
       <PackagePath>money_sendwhite.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.043</Modified>
+      <Modified>2025-04-19T02:54:00.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_sendwhite.scale-150.png">
       <PackagePath>money_sendwhite.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.042</Modified>
+      <Modified>2025-04-19T02:54:00.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_sendwhite.scale-200.png">
       <PackagePath>money_sendwhite.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.042</Modified>
+      <Modified>2025-04-19T02:54:00.242</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\money_sendwhite.scale-400.png">
       <PackagePath>money_sendwhite.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.042</Modified>
+      <Modified>2025-04-19T02:54:00.241</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-100.png">
       <PackagePath>notificationss.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.099</Modified>
+      <Modified>2025-04-19T02:54:00.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-125.png">
       <PackagePath>notificationss.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.099</Modified>
+      <Modified>2025-04-19T02:54:00.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-150.png">
       <PackagePath>notificationss.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.099</Modified>
+      <Modified>2025-04-19T02:54:00.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-200.png">
       <PackagePath>notificationss.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.098</Modified>
+      <Modified>2025-04-19T02:54:00.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\notificationss.scale-400.png">
       <PackagePath>notificationss.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.098</Modified>
+      <Modified>2025-04-19T02:54:00.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-100.png">
       <PackagePath>nuevacontrasena.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.082</Modified>
+      <Modified>2025-04-19T02:54:00.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-125.png">
       <PackagePath>nuevacontrasena.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.081</Modified>
+      <Modified>2025-04-19T02:54:00.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-150.png">
       <PackagePath>nuevacontrasena.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.081</Modified>
+      <Modified>2025-04-19T02:54:00.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-200.png">
       <PackagePath>nuevacontrasena.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.081</Modified>
+      <Modified>2025-04-19T02:54:00.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\nuevacontrasena.scale-400.png">
       <PackagePath>nuevacontrasena.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.081</Modified>
+      <Modified>2025-04-19T02:54:00.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\passwordcandado.scale-100.png">
       <PackagePath>passwordcandado.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.090</Modified>
+      <Modified>2025-04-19T02:54:00.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\passwordmaui.scale-100.png">
       <PackagePath>passwordmaui.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.041</Modified>
+      <Modified>2025-04-19T02:54:00.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-100.png">
       <PackagePath>pen.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.090</Modified>
+      <Modified>2025-04-19T02:54:00.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-125.png">
       <PackagePath>pen.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.089</Modified>
+      <Modified>2025-04-19T02:54:00.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-150.png">
       <PackagePath>pen.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.089</Modified>
+      <Modified>2025-04-19T02:54:00.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-200.png">
       <PackagePath>pen.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.089</Modified>
+      <Modified>2025-04-19T02:54:00.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\pen.scale-400.png">
       <PackagePath>pen.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.089</Modified>
+      <Modified>2025-04-19T02:54:00.189</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\perfil.scale-100.jpg">
       <PackagePath>perfil.scale-100.jpg</PackagePath>
-      <Modified>2025-04-16T16:02:35.122</Modified>
+      <Modified>2025-04-19T02:54:00.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-100.png">
       <PackagePath>phone.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.093</Modified>
+      <Modified>2025-04-19T02:54:00.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-125.png">
       <PackagePath>phone.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.093</Modified>
+      <Modified>2025-04-19T02:54:00.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-150.png">
       <PackagePath>phone.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.093</Modified>
+      <Modified>2025-04-19T02:54:00.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-200.png">
       <PackagePath>phone.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.093</Modified>
+      <Modified>2025-04-19T02:54:00.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\phone.scale-400.png">
       <PackagePath>phone.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.093</Modified>
+      <Modified>2025-04-19T02:54:00.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-100.png">
       <PackagePath>placa.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.122</Modified>
+      <Modified>2025-04-19T02:54:00.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-125.png">
       <PackagePath>placa.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.121</Modified>
+      <Modified>2025-04-19T02:54:00.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-150.png">
       <PackagePath>placa.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.121</Modified>
+      <Modified>2025-04-19T02:54:00.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-200.png">
       <PackagePath>placa.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.121</Modified>
+      <Modified>2025-04-19T02:54:00.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\placa.scale-400.png">
       <PackagePath>placa.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.121</Modified>
+      <Modified>2025-04-19T02:54:00.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-100.png">
       <PackagePath>profile.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.081</Modified>
+      <Modified>2025-04-19T02:54:00.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-125.png">
       <PackagePath>profile.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.079</Modified>
+      <Modified>2025-04-19T02:54:00.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-150.png">
       <PackagePath>profile.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.079</Modified>
+      <Modified>2025-04-19T02:54:00.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-200.png">
       <PackagePath>profile.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.079</Modified>
+      <Modified>2025-04-19T02:54:00.274</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\profile.scale-400.png">
       <PackagePath>profile.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.079</Modified>
+      <Modified>2025-04-19T02:54:00.273</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-100.png">
       <PackagePath>salirapp.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.054</Modified>
+      <Modified>2025-04-19T02:54:00.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-125.png">
       <PackagePath>salirapp.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.053</Modified>
+      <Modified>2025-04-19T02:54:00.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-150.png">
       <PackagePath>salirapp.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.053</Modified>
+      <Modified>2025-04-19T02:54:00.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-200.png">
       <PackagePath>salirapp.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.053</Modified>
+      <Modified>2025-04-19T02:54:00.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirapp.scale-400.png">
       <PackagePath>salirapp.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.053</Modified>
+      <Modified>2025-04-19T02:54:00.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-100.png">
       <PackagePath>salirrrr.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.053</Modified>
+      <Modified>2025-04-19T02:54:00.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-125.png">
       <PackagePath>salirrrr.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.051</Modified>
+      <Modified>2025-04-19T02:54:00.217</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-150.png">
       <PackagePath>salirrrr.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.051</Modified>
+      <Modified>2025-04-19T02:54:00.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-200.png">
       <PackagePath>salirrrr.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.051</Modified>
+      <Modified>2025-04-19T02:54:00.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\salirrrr.scale-400.png">
       <PackagePath>salirrrr.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.051</Modified>
+      <Modified>2025-04-19T02:54:00.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-100.png">
       <PackagePath>scan.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.117</Modified>
+      <Modified>2025-04-19T02:54:00.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-125.png">
       <PackagePath>scan.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.117</Modified>
+      <Modified>2025-04-19T02:54:00.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-150.png">
       <PackagePath>scan.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.117</Modified>
+      <Modified>2025-04-19T02:54:00.284</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-200.png">
       <PackagePath>scan.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.117</Modified>
+      <Modified>2025-04-19T02:54:00.283</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan.scale-400.png">
       <PackagePath>scan.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.117</Modified>
+      <Modified>2025-04-19T02:54:00.283</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scandos.scale-100.png">
       <PackagePath>scandos.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.116</Modified>
+      <Modified>2025-04-19T02:54:00.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scandos.scale-125.png">
       <PackagePath>scandos.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.116</Modified>
+      <Modified>2025-04-19T02:54:00.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scandos.scale-150.png">
       <PackagePath>scandos.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.116</Modified>
+      <Modified>2025-04-19T02:54:00.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scandos.scale-200.png">
       <PackagePath>scandos.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.116</Modified>
+      <Modified>2025-04-19T02:54:00.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scandos.scale-400.png">
       <PackagePath>scandos.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.116</Modified>
+      <Modified>2025-04-19T02:54:00.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansolo.scale-100.png">
       <PackagePath>scansolo.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.112</Modified>
+      <Modified>2025-04-19T02:54:00.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansolo.scale-125.png">
       <PackagePath>scansolo.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.112</Modified>
+      <Modified>2025-04-19T02:54:00.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansolo.scale-150.png">
       <PackagePath>scansolo.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansolo.scale-200.png">
       <PackagePath>scansolo.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansolo.scale-400.png">
       <PackagePath>scansolo.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansoloafuera.scale-100.png">
       <PackagePath>scansoloafuera.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.075</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansoloafuera.scale-125.png">
       <PackagePath>scansoloafuera.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.073</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansoloafuera.scale-150.png">
       <PackagePath>scansoloafuera.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.073</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansoloafuera.scale-200.png">
       <PackagePath>scansoloafuera.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.073</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scansoloafuera.scale-400.png">
       <PackagePath>scansoloafuera.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.073</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-100.png">
       <PackagePath>scan_line.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-125.png">
       <PackagePath>scan_line.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.268</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-150.png">
       <PackagePath>scan_line.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.111</Modified>
+      <Modified>2025-04-19T02:54:00.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-200.png">
       <PackagePath>scan_line.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.109</Modified>
+      <Modified>2025-04-19T02:54:00.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scan_line.scale-400.png">
       <PackagePath>scan_line.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.109</Modified>
+      <Modified>2025-04-19T02:54:00.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-100.png">
       <PackagePath>search.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.094</Modified>
+      <Modified>2025-04-19T02:54:00.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-125.png">
       <PackagePath>search.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.094</Modified>
+      <Modified>2025-04-19T02:54:00.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-150.png">
       <PackagePath>search.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.094</Modified>
+      <Modified>2025-04-19T02:54:00.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-200.png">
       <PackagePath>search.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.094</Modified>
+      <Modified>2025-04-19T02:54:00.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-400.png">
       <PackagePath>search.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.094</Modified>
+      <Modified>2025-04-19T02:54:00.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-100.png">
       <PackagePath>searchbar.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.106</Modified>
+      <Modified>2025-04-19T02:54:00.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-125.png">
       <PackagePath>searchbar.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.106</Modified>
+      <Modified>2025-04-19T02:54:00.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-150.png">
       <PackagePath>searchbar.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.106</Modified>
+      <Modified>2025-04-19T02:54:00.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-200.png">
       <PackagePath>searchbar.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.106</Modified>
+      <Modified>2025-04-19T02:54:00.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\searchbar.scale-400.png">
       <PackagePath>searchbar.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.106</Modified>
+      <Modified>2025-04-19T02:54:00.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-100.png">
       <PackagePath>sendmensaje.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.104</Modified>
+      <Modified>2025-04-19T02:54:00.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-125.png">
       <PackagePath>sendmensaje.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.104</Modified>
+      <Modified>2025-04-19T02:54:00.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-150.png">
       <PackagePath>sendmensaje.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.104</Modified>
+      <Modified>2025-04-19T02:54:00.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-200.png">
       <PackagePath>sendmensaje.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.104</Modified>
+      <Modified>2025-04-19T02:54:00.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sendmensaje.scale-400.png">
       <PackagePath>sendmensaje.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.104</Modified>
+      <Modified>2025-04-19T02:54:00.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-100.png">
       <PackagePath>setting.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.103</Modified>
+      <Modified>2025-04-19T02:54:00.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-125.png">
       <PackagePath>setting.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.103</Modified>
+      <Modified>2025-04-19T02:54:00.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-150.png">
       <PackagePath>setting.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.103</Modified>
+      <Modified>2025-04-19T02:54:00.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-200.png">
       <PackagePath>setting.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.103</Modified>
+      <Modified>2025-04-19T02:54:00.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\setting.scale-400.png">
       <PackagePath>setting.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.102</Modified>
+      <Modified>2025-04-19T02:54:00.224</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-100.png">
       <PackagePath>telefono.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.089</Modified>
+      <Modified>2025-04-19T02:54:00.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-125.png">
       <PackagePath>telefono.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.087</Modified>
+      <Modified>2025-04-19T02:54:00.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-150.png">
       <PackagePath>telefono.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.087</Modified>
+      <Modified>2025-04-19T02:54:00.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-200.png">
       <PackagePath>telefono.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.087</Modified>
+      <Modified>2025-04-19T02:54:00.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\telefono.scale-400.png">
       <PackagePath>telefono.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.087</Modified>
+      <Modified>2025-04-19T02:54:00.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undrawaccess.scale-100.png">
       <PackagePath>undrawaccess.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.047</Modified>
+      <Modified>2025-04-19T02:54:00.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undrawforgott.scale-100.png">
       <PackagePath>undrawforgott.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.045</Modified>
+      <Modified>2025-04-19T02:54:00.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undraw_login.scale-100.png">
       <PackagePath>undraw_login.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.045</Modified>
+      <Modified>2025-04-19T02:54:00.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undraw_login.scale-125.png">
       <PackagePath>undraw_login.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.045</Modified>
+      <Modified>2025-04-19T02:54:00.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undraw_login.scale-150.png">
       <PackagePath>undraw_login.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.045</Modified>
+      <Modified>2025-04-19T02:54:00.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undraw_login.scale-200.png">
       <PackagePath>undraw_login.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.045</Modified>
+      <Modified>2025-04-19T02:54:00.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\undraw_login.scale-400.png">
       <PackagePath>undraw_login.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.044</Modified>
+      <Modified>2025-04-19T02:54:00.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png">
       <PackagePath>user.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.098</Modified>
+      <Modified>2025-04-19T02:54:00.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\userbarr.scale-100.png">
       <PackagePath>userbarr.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.031</Modified>
+      <Modified>2025-04-19T02:54:00.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\userbarr.scale-125.png">
       <PackagePath>userbarr.scale-125.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.031</Modified>
+      <Modified>2025-04-19T02:54:00.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\userbarr.scale-150.png">
       <PackagePath>userbarr.scale-150.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.030</Modified>
+      <Modified>2025-04-19T02:54:00.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\userbarr.scale-200.png">
       <PackagePath>userbarr.scale-200.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.030</Modified>
+      <Modified>2025-04-19T02:54:00.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\userbarr.scale-400.png">
       <PackagePath>userbarr.scale-400.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.029</Modified>
+      <Modified>2025-04-19T02:54:00.277</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usermaui.scale-100.png">
       <PackagePath>usermaui.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.051</Modified>
+      <Modified>2025-04-19T02:54:00.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\usuario.scale-100.png">
       <PackagePath>usuario.scale-100.png</PackagePath>
-      <Modified>2025-04-16T16:02:35.042</Modified>
+      <Modified>2025-04-19T02:54:00.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vistodos.scale-100.jpg">
       <PackagePath>vistodos.scale-100.jpg</PackagePath>
-      <Modified>2025-04-16T16:02:35.069</Modified>
+      <Modified>2025-04-19T02:54:00.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\Desktop\Web\DigesettAPP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DigesettAPP.deps.json">
       <PackagePath>DigesettAPP.deps.json</PackagePath>
-      <Modified>2025-04-16T19:37:59.666</Modified>
+      <Modified>2025-04-19T04:12:31.637</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.54\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -1666,6 +1790,34 @@
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2023-03-08T07:09:54.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.licensing\29.1.38\lib\net8.0\Syncfusion.Licensing.dll">
+      <PackagePath>Syncfusion.Licensing.dll</PackagePath>
+      <Modified>2025-04-14T10:02:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.core\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.Core.dll">
+      <PackagePath>Syncfusion.Maui.Core.dll</PackagePath>
+      <Modified>2025-04-14T08:08:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.datasource\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.DataSource.dll">
+      <PackagePath>Syncfusion.Maui.DataSource.dll</PackagePath>
+      <Modified>2025-04-14T08:23:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.expander\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.Expander.dll">
+      <PackagePath>Syncfusion.Maui.Expander.dll</PackagePath>
+      <Modified>2025-04-14T08:57:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.gridcommon\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.GridCommon.dll">
+      <PackagePath>Syncfusion.Maui.GridCommon.dll</PackagePath>
+      <Modified>2025-04-14T08:25:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.inputs\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.Inputs.dll">
+      <PackagePath>Syncfusion.Maui.Inputs.dll</PackagePath>
+      <Modified>2025-04-14T08:41:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.listview\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.ListView.dll">
+      <PackagePath>Syncfusion.Maui.ListView.dll</PackagePath>
+      <Modified>2025-04-14T08:28:08.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\system.diagnostics.diagnosticsource\9.0.2\lib\net8.0\System.Diagnostics.DiagnosticSource.dll">
       <PackagePath>System.Diagnostics.DiagnosticSource.dll</PackagePath>
       <Modified>2025-01-16T19:04:06.000</Modified>
@@ -1814,6 +1966,10 @@
       <PackagePath>zh-Hant\Microsoft.Maui.Controls.resources.dll</PackagePath>
       <Modified>2024-10-29T22:31:24.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.inputs\29.1.38\lib\net8.0-windows10.0.19041.0\en-US\Syncfusion.Maui.Inputs.resources.dll">
+      <PackagePath>en-US\Syncfusion.Maui.Inputs.resources.dll</PackagePath>
+      <Modified>2025-04-14T08:41:34.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\microsoft.graphics.win2d\1.2.0\runtimes\win-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2024-03-11T15:36:40.000</Modified>
@@ -1833,6 +1989,10 @@
     <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\microsoft.maui.core\8.0.83\lib\net8.0-windows10.0.19041\Microsoft.Maui.pri">
       <PackagePath>Microsoft.Maui.pri</PackagePath>
       <Modified>2024-10-29T21:54:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Junior Colon\.nuget\packages\syncfusion.maui.core\29.1.38\lib\net8.0-windows10.0.19041.0\Syncfusion.Maui.Core.pri">
+      <PackagePath>Syncfusion.Maui.Core.pri</PackagePath>
+      <Modified>2025-04-14T08:08:32.000</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

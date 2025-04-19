@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:local="clr-namespace:DigesettAPP.ViewModel"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.ViewCiudadano.HistorialMultasPagadasCiudadano"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2021/maui/toolkit"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             Title="">
+
+
+
+    <ContentPage.BindingContext>
+        <local:HistorialMultasPagasViewModel />
+    </ContentPage.BindingContext>
+
+
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowDefinitions="Auto,*,Auto" Margin="0,0,0,0">
+        <Label Text="Historial Multas Pagadas"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               Margin="0,50,0,10"> </Label>
+        <!-- Cargando Overlay -->
+        <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <Image Source="loadinglogo.png" WidthRequest="80" HeightRequest="80"/>
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#009C40" />
+            </StackLayout>
+        </Grid>
+
+        <!-- ScrollView que contiene el CollectionView -->
+        <ScrollView Grid.Row="1" Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+            <CollectionView x:Name="TicketsCollectionView"
+                 ItemsSource="{Binding Tickets}"
+                 SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeShape="RoundRectangle 15,15,15,15"
+                     Margin="8,0,8,8"
+                     Stroke="Black"
+                     StrokeThickness="1"
+                     HorizontalOptions="FillAndExpand">
+
+                            <syncfusion:SfExpander AnimationDuration="200" IsExpanded="{Binding IsExpanded}">
+                                <syncfusion:SfExpander.Header>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="73"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Ícono de alerta -->
+                                        <Image Grid.Row="0" Grid.Column="0" VerticalOptions="Center"
+                                    Source="alert_circle" WidthRequest="20" HeightRequest="20" Margin="14,2,2,2" />
+
+                                        <!-- Texto 'Nueva multa en lista' -->
+                                        <!-- Texto 'Multa #ID' dinámico -->
+                                        <Label CharacterSpacing="0.35" FontFamily="SfProTextRegular"
+       Text="{Binding TicketId, StringFormat='Multa #{0}'}"
+       Margin="15,0,0,0"
+       TextColor="Black" FontSize="13"
+       Grid.Column="1" VerticalOptions="CenterAndExpand"
+       FontAttributes="Bold"/>
+
+
+                                        <!-- Fecha del ticket -->
+                                        <Label x:Name="ffechaLabel" Text="{Binding FormattedTicketDate}" Grid.Row="0" Grid.Column="2" FontSize="13"  
+                                    FontFamily="SfProTextRegular" TextColor="#009C40" 
+                                    Margin="20,0,5,0" VerticalOptions="CenterAndExpand"/>
+                                    </Grid>
+                                </syncfusion:SfExpander.Header>
+
+                                <syncfusion:SfExpander.Content>
+                                    <StackLayout Padding="20,10" Spacing="8">
+
+                                        <!-- Zona / Lugar del Incidente -->
+                                        <Label FontSize="12" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Zona / Lugar del Incidente: " FontAttributes="Bold" />
+                                                    <Span Text="{Binding LocationInfo}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <!-- Artículo Infringido -->
+                                        <Label FontSize="12" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Artículo Infringido: " FontAttributes="Bold" />
+                                                    <Span Text="{Binding ArticleFull}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <!-- Vehículo -->
+                                        <Label FontSize="12" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Vehículo: " FontAttributes="Bold" />
+                                                    <Span Text="{Binding VehicleInfo}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <!-- Agente -->
+                                        <Label FontSize="12" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Agente: " FontAttributes="Bold" />
+                                                    <Span Text="{Binding AgentInfo}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+
+
+
+                                        
+                               
+
+
+                                        <!-- 🔽 Información de Pago (con Frame) -->
+                                        <Frame BackgroundColor="#E8F5E9"
+                                           CornerRadius="8"
+                                           Padding="10"
+                                           BorderColor="#CCCCCC"
+                                           HasShadow="True"
+                                               WidthRequest="350">
+
+                                            <StackLayout Spacing="4">
+
+                                                <Label FontSize="12" TextColor="Black">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Número del Pago #: " FontAttributes="Bold" />
+                                                            <Span Text="{Binding PaymentId}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+
+                                                <Label FontSize="12" TextColor="Black">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Monto Pagado: " FontAttributes="Bold" />
+                                                            <Span Text="{Binding PaymentAmount, StringFormat='RD${0:N2}'}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+
+                                                <Label FontSize="12" TextColor="Black">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Fecha de Pago: " FontAttributes="Bold" />
+                                                            <Span Text="{Binding PaymentDateFormatted}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+
+                                            </StackLayout>
+
+                                        </Frame>
+
+
+
+                                    </StackLayout>
+                                </syncfusion:SfExpander.Content>
+                            </syncfusion:SfExpander>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+
+    </Grid>
+
+
+</ContentPage>

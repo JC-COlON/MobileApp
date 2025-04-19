@@ -46,7 +46,7 @@
         <Grid Grid.Row="3" Margin="20,15,20,0" RowDefinitions="Auto,Auto" >
             <Label Text="Número de tarjeta" FontFamily="OpenSansRegular" FontSize="17" TextColor="#707070" Margin="15,10,0,5" Grid.Row="0"/>
             <Frame BorderColor="#7F8184" CornerRadius="10" HeightRequest="55" Margin="0,0,0,5" Grid.Row="1" Padding="1">
-                <Entry Keyboard="Numeric" Text="{Binding CardNumber}" TextColor="Black" FontSize="16" Margin="10,5,10,-11"  />
+                <Entry Keyboard="Numeric" Text="{Binding CardNumber}" TextColor="Black" FontSize="16" Margin="10,5,10,-11" MaxLength="16"  />
             </Frame>
 
         </Grid>
@@ -74,7 +74,7 @@
 
                 <Frame BorderColor="#7F8184" CornerRadius="10" HeightRequest="48" WidthRequest="150"  Grid.Row="1" Padding="2">
                     <Grid >
-                        <Entry Text="{Binding CVV}" Placeholder="CVC" Keyboard="Numeric" TextColor="Black" FontSize="16" Margin="10,0,10,-10" HorizontalOptions="Start" MaxLength="4"/>
+                        <Entry Text="{Binding Cvv}" Placeholder="CVC" Keyboard="Numeric" TextColor="Black" FontSize="16" Margin="10,0,10,-10" HorizontalOptions="Start" MaxLength="4"/>
                         <Image Source="card_dos" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center"/>
                     </Grid>
                 </Frame>

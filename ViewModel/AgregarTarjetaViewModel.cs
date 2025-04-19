@@ -10,6 +10,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Linq;
 using System.Threading.Tasks;
+using CommunityToolkit.Maui.Views;
+using DigesettAPP.ViewCiudadano;
 
 namespace DigesettAPP.ViewModels
 {
@@ -110,6 +112,39 @@ namespace DigesettAPP.ViewModels
         {
             try
             {
+                // Verificar que todos los campos estén completos
+                if (string.IsNullOrWhiteSpace(CardNumber) ||
+                    string.IsNullOrWhiteSpace(ExpirationDate) ||
+                    string.IsNullOrWhiteSpace(cvv))
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
+                    return;
+                }
+
+                // Limpiar el número de la tarjeta de cualquier carácter no numérico
+                var cardNumberDigits = new string(CardNumber.Where(char.IsDigit).ToArray());
+
+                // Verificar que el número de la tarjeta tiene 16 dígitos
+                if (cardNumberDigits.Length != 16)
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", "El número de la tarjeta debe tener 16 dígitos.", "OK");
+                    return;
+                }
+
+                // Convertir el número de la tarjeta a long (BigInt)
+                if (!long.TryParse(cardNumberDigits, out long cardNumberLong))
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", "Número de tarjeta inválido.", "OK");
+                    return;
+                }
+
+                // Validar que el CVV tenga exactamente 3 dígitos numéricos
+                if (cvv.Length != 3 || !cvv.All(char.IsDigit))
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", "El CVV debe tener 3 dígitos numéricos.", "OK");
+                    return;
+                }
+
                 var token = Preferences.Get("AuthToken", string.Empty);
 
                 if (string.IsNullOrEmpty(token))
@@ -130,35 +165,44 @@ namespace DigesettAPP.ViewModels
 
                 int userId = int.Parse(userIdClaim.Value);
 
+                // Asegúrate de formatear la fecha de expiración antes de enviarla
+                var formattedExpirationDate = FormatExpirationDate(ExpirationDate);
+
                 var cardInfo = new
                 {
                     userId = userId,
-                    cardNumber = new string(CardNumber?.Where(char.IsDigit).ToArray() ?? Array.Empty<char>()),
-                    expirationDate = new string(ExpirationDate?.Where(char.IsDigit).ToArray() ?? Array.Empty<char>()),
-                    cvv = Cvv
+                    cardNumber = cardNumberLong,
+                    expirationDate = formattedExpirationDate,
+                    cvv = cvv
                 };
 
-                var json = JsonConvert.SerializeObject(cardInfo);
+                var json = JsonConvert.SerializeObject(cardInfo, Formatting.Indented);
+
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var response = await _httpClient.PostAsync("https://localhost:7277/api/CreditCard", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    await App.Current.MainPage.DisplayAlert("Éxito", "Tarjeta registrada correctamente", "OK");
+                    await App.Current.MainPage.ShowPopupAsync(new PoputTarjetaAgregada());
                 }
                 else
                 {
                     var errorJson = await response.Content.ReadAsStringAsync();
+
                     try
                     {
                         var errorObj = JObject.Parse(errorJson);
                         var mensaje = errorObj["mensaje"]?.ToString() ?? "Error desconocido";
                         await App.Current.MainPage.DisplayAlert("Error", mensaje, "OK");
                     }
-                    catch
+                    catch (JsonException jsonEx)
                     {
-                        await App.Current.MainPage.DisplayAlert("Error", "No se pudo procesar la respuesta del servidor", "OK");
+                        await App.Current.MainPage.DisplayAlert("Error de JSON", $"No se pudo procesar la respuesta del servidor. Error JSON: {jsonEx.Message}", "OK");
+                    }
+                    catch (Exception ex)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Error", $"Error al procesar la respuesta: {ex.Message}", "OK");
                     }
                 }
             }
@@ -167,5 +211,9 @@ namespace DigesettAPP.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
             }
         }
+
+
+
+
     }
 }
