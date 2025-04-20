@@ -15,6 +15,7 @@ namespace DigesettAPP.ViewModel
     public  class HistorialMultasPagasViewModel : BindableObject
     {
         private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket";
+        private const string PaymentBaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Payments/GetByTicketId/";
         private ObservableCollection<Ticket> _tickets;
 
         public ObservableCollection<Ticket> Tickets
@@ -71,7 +72,6 @@ namespace DigesettAPP.ViewModel
 
         private async Task CargarMultas()
         {
-            // Extraer la cédula del token
             string cedula = ObtenerCedulaDelToken();
             if (string.IsNullOrEmpty(cedula))
             {
@@ -79,8 +79,7 @@ namespace DigesettAPP.ViewModel
                 return;
             }
 
-            // Construir la URL correctamente con los parámetros Cedula y Estado
-            string url = $"{BaseUrl}?Cedula={cedula}&Estado=paid";  // Ahora incluye ambos parámetros
+            string url = $"{BaseUrl}?Cedula={cedula}&Estado=paid";
 
             try
             {
@@ -88,7 +87,7 @@ namespace DigesettAPP.ViewModel
 
                 using (HttpClient client = new HttpClient())
                 {
-                    string token = Preferences.Get("AuthToken", string.Empty);  // Se obtiene el token de autorización
+                    string token = Preferences.Get("AuthToken", string.Empty);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                     HttpResponseMessage response = await client.GetAsync(url);
@@ -96,22 +95,21 @@ namespace DigesettAPP.ViewModel
 
                     if (response.IsSuccessStatusCode)
                     {
-                        // Deserializamos directamente el array de tickets
                         var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
 
                         if (tickets != null && tickets.Count > 0)
                         {
-                            // Ordenamos los tickets por fecha de manera descendente
+                            await CargarPagosParaMultas(tickets); // ✅ Aquí se llama a los pagos
+
                             var orderedTickets = tickets
                                 .OrderByDescending(ticket => DateTime.TryParse(ticket.TicketDate, out DateTime date) ? date : DateTime.MinValue)
                                 .ToList();
 
-                            // Asignamos la colección ordenada a la propiedad Tickets
                             Tickets = new ObservableCollection<Ticket>(orderedTickets);
                         }
                         else
                         {
-                            await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pendientes.", "OK");
+                            await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pagadas.", "OK");
                         }
                     }
                     else
@@ -130,7 +128,7 @@ namespace DigesettAPP.ViewModel
             }
         }
 
-       
+
 
 
 
@@ -158,32 +156,39 @@ namespace DigesettAPP.ViewModel
             }
         }
 
-        private async Task<List<Payment>> ObtenerPagosPorUsuario(string userId)
+
+
+        private async Task CargarPagosParaMultas(List<Ticket> tickets)
         {
-            try
+            using (HttpClient client = new HttpClient())
             {
                 string token = Preferences.Get("AuthToken", string.Empty);
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                    string pagosUrl = $"https://d79f-200-215-234-53.ngrok-free.app/api/Payment/GetPagosByUsuario?userId={userId}";
-                    HttpResponseMessage response = await client.GetAsync(pagosUrl);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                    if (response.IsSuccessStatusCode)
+                foreach (var ticket in tickets)
+                {
+                    string pagoUrl = $"{PaymentBaseUrl}{ticket.TicketId}";
+                    HttpResponseMessage pagoResponse = await client.GetAsync(pagoUrl);
+
+                    if (pagoResponse.IsSuccessStatusCode)
                     {
-                        string jsonResponse = await response.Content.ReadAsStringAsync();
-                        var pagos = JsonConvert.DeserializeObject<List<Payment>>(jsonResponse);
-                        return pagos;
+                        string pagoJson = await pagoResponse.Content.ReadAsStringAsync();
+                        var pago = JsonConvert.DeserializeObject<PaymentInfo>(pagoJson);
+
+                        if (pago != null)
+                        {
+                            ticket.PaymentId = pago.PaymentId;
+                            ticket.PaymentDateFormatted = pago.Date.ToString("dd/MM/yyyy");
+
+                            // ✅ El monto pagado viene del artículo asociado a la multa
+                            ticket.PaymentAmount = ticket.Articulo?.Price ?? 0;
+                        }
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error obteniendo pagos: {ex.Message}");
-            }
-
-            return new List<Payment>();
         }
+
+
 
 
         public class VehicleType
@@ -255,12 +260,10 @@ namespace DigesettAPP.ViewModel
 
             public string PrecioInfo => $"{Articulo?.Price}";
 
-            public int? PaymentId { get; set; }
-            public decimal? PaymentAmount { get; set; }
-            public DateTime? PaymentDate { get; set; }
+            public int PaymentId { get; set; }
+            public decimal PaymentAmount { get; set; }
+            public string PaymentDateFormatted { get; set; }
 
-            public string PaymentDateFormatted =>
-                PaymentDate.HasValue ? PaymentDate.Value.ToString("dd/MM/yyyy") : string.Empty;
 
 
         }
@@ -283,13 +286,13 @@ namespace DigesettAPP.ViewModel
         }
 
 
-        public class Payment
+        public class PaymentInfo
         {
             public int PaymentId { get; set; }
-            public int TicketId { get; set; }
             public decimal Amount { get; set; }
-            public DateTime PaymentDate { get; set; }
+            public DateTime Date { get; set; }
         }
+
 
 
     }

@@ -53,6 +53,9 @@
     <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ViewCiudadano\PoputSeleccionarMetodoPago.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

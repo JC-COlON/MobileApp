@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewModels;
 using DigesettAPP.Views;
 using System;
@@ -38,6 +39,9 @@ namespace DigesettAPP.ViewCiudadano
             await Shell.Current.GoToAsync(nameof(ListadoTarjetasCiudadano));
         }
 
+
+
+
         private async void IrAverMultass(object sender, TappedEventArgs e)
         {
             var border = sender as Border;  // Ahora estamos trabajando con Border
@@ -63,6 +67,25 @@ namespace DigesettAPP.ViewCiudadano
             {
                 System.Diagnostics.Debug.WriteLine("El sender no es un Border");
             }
+        }
+
+
+        private async void iraMultapagar(object sender, TappedEventArgs e)
+        {
+            var frame2 = (Frame)sender;
+
+            // Animación combinada de opacidad y escala
+            await Task.WhenAll(
+                frame2.ScaleTo(0.95, 100, Easing.CubicOut),
+                frame2.FadeTo(0.8, 100)
+            );
+
+            await Task.WhenAll(
+                frame2.ScaleTo(1, 100, Easing.CubicIn),
+                frame2.FadeTo(1, 100)
+            );
+
+            await Shell.Current.GoToAsync(nameof(ListaMultasParaPagar));
         }
 
     }

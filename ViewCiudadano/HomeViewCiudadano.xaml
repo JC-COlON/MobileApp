@@ -107,9 +107,9 @@
                         <!-- pagar-->
                         <Frame HeightRequest="110"  BorderColor="Transparent" BackgroundColor="#f5f5f5"  CornerRadius="15" Grid.Column="1">
 
-                            <!--<Frame.GestureRecognizers>
+                            <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="iraMultapagar" />
-                    </Frame.GestureRecognizers>-->
+                    </Frame.GestureRecognizers>
 
                             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="4" >
                                 <Image Source="moneysendgreen" HeightRequest="39" WidthRequest="37"  />
@@ -126,7 +126,7 @@
                             </Frame.GestureRecognizers>
 
                             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="3" >
-                                <Image Source="ir_tarjetas" HeightRequest="44" WidthRequest="44"  />
+                                <Image Source="ir_tarjetas" HeightRequest="48" WidthRequest="48"  />
                                 <Label FontFamily="SfProTextRegular" Text="Tarjetas" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#025825" FontSize="14" FontAttributes="Bold" Margin="0,-2,0,0"/>
                             </VerticalStackLayout>
                         </Frame>

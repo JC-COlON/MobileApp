@@ -1,50 +1,87 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DigesettAPP.ViewCiudadano.PagarMultaViewCiudadano">
+             x:Class="DigesettAPP.ViewCiudadano.PagarMultaViewCiudadano"
+         
+             BackgroundColor="White">
 
+    <ScrollView>
+        
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-    <Frame CornerRadius="15" BackgroundColor="White" HeightRequest="600" WidthRequest="310">
+            <Label Text="Pago de Multa" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,-25,0,0">
 
-        <StackLayout>
+            </Label>
 
-            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
-                <Label Text="Tarjeta" Grid.Row="0" Grid.Column="0" FontSize="25" HorizontalOptions="Start" FontAttributes="Bold" />
+            <!-- Frame Principal -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
 
-                <Label Text="Usar tarjeta" Grid.Row="1" Grid.Column="1" FontSize="15" HorizontalOptions="Start" VerticalOptions="Start" FontAttributes="Bold" Margin="0,40,0,0"/>
+                <VerticalStackLayout Spacing="20">
 
+                    <!-- Frame 1: Datos del Usuario -->
+                    <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Información Personal" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="Nombre: Juan Pérez" FontSize="14"/>
+                            <Label Text="Cédula: 001-1234567-8" FontSize="14"/>
+                            <Label Text="Correo: juanperez@email.com" FontSize="14"/>
+                        </VerticalStackLayout>
+                    </Frame>
 
-                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="92" WidthRequest="260" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Margin="0,10,0,0">
+                    <!-- Frame 2: Datos de la Tarjeta -->
+                    <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="15">
+                            <Image Source="tarjeta.png" WidthRequest="60" HeightRequest="40" VerticalOptions="Center" Margin="0,-20,0,0" />
 
-                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto" ColumnSpacing="15" VerticalOptions="Center"  RowSpacing="3">
-                        <!--<Frame Grid.Row="0" BackgroundColor="Black" Margin="10,0,0,0" HeightRequest="25" BorderColor="Transparent" WidthRequest="42" CornerRadius="2" Padding="1" HorizontalOptions="Start" Grid.Column="0" />-->
-                        <Image  Source="blackcard" Margin="10,0,0,0" HeightRequest="25" WidthRequest="42" HorizontalOptions="Start" Grid.Column="0" Grid.Row="0"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="Credit- MasterCard" TextColor="Black" FontSize="15" HorizontalOptions="Start" FontAttributes="Bold"/>
-                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding UserName}"  TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
-                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding CardList[0].cardNumber, TargetNullValue='**** **** **** ****'}" TextColor="#8D8A8E" FontSize="13" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <!-- Aseguramos que esté en la segunda columna -->
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="**** **** **** 1234" FontSize="14" />
+                                <Label Text="Exp: 12/26" FontSize="14" />
+                                <Label Text="Elegir otra tarjeta" TextColor="Gray" HorizontalOptions="End" FontSize="12">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ElegirNuevaTarjeta_Tapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
 
-                    </Grid>
-                </Frame>
+                    <!-- Frame 3: Datos de la Multa -->
+                    <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10">
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Detalles de la Multa" FontAttributes="Bold" FontSize="16"/>
+                            <Label Text="Lugar: Av. 27 de Febrero" FontSize="14"/>
+                            <Label Text="Fecha: 15/04/2025" FontSize="14"/>
+                            <Label Text="Artículo infringido: Art. 45 - Uso indebido de carril" FontSize="14"/>
+                        </VerticalStackLayout>
+                    </Frame>
 
-                <Frame BackgroundColor="White" BorderColor="#E1E1E1" HeightRequest="92" WidthRequest="260" CornerRadius="10" Padding="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Margin="0,70,0,0">
+                    <!-- Frame 4: Monto a Pagar -->
+                    <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10">
+                        <HorizontalStackLayout>
+                            <Label Text="Total a pagar:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center"/>
+                            <Label Text="RD$ 3,000.00" FontSize="21" TextColor="Green" Margin="10,0,0,0" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                    </Frame>
 
-                    <!--<Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoToNewCard" />
-                    </Frame.GestureRecognizers>-->
+                    <Button Text="PAGAR" BackgroundColor="#009C40" 
+                            FontAttributes="Bold" Margin="0,20,0,0"
+                            FontSize="18">
+                    </Button>
 
-                    <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*" VerticalOptions="Center" RowSpacing="5">
-                        <Image Grid.Row="0" Grid.Column="0" Source="card_add" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"/>
-                        <Label Grid.Row="1" Grid.Column="0" Text="Nueva tarjeta" TextColor="#3C3C43" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    </Grid>
-                </Frame>
+                    <Label Text="Volver atras" HorizontalOptions="End" TextColor="Gray">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Volveratras" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
-                <Button Text="Siguiente" TextColor="White" Margin="0,45,0,0" BackgroundColor="#009C40" 
-                     HeightRequest="50" WidthRequest="150" Grid.Row="4" Grid.Column="1" HorizontalOptions="Center"
-                     VerticalOptions="Center"  />
+                </VerticalStackLayout>
 
-            </Grid>
-        </StackLayout>
-    </Frame>
+             
+                
+            </Frame>
 
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

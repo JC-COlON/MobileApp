@@ -14,7 +14,7 @@ namespace DigesettAPP.ViewModels
 {
     public class ListaMultasParaPagarViewModel : BindableObject
     {
-        private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket";
+        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/Pending";
 
         private ObservableCollection<Ticket> _multas;
         public ObservableCollection<Ticket> Multas
@@ -55,7 +55,7 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            string url = $"{BaseUrl}?Cedula={cedula}&Estado=pending";
+            string url = $"{BaseUrl}/{cedula}";
 
             try
             {

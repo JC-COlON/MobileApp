@@ -13,17 +13,17 @@
             <!-- Contenido principal -->
             <ScrollView>
                 <VerticalStackLayout Padding="10">
-                    <Label Text="Tus tarjetas registradas"
+                    <Label Text="Tus Tarjetas Registradas"
                            FontSize="20"
                            FontAttributes="Bold"
                            HorizontalOptions="Center"
                            Margin="0,-10,0,25" />
-                   <Frame> 
+                   
                     <!-- Muestra las tarjetas registradas -->
                     <CollectionView x:Name="TarjetasCollectionView" ItemsSource="{Binding Tarjetas}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="12"
+                                <Frame CornerRadius="10"
                                        Padding="10"
                                        Margin="0,5"
                                        HasShadow="True"
@@ -56,18 +56,19 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    </Frame>
+                    
                     <!-- Botón para agregar nueva tarjeta -->
-                    <Button Text="Agregar Tarjeta"
+                    <Button Text="AGREGAR TARJETA"
                             FontAttributes="Bold"
-                            TextColor="Green"
+                            TextColor="Black"
                             BackgroundColor="White"
-                            CornerRadius="12"
+                            CornerRadius="10"
                             Margin="0,20,0,0"
                             Padding="10"
                             HorizontalOptions="FillAndExpand"
                             Clicked="OnAgregarTarjetaClicked"
-                            BorderColor="Green">
+                            BorderColor="#f5f5f5"
+                            BorderWidth="4">
                         <Button.ImageSource>
                             <FileImageSource File="cardadd_green.png" />
                         </Button.ImageSource>

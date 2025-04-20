@@ -89,6 +89,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewCiudadano\PagarMultaViewCiudadano.xaml.cs">
+	    <DependentUpon>PagarMultaViewCiudadano.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\OlvidelaContrasenaPage.xaml.cs">
 	    <DependentUpon>OlvidelaContrasenaPage.xaml</DependentUpon>
 	  </Compile>
@@ -135,6 +138,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputSeleccionarMetodoPago.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">

@@ -148,6 +148,9 @@ namespace DigesettAPP.ViewModel
         public string Cvv { get; set; }
 
         public string CardNumberMasked => $"****-****-****-{CardNumber.ToString().Substring(CardNumber.ToString().Length - 4)}";
+
+        public string ExpirationDateInfo => $"Exp: {ExpirationDate}";
+
     }
 }
 
