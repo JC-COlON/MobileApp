@@ -140,6 +140,9 @@
 	  <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputTarjetaEliminadaExito.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\RegistrarViewCiudadano.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

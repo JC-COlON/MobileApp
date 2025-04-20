@@ -143,6 +143,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputTarjetaAgregada.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputTarjetaAgregada.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PoputTarjetaEliminadaExito.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PoputTarjetaEliminadaExito.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputTarjetaEliminadaExito.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputTarjetaEliminadaExito.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/RegistrarViewCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.RegistrarViewCiudadano.xaml

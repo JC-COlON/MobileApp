@@ -56,6 +56,9 @@
     <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ViewCiudadano\PoputTarjetaEliminadaExito.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ViewCiudadano\RegistrarViewCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

@@ -168,11 +168,16 @@ namespace DigesettAPP.ViewModels
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await _httpClient.PostAsync("https://localhost:7277/api/CreditCard", content);
+                var response = await _httpClient.PostAsync("https://d79f-200-215-234-53.ngrok-free.app/api/CreditCard", content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     await App.Current.MainPage.ShowPopupAsync(new PoputTarjetaAgregada());
+
+                    // Limpiar los campos
+                    CardNumber = string.Empty;
+                    ExpirationDate = string.Empty;
+                    cvv = string.Empty;
                 }
                 else
                 {

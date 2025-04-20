@@ -11,6 +11,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\logoamet.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\passwordcandado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\passwordmaui.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\perfil.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\tarjeta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\undrawaccess.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\undrawforgott.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\user.png
@@ -36,8 +37,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\document_filledgrenn.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\edit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\exitundraw.png
@@ -52,6 +55,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\identification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\info.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\interrogacion.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lugartrabajo.png
@@ -98,8 +102,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\document_filledgrenn.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\edit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\exitundraw.png
@@ -114,6 +120,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\identification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\info.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\interrogacion.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lugartrabajo.png
@@ -160,8 +167,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\document_filledgrenn.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\edit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\exitundraw.png
@@ -176,6 +185,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\identification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\info.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\interrogacion.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lugartrabajo.png
@@ -222,8 +232,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\document_filledgrenn.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\edit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\exitundraw.png
@@ -238,6 +250,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\identification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\info.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\interrogacion.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lugartrabajo.png
@@ -284,8 +297,10 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\document_filledgrenn.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\edit.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\exitundraw.png
@@ -300,6 +315,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\homeeee.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\identification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\info.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\interrogacion.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\location.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lugartrabajo.png

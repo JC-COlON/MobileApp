@@ -35,7 +35,7 @@ namespace DigesettAPP.ViewCiudadano
                 frame2.FadeTo(1, 100)
             );
 
-            await Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
+            await Shell.Current.GoToAsync(nameof(ListadoTarjetasCiudadano));
         }
 
         private async void IrAverMultass(object sender, TappedEventArgs e)

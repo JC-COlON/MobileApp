@@ -38,7 +38,7 @@
         <!--<ImageButton Source="scandos" Margin="0,0,0,0" Grid.Row="1" HeightRequest="33" WidthRequest="33" HorizontalOptions="Center" Clicked="ImageButton_Clicked" />-->
 
         <!-- Nombre de tarjeta -->
-        <Grid Margin="20,20,20,0" RowDefinitions="Auto,Auto,Auto,Auto" Grid.Row="2">
+        <Grid Margin="20,5,20,0" RowDefinitions="Auto,Auto,Auto,Auto" Grid.Row="2">
             <Label Text="Nombre de tarjeta" FontFamily="OpenSansRegular" FontSize="17" TextColor="#707070" Margin="15,0,0,5" Grid.Row="0"/>
 
             <Frame BorderColor="#7F8184" CornerRadius="10" HeightRequest="55" Margin="0,0,0,5" Padding="0" Grid.Row="1">
@@ -48,17 +48,17 @@
         </Grid>
 
         <!-- Número de tarjeta -->
-        <Grid Grid.Row="3" Margin="20,15,20,0" RowDefinitions="Auto,Auto" >
+        <Grid Grid.Row="3" Margin="20,5,20,0" RowDefinitions="Auto,Auto" >
             <Label Text="Número de tarjeta" FontFamily="OpenSansRegular" FontSize="17" TextColor="#707070" Margin="15,10,0,5" Grid.Row="0"/>
             <Frame BorderColor="#7F8184" CornerRadius="10" HeightRequest="55" Margin="0,0,0,5" Grid.Row="1" Padding="1">
-                <Entry Keyboard="Numeric" Text="{Binding CardNumber}" TextColor="Black" FontSize="16" Margin="10,5,10,-11" MaxLength="16"  />
+                <Entry Keyboard="Numeric" Text="{Binding CardNumber}" TextColor="Black" FontSize="16" Margin="10,5,10,-11" MaxLength="20"  />
             </Frame>
 
         </Grid>
 
         <!-- EXPIRACION -->
         <!-- CVC -->
-        <Grid Margin="20,15,15,0"  ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" Grid.Row="4">
+        <Grid Margin="20,5,15,0"  ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" Grid.Row="4">
 
             <Grid Grid.Row="0"  RowDefinitions="Auto,Auto" >
 

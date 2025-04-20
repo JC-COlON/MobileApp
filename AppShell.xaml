@@ -50,7 +50,7 @@
             Route="HomeViewCiudadano" />
         </Tab>
 
-        <Tab Title="Historial" Icon="iconhistory.png">
+        <Tab Title="Pagos" Icon="iconhistory.png">
             <ShellContent
              Title="HistorialMultasPagadas"
              ContentTemplate="{DataTemplate ciudadano:HistorialMultasPagadasCiudadano}"

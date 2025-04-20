@@ -126,8 +126,8 @@
                             </Frame.GestureRecognizers>
 
                             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="3" >
-                                <Image Source="cardadd_greenn" HeightRequest="37" WidthRequest="37"  />
-                                <Label FontFamily="SfProTextRegular" Text="Tarjeta" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#025825" FontSize="14" FontAttributes="Bold"/>
+                                <Image Source="ir_tarjetas" HeightRequest="44" WidthRequest="44"  />
+                                <Label FontFamily="SfProTextRegular" Text="Tarjetas" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#025825" FontSize="14" FontAttributes="Bold" Margin="0,-2,0,0"/>
                             </VerticalStackLayout>
                         </Frame>
 

@@ -14,7 +14,7 @@ namespace DigesettAPP.ViewModel
 {
     public  class HistorialMultasPagasViewModel : BindableObject
     {
-        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket";
+        private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket";
         private ObservableCollection<Ticket> _tickets;
 
         public ObservableCollection<Ticket> Tickets
@@ -166,7 +166,7 @@ namespace DigesettAPP.ViewModel
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                    string pagosUrl = $"https://localhost:7277/api/Payment/GetPagosByUsuario?userId={userId}";
+                    string pagosUrl = $"https://d79f-200-215-234-53.ngrok-free.app/api/Payment/GetPagosByUsuario?userId={userId}";
                     HttpResponseMessage response = await client.GetAsync(pagosUrl);
 
                     if (response.IsSuccessStatusCode)
