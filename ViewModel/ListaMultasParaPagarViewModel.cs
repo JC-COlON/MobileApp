@@ -14,7 +14,7 @@ namespace DigesettAPP.ViewModels
 {
     public class ListaMultasParaPagarViewModel : BindableObject
     {
-        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/Pending";
+        private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/Pending";
 
         private ObservableCollection<Ticket> _multas;
         public ObservableCollection<Ticket> Multas
@@ -87,8 +87,14 @@ namespace DigesettAPP.ViewModels
                             await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
                         }
                     }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        // Si el código de estado es 400, podemos asumir que no hay multas pendientes
+                        await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                    }
                     else
                     {
+                        // Si hay otro código de error, mostramos el error genérico
                         await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las multas.", "OK");
                     }
                 }
@@ -102,6 +108,7 @@ namespace DigesettAPP.ViewModels
                 IsLoading = false;
             }
         }
+
 
         private string ObtenerCedulaDelToken()
         {

@@ -146,17 +146,25 @@ namespace DigesettAPP.ViewModels
                         }
                         else
                         {
+                            // Si no hay tickets, mostramos un mensaje específico
                             await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pendientes.", "OK");
                         }
                     }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        // Si el código de estado es 400 (BadRequest), asumimos que el usuario no tiene multas pendientes
+                        await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                    }
                     else
                     {
+                        // Si otro código de error es devuelto, mostramos un mensaje genérico
                         await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las multas.", "OK");
                     }
                 }
             }
             catch (Exception ex)
             {
+                // Si hay un error en la conexión o en el código, lo mostramos
                 await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
             }
             finally
@@ -164,6 +172,7 @@ namespace DigesettAPP.ViewModels
                 IsLoading = false;
             }
         }
+
 
         private async Task EnviarReview(Ticket ticket)
         {

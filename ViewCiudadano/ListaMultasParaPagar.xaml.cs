@@ -19,11 +19,16 @@ public partial class ListaMultasParaPagar : ContentPage
     }
     private async void OnMoneyIconTapped(object sender, EventArgs e)
     {
-        // Obtener el Ticket desde el BindingContext de la imagen
         var image = sender as Image;
         if (image?.BindingContext is Ticket ticket)
         {
-            await DisplayAlert("Pago", $"Vas a pagar la multa #{ticket.TicketId}", "OK");
+            
+
+            // Llevamos el ticketId directamente al constructor
+            var page = new PagarMultaViewCiudadano(ticket.TicketId);
+            await Navigation.PushAsync(page);
         }
     }
+
+
 }

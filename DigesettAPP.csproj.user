@@ -50,6 +50,9 @@
     <MauiXaml Update="ViewCiudadano\PoputInformacionRating.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ViewCiudadano\PoputMultaPagadaExito.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
