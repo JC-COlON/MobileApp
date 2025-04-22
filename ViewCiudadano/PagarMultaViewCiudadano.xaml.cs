@@ -44,5 +44,33 @@ namespace DigesettAPP.ViewCiudadano
         {
             await Navigation.PopAsync();
         }
+
+        private async void OnPagarButtonClicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            // Animación combinada de escala y opacidad para simular "presión"
+            await Task.WhenAll(
+                button.ScaleTo(0.95, 100, Easing.CubicOut),
+                button.FadeTo(0.8, 100)
+            );
+
+            await Task.WhenAll(
+                button.ScaleTo(1, 100, Easing.CubicIn),
+                button.FadeTo(1, 100)
+            );
+
+            // Ejecutar el comando del ViewModel
+            if (BindingContext is PagarMultaCiudadanoViewModel viewModel)
+            {
+                if (viewModel.PagarMultaCommand.CanExecute(null))
+                {
+                    viewModel.PagarMultaCommand.Execute(null);
+                }
+            }
+        }
+
+
+
     }
 }

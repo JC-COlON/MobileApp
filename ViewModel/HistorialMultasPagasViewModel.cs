@@ -14,8 +14,8 @@ namespace DigesettAPP.ViewModel
 {
     public  class HistorialMultasPagasViewModel : BindableObject
     {
-        private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket";
-        private const string PaymentBaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/Payments/GetByTicketId/";
+        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket";
+        private const string PaymentBaseUrl = "https://digesett.somee.com/api/Payments/GetByTicketId/";
         private ObservableCollection<Ticket> _tickets;
 
         public ObservableCollection<Ticket> Tickets
@@ -160,34 +160,77 @@ namespace DigesettAPP.ViewModel
 
         private async Task CargarPagosParaMultas(List<Ticket> tickets)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                string token = Preferences.Get("AuthToken", string.Empty);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                foreach (var ticket in tickets)
+                using (HttpClient client = new HttpClient())
                 {
-                    string pagoUrl = $"{PaymentBaseUrl}{ticket.TicketId}";
-                    HttpResponseMessage pagoResponse = await client.GetAsync(pagoUrl);
+                    string token = Preferences.Get("AuthToken", string.Empty);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    int? userId = ObtenerUserIdDesdeToken();
+                    if (userId == null)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Error", "No se pudo obtener el userId desde el token.", "OK");
+                        return;
+                    }
+
+                    string pagosUrl = $"https://digesett.somee.com/api/Payment/GetPagosByUsuario?userId={userId}";
+                    HttpResponseMessage pagoResponse = await client.GetAsync(pagosUrl);
 
                     if (pagoResponse.IsSuccessStatusCode)
                     {
                         string pagoJson = await pagoResponse.Content.ReadAsStringAsync();
-                        var pago = JsonConvert.DeserializeObject<PaymentInfo>(pagoJson);
+                        var pagos = JsonConvert.DeserializeObject<List<PaymentInfo>>(pagoJson) ?? new List<PaymentInfo>();
 
-                        if (pago != null)
+
+
+                        foreach (var ticket in tickets)
                         {
-                            ticket.PaymentId = pago.PaymentId;
-                            ticket.PaymentDateFormatted = pago.Date.ToString("dd/MM/yyyy");
+                            var pagoRelacionado = pagos.FirstOrDefault(p => p.TicketId == ticket.TicketId);
 
-                            // ✅ El monto pagado viene del artículo asociado a la multa
-                            ticket.PaymentAmount = ticket.Articulo?.Price ?? 0;
+                            if (pagoRelacionado != null)
+                            {
+                                ticket.PaymentId = pagoRelacionado.PaymentId;
+                                ticket.PaymentAmount = pagoRelacionado.Amount;
+                                ticket.PaymentDateFormatted = pagoRelacionado.PaymentDate.ToString("dd/MM/yyyy");
+
+                            }
                         }
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Error", "No se pudieron obtener los pagos del usuario.", "OK");
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error al obtener los pagos: {ex.Message}", "OK");
+            }
         }
 
+
+
+
+        private int ObtenerUserIdDesdeToken()
+        {
+            try
+            {
+                string token = Preferences.Get("AuthToken", string.Empty);
+                if (string.IsNullOrEmpty(token)) return 0;
+
+                var handler = new JwtSecurityTokenHandler();
+                var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+                var userIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier");
+                return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener UserId: {ex.Message}");
+                return 0;
+            }
+        }
 
 
 
@@ -285,13 +328,37 @@ namespace DigesettAPP.ViewModel
             public string mensaje { get; set; }
         }
 
-
         public class PaymentInfo
         {
+            [JsonProperty("paymentId")]
             public int PaymentId { get; set; }
+
+            [JsonProperty("ticketId")]
+            public int TicketId { get; set; }
+
+            [JsonProperty("amount")]
             public decimal Amount { get; set; }
-            public DateTime Date { get; set; }
+
+            [JsonProperty("paymentDate")]
+            public DateTime PaymentDate { get; set; }
+
+            [JsonProperty("formattedDate")]
+            public string FormattedDate { get; set; }
+
+            [JsonProperty("status")]
+            public string Status { get; set; }
         }
+
+
+        public class PagosResponse
+        {
+            [JsonProperty("$id")]
+            public string Id { get; set; }
+
+            [JsonProperty("$values")]
+            public List<PaymentInfo> Values { get; set; }
+        }
+
 
 
 

@@ -60,11 +60,11 @@
                                         <!-- Texto 'Nueva multa en lista' -->
                                         <!-- Texto 'Multa #ID' dinámico -->
                                         <Label CharacterSpacing="0.35" FontFamily="SfProTextRegular"
-       Text="{Binding TicketId, StringFormat='Multa #{0}'}"
-       Margin="15,0,0,0"
-       TextColor="Black" FontSize="13"
-       Grid.Column="1" VerticalOptions="CenterAndExpand"
-       FontAttributes="Bold"/>
+                                       Text="{Binding TicketId, StringFormat='Multa #{0}'}"
+                                       Margin="15,0,0,0"
+                                       TextColor="Black" FontSize="13"
+                                       Grid.Column="1" VerticalOptions="CenterAndExpand"
+                                       FontAttributes="Bold"/>
 
 
                                         <!-- Fecha del ticket -->

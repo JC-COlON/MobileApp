@@ -136,30 +136,39 @@
                                                    Margin="0,45,0,0"/>
 
                                             <!-- Botón con el precio -->
+                                            <!-- Botón con el precio -->
                                             <Frame BackgroundColor="#E8F5E9"
-                                           CornerRadius="12"
-                                           Padding="12"
-                                           Margin="10,-40,0,0"
-                                           HasShadow="True"
-                                           HorizontalOptions="End"
-                                           WidthRequest="120"
-                                           Grid.Column="2"
-                                                   HeightRequest="45">
+                                               CornerRadius="12"
+                                               Padding="12"
+                                               Margin="10,-40,0,0"
+                                               HasShadow="True"
+                                               HorizontalOptions="End"
+                                               WidthRequest="120"
+                                               HeightRequest="45"
+                                               Grid.Column="2">
 
                                                 <StackLayout>
-                                                    <Label Text="{Binding PrecioInfo, StringFormat='RD${0}'}"
-                                           FontSize="14"
-                                           FontAttributes="Bold"
-                                           TextColor="Black"
-                                           HorizontalOptions="Center" />
+                                                    <!-- Mostramos el precio -->
+                                                    <Label Text="{Binding Articulo.Price, StringFormat='RD${0:F2}'}"
+           FontSize="14"
+           FontAttributes="Bold"
+           TextColor="Black"
+           HorizontalOptions="Center">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Tapped="OnMoneyIconTapped" />
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
                                                 </StackLayout>
 
+
+                                                <!-- TapGestureRecognizer para ir a la pantalla de pago -->
                                                 <Frame.GestureRecognizers>
                                                     <TapGestureRecognizer
-                                            Command="{Binding PayCommand}"
-                                            CommandParameter="{Binding .}" />
+                                                        Command="{Binding BindingContext.IrAPagarMultaCommand, Source={x:Reference TicketsCollectionView}}"
+                                                        CommandParameter="{Binding .}" />
                                                 </Frame.GestureRecognizers>
                                             </Frame>
+
                                         </Grid>
 
                                         <control:SfRating

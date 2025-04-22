@@ -62,7 +62,7 @@
             </Grid>
         </StackLayout>
 
-        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto" Grid.Row="1" Margin="180,40,0,0" HorizontalOptions="Center">
+        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto" Grid.Row="1" Margin="180,010,0,0" HorizontalOptions="Center">
 
             <Label FontFamily="SfProTextRegular" Text="¿No tienes una cuenta?" TextColor="Black" FontSize="13"  Grid.Row="1" Grid.Column="0"  Margin="0,0,0,0"   />
 

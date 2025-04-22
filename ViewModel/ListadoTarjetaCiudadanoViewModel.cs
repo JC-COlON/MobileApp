@@ -17,7 +17,7 @@ namespace DigesettAPP.ViewModel
     public class ListadoTarjetaCiudadanoViewModel : BindableObject
     {
         // URL base de ngrok
-        private const string BaseUrl = "https://d79f-200-215-234-53.ngrok-free.app/api/CreditCard";
+        private const string BaseUrl = "https://digesett.somee.com/api/CreditCard";
 
         // Cambié la propiedad Tarjetas para que sea directamente una lista de CreditCard
         public ObservableCollection<CreditCard> Tarjetas { get; set; } = new ObservableCollection<CreditCard>();

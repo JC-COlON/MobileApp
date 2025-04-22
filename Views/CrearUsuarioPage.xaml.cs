@@ -12,7 +12,7 @@ namespace DigesettAPP.Views
     public partial class CrearUsuarioPage : ContentPage
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string Url = "https://localhost:7277/api/User/Create";
+        private const string Url = "https://d79f-200-215-234-53.ngrok-free.app/api/User/Create";
         private const string CedulaValidationUrl = "https://api.digital.gob.do/v3/cedulas";
 
         public CrearUsuarioPage()

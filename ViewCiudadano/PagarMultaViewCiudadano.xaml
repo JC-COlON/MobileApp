@@ -12,16 +12,23 @@
             <Label Text="Pago de Multa" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,-25,0,0">
 
             </Label>
-
-            <!-- Frame Principal -->
-            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
-
-                <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
-                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+            
+            
+   <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" 
+      Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="10">
                         <Image Source="loadinglogo.png" WidthRequest="80" HeightRequest="80"/>
                         <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#009C40" />
                     </StackLayout>
+       
+       
+       
                 </Grid>
+            <!-- Frame Principal -->
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+
+             
+
 
 
                 <VerticalStackLayout Spacing="20">
@@ -143,14 +150,14 @@
                         </HorizontalStackLayout>
                     </Frame>
 
+                    <Button 
+                    Text="PAGAR"
+                    BackgroundColor="#009C40"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Clicked="OnPagarButtonClicked" />
 
-                    <Button Text="PAGAR"
-                        BackgroundColor="#009C40"
-                        FontAttributes="Bold"
-                        FontSize="18"
-                        Command="{Binding PagarMultaCommand}"  
-                        Margin="0,0,0,0">
-                    </Button>
+
 
 
 

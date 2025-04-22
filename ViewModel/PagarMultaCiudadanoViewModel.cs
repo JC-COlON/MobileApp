@@ -120,7 +120,7 @@ namespace DigesettAPP.ViewModel
             try
             {
                 var cedulaLimpia = Cedula.Replace("Cédula: ", "").Trim();
-                string url = $"https://d79f-200-215-234-53.ngrok-free.app/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
+                string url = $"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
 
                 using var client = new HttpClient();
                 string token = Preferences.Get("AuthToken", string.Empty);
@@ -168,7 +168,7 @@ namespace DigesettAPP.ViewModel
         {
             try
             {
-                string url = $"https://d79f-200-215-234-53.ngrok-free.app/api/Ticket/{ticketId}";
+                string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
 
                 using var client = new HttpClient();
                 string token = Preferences.Get("AuthToken", string.Empty);
@@ -226,70 +226,72 @@ namespace DigesettAPP.ViewModel
             var handler = new JwtSecurityTokenHandler();
             var jwt = handler.ReadToken(token) as JwtSecurityToken;
 
-            // Obtener los valores del token
             int userId = int.Parse(jwt?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value ?? "0");
             string email = jwt?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value ?? "";
 
-            // Obtener el CardId desde el ViewModel
-            int cardId = CardId; // Usamos la propiedad CardId del ViewModel
-            int ticketId = TicketSeleccionado.TicketId; // Obtener el ticketId de la multa seleccionada
+            int cardId = CardId;
+            int ticketId = TicketSeleccionado.TicketId;
 
-            // Crear el objeto payload
             var payload = new
             {
-                ticketId = ticketId,
-                userId = userId,
-                cardId = cardId,
-                email = email
+                TicketId = ticketId,
+                UserId = userId,
+                CardId = cardId,
+                Email = email
             };
 
-            // Serializar el objeto a JSON
-            string jsonPayload = JsonConvert.SerializeObject(payload);
+            string jsonPayload = JsonConvert.SerializeObject(payload, Formatting.Indented);
+
+            // Mostrar el JSON en un DisplayAlert
+            //await App.Current.MainPage.DisplayAlert("JSON Enviado", jsonPayload, "OK");
 
             try
             {
-                // Activar el loading antes de realizar la solicitud HTTP
-                IsLoading = true;
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
 
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync("https://d79f-200-215-234-53.ngrok-free.app/api/Payment/PayTicket", content);
+                var response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
 
-                // Desactivar el loading después de que se haya recibido la respuesta
-                IsLoading = false;
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Mostrar pop-up personalizado
                     var popup = new ViewCiudadano.PoputMultaPagadaExito();
                     await App.Current.MainPage.ShowPopupAsync(popup);
                 }
                 else
                 {
-                    // Si la respuesta no es exitosa, obtener y mostrar el error
                     string errorContent = await response.Content.ReadAsStringAsync();
                     string errorMessage = $"Error al pagar la multa. StatusCode: {response.StatusCode}\nMensaje: {errorContent}";
-
-                    // Mostrar el mensaje de error
                     await App.Current.MainPage.DisplayAlert("Error en la API", errorMessage, "OK");
                 }
             }
             catch (HttpRequestException ex)
             {
-                // Captura cualquier error relacionado con la solicitud HTTP (por ejemplo, problemas de red)
-                IsLoading = false;  // Asegúrate de desactivar el loading si ocurre un error de red
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
                 await App.Current.MainPage.DisplayAlert("Error de conexión", $"No se pudo conectar con el servidor. Detalles: {ex.Message}", "OK");
             }
             catch (Exception ex)
             {
-                // Captura errores generales que no sean específicamente HTTP
-                IsLoading = false;  // Asegúrate de desactivar el loading si ocurre un error inesperado
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
                 await App.Current.MainPage.DisplayAlert("Error desconocido", $"Ocurrió un error inesperado. Detalles: {ex.Message}", "OK");
             }
         }
 
+
+
+        //public void ActualizarTarjetaSeleccionada(CreditCard tarjeta)
+        //{
+        //    if (tarjeta == null) return;
+
+        //    var numeroStr = tarjeta.CardNumber.ToString();
+        //    NumeroTarjeta = $"**** **** **** {numeroStr[^4..]}";
+        //    Expiracion = $"Exp: {tarjeta.ExpirationDate}";
+        //    CardId = tarjeta.CardId;
+        //}
 
 
     }

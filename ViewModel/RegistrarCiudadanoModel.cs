@@ -7,6 +7,8 @@ using System.Windows.Input;
 using Microsoft.Maui.Controls;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using DigesettAPP.ViewCiudadano;
+using CommunityToolkit.Maui.Views;
 
 
 
@@ -394,14 +396,17 @@ namespace DigesettAPP.ViewModels
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string mensaje = IsNewUser ? "Usuario registrado correctamente." : "Usuario actualizado correctamente.";
-                    await Shell.Current.DisplayAlert("¡Éxito!", mensaje, "OK");
+                    // Mensaje de éxito no se mostrará en un alert
+                    // Solo mostramos el pop-up
+                    var popup = new PoputRegistradoCorrectamente();
+                    await App.Current.MainPage.ShowPopupAsync(popup);  // Mostrar el pop-up de éxito
                 }
                 else
                 {
                     var error = await response.Content.ReadAsStringAsync();
                     await Shell.Current.DisplayAlert("Error", error, "OK");
                 }
+
             }
             catch (Exception ex)
             {
