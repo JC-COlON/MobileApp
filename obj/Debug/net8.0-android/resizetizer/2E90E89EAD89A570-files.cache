@@ -63,6 +63,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\moneysendgreen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\money_sendwhite.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\nuevacontrasena.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\pen.png
@@ -128,6 +129,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\moneysendgreen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\money_sendwhite.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\nuevacontrasena.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\pen.png
@@ -193,6 +195,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\moneysendgreen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\money_sendwhite.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\nuevacontrasena.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\pen.png
@@ -258,6 +261,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\moneysendgreen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\money_sendwhite.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\nuevacontrasena.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\pen.png
@@ -323,6 +327,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\moneysendgreen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\money_send.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\money_sendwhite.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\nuevacontrasena.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\pen.png

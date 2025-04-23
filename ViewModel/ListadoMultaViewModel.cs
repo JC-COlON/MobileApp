@@ -16,7 +16,7 @@ namespace DigesettAPP.ViewModels
 {
     public class ListaMultaViewModel : BindableObject
     {
-        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket";
+        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/Pending";
         private ObservableCollection<Ticket> _tickets;
 
         public ObservableCollection<Ticket> Tickets
@@ -75,22 +75,27 @@ namespace DigesettAPP.ViewModels
         }
 
 
-
+        public ICommand IrAPagarMultaCommand { get; }
         public Command<Ticket> EnviarComentarioCommand { get; }
         public ListaMultaViewModel()
         {
-            ToggleExpandCommand = new Command<Ticket>(ToggleExpand);  // Cambié a Command<Ticket> para pasar el objeto actual
+            ToggleExpandCommand = new Command<Ticket>(ToggleExpand);
             CargarMultasCommand = new Command(async () => await CargarMultas());
 
-
-
+            IrAPagarMultaCommand = new Command<Ticket>(async (ticket) =>
+            {
+                if (ticket != null)
+                {
+                    await Shell.Current.Navigation.PushAsync(new PagarMultaViewCiudadano(ticket.TicketId));
+                }
+            });
 
             EnviarComentarioCommand = new Command<Ticket>(async (ticket) =>
             {
                 await EnviarReview(ticket);
             });
-
         }
+
 
 
 
@@ -103,10 +108,95 @@ namespace DigesettAPP.ViewModels
             OnPropertyChanged(nameof(Tickets));  // Notificar que la lista de tickets ha cambiado
         }
 
+        private async void IrAPagarMulta(Ticket ticket)
+        {
+            if (ticket == null)
+                return;
+
+            // Navegar a la página de pago con el ticketId
+            await Shell.Current.GoToAsync($"pagarMultaCiudadano?ticketId={ticket.TicketId}");
+        }
+
+
+        //private async Task CargarMultas()
+        //{
+        //    string cedula = ObtenerCedulaDelToken();
+        //    if (string.IsNullOrEmpty(cedula))
+        //    {
+        //        await App.Current.MainPage.DisplayAlert("Error", "No se pudo obtener la cédula del token.", "OK");
+        //        return;
+        //    }
+
+        //    string url = $"{BaseUrl}?Cedula={cedula}&Estado=pending";
+
+        //    try
+        //    {
+        //        IsLoading = true;
+
+        //        using (HttpClient client = new HttpClient())
+        //        {
+        //            string token = Preferences.Get("AuthToken", string.Empty);
+        //            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+        //            HttpResponseMessage response = await client.GetAsync(url);
+        //            string jsonResponse = await response.Content.ReadAsStringAsync();
+
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
+
+        //                if (tickets != null && tickets.Count > 0)
+        //                {
+        //                    var orderedTickets = tickets
+        //                        .OrderByDescending(ticket => DateTime.TryParse(ticket.TicketDate, out DateTime date) ? date : DateTime.MinValue)
+        //                        .ToList();
+
+        //                    Tickets = new ObservableCollection<Ticket>(orderedTickets);
+        //                }
+        //                else
+        //                {
+        //                    await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+        //                    await Shell.Current.GoToAsync("..");
+        //                }
+        //            }
+        //            else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+        //            {
+        //                string mensajeApi = "No tienes multas pendientes por pagar.";
+        //                try
+        //                {
+        //                    dynamic errorObj = JsonConvert.DeserializeObject(jsonResponse);
+        //                    if (errorObj?.message != null)
+        //                    {
+        //                        mensajeApi = errorObj.message;
+        //                    }
+        //                }
+        //                catch
+        //                {
+        //                    // ignorar si falla el parseo
+        //                }
+
+        //                await App.Current.MainPage.DisplayAlert("Sin multas", mensajeApi, "OK");
+        //                await Shell.Current.GoToAsync("..");
+        //            }
+        //            else
+        //            {
+        //                await App.Current.MainPage.DisplayAlert("Error", $"No se pudieron cargar las multas. Código: {response.StatusCode}", "OK");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
+        //    }
+        //    finally
+        //    {
+        //        IsLoading = false;
+        //    }
+        //}
+
 
         private async Task CargarMultas()
         {
-            // Extraer la cédula del token
             string cedula = ObtenerCedulaDelToken();
             if (string.IsNullOrEmpty(cedula))
             {
@@ -114,8 +204,7 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            // Construir la URL correctamente con los parámetros Cedula y Estado
-            string url = $"{BaseUrl}?Cedula={cedula}&Estado=pending";  // Ahora incluye ambos parámetros
+            string url = $"{BaseUrl}/{cedula}";
 
             try
             {
@@ -123,7 +212,7 @@ namespace DigesettAPP.ViewModels
 
                 using (HttpClient client = new HttpClient())
                 {
-                    string token = Preferences.Get("AuthToken", string.Empty);  // Se obtiene el token de autorización
+                    string token = Preferences.Get("AuthToken", string.Empty);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                     HttpResponseMessage response = await client.GetAsync(url);
@@ -131,40 +220,54 @@ namespace DigesettAPP.ViewModels
 
                     if (response.IsSuccessStatusCode)
                     {
-                        // Deserializamos directamente el array de tickets
                         var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
 
                         if (tickets != null && tickets.Count > 0)
                         {
-                            // Ordenamos los tickets por fecha de manera descendente
                             var orderedTickets = tickets
                                 .OrderByDescending(ticket => DateTime.TryParse(ticket.TicketDate, out DateTime date) ? date : DateTime.MinValue)
                                 .ToList();
 
-                            // Asignamos la colección ordenada a la propiedad Tickets
                             Tickets = new ObservableCollection<Ticket>(orderedTickets);
                         }
                         else
                         {
-                            // Si no hay tickets, mostramos un mensaje específico
-                            await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pendientes.", "OK");
+                            await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                            await Shell.Current.GoToAsync("..");
                         }
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                     {
-                        // Si el código de estado es 400 (BadRequest), asumimos que el usuario no tiene multas pendientes
-                        await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                        string mensajeApi = "No tienes multas pendientes por pagar.";
+                        try
+                        {
+                            dynamic errorObj = JsonConvert.DeserializeObject(jsonResponse);
+                            if (errorObj?.message != null)
+                            {
+                                mensajeApi = errorObj.message;
+                            }
+                        }
+                        catch
+                        {
+                            // ignorar si falla el parseo
+                        }
+
+                        await App.Current.MainPage.DisplayAlert("Sin multas", mensajeApi, "OK");
+                        await Shell.Current.GoToAsync("..");
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Sin multas", "Este Usuario NO tiene Multas Pendientes.", "OK");
+                        await Shell.Current.GoToAsync("..");
                     }
                     else
                     {
-                        // Si otro código de error es devuelto, mostramos un mensaje genérico
-                        await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las multas.", "OK");
+                        await App.Current.MainPage.DisplayAlert("Error", $"No se pudieron cargar las multas. Código: {response.StatusCode}", "OK");
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Si hay un error en la conexión o en el código, lo mostramos
                 await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
             }
             finally

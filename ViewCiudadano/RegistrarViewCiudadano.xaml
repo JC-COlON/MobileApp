@@ -57,7 +57,7 @@
 
             <!-- Formulario -->
             <Grid
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
         ColumnDefinitions="Auto, *, Auto"
         HorizontalOptions="Center">
 
@@ -120,25 +120,42 @@
 
                 <!-- Contraseña -->
                 <Border StrokeShape="RoundRectangle 10"
-                StrokeThickness="1"
-                Stroke="#d9d0e3"
-                Grid.Row="3" Grid.Column="1"
-                WidthRequest="285"
-                HeightRequest="45"
-                Margin="0,0,0,20">
+        StrokeThickness="1"
+        Stroke="#d9d0e3"
+        Grid.Row="3" Grid.Column="1"
+        WidthRequest="285"
+        HeightRequest="45"
+        Margin="0,0,0,20">
                     <Entry Placeholder="Contraseña"
-                 Text="{Binding Password}"
-                 IsPassword="True"
-                 TextColor="Black"
-                 FontSize="16"
-                 Margin="10,0,0,-8" />
+           Text="{Binding Password}"
+           IsPassword="True"
+           TextColor="Black"
+           FontSize="16"
+           Margin="10,0,0,-8" />
                 </Border>
+
+                <!-- Confirmar Contraseña -->
+                <Border StrokeShape="RoundRectangle 10"
+        StrokeThickness="1"
+        Stroke="#d9d0e3"
+        Grid.Row="4" Grid.Column="1"
+        WidthRequest="285"
+        HeightRequest="45"
+        Margin="0,0,0,20">
+                    <Entry Placeholder="Confirmar Contraseña"
+           Text="{Binding ConfirmPassword}"
+           IsPassword="True"
+           TextColor="Black"
+           FontSize="16"
+           Margin="10,0,0,-8" />
+                </Border>
+
 
                 <!-- Correo -->
                 <Border StrokeShape="RoundRectangle 10"
                 StrokeThickness="1"
                 Stroke="#d9d0e3"
-                Grid.Row="4" Grid.Column="1"
+                Grid.Row="6" Grid.Column="1"
                 WidthRequest="285"
                 HeightRequest="45"
                 Margin="0,0,0,20">
@@ -154,7 +171,7 @@
                 <Border StrokeShape="RoundRectangle 10"
                 StrokeThickness="1"
                 Stroke="#d9d0e3"
-                Grid.Row="5" Grid.Column="1"
+                Grid.Row="7" Grid.Column="1"
                 WidthRequest="285"
                 HeightRequest="45"
                 Margin="0,0,0,20">
@@ -175,7 +192,7 @@
                 <Border StrokeShape="RoundRectangle 10"
                 StrokeThickness="1"
                 Stroke="#d9d0e3"
-                Grid.Row="6" Grid.Column="1"
+                Grid.Row="8" Grid.Column="1"
                 WidthRequest="285"
                 HeightRequest="45"
                 Margin="0,0,0,20"

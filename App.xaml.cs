@@ -18,7 +18,7 @@ namespace DigesettAPP
 
             //Shell.Current.GoToAsync(nameof(HistorialMultasPagadasCiudadano));
 
-            //Shell.Current.GoToAsync($"//{nameof(HistorialMultasPagadasCiudadano)}");
+            //Shell.Current.GoToAsync($"//{nameof(RegistrarViewCiudadano)}");
 
         }
 

@@ -70,7 +70,12 @@ namespace DigesettAPP.ViewCiudadano
             }
         }
 
+        
 
 
     }
+
+
 }
+
+

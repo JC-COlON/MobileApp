@@ -46,15 +46,39 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame BackgroundColor="#eeeeee" CornerRadius="10" Padding="10" Margin="0,5">
-                        <StackLayout>
-                            <Label Text="{Binding Fecha}" FontAttributes="Bold" />
-                            <Label Text="{Binding Articulo}" />
-                            <Label Text="{Binding Zona}" TextColor="Gray"/>
+                        <StackLayout Spacing="5">
+
+                            <!-- Nombre -->
+                            <HorizontalStackLayout>
+                                <Label Text="Nombre: " FontAttributes="Bold" />
+                                <Label Text="{Binding Nombre}" />
+                            </HorizontalStackLayout>
+
+                            <!-- Fecha -->
+                            <HorizontalStackLayout>
+                                <Label Text="Fecha: " FontAttributes="Bold" />
+                                <Label Text="{Binding Fecha}" />
+                            </HorizontalStackLayout>
+
+                            <!-- Artículo Infringido -->
+                            <HorizontalStackLayout>
+                                <Label Text="Artículo Infringido: " FontAttributes="Bold" />
+                                <Label Text="{Binding Articulo}" />
+                            </HorizontalStackLayout>
+
+                            <!-- Zona / Lugar de la Infracción -->
+                            <HorizontalStackLayout>
+                                <Label Text="Zona / Lugar de la Infracción: " FontAttributes="Bold" />
+                                <Label Text="{Binding Zona}" />
+                            </HorizontalStackLayout>
+
                         </StackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+
 
     </VerticalStackLayout>
 </ContentPage>

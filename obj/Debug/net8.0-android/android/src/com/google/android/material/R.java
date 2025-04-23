@@ -2916,21 +2916,21 @@ public final class R {
 		public static final int mtrl_switch_track_decoration = 0x7f07010a;
 		public static final int mtrl_tabs_default_indicator = 0x7f07010b;
 		public static final int navigation_empty_icon = 0x7f07010c;
-		public static final int notification_action_background = 0x7f07010d;
-		public static final int notification_bg = 0x7f07010e;
-		public static final int notification_bg_low = 0x7f07010f;
-		public static final int notification_bg_low_normal = 0x7f070110;
-		public static final int notification_bg_low_pressed = 0x7f070111;
-		public static final int notification_bg_normal = 0x7f070112;
-		public static final int notification_bg_normal_pressed = 0x7f070113;
-		public static final int notification_icon_background = 0x7f070114;
-		public static final int notification_template_icon_bg = 0x7f070115;
-		public static final int notification_template_icon_low_bg = 0x7f070116;
-		public static final int notification_tile_bg = 0x7f070117;
-		public static final int notify_panel_notification_icon_bg = 0x7f070119;
-		public static final int test_level_drawable = 0x7f07012f;
-		public static final int tooltip_frame_dark = 0x7f070130;
-		public static final int tooltip_frame_light = 0x7f070131;
+		public static final int notification_action_background = 0x7f07010e;
+		public static final int notification_bg = 0x7f07010f;
+		public static final int notification_bg_low = 0x7f070110;
+		public static final int notification_bg_low_normal = 0x7f070111;
+		public static final int notification_bg_low_pressed = 0x7f070112;
+		public static final int notification_bg_normal = 0x7f070113;
+		public static final int notification_bg_normal_pressed = 0x7f070114;
+		public static final int notification_icon_background = 0x7f070115;
+		public static final int notification_template_icon_bg = 0x7f070116;
+		public static final int notification_template_icon_low_bg = 0x7f070117;
+		public static final int notification_tile_bg = 0x7f070118;
+		public static final int notify_panel_notification_icon_bg = 0x7f07011a;
+		public static final int test_level_drawable = 0x7f070130;
+		public static final int tooltip_frame_dark = 0x7f070131;
+		public static final int tooltip_frame_light = 0x7f070132;
 	}
 	public static final class id {
 		public static final int BOTTOM_END = 0x7f080001;

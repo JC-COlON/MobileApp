@@ -5,30 +5,33 @@
              BackgroundColor="White"
              Title="">
 
-    <ScrollView>
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,-15,0,0">
 
+    <Grid RowDefinitions="Auto,*" Margin="0,-50,0,0">
+        <!-- CABECERA: FRAME VERDE -->
+        <Frame BackgroundColor="#009C40" 
+               HeightRequest="180" 
+               CornerRadius="65"
+               Padding="0"
+               HasShadow="False" 
+               WidthRequest="460"/>
+
+        <!-- CONTENIDO CON SCROLL -->
+        <ScrollView Grid.Row="1" Margin="0,-150,0,0">
             <StackLayout>
 
-                <!--CIRCULE AND NOTI-ICON-->
-                <StackLayout Margin="0,60,0,0"  >
-
-                    <ImageButton  Source="notificationss"  Margin="230,0,60,0" 
-            TranslationY="12" HeightRequest="30" WidthRequest="30" MaximumHeightRequest="30"/>
-
-                    <Frame HeightRequest="50" WidthRequest="50" TranslationX="150" TranslationY="-30" CornerRadius="25" Padding="0" >
+                <!-- CIRCULO E ICONOS -->
+                <StackLayout Margin="0,60,0,0">
+                    <ImageButton Source="notification" Margin="230,0,60,0" TranslationY="12" HeightRequest="35" WidthRequest="35"/>
+                    <Frame HeightRequest="50" WidthRequest="50" TranslationX="150" TranslationY="-30" CornerRadius="25" Padding="0">
                         <ImageButton Source="usuario.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" Clicked="IrPerfilCiudadano"/>
-
-
                     </Frame>
-                    <Image Source="ametlogo.png"  HeightRequest="100" WidthRequest="100" Margin="0,-100,280,0"/>
-
-                    <!--<Label FontSize="25" FontFamily="SfProTextRegular" Margin="10,-70,250,0" Text="Datos"  FontAttributes="Bold" TextColor="#009C40"  />-->
-
+                    <Image Source="ametlogo.png" HeightRequest="100" WidthRequest="100" Margin="0,-100,280,0"/>
                 </StackLayout>
+                <!--<Label FontSize="25" FontFamily="SfProTextRegular" Margin="10,-70,250,0" Text="Datos"  FontAttributes="Bold" TextColor="#009C40"  />-->
+
 
                 <!--CARD -->
-                <Border Margin="10,50,10,0" HeightRequest="193" StrokeShape="RoundRectangle 22" StrokeThickness="0">
+                <Border Margin="10,45,10,0" HeightRequest="193" StrokeShape="RoundRectangle 22" StrokeThickness="0">
                     <Border.Background>
                         <LinearGradientBrush>
                             <GradientStop Color="#FD8402" Offset="0.0"/>
@@ -87,7 +90,7 @@
 
 
                 <!--COLUM CENTER-->
-                <StackLayout Margin="0,40,0,30" Padding="10" >
+                <StackLayout Margin="0,30,0,30" Padding="10" >
                     <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto" ColumnSpacing="15">
                         <!-- multas -->
                         <Border HeightRequest="110" BackgroundColor="#f5f5f5" Grid.Column="0"  
@@ -172,9 +175,9 @@
                 </StackLayout>
 
             </StackLayout>
-
-        </Grid>
-    </ScrollView>
+        </ScrollView>
+    </Grid>
+    
 
     
 

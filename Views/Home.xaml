@@ -83,7 +83,10 @@
                                     <Grid HorizontalOptions="Center">
                                         <Label Text="" TextColor="White" FontSize="14" FontAttributes="Bold"/>
                                         <ImageButton Source="lapiz.png" x:Name="GotoCrearMultas" Clicked="GotoCrearMultas_Clicked" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,4,0" />
+                                        
                                     </Grid>
+                                    
+                                    
                                 </Frame>
 
                                 <!-- Frame 2 -->

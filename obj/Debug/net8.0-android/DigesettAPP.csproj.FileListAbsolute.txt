@@ -1491,3 +1491,8 @@ C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\stamp\_Co
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notification.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notification.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notification.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notification.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notification.png

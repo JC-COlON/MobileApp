@@ -51,6 +51,18 @@ namespace DigesettAPP.ViewModels
             }
         }
 
+        private string _confirmPassword;
+        public string ConfirmPassword
+        {
+            get => _confirmPassword;
+            set
+            {
+                _confirmPassword = value;
+                OnPropertyChanged();
+            }
+        }
+
+
 
 
         private string _rawPhone = "";
@@ -328,6 +340,13 @@ namespace DigesettAPP.ViewModels
             if (Password.Length < 6)
             {
                 await Shell.Current.DisplayAlert("Contraseña débil", "La contraseña debe tener al menos 6 caracteres.", "OK");
+                return;
+            }
+
+            // Verifica que las contraseñas coincidan
+            if (Password != ConfirmPassword)
+            {
+                await Shell.Current.DisplayAlert("Contraseñas no coinciden", "La contraseña y su confirmación no coinciden. Intente nuevamente.", "OK");
                 return;
             }
 

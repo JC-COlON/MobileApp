@@ -85,22 +85,36 @@ namespace DigesettAPP.ViewModels
                         {
                             Multas = new ObservableCollection<Ticket>();
                             await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                            await Shell.Current.GoToAsync("..");
                         }
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
                     {
-                        // Si el código de estado es 404, significa que no se encontraron multas pendientes
                         string errorMessage = "Este Usuario No tiene Multas Pendientes.";
                         await App.Current.MainPage.DisplayAlert("Sin multas", errorMessage, "OK");
+                        await Shell.Current.GoToAsync("..");
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                     {
-                        // Si el código de estado es 400, podemos asumir que no hay multas pendientes
-                        await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                        string mensajeApi = "No tienes multas pendientes por pagar.";
+                        try
+                        {
+                            dynamic errorObj = JsonConvert.DeserializeObject(jsonResponse);
+                            if (errorObj?.message != null)
+                            {
+                                mensajeApi = errorObj.message;
+                            }
+                        }
+                        catch
+                        {
+                            // ignorar si falla el parseo
+                        }
+
+                        await App.Current.MainPage.DisplayAlert("Sin multas", mensajeApi, "OK");
+                        await Shell.Current.GoToAsync("..");
                     }
                     else
                     {
-                        // Si hay otro código de error, mostramos el error genérico
                         await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las multas.", "OK");
                     }
                 }
@@ -114,6 +128,7 @@ namespace DigesettAPP.ViewModels
                 IsLoading = false;
             }
         }
+
 
 
 

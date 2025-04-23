@@ -36,6 +36,7 @@ namespace DigesettAPP.ViewModel
             set { _cardId = value; OnPropertyChanged(); }
         }
 
+
         public string Cedula
         {
             get => _cedula;
@@ -137,7 +138,7 @@ namespace DigesettAPP.ViewModel
                     {
                         string num = ultimaTarjeta.CardNumber.ToString();
                         NumeroTarjeta = $"**** **** **** {num.Substring(num.Length - 4)}";
-                        Expiracion = $"Exp: {ultimaTarjeta.ExpirationDate}";
+                        Expiracion = $" {ultimaTarjeta.ExpirationDate}";
 
                         // Asignamos el CardId a la propiedad en ViewModel
                         CardId = ultimaTarjeta.CardId;  // Aquí es donde asignas el CardId
@@ -168,8 +169,9 @@ namespace DigesettAPP.ViewModel
         {
             try
             {
-                string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
+                IsLoading = true; // Mostrar el loading
 
+                string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
                 using var client = new HttpClient();
                 string token = Preferences.Get("AuthToken", string.Empty);
 
@@ -180,7 +182,6 @@ namespace DigesettAPP.ViewModel
                 }
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
                 var response = await client.GetAsync(url);
 
                 if (response.IsSuccessStatusCode)
@@ -191,7 +192,7 @@ namespace DigesettAPP.ViewModel
                     if (ticket != null)
                     {
                         TicketSeleccionado = ticket;
-                        OnPropertyChanged(nameof(TicketSeleccionado)); // Asegura actualización en la UI
+                        OnPropertyChanged(nameof(TicketSeleccionado));
                     }
                     else
                     {
@@ -208,7 +209,12 @@ namespace DigesettAPP.ViewModel
             {
                 await App.Current.MainPage.DisplayAlert("Excepción", $"Error al obtener la multa:\n{ex.Message}", "OK");
             }
+            finally
+            {
+                IsLoading = false; // Ocultar el loading
+            }
         }
+
 
         // NUEVO: Método para pagar la multa
         public async Task PagarMulta()
@@ -223,11 +229,23 @@ namespace DigesettAPP.ViewModel
             if (!confirm) return;
 
             string token = Preferences.Get("AuthToken", string.Empty);
+            if (string.IsNullOrEmpty(token))
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "Token no encontrado. El usuario no está autenticado.", "OK");
+                return;
+            }
+
             var handler = new JwtSecurityTokenHandler();
             var jwt = handler.ReadToken(token) as JwtSecurityToken;
 
             int userId = int.Parse(jwt?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value ?? "0");
             string email = jwt?.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")?.Value ?? "";
+
+            if (userId == 0 || string.IsNullOrEmpty(email))
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "No se pudo extraer el UserId o el Email del token.", "OK");
+                return;
+            }
 
             int cardId = CardId;
             int ticketId = TicketSeleccionado.TicketId;
@@ -241,9 +259,7 @@ namespace DigesettAPP.ViewModel
             };
 
             string jsonPayload = JsonConvert.SerializeObject(payload, Formatting.Indented);
-
-            // Mostrar el JSON en un DisplayAlert
-            //await App.Current.MainPage.DisplayAlert("JSON Enviado", jsonPayload, "OK");
+            await App.Current.MainPage.DisplayAlert("JSON Enviado", jsonPayload, "OK");
 
             try
             {
@@ -251,6 +267,7 @@ namespace DigesettAPP.ViewModel
 
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
@@ -265,33 +282,32 @@ namespace DigesettAPP.ViewModel
                 else
                 {
                     string errorContent = await response.Content.ReadAsStringAsync();
-                    string errorMessage = $"Error al pagar la multa. StatusCode: {response.StatusCode}\nMensaje: {errorContent}";
-                    await App.Current.MainPage.DisplayAlert("Error en la API", errorMessage, "OK");
+
+                    // Verifica también los headers y body enviados para debug completo
+                    var debugInfo = $"Status: {response.StatusCode}\n" +
+                                    $"Request Headers: {client.DefaultRequestHeaders}\n" +
+                                    $"Payload: {jsonPayload}\n" +
+                                    $"Response: {errorContent}";
+
+                    await App.Current.MainPage.DisplayAlert("Error al pagar", debugInfo, "OK");
                 }
             }
             catch (HttpRequestException ex)
             {
                 await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await App.Current.MainPage.DisplayAlert("Error de conexión", $"No se pudo conectar con el servidor. Detalles: {ex.Message}", "OK");
+                await App.Current.MainPage.DisplayAlert("Error de conexión", $"No se pudo conectar con el servidor:\n{ex.Message}", "OK");
             }
             catch (Exception ex)
             {
                 await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await App.Current.MainPage.DisplayAlert("Error desconocido", $"Ocurrió un error inesperado. Detalles: {ex.Message}", "OK");
+                await App.Current.MainPage.DisplayAlert("Error inesperado", $"Ocurrió un error:\n{ex.Message}", "OK");
             }
         }
 
 
 
-        //public void ActualizarTarjetaSeleccionada(CreditCard tarjeta)
-        //{
-        //    if (tarjeta == null) return;
 
-        //    var numeroStr = tarjeta.CardNumber.ToString();
-        //    NumeroTarjeta = $"**** **** **** {numeroStr[^4..]}";
-        //    Expiracion = $"Exp: {tarjeta.ExpirationDate}";
-        //    CardId = tarjeta.CardId;
-        //}
+
 
 
     }

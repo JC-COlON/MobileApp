@@ -150,13 +150,11 @@
                                                 <StackLayout>
                                                     <!-- Mostramos el precio -->
                                                     <Label Text="{Binding Articulo.Price, StringFormat='RD${0:F2}'}"
-           FontSize="14"
-           FontAttributes="Bold"
-           TextColor="Black"
-           HorizontalOptions="Center">
-                                                        <Label.GestureRecognizers>
-                                                            <TapGestureRecognizer Tapped="OnMoneyIconTapped" />
-                                                        </Label.GestureRecognizers>
+                                                   FontSize="12"
+                                                   FontAttributes="Bold"
+                                                   TextColor="Black"
+                                                   HorizontalOptions="Center">
+                                                        
                                                     </Label>
                                                 </StackLayout>
 
@@ -190,24 +188,25 @@
                                             <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
                                                 <!-- Entry para el comentario -->
                                                 <Entry Placeholder="Escribe un comentario..."
-       Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.Comentario, Mode=TwoWay}"
-       FontSize="14"
-       BackgroundColor="Transparent"
-       TextColor="Black"
-       PlaceholderColor="Gray"
-       Grid.Column="0" />
+                                               Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
+                                                    Path=BindingContext.Comentario, Mode=TwoWay}"
+                                               FontSize="14"
+                                               BackgroundColor="Transparent"
+                                               TextColor="Black"
+                                               PlaceholderColor="Gray"
+                                               Grid.Column="0" />
 
 
                                                 <!-- Botón de enviar -->
                                                 <ImageButton Source="enviarcomentario.png"
-             WidthRequest="28"
-             HeightRequest="28"
-             BackgroundColor="Transparent"
-             Command="{Binding BindingContext.EnviarComentarioCommand, Source={x:Reference TicketsCollectionView}}"
-             CommandParameter="{Binding .}"
-             Grid.Column="1"
-             HorizontalOptions="End"
-             VerticalOptions="Center"/>
+                                                 WidthRequest="28"
+                                                 HeightRequest="28"
+                                                 BackgroundColor="Transparent"
+                                                 Command="{Binding BindingContext.EnviarComentarioCommand, Source={x:Reference TicketsCollectionView}}"
+                                                 CommandParameter="{Binding .}"
+                                                 Grid.Column="1"
+                                                 HorizontalOptions="End"
+                                                 VerticalOptions="Center"/>
 
                                             </Grid>
                                         </Frame>
