@@ -146,6 +146,9 @@
 	  <MauiXaml Update="ViewCiudadano\PoputRegistradoCorrectamente.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputSeleccionarArticulo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ViewCiudadano\PoputSeleccionarMetodoPago.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

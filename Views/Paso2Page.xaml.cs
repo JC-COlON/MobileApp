@@ -1,67 +1,27 @@
+Ôªøusing CommunityToolkit.Maui.Views;
+using DigesettAPP.ViewCiudadano;
+using DigesettAPP.Models; // Aseg√∫rate de que este espacio de nombres est√© presente para la clase 'Article'
+
 namespace DigesettAPP.Views
 {
     public partial class Paso2Page : ContentPage
     {
         private Multa _multa;
+        private Article articuloSeleccionado; // Variable para almacenar el art√≠culo seleccionado
 
         public Paso2Page(Multa multa)
         {
             InitializeComponent();
             _multa = multa;
 
-            // Definir las opciones del Picker para tipo de vehÌculo
+            // Definir las opciones del Picker para tipo de veh√≠culo (el Picker para tipo de veh√≠culo a√∫n es necesario)
             tipoVehiculoPicker.ItemsSource = new List<string>
             {
                 "Motocicleta",
-                "AutomÛvil",
+                "Autom√≥vil",
                 "Camioneta",
-                "Autob˙s",
+                "Autob√∫s",
                 "Otros"
-            };
-
-            // Definir las opciones del Picker para artÌculo infringido
-            articuloInfringidoPicker.ItemsSource = new List<string>
-            {
-                "ART 29 : Sin licencia",
-                "ART 40-41 : Licencia vencida",
-                "ART 47-7 : No portar licencia",
-                "ART 146/02 : Sin marbete de seguro",
-                "ART 27-3 : Sin matrÌcula",
-                "ART 27-4 : Sin placa",
-                "ART 110 : Sin revista",
-                "ART 1 LEY513 : Sin tablilla",
-                "ART 135C : Sin casco",
-                "ART 33-77 : Pirata no rotulÛ",
-                "ART 88 : ObstrucciÛn al tr·nsito",
-                "ART 81 : Sitio (zona) prohibido",
-                "ART 97 : SeÒales de tr·nsito",
-                "ART 97-A : Violar seÒal de pare",
-                "ART 76-C : Viraje en U",
-                "ART 27-22 : Una placa",
-                "ART 27-2 : Uso distinto de matrÌcula",
-                "ART 27-27 : Color distinto de matrÌcula",
-                "ART 174 : Personas sobre la carga",
-                "ART 162 : Ruido",
-                "ART 74-H : Ceder paso a vehÌculo de emergencia",
-                "ART 27-4 : No exhibir la placa en su lugar",
-                "ART 144 : Luz delantera apagada",
-                "ART 145 : Luz trasera",
-                "ART 158 : Espejo retrovisor",
-                "ART 164-B : Extinguidor",
-                "ART 164 AP 200 : BotiquÌn",
-                "ART 171 A-3 : Bandera roja",
-                "ART 173-G : Plataforma y timbre",
-                "ART 173-D : PeÛn",
-                "ART 164-D : Tri·ngulo",
-                "ART 130 LEY 241 : Ventas vÌas p˙blicas",
-                "ART 130 : Lanzar desperdicios en vÌas p˙blicas",
-                "ART 62 : Velocidad muy reducida",
-                "ART 5 : GuÌa a la izquierda",
-                "ART 27 Y 47 : Actos prohibidos",
-                "ART 161 : Sin cinturÛn",
-                "ART 96-B-1 : Luz roja",
-                "ART 1 LEY 143-01 : Uso del celular",
-                "ART 106 : NiÒos menores en el asiento delantero"
             };
 
             // Cargar los datos guardados, si existen
@@ -70,8 +30,8 @@ namespace DigesettAPP.Views
 
         private void GuardarDatosPaso2()
         {
-            // Guardar el texto seleccionado en lugar del ID
-            Preferences.Set("ArticuloInfringido", articuloInfringidoPicker.SelectedItem?.ToString());
+            // Guardar el art√≠culo seleccionado en lugar del ID del Picker
+            Preferences.Set("ArticuloInfringido", articuloSeleccionado?.DisplayText); // Almacena el texto de DisplayText del art√≠culo seleccionado
             Preferences.Set("TipoVehiculo", tipoVehiculoPicker.SelectedItem?.ToString());
 
             // Guardar otros campos
@@ -87,22 +47,26 @@ namespace DigesettAPP.Views
             // Cargar el texto guardado en lugar del ID
             lugarIncidenteEntry.Text = Preferences.Get("LugarIncidente", string.Empty);
 
-            // Recuperar el texto del Picker desde las preferencias y seleccionar el Ìtem correspondiente
+            // Recuperar el art√≠culo infringido guardado y mostrar el texto correspondiente
             var articuloInfringidoText = Preferences.Get("ArticuloInfringido", string.Empty);
-            articuloInfringidoPicker.SelectedItem = articuloInfringidoText;
+            if (!string.IsNullOrEmpty(articuloInfringidoText))
+            {
+                articuloSeleccionadoLabel.Text = articuloInfringidoText;
+                articuloSeleccionadoLabel.TextColor = Colors.Black; // Cambia el color si ya est√° seleccionado
+            }
 
             placaVehiculoEntry.Text = Preferences.Get("PlacaVehiculo", string.Empty);
             modeloVehiculoEntry.Text = Preferences.Get("ModeloVehiculo", string.Empty);
             marcaVehiculoEntry.Text = Preferences.Get("MarcaVehiculo", string.Empty);
 
-            // Recuperar el texto del tipo de vehÌculo y seleccionarlo
+            // Recuperar el texto del tipo de veh√≠culo y seleccionarlo
             var tipoVehiculoText = Preferences.Get("TipoVehiculo", string.Empty);
             tipoVehiculoPicker.SelectedItem = tipoVehiculoText;
 
             ObservacionesEntry.Text = Preferences.Get("Observaciones", string.Empty);
         }
 
-        // MÈtodo de validaciÛn
+        // M√©todo de validaci√≥n
         private bool ValidarFormulario()
         {
             // Comprobar los campos obligatorios
@@ -111,24 +75,24 @@ namespace DigesettAPP.Views
                 DisplayAlert("Error", "'Zona / Lugar del Incidente' obligatorio", "OK");
                 return false;
             }
-            else if (articuloInfringidoPicker.SelectedIndex == -1)
+            else if (articuloSeleccionado == null) // Validaci√≥n de que se haya seleccionado un art√≠culo
             {
-                DisplayAlert("Error", "'ArtÌculo Infringido' obligatorio", "OK");
+                DisplayAlert("Error", "'Art√≠culo Infringido' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(placaVehiculoEntry.Text))
             {
-                DisplayAlert("Error", "'Placa del VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Placa del Veh√≠culo' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(marcaVehiculoEntry.Text))
             {
-                DisplayAlert("Error", "'Marca del VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Marca del Veh√≠culo' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(tipoVehiculoPicker.SelectedItem?.ToString()))
             {
-                DisplayAlert("Error", "'Tipo de VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Tipo de Veh√≠culo' obligatorio", "OK");
                 return false;
             }
 
@@ -142,9 +106,10 @@ namespace DigesettAPP.Views
             {
                 // Guardar los datos antes de retroceder
                 GuardarDatosPaso2();
-                await Shell.Current.GoToAsync(nameof(Paso3Page));
+                await Navigation.PopAsync(); // ‚Üê Regresa a la p√°gina anterior
             }
         }
+
 
         private async void IrPaso3(object sender, EventArgs e)
         {
@@ -156,5 +121,24 @@ namespace DigesettAPP.Views
                 await Navigation.PushAsync(new Paso3Page());
             }
         }
+
+        // M√©todo para abrir el popup de selecci√≥n de art√≠culo
+        private async void AbrirPopupArticulo(object sender, EventArgs e)
+        {
+            var popup = new PoputSeleccionarArticulo();
+            var result = await this.ShowPopupAsync(popup); // Espera el resultado
+
+            if (result is Article selectedArticle)
+            {
+                articuloSeleccionado = selectedArticle; // Asigna el art√≠culo seleccionado
+                articuloSeleccionadoLabel.Text = selectedArticle.DisplayText; // Muestra el texto del art√≠culo en el Label
+                articuloSeleccionadoLabel.TextColor = Colors.Black; // Cambia el color a negro si se selecciona un art√≠culo
+
+                // Guardar el texto y el ID del art√≠culo seleccionado en Preferences
+                Preferences.Set("ArticuloInfringido", selectedArticle.DisplayText);  // Guardar el texto para mostrarlo
+                Preferences.Set("ArticuloInfringidoId", selectedArticle.articleId.ToString()); // Guardar el ID para enviarlo
+            }
+        }
+
     }
 }

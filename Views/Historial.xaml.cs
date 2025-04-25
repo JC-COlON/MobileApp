@@ -24,6 +24,8 @@ namespace DigesettAPP.Views
             CargarHistorial();
         }
 
+        private List<Ticket> allTickets = new List<Ticket>();
+
         private async void CargarHistorial()
         {
             string noAgente = Preferences.Get("NoAgente", string.Empty);
@@ -37,7 +39,6 @@ namespace DigesettAPP.Views
 
             try
             {
-                // 👀 Mostrar loading
                 LoadingOverlay.IsVisible = true;
 
                 using (HttpClient client = new HttpClient())
@@ -45,35 +46,18 @@ namespace DigesettAPP.Views
                     string token = Preferences.Get("AuthToken", string.Empty);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                    TicketsList.ItemsSource = null;
-                    TicketsList.ItemsSource = new List<Ticket>();
-
                     HttpResponseMessage response = await client.GetAsync(url);
                     string jsonResponse = await response.Content.ReadAsStringAsync();
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
-
-                        if (tickets != null && tickets.Count > 0)
-                        {
-                            TicketsList.ItemsSource = tickets;
-                        }
-                        else
-                        {
-                            await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
-                            await Shell.Current.GoToAsync("//MainHome");
-                        }
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        await DisplayAlert("Historial vacío", "No tienes multas registradas aún.", "OK");
-                        await Shell.Current.GoToAsync("//MainHome");
+                        allTickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
+                        TicketsList.ItemsSource = allTickets;
                     }
                     else
                     {
                         TicketsList.ItemsSource = new List<Ticket>();
-                        await DisplayAlert("Error", $"No se pudo cargar el historial.\nCódigo: {response.StatusCode}\nMensaje: {jsonResponse}", "OK");
+                        await DisplayAlert("Error", "No se pudo cargar el historial.", "OK");
                     }
                 }
             }
@@ -84,11 +68,26 @@ namespace DigesettAPP.Views
             }
             finally
             {
-                // ✅ Ocultar loading
                 LoadingOverlay.IsVisible = false;
             }
         }
 
+        private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            string searchText = e.NewTextValue.ToLower();
+
+            var filteredTickets = allTickets.FindAll(t =>
+                (!string.IsNullOrEmpty(t.TicketNumber) && t.TicketNumber.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.LicensePlate) && t.LicensePlate.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.FormattedDate) && t.FormattedDate.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.Name) && t.Name.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.LastName) && t.LastName.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.Brand) && t.Brand.ToLower().Contains(searchText)) ||
+                (!string.IsNullOrEmpty(t.Model) && t.Model.ToLower().Contains(searchText))
+            );
+
+            TicketsList.ItemsSource = filteredTickets;
+        }
 
 
     }

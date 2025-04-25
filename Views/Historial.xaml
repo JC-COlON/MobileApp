@@ -6,10 +6,27 @@
              BackgroundColor="#f5f5f5">
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  RowDefinitions="Auto,*,Auto" Margin="0,50,0,0">
 
-        <Image Source="ametlogoo" HorizontalOptions="Start" Margin="20,0,0,0" Grid.Column="0" HeightRequest="50" WidthRequest="50" Grid.Row="0" />
+
 
         <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" Grid.Row="0" FontAttributes="Bold"/>
 
+      
+
+        <Frame BorderColor="Gray"
+  CornerRadius="10"
+  Padding="0"
+  HasShadow="False"
+  Margin="0,80,0,0"
+  HeightRequest="50"
+               WidthRequest="350">
+            <SearchBar x:Name="TicketSearchBar" 
+                       Placeholder="Buscar Multa..."
+          TextChanged="OnSearchTextChanged"
+          BackgroundColor="White"
+          Margin="5,0"
+          HeightRequest="46"
+                       WidthRequest="340"/>
+        </Frame>
 
         <!-- 🌀 Loading logo + Spinner -->
         <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="False" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">

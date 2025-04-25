@@ -41,7 +41,7 @@ namespace DigesettAPP.ViewModel
                         switch (user.Rol?.ToLower())
                         {
                             case "agente":
-                                await Shell.Current.GoToAsync("//MainHome"); // ← solo esto
+                                await Shell.Current.GoToAsync("//MainHome");
                                 break;
 
                             case "ciudadano":
@@ -53,18 +53,37 @@ namespace DigesettAPP.ViewModel
                                 await Shell.Current.DisplayAlert("Acceso Denegado", "No tiene permisos para acceder a esta aplicación.", "OK");
                                 break;
                         }
-
-
-
                     }
                     else
                     {
-                        await Shell.Current.DisplayAlert("Error", "Usuario o Contraseña Incorrecta", "OK");
+                        await Shell.Current.DisplayAlert("Error", "Usuario o contraseña incorrecta", "OK");
                     }
                 }
                 else
                 {
-                    await Shell.Current.DisplayAlert("Error", "Campos Necesarios", "OK");
+                    await Shell.Current.DisplayAlert("Error", "Debe completar todos los campos.", "OK");
+                }
+            }
+            catch (HttpRequestException httpEx)
+            {
+                // Si el servicio lanza una HttpRequestException y devuelve un contenido
+                if (httpEx.Data.Contains("ResponseBody"))
+                {
+                    var responseBody = httpEx.Data["ResponseBody"].ToString();
+                    try
+                    {
+                        dynamic errorObj = JsonConvert.DeserializeObject(responseBody);
+                        string message = errorObj?.message ?? "Error al iniciar sesión.";
+                        await Shell.Current.DisplayAlert("Error", message, "OK");
+                    }
+                    catch
+                    {
+                        await Shell.Current.DisplayAlert("Error", "Error inesperado al iniciar sesión.", "OK");
+                    }
+                }
+                else
+                {
+                    await Shell.Current.DisplayAlert("Error", "No se pudo conectar al servidor.", "OK");
                 }
             }
             catch (Exception ex)
@@ -72,6 +91,7 @@ namespace DigesettAPP.ViewModel
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
 
         public void LimpiarCampos()
         {

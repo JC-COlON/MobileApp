@@ -153,6 +153,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputRegistradoCorrectamente.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputRegistradoCorrectamente.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PoputSeleccionarArticulo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PoputSeleccionarArticulo.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PoputSeleccionarArticulo.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PoputSeleccionarArticulo.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PoputSeleccionarMetodoPago.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PoputSeleccionarMetodoPago.xaml

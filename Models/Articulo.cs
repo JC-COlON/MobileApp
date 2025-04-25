@@ -20,6 +20,9 @@ namespace DigesettAPP.Models
 
         [JsonProperty("articleId")]
         public int ArticleId { get; set; }
+
+        // solo lectura
+
     }
 
 }

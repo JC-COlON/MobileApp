@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -37,6 +37,35 @@ namespace DigesettAPP.Views
             });
         }
 
+        private async Task<bool> TieneMultaHoy(string cedula)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync($"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    var jObject = JsonConvert.DeserializeObject<Newtonsoft.Json.Linq.JObject>(json);
+
+                    var ticketsArray = jObject["$values"] as Newtonsoft.Json.Linq.JArray;
+
+                    if (ticketsArray != null)
+                    {
+                        foreach (var ticket in ticketsArray)
+                        {
+                            DateTime fechaMulta = ticket["ticketDate"].ToObject<DateTime>();
+                            if (fechaMulta.Date == DateTime.Today)
+                            {
+                                return true; // Ya tiene una multa hoy
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+
         private async void OnCedulaChanged(object sender, TextChangedEventArgs e)
         {
             if (e.NewTextValue.Length > 11)
@@ -47,7 +76,18 @@ namespace DigesettAPP.Views
 
             if (e.NewTextValue.Length == 11)
             {
-                var usuario = await BuscarUsuarioEnBD(e.NewTextValue);
+                string cedula = e.NewTextValue;
+
+                // 🚨 Primero verifica si ya tiene una multa hoy
+                bool tieneMultaHoy = await TieneMultaHoy(cedula);
+                if (tieneMultaHoy)
+                {
+                    await DisplayAlert("Atención", "Este ciudadano ya ha recibido una multa el día de hoy.", "OK");
+                    return;
+                }
+
+                // ✅ Si no tiene multa hoy, continúa con la lógica existente
+                var usuario = await BuscarUsuarioEnBD(cedula);
                 if (usuario != null)
                 {
                     NombreEntry.Text = usuario.Name;
@@ -65,7 +105,7 @@ namespace DigesettAPP.Views
                 }
                 else
                 {
-                    bool registrar = await DisplayAlert("Usuario No Registrado", "�Desea registrar un nuevo usuario?", "Registrar", "Cancelar");
+                    bool registrar = await DisplayAlert("Usuario No Registrado", "¿Desea registrar un nuevo usuario?", "Registrar", "Cancelar");
                     if (registrar)
                     {
                         await Task.Delay(100);
@@ -74,6 +114,7 @@ namespace DigesettAPP.Views
                 }
             }
         }
+
 
         private async Task<Usuario> BuscarUsuarioEnBD(string cedula)
         {
@@ -119,8 +160,8 @@ namespace DigesettAPP.Views
             Preferences.Set("Cedula", usuario.Cedula);
             Preferences.Set("Nombre", usuario.Name);  // Guarda el nombre
             Preferences.Set("Apellido", usuario.LastName);  // Guarda el apellido
-            Preferences.Set("Telefono", usuario.Phone);  // Guarda el tel�fono
-            Preferences.Set("Email", usuario.Email);  // Guarda el correo electr�nico
+            Preferences.Set("Telefono", usuario.Phone);  // Guarda el teléfono
+            Preferences.Set("Email", usuario.Email);  // Guarda el correo electrónico
         }
 
 
