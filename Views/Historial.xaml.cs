@@ -51,7 +51,13 @@ namespace DigesettAPP.Views
 
                     if (response.IsSuccessStatusCode)
                     {
+                        // Deserializar los tickets obtenidos del JSON
                         allTickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
+
+                        // Ordenar los tickets por fecha en orden descendente (más reciente primero)
+                        allTickets = allTickets.OrderByDescending(ticket => ticket.FormattedDate).ToList();
+
+                        // Asignar la lista ordenada como fuente de datos
                         TicketsList.ItemsSource = allTickets;
                     }
                     else
@@ -71,6 +77,7 @@ namespace DigesettAPP.Views
                 LoadingOverlay.IsVisible = false;
             }
         }
+
 
         private void OnSearchTextChanged(object sender, TextChangedEventArgs e)
         {

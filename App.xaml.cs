@@ -20,10 +20,10 @@ namespace DigesettAPP
 
             //Shell.Current.GoToAsync($"//{nameof(RegistrarViewCiudadano)}");
 
-            // Muestra el popup después de que la UI esté disponible
+
             //MainPage.Dispatcher.Dispatch(async () =>
             //{
-            //    var popup = new PoputSeleccionarArticulo();
+            //    var popup = new PopupAgregarVehiculo();
             //    await MainPage.ShowPopupAsync(popup);
             //});
 

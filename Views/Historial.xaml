@@ -13,7 +13,7 @@
       
 
         <Frame BorderColor="Gray"
-  CornerRadius="10"
+  CornerRadius="16"
   Padding="0"
   HasShadow="False"
   Margin="0,80,0,0"
@@ -25,7 +25,7 @@
           BackgroundColor="White"
           Margin="5,0"
           HeightRequest="46"
-                       WidthRequest="340"/>
+                       WidthRequest="330"/>
         </Frame>
 
         <!-- 🌀 Loading logo + Spinner -->

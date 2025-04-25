@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewCiudadano;
-using DigesettAPP.Models; // Asegúrate de que este espacio de nombres esté presente para la clase 'Article'
+using DigesettAPP.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization; // Asegúrate de que este espacio de nombres esté presente para la clase 'Article'
 
 namespace DigesettAPP.Views
 {
@@ -140,5 +142,107 @@ namespace DigesettAPP.Views
             }
         }
 
+        private async void BuscarVehiculoPorPlaca(object sender, FocusEventArgs e)
+        {
+            var placa = placaVehiculoEntry.Text?.Trim();
+
+            if (string.IsNullOrEmpty(placa))
+                return;
+
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string url = $"https://1037-200-215-234-53.ngrok-free.app/api/VehicleInfo/SearchByLicensePlate/{placa}";
+                    var response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var json = await response.Content.ReadAsStringAsync();
+
+                        var resultado = JsonSerializer.Deserialize<VehicleResponse>(json, new JsonSerializerOptions
+                        {
+                            PropertyNameCaseInsensitive = true
+                        });
+
+                        var vehiculo = resultado?.Vehicles?.Values?.FirstOrDefault();
+
+                        if (vehiculo != null)
+                        {
+                            marcaVehiculoEntry.Text = vehiculo.Brand;
+                            modeloVehiculoEntry.Text = vehiculo.Model;
+                            // Puedes usar también vehiculo.Color, vehiculo.Year, etc.
+                        }
+                        else
+                        {
+                            bool registrar = await App.Current.MainPage.DisplayAlert(
+                                "Vehículo no encontrado",
+                                "¿Desea registrar este vehículo?",
+                                "Sí", "No");
+
+                            if (registrar)
+                            {
+                                // Aquí pasamos la placa al constructor del popup
+                                var popup = new PopupAgregarVehiculo(placa);
+                                await App.Current.MainPage.ShowPopupAsync(popup);
+                            }
+                        }
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        bool registrar = await App.Current.MainPage.DisplayAlert(
+                            "Vehículo no encontrado",
+                            "¿Desea registrar este vehículo?",
+                            "Sí", "No");
+
+                        if (registrar)
+                        {
+                            // Aquí pasamos la placa al constructor del popup
+                            var popup = new PopupAgregarVehiculo(placa);
+                            await App.Current.MainPage.ShowPopupAsync(popup);
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "No se pudo obtener la información del vehículo.", "OK");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", $"Ocurrió un error al buscar la placa: {ex.Message}", "OK");
+            }
+        }
+
+
+
+
+
+
+
+
     }
 }
+
+public class VehicleResponse
+{
+    public VehiclesWrapper Vehicles { get; set; }
+}
+
+public class VehiclesWrapper
+{
+    [JsonPropertyName("$values")]
+    public List<Vehicle> Values { get; set; }
+}
+
+public class Vehicle
+{
+    public int VehicleInfoId { get; set; }
+    public string LicensePlate { get; set; }
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public string Color { get; set; }
+    public int Year { get; set; }
+}
+
+

@@ -111,6 +111,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PerfilPageCiudadano.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PerfilPageCiudadano.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupAgregarVehiculo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupAgregarVehiculo.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PopupAgregarVehiculo.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PopupAgregarVehiculo.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupPagarCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupPagarCiudadano.xaml
