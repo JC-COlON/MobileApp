@@ -22,11 +22,13 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\about.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\adduser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\alert_circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\articleicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\badge.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\cardadd_greenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\change.png
@@ -37,6 +39,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dateicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\document_filledgrenn.png
@@ -58,6 +61,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\interrogacion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\location.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\locationicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\moneysendgreen.png
@@ -88,11 +92,13 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\about.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\adduser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\alert_circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\articleicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\badge.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\cardadd_greenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\change.png
@@ -103,6 +109,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\dateicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\document_filledgrenn.png
@@ -124,6 +131,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\interrogacion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\location.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\locationicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\moneysendgreen.png
@@ -154,11 +162,13 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\about.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\adduser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\alert_circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\articleicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\badge.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\cardadd_greenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\change.png
@@ -169,6 +179,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\dateicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\document_filledgrenn.png
@@ -190,6 +201,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\interrogacion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\location.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\locationicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\moneysendgreen.png
@@ -220,11 +232,13 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\about.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\adduser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\alert_circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\articleicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\badge.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\cardadd_greenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\change.png
@@ -235,6 +249,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\dateicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\document_filledgrenn.png
@@ -256,6 +271,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\interrogacion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\location.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\locationicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\moneysendgreen.png
@@ -286,11 +302,13 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\about.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\adduser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\agregaruser.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\alert_circle.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\articleicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\badge.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\buscarmultapage.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\cardadd_greenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_add.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\card_dos.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\change.png
@@ -301,6 +319,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_right.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_up.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\configuracion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\correo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\dateicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\document_filledgrenn.png
@@ -322,6 +341,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\interrogacion.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\ir_tarjetas.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lapiz.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\location.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\locationicon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\lugartrabajo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\mastercard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\moneysendgreen.png

@@ -159,10 +159,17 @@ namespace DigesettAPP.ViewModels
         public int TicketId { get; set; }
         public string UserId { get; set; }
         public string AgentId { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
         public int ArticuloInfringido { get; set; }
         public string Zona { get; set; }
         public string LugarHecho { get; set; }
         public string Estado { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string LicensePlate { get; set; }
+        
+        public string IncidentLocation { get; set; }
         public string TicketDate { get; set; }
         public string? FechaVencimiento { get; set; }
         public string? UpdatedAt { get; set; }
@@ -173,6 +180,17 @@ namespace DigesettAPP.ViewModels
         public string Fecha => DateTime.TryParse(TicketDate, out var date) ? date.ToString("dd/MM/yyyy") : "Sin fecha";
 
         public string PrecioInfo => $"{Articulo?.Price}";
+
+        public string FormattedTicketDate =>
+                DateTime.TryParse(TicketDate, out var date) ? date.ToString("dd/MM/yyyy") : string.Empty;
+
+
+        public string FormattedTicketDatee =>
+    DateTime.TryParse(TicketDate, out var date)
+        ? date.ToString("dd/MM/yyyy hh:mm tt")
+        : string.Empty;
+
+
 
     }
 

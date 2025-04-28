@@ -34,15 +34,6 @@
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:DigesettAPP.ViewModels.AgregarTarjetaViewModel.Cvv"/> is changed.</remarks>
         </member>
-        <member name="T:DigesettAPP.ViewModels.HomeViewModel">
-            <inheritdoc/>
-        </member>
-        <member name="P:DigesettAPP.ViewModels.HomeViewModel.FormattedCardNumber">
-            <inheritdoc cref="F:DigesettAPP.ViewModels.HomeViewModel.formattedCardNumber"/>
-        </member>
-        <member name="P:DigesettAPP.ViewModels.HomeViewModel.ExpirationDate">
-            <inheritdoc cref="F:DigesettAPP.ViewModels.HomeViewModel.expirationDate"/>
-        </member>
         <member name="T:DigesettAPP.ViewModel.LoginViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -216,9 +207,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Cvv">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Cvv" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FormattedCardNumber">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FormattedCardNumber" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Cedula">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Cedula" generated properties.</summary>
         </member>
@@ -251,9 +239,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Cvv">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Cvv" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FormattedCardNumber">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FormattedCardNumber" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Cedula">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Cedula" generated properties.</summary>

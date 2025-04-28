@@ -31,6 +31,9 @@ namespace DigesettAPP
 
 
 
+
+
+
         }
 
         // Este método se llama cuando la app se pone en segundo plano (o está por cerrarse)
