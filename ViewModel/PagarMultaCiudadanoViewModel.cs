@@ -265,7 +265,10 @@ namespace DigesettAPP.ViewModel
             {
                 await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
 
-                using var client = new HttpClient();
+                using var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(120) // ⬅️ Aquí agregamos el timeout
+                };
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -303,6 +306,7 @@ namespace DigesettAPP.ViewModel
                 await App.Current.MainPage.DisplayAlert("Error inesperado", $"Ocurrió un error:\n{ex.Message}", "OK");
             }
         }
+
 
 
 

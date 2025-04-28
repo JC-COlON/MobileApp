@@ -14,7 +14,6 @@ public partial class PoputTarjetaAgregada : Popup
         // Cerrar el pop-up
         this.Close();
 
-        // Después de cerrar, redirigir a la página Home que tiene el TabBar
-        await Shell.Current.GoToAsync("ListadoTarjetasCiudadano");
+        await Shell.Current.GoToAsync("..");
     }
 }

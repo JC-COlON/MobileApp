@@ -9,13 +9,10 @@ public partial class PoputExitoReview : Popup
 		InitializeComponent();
 	}
 
-
     private async void OnCloseButtonClicked(object sender, EventArgs e)
     {
-        // Cerrar el pop-up
-        this.Close();
-
-        // Después de cerrar, redirigir a la página Home que tiene el TabBar
-        await Shell.Current.GoToAsync("ListaMultasCiudadano");
+        await this.CloseAsync(); // Solo cerrar el popup
     }
+
+
 }

@@ -20,6 +20,9 @@ namespace DigesettAPP.ViewModels
         private readonly HttpClient _httpClient;
 
         [ObservableProperty]
+        string carName;
+
+        [ObservableProperty]
         string cardNumber;
 
         [ObservableProperty]
@@ -177,7 +180,9 @@ namespace DigesettAPP.ViewModels
                     // Limpiar los campos
                     CardNumber = string.Empty;
                     ExpirationDate = string.Empty;
-                    cvv = string.Empty;
+                    Cvv = string.Empty;
+                    carName = string.Empty;
+                    
                 }
                 else
                 {

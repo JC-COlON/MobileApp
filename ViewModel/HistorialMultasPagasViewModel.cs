@@ -110,12 +110,19 @@ namespace DigesettAPP.ViewModel
                         else
                         {
                             await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pagadas.", "OK");
+                            await Task.Delay(200);
+                            await Shell.Current.GoToAsync("//HomeViewCiudadano"); // 🚀 A donde tú quieras llevarlo
+
                         }
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las multas.", "OK");
+                        await App.Current.MainPage.DisplayAlert("No hay multas", "Este ciudadano no tiene multas pagadas.", "OK");
+                        await Task.Delay(200);
+                        await Shell.Current.GoToAsync("//HomeViewCiudadano"); // 🚀 A donde tú quieras llevarlo
+
                     }
+
                 }
             }
             catch (Exception ex)

@@ -102,11 +102,17 @@ namespace DigesettAPP.ViewModels
         public ICommand CargarMultasCommand { get; }
 
         public ICommand ToggleExpandCommand { get; }
-        private void ToggleExpand(Ticket ticket)
+        private async void ToggleExpand(Ticket ticket)
         {
-            ticket.IsExpanded = !ticket.IsExpanded;  // Cambia el estado expandido del ticket
-            OnPropertyChanged(nameof(Tickets));  // Notificar que la lista de tickets ha cambiado
+            ticket.IsExpanded = !ticket.IsExpanded;
+            OnPropertyChanged(nameof(Tickets));
+
+            if (ticket.IsExpanded)
+            {
+                await VerificarSiMultaYaFueCalificada(ticket);
+            }
         }
+
 
         private async void IrAPagarMulta(Ticket ticket)
         {
@@ -118,81 +124,6 @@ namespace DigesettAPP.ViewModels
         }
 
 
-        //private async Task CargarMultas()
-        //{
-        //    string cedula = ObtenerCedulaDelToken();
-        //    if (string.IsNullOrEmpty(cedula))
-        //    {
-        //        await App.Current.MainPage.DisplayAlert("Error", "No se pudo obtener la cédula del token.", "OK");
-        //        return;
-        //    }
-
-        //    string url = $"{BaseUrl}?Cedula={cedula}&Estado=pending";
-
-        //    try
-        //    {
-        //        IsLoading = true;
-
-        //        using (HttpClient client = new HttpClient())
-        //        {
-        //            string token = Preferences.Get("AuthToken", string.Empty);
-        //            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-        //            HttpResponseMessage response = await client.GetAsync(url);
-        //            string jsonResponse = await response.Content.ReadAsStringAsync();
-
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                var tickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
-
-        //                if (tickets != null && tickets.Count > 0)
-        //                {
-        //                    var orderedTickets = tickets
-        //                        .OrderByDescending(ticket => DateTime.TryParse(ticket.TicketDate, out DateTime date) ? date : DateTime.MinValue)
-        //                        .ToList();
-
-        //                    Tickets = new ObservableCollection<Ticket>(orderedTickets);
-        //                }
-        //                else
-        //                {
-        //                    await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
-        //                    await Shell.Current.GoToAsync("..");
-        //                }
-        //            }
-        //            else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-        //            {
-        //                string mensajeApi = "No tienes multas pendientes por pagar.";
-        //                try
-        //                {
-        //                    dynamic errorObj = JsonConvert.DeserializeObject(jsonResponse);
-        //                    if (errorObj?.message != null)
-        //                    {
-        //                        mensajeApi = errorObj.message;
-        //                    }
-        //                }
-        //                catch
-        //                {
-        //                    // ignorar si falla el parseo
-        //                }
-
-        //                await App.Current.MainPage.DisplayAlert("Sin multas", mensajeApi, "OK");
-        //                await Shell.Current.GoToAsync("..");
-        //            }
-        //            else
-        //            {
-        //                await App.Current.MainPage.DisplayAlert("Error", $"No se pudieron cargar las multas. Código: {response.StatusCode}", "OK");
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error inesperado: {ex.Message}", "OK");
-        //    }
-        //    finally
-        //    {
-        //        IsLoading = false;
-        //    }
-        //}
 
 
         private async Task CargarMultas()
@@ -204,7 +135,11 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            string url = $"{BaseUrl}/{cedula}";
+            // Construir la URL correctamente
+            string url = $"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending";
+
+
+   
 
             try
             {
@@ -277,13 +212,21 @@ namespace DigesettAPP.ViewModels
         }
 
 
+
         private async Task EnviarReview(Ticket ticket)
         {
+            // 🔵 Validar primero que el ticket tenga un agente válido
+            if (ticket.Agente == null || ticket.Agente.UserId == 0)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "La multa no tiene asignado un agente válido para enviar la reseña.", "OK");
+                return;
+            }
+
             var review = new ReviewDTO
             {
                 UserId = ObtenerUserIdDesdeToken(),
                 TicketId = ticket.TicketId,
-                AgentId = ticket.Agente?.UserId ?? 0,
+                AgentId = ticket.Agente.UserId,
                 Rating = (int)ticket.Rating + 1,
                 Comment = Comentario
             };
@@ -305,7 +248,13 @@ namespace DigesettAPP.ViewModels
             {
                 string json = JsonConvert.SerializeObject(review, Formatting.Indented);
 
-                using (HttpClient client = new HttpClient())
+                // 🟡 Mostrar el JSON en un alert para depuración
+                await App.Current.MainPage.DisplayAlert("JSON Enviado", json, "OK");
+
+                using (HttpClient client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(120) // ⬅️ Aquí agregamos también el timeout
+                })
                 {
                     string token = Preferences.Get("AuthToken", string.Empty);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -318,7 +267,6 @@ namespace DigesettAPP.ViewModels
                         Comentario = string.Empty;
                         Calificacion = 0;
 
-                        // Mostrar popup de éxito
                         await App.Current.MainPage.ShowPopupAsync(new PoputExitoReview());
                     }
                     else
@@ -357,6 +305,9 @@ namespace DigesettAPP.ViewModels
         }
 
 
+
+
+
         private int ObtenerUserIdDesdeToken()
         {
             try
@@ -377,7 +328,33 @@ namespace DigesettAPP.ViewModels
             }
         }
 
- 
+        private async Task VerificarSiMultaYaFueCalificada(Ticket ticket)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string url = $"https://1037-200-215-234-53.ngrok-free.app/api/Reviews/CheckReviewByTicket?ticketId={ticket.TicketId}";
+
+                    HttpResponseMessage response = await client.GetAsync(url);
+                    string json = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        bool yaCalificada = JsonConvert.DeserializeObject<bool>(json);
+                        ticket.YaCalificada = yaCalificada;
+
+                        OnPropertyChanged(nameof(Tickets)); // Para refrescar la UI si es necesario
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al verificar review: {ex.Message}");
+                ticket.YaCalificada = false;
+            }
+        }
+
 
         // Método para obtener la cédula desde el token
         private string ObtenerCedulaDelToken()
@@ -455,6 +432,9 @@ namespace DigesettAPP.ViewModels
             public Agente Agente { get; set; }
 
             public bool IsExpanded { get; set; }
+
+            public bool YaCalificada { get; set; }
+
 
             // ➕ Propiedades calculadas
             public string FullName => $"{Name} {LastName}";

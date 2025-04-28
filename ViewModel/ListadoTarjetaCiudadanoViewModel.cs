@@ -49,6 +49,7 @@ namespace DigesettAPP.ViewModel
             if (string.IsNullOrEmpty(cedula))
             {
                 await App.Current.MainPage.DisplayAlert("Error", "No se pudo obtener la cédula del token.", "OK");
+                await Shell.Current.GoToAsync("..");
                 return;
             }
 
@@ -68,20 +69,45 @@ namespace DigesettAPP.ViewModel
                     Tarjetas = new ObservableCollection<CreditCard>(tarjetas ?? new List<CreditCard>());
                     OnPropertyChanged(nameof(Tarjetas)); // Notificar que las tarjetas han cambiado
                 }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    // Quitar el Device.BeginInvokeOnMainThread y usar await directamente
+                    var respuesta = await App.Current.MainPage.DisplayAlert(
+                        "No tiene tarjetas registradas",
+                        "¿Desea registrar una tarjeta?",
+                        "Sí",
+                        "No"
+                    );
+
+                    if (respuesta)
+                    {
+                        await Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
+                    }
+                    else
+                    {
+                        await Shell.Current.GoToAsync("..");
+                    }
+                }
+
+
+
                 else
                 {
                     await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las tarjetas.", "OK");
+                    await Shell.Current.GoToAsync("..");
                 }
             }
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Error", $"Ocurrió un error: {ex.Message}", "OK");
+                await Shell.Current.GoToAsync("..");
             }
             finally
             {
                 IsLoading = false;
             }
         }
+
 
 
         private async Task EliminarTarjeta(CreditCard card)

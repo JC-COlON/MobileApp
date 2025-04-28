@@ -15,6 +15,8 @@ namespace DigesettAPP
             InitializeComponent();
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzgyMTc3OEAzMjM5MmUzMDJlMzAzYjMyMzkzYld1RmdmVFF2eXl0cmM5L08zN0RkMHlTTDRkaEpHRVFhdGV1bDR3U2h5N2s9");
             MainPage = new AppShell();
+            Preferences.Clear();
+
 
             //Shell.Current.GoToAsync(nameof(HistorialMultasPagadasCiudadano));
 
@@ -26,6 +28,8 @@ namespace DigesettAPP
             //    var popup = new PopupAgregarVehiculo();
             //    await MainPage.ShowPopupAsync(popup);
             //});
+
+
 
         }
 

@@ -169,7 +169,11 @@ public partial class Paso3Page : ContentPage
 
             try
             {
-                var client = new HttpClient();
+                var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(120)
+                };
+
                 var jsonContent = JsonConvert.SerializeObject(multa);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 

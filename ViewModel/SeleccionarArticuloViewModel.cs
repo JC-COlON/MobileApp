@@ -59,7 +59,7 @@ public partial class SeleccionarArticuloViewModel : ObservableObject
         {
             IsLoading = true;
 
-            var response = await _httpClient.GetStringAsync("https://1037-200-215-234-53.ngrok-free.app/api/Article/GetAllArticles");
+            var response = await _httpClient.GetStringAsync("https://digesett.somee.com/api/Article/GetAllArticles");
 
             // ✅ NUEVO: Deserialización manual con JObject
             var jObject = JsonConvert.DeserializeObject<JObject>(response);

@@ -103,14 +103,12 @@ namespace DigesettAPP.Views
 
         private async void IrAtras2(object sender, EventArgs e)
         {
-            // Validar el formulario antes de retroceder
-            if (ValidarFormulario())
-            {
-                // Guardar los datos antes de retroceder
-                GuardarDatosPaso2();
-                await Navigation.PopAsync(); // ← Regresa a la página anterior
-            }
+            // NO validar al retroceder
+            // Guardar los datos antes de retroceder si quieres, pero sin validar
+            GuardarDatosPaso2();
+            await Navigation.PopAsync(); // ← Regresa a la página anterior
         }
+
 
 
         private async void IrPaso3(object sender, EventArgs e)
@@ -153,7 +151,7 @@ namespace DigesettAPP.Views
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = $"https://1037-200-215-234-53.ngrok-free.app/api/VehicleInfo/SearchByLicensePlate/{placa}";
+                    string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
                     var response = await client.GetAsync(url);
 
                     if (response.IsSuccessStatusCode)

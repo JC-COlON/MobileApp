@@ -23,7 +23,7 @@ namespace DigesettAPP.Views
         private async void OnInfoTapped(object sender, EventArgs e)
         {
             var popup = new PoputInformacionRating();
-            this.ShowPopup(popup); // <-- Requiere usar CommunityToolkit.Maui.Views
+            this.ShowPopup(popup); 
         }
 
         
