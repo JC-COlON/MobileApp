@@ -1,6 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewModels;
 using DigesettAPP.Views;
+using Microsoft.Maui.Controls;
 using System;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace DigesettAPP.ViewCiudadano
         public HomeViewCiudadano()
         {
             InitializeComponent();
+            carouselView.IndicatorView = indicatorview;
 
             // Establece el ViewModel como contexto de enlace
             BindingContext = new HomeViewModel();

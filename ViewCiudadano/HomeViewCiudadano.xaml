@@ -29,7 +29,7 @@
                     </StackLayout>
                     <!--<Label FontSize="25" FontFamily="SfProTextRegular" Margin="10,-70,250,0" Text="Datos"  FontAttributes="Bold" TextColor="#009C40"  />-->
 
-                    <Label Text="Multas Recientes"  TextColor="Black" FontFamily="SfProTextRegular"  FontSize="20" Margin="15,30,0,-40" FontAttributes="Bold" Grid.Row="0" />
+                    <!--<Label Text="Multas Recientes"  TextColor="Black" FontFamily="SfProTextRegular"  FontSize="20" Margin="15,30,0,-40" FontAttributes="Bold" Grid.Row="0" />
 
                     <CollectionView 
                             x:Name="listViewMultaPAY"
@@ -48,7 +48,7 @@
                                     WidthRequest="300"
                                     HeightRequest="200">
 
-                                    <!-- Fondo con degradado -->
+                                    --><!-- Fondo con degradado --><!--
                                     <Border.Background>
                                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                             <GradientStop Color="#FD8402" Offset="0.0" />
@@ -58,29 +58,29 @@
 
                                     <VerticalStackLayout Spacing="15" HorizontalOptions="Fill">
 
-                                        <!-- Título: Multa No. 12345 -->
+                                        --><!-- Título: Multa No. 12345 --><!--
                                         <Label Text="{Binding TicketId, StringFormat='Multa No. {0}'}"
                                            FontAttributes="Bold" FontSize="20"
                                            HorizontalOptions="Center" TextColor="White"
                                            FontFamily="SfProTextRegular" />
 
-                                        <!-- Zona -->
+                                        --><!-- Zona --><!--
                                         <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
                                             <Image Source="locationicon.png" HeightRequest="20" WidthRequest="20" />
                                             <Label Text="Zona:" FontSize="14" TextColor="LightGray" FontFamily="SfProTextRegular"/>
                                             <Label Text="{Binding IncidentLocation}" FontSize="14" TextColor="White" FontFamily="SfProTextRegular" />
                                         </HorizontalStackLayout>
 
-                                        <!-- Vehículo -->
+                                        --><!-- Vehículo --><!--
                                         <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
                                             <Image Source="caricon.png" HeightRequest="20" WidthRequest="20" />
                                             <Label Text="Vehículo:" FontSize="14" TextColor="LightGray" FontFamily="SfProTextRegular"/>
                                             <Label Text="{Binding Brand}" FontSize="14" TextColor="White" FontFamily="SfProTextRegular"/>
                                             <Label Text="{Binding Model}" FontSize="14" TextColor="White" FontFamily="SfProTextRegular"/>
-                                            <!--<Label Text="{Binding LicensePlate}" FontSize="14" TextColor="White" FontFamily="SfProTextRegular"/>-->
+                                            --><!--<Label Text="{Binding LicensePlate}" FontSize="14" TextColor="White" FontFamily="SfProTextRegular"/>--><!--
                                         </HorizontalStackLayout>
 
-                                        <!-- Fecha -->
+                                        --><!-- Fecha --><!--
                                         <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
                                             <Image Source="dateicon.png" HeightRequest="20" WidthRequest="20" />
                                             <Label Text="Fecha:" FontSize="14" TextColor="LightGray" FontFamily="SfProTextRegular"/>
@@ -91,72 +91,141 @@
                                 </Border>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
-                    </CollectionView>
+                    </CollectionView>-->
 
 
 
-                    <!--CARD -->
-                    <!--
-            <Border Margin="10,45,10,0" HeightRequest="193" StrokeShape="RoundRectangle 22" StrokeThickness="0">
-                <Border.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#FD8402" Offset="0.0"/>
-                        <GradientStop Color="Black" Offset="1.0"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                    <VerticalStackLayout Margin="0,20,0,0">
 
-                <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto" Padding="10" Margin="20,0,0,0">
+                        <CarouselView x:Name="carouselView" HeightRequest="200">
+                            <CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" />
+                            </CarouselView.ItemsLayout>
 
-                    <Label FontFamily="SfProTextRegular"
-           Grid.Row="0" Grid.Column="0"
-           Text="Credit"
-           VerticalOptions="Start"
-           TextColor="White"
-           Margin="0,15,0,0" />
+                            <CarouselView.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>1</x:String>
+                                    <x:String>2</x:String>
+                                    <x:String>3</x:String>
+                                    <x:String>4</x:String>
+                                    <x:String>5</x:String>
+                                </x:Array>
+                            </CarouselView.ItemsSource>
 
-                    -->
-                    <!-- Número de tarjeta formateado -->
-                    <!--
-                    <Label Grid.Row="1" Grid.Column="0"
-           FontSize="22"
-           Text="{Binding FormattedCardNumber, TargetNullValue='****-****-****-****'}"
-           VerticalOptions="Start"
-           TextColor="White"
-           Margin="0,30,0,0"
-           FontFamily="SfProTextRegular"/>
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.Triggers>
+                                            <DataTrigger TargetType="Grid" Binding="{Binding .}" Value="1">
+                                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Grid" Binding="{Binding .}" Value="2">
+                                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Grid" Binding="{Binding .}" Value="3">
+                                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Grid" Binding="{Binding .}" Value="4">
+                                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Grid" Binding="{Binding .}" Value="5">
+                                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                                            </DataTrigger>
+                                        </Grid.Triggers>
 
-                    -->
-                    <!-- Fecha de expiración -->
-                    <!--
-                    <Grid Grid.Row="2" RowDefinitions="Auto" ColumnDefinitions="Auto,Auto"
-          Grid.Column="0" Margin="0,20,0,0">
+                                        <Frame CornerRadius="22" Margin="10" Padding="10" HasShadow="True" BackgroundColor="Transparent">
+                                            <HorizontalStackLayout Spacing="10">
+                                                <Image WidthRequest="80" HeightRequest="80" VerticalOptions="Center">
+                                                    <Image.Triggers>
+                                                        <DataTrigger TargetType="Image" Binding="{Binding .}" Value="1">
+                                                            <Setter Property="Source" Value="cinturonseguridad.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{Binding .}" Value="2">
+                                                            <Setter Property="Source" Value="semaforo.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{Binding .}" Value="3">
+                                                            <Setter Property="Source" Value="velocimetro.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{Binding .}" Value="4">
+                                                            <Setter Property="Source" Value="volanteconmanos.png"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Image" Binding="{Binding .}" Value="5">
+                                                            <Setter Property="Source" Value="celulartachado.png"/>
+                                                        </DataTrigger>
+                                                    </Image.Triggers>
+                                                </Image>
 
-                        <Label Grid.Row="0" Grid.Column="0"
-               Text="Válido hasta"
-               VerticalOptions="Start"
-               TextColor="White"
-               Margin="0,2,10,0"
-               FontSize="13"
-               FontFamily="SfProTextRegular" />
+                                                <VerticalStackLayout VerticalOptions="Center" Spacing="5">
+                                                    <Label FontAttributes="Bold"
+                                                       FontSize="16"
+                                                       WidthRequest="220"
+                                                       HorizontalTextAlignment="Center"
+                                                       HorizontalOptions="Center">
+                                                        <Label.Triggers>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="1">
+                                                                <Setter Property="Text" Value="Tip de Conducción" />
+                                                                <Setter Property="TextColor" Value="#009C40" />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="2">
+                                                                <Setter Property="Text" Value="Consejo de Seguridad" />
+                                                                <Setter Property="TextColor" Value="#FD8402" />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="3">
+                                                                <Setter Property="Text" Value="Consejo de Seguridad" />
+                                                                <Setter Property="TextColor" Value="#FD8402" />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="4">
+                                                                <Setter Property="Text" Value="Tip de Conducción" />
+                                                                <Setter Property="TextColor" Value="#009C40" />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="5">
+                                                                <Setter Property="Text" Value="Consejo de Seguridad" />
+                                                                <Setter Property="TextColor" Value="#FD8402" />
+                                                            </DataTrigger>
+                                                        </Label.Triggers>
+                                                    </Label>
 
-                        <Label Grid.Row="0" Grid.Column="1"
-               Text="{Binding ExpirationDate, TargetNullValue='MM/YY'}"
-               VerticalOptions="Start"
-               TextColor="White"
-               Margin="0,0,0,0"
-               FontSize="16"
-               FontFamily="SfProTextBold"/>
-                    </Grid>
+                                                    <Label FontSize="14" 
+                                                       TextColor="Black" 
+                                                       LineBreakMode="WordWrap" 
+                                                       MaxLines="4" 
+                                                       HorizontalTextAlignment="Center"
+                                                       HorizontalOptions="Center"
+                                                       WidthRequest="200" 
+                                                       Margin="0,0,0,0">
+                                                        <Label.Triggers>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="1" >
+                                                                <Setter Property="Text" Value="Usa siempre el cinturón de seguridad, aunque el trayecto sea corto." />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="2">
+                                                                <Setter Property="Text" Value="Respeta los semáforos, incluso si la calle parece vacía." />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="3">
+                                                                <Setter Property="Text" Value="Respeta los límites de velocidad, incluso en vías despejadas." />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="4">
+                                                                <Setter Property="Text" Value="Conduce siempre con ambas manos en el volante para mayor control." />
+                                                            </DataTrigger>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding .}" Value="5">
+                                                                <Setter Property="Text" Value="No uses el celular mientras manejas. Mantén tu atención en el camino." />
+                                                            </DataTrigger>
+                                                        </Label.Triggers>
+                                                    </Label>
 
-                    <Image Grid.Row="3" Grid.Column="1"
-           Source="mastercard"
-           WidthRequest="80"
-           HeightRequest="80"
-           VerticalOptions="Center"
-           HorizontalOptions="End"
-           Margin="0,-50,0,0" />
-                </Grid>
-            </Border>-->
+                                                </VerticalStackLayout>
+                                            </HorizontalStackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+
+                        </CarouselView>
+
+                        <IndicatorView x:Name="indicatorview" Margin="5" HorizontalOptions="Center" IndicatorColor="Gray" SelectedIndicatorColor="#009C40"/>
+
+                    </VerticalStackLayout>
+
+
 
 
                     <!--COLUM CENTER-->
