@@ -31,11 +31,12 @@ namespace DigesettAPP
 
 
             // Navegar a la página de "HomeViewCiudadano" al iniciar la app
-            MainPage.Dispatcher.Dispatch(async () =>
-            {
-                // Navegar a la página de inicio directamente
-                await Shell.Current.GoToAsync("//HomeViewCiudadano");
-            });
+
+            //MainPage.Dispatcher.Dispatch(async () =>
+            //{
+            //    // Navegar a la página de inicio directamente
+            //    await Shell.Current.GoToAsync("//HomeViewCiudadano");
+            //});
 
 
 

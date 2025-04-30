@@ -5,68 +5,172 @@
              Title=""
              BackgroundColor="White">
 
-    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,65,0,0" >
+    <!-- Grid principal sin Row/ColumnDefinitions para superposición -->
+    <Grid>
 
-        <StackLayout Grid.Row="0" Grid.ColumnSpan="2"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  >
+        <!-- Contenido original dentro de un StackLayout o Grid -->
+        <Grid RowDefinitions="Auto,Auto"
+              ColumnDefinitions="*,*"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              Margin="0,65,0,0">
 
-            <Grid Grid.Row="0" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, Auto"  >
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2"
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
 
-                <Label Text="CREAR USUARIO"  Grid.Row="0" Grid.Column="0" 
-                 FontSize="22" TextColor="Black" FontAttributes="Bold"
-                 Margin="0,-40,0,25"  HorizontalOptions="Center"  FontFamily="poppins-bold.ttf"
-                />
+                <Grid Grid.Row="0"
+                      RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+                      ColumnDefinitions="Auto, *, Auto">
 
-                <Label Text="Cédula"  TextColor="Black" FontSize="14" HorizontalOptions="Start"  Grid.Row="1" Grid.Column="0" Margin="10,15,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="2" Grid.Column="0" 
-                       CornerRadius="10" WidthRequest="285" HeightRequest="45" Margin="0,6,0,10">
-                    <Entry x:Name="CedulaEntry"
-                           Keyboard="Numeric"
+                    <Label Text="CREAR USUARIO"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           FontSize="22"
                            TextColor="Black"
-                           FontSize="15"
-                           WidthRequest="250"
-                           TranslationY="10"
-                           Margin="0,-30,0,-19"
-                           MaxLength="11" 
-                           TextChanged="CedulaEntry_TextChanged"
-                            />
-                </Frame>
+                           FontAttributes="Bold"
+                           Margin="0,-40,0,25"
+                           HorizontalOptions="Center"
+                           FontFamily="poppins-bold.ttf" />
 
-                <Label Text="Nombre"  TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0"  Margin="10,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
-                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="285" HeightRequest="45" Margin="0,6,0,10">
-                    <Entry x:Name="NombreEntry"
+                    <Label Text="Cédula"
                            TextColor="Black"
-                           FontSize="15"
-                           WidthRequest="250"
-                           TranslationY="10"
-                           Margin="0,-30,0,-19" />
-                </Frame>
+                           FontSize="14"
+                           HorizontalOptions="Start"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Margin="10,15,0,0"
+                           FontAttributes="Bold"
+                           FontFamily="poppins-bold.ttf" />
+                    <Frame BackgroundColor="White"
+                           BorderColor="#D9D0E3"
+                           Grid.Row="2"
+                           Grid.Column="0"
+                           CornerRadius="10"
+                           WidthRequest="285"
+                           HeightRequest="45"
+                           Margin="0,6,0,10">
+                        <Entry x:Name="CedulaEntry"
+                               Keyboard="Numeric"
+                               TextColor="Black"
+                               FontSize="15"
+                               WidthRequest="250"
+                               TranslationY="10"
+                               Margin="0,-30,0,-19"
+                               MaxLength="11"
+                               TextChanged="CedulaEntry_TextChanged" />
+                    </Frame>
 
-                <Label Text="Apellidos" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="5" Grid.Column="0"  Margin="10,20,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="6" Grid.Column="0" CornerRadius="10" WidthRequest="285" HeightRequest="45" Margin="0,6,0,10">
-                    <Entry x:Name="ApellidoEntry"
+                    <Label Text="Nombre"
                            TextColor="Black"
-                           FontSize="15"
-                           WidthRequest="250"
-                           TranslationY="10"
-                           Margin="0,-30,0,-19" />
-                </Frame>
+                           FontSize="14"
+                           HorizontalOptions="Start"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           Margin="10,20,0,0"
+                           FontAttributes="Bold"
+                           FontFamily="poppins-bold.ttf" />
+                    <Frame BackgroundColor="White"
+                           BorderColor="#D9D0E3"
+                           Grid.Row="4"
+                           Grid.Column="0"
+                           CornerRadius="10"
+                           WidthRequest="285"
+                           HeightRequest="45"
+                           Margin="0,6,0,10">
+                        <Entry x:Name="NombreEntry"
+                               TextColor="Black"
+                               FontSize="15"
+                               WidthRequest="250"
+                               TranslationY="10"
+                               Margin="0,-30,0,-19" />
+                    </Frame>
 
-                <Label Text="Teléfono" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="7" Grid.Column="0"  Margin="10,20,0,0"  FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
-                <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="8" Grid.Column="0" CornerRadius="10" WidthRequest="285" HeightRequest="45" Margin="0,6,0,20">
-                    <Entry x:Name="TelefonoEntry"
-                           Keyboard="Telephone"
+                    <Label Text="Apellidos"
                            TextColor="Black"
-                           FontSize="15"
-                           WidthRequest="250"
-                           TranslationY="10"
-                           Margin="0,-30,0,-19" />
-                </Frame>
+                           FontSize="14"
+                           HorizontalOptions="Start"
+                           Grid.Row="5"
+                           Grid.Column="0"
+                           Margin="10,20,0,0"
+                           FontAttributes="Bold"
+                           FontFamily="poppins-bold.ttf" />
+                    <Frame BackgroundColor="White"
+                           BorderColor="#D9D0E3"
+                           Grid.Row="6"
+                           Grid.Column="0"
+                           CornerRadius="10"
+                           WidthRequest="285"
+                           HeightRequest="45"
+                           Margin="0,6,0,10">
+                        <Entry x:Name="ApellidoEntry"
+                               TextColor="Black"
+                               FontSize="15"
+                               WidthRequest="250"
+                               TranslationY="10"
+                               Margin="0,-30,0,-19" />
+                    </Frame>
 
-                <Button Grid.Row="9" Grid.Column="0" Text="Crear"  FontSize="18" x:Name="CrearUsuarioButton"
-                         CornerRadius="10" WidthRequest="250" HeightRequest="50"  BackgroundColor="#009C40"  TextColor="White"
-                         HorizontalOptions="Center" Margin="0,25,0,0" 
-                         Clicked="OnCrearUsuarioClicked"/>
-            </Grid>
-        </StackLayout>
+                    <Label Text="Teléfono"
+                           TextColor="Black"
+                           FontSize="14"
+                           HorizontalOptions="Start"
+                           Grid.Row="7"
+                           Grid.Column="0"
+                           Margin="10,20,0,0"
+                           FontAttributes="Bold"
+                           FontFamily="poppins-bold.ttf" />
+                    <Frame BackgroundColor="White"
+                           BorderColor="#D9D0E3"
+                           Grid.Row="8"
+                           Grid.Column="0"
+                           CornerRadius="10"
+                           WidthRequest="285"
+                           HeightRequest="45"
+                           Margin="0,6,0,20">
+                        <Entry x:Name="TelefonoEntry"
+                               Keyboard="Telephone"
+                               TextColor="Black"
+                               FontSize="15"
+                               WidthRequest="250"
+                               TranslationY="10"
+                               Margin="0,-30,0,-19"
+                               MaxLength="10" />
+                    </Frame>
+
+                    <Button Grid.Row="9"
+                            Grid.Column="0"
+                            Text="Crear"
+                            FontSize="18"
+                            x:Name="CrearUsuarioButton"
+                            CornerRadius="10"
+                            WidthRequest="250"
+                            HeightRequest="50"
+                            BackgroundColor="#009C40"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            Margin="0,25,0,0"
+                            Clicked="OnCrearUsuarioClicked" />
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+        <!-- Este Grid está sobrepuesto y cubre toda la pantalla -->
+        <Grid x:Name="LoadingOverlay"
+              IsVisible="False"
+              BackgroundColor="White"
+              Opacity="0.9"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              ZIndex="100"
+              InputTransparent="False">
+            <ActivityIndicator IsRunning="True"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               Color="#009C40"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+        </Grid>
+
     </Grid>
 </ContentPage>

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.LoginPage"
              xmlns:viewmodel="clr-namespace:DigesettAPP.ViewModel"
+              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
               x:DataType="viewmodel:LoginViewModel"
              BackgroundColor="White"
              Title="">
@@ -75,7 +77,26 @@
             </Label>
 
         </Grid>
-    </Grid>
+        <!--<core:SfBusyIndicator IsRunning="True"
+                             AnimationType="Cupertino"
+                             Title="Verificando..."
+                            
+                             IndicatorColor="#009C40"
+                             SizeFactor="2"></core:SfBusyIndicator>-->
 
+        <sfPopup:SfPopup x:Name="popup" ShowHeader="True" HeightRequest="190" WidthRequest="200"
+                    HeaderTitle="Verificando..." AutoSizeMode="Height" StaysOpen="True">
+            <sfPopup:SfPopup.PopupStyle>
+                <sfPopup:PopupStyle PopupBackground="White" HeaderTextAlignment="Center" HeaderFontSize="18"
+                               HeaderTextColor="#009C40" CornerRadius="16" />
+            </sfPopup:SfPopup.PopupStyle>
+            <sfPopup:SfPopup.ContentTemplate>
+                <DataTemplate>
+                    <ActivityIndicator IsRunning="True" Color="#009C40" HeightRequest="65" WidthRequest="85" />
+                </DataTemplate>
+            </sfPopup:SfPopup.ContentTemplate>
+        </sfPopup:SfPopup>
+    </Grid>
+   
   
 </ContentPage>

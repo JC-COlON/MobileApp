@@ -17,6 +17,9 @@ namespace DigesettAPP.ViewModel
 
         readonly ILoginRepository loginservice = new LoginService();
 
+        public LoginPage LoginPage { get; set; }
+
+
         [RelayCommand]
         public async Task Entrar()
         {
@@ -24,15 +27,16 @@ namespace DigesettAPP.ViewModel
             {
                 if (!string.IsNullOrWhiteSpace(Cedula) && !string.IsNullOrWhiteSpace(Password))
                 {
+                    LoginPage?.MostrarPopup(); // Muestra el popup
+
                     User user = await loginservice.Login(Cedula, Password);
+
+
 
                     if (user != null)
                     {
-                        // Guardar usuario en Preferences
                         if (Preferences.ContainsKey(nameof(App.user)))
-                        {
                             Preferences.Remove(nameof(App.user));
-                        }
 
                         string userDetails = JsonConvert.SerializeObject(user);
                         Preferences.Set(nameof(App.user), userDetails);
@@ -43,16 +47,15 @@ namespace DigesettAPP.ViewModel
                             case "agente":
                                 await Shell.Current.GoToAsync("//MainHome");
                                 break;
-
                             case "ciudadano":
                             case "administrador":
                                 await Shell.Current.GoToAsync("//HomeViewCiudadano");
                                 break;
-
                             default:
                                 await Shell.Current.DisplayAlert("Acceso Denegado", "No tiene permisos para acceder a esta aplicación.", "OK");
                                 break;
                         }
+                        LoginPage?.OcultarPopup(); // Oculta el popup después del login
                     }
                     else
                     {
@@ -64,30 +67,9 @@ namespace DigesettAPP.ViewModel
                     await Shell.Current.DisplayAlert("Error", "Debe completar todos los campos.", "OK");
                 }
             }
-            catch (HttpRequestException httpEx)
-            {
-                // Si el servicio lanza una HttpRequestException y devuelve un contenido
-                if (httpEx.Data.Contains("ResponseBody"))
-                {
-                    var responseBody = httpEx.Data["ResponseBody"].ToString();
-                    try
-                    {
-                        dynamic errorObj = JsonConvert.DeserializeObject(responseBody);
-                        string message = errorObj?.message ?? "Error al iniciar sesión.";
-                        await Shell.Current.DisplayAlert("Error", message, "OK");
-                    }
-                    catch
-                    {
-                        await Shell.Current.DisplayAlert("Error", "Error inesperado al iniciar sesión.", "OK");
-                    }
-                }
-                else
-                {
-                    await Shell.Current.DisplayAlert("Error", "No se pudo conectar al servidor.", "OK");
-                }
-            }
             catch (Exception ex)
             {
+                LoginPage?.OcultarPopup(); // Asegúrate de ocultarlo si hay error
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
         }

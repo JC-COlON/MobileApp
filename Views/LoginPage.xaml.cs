@@ -11,15 +11,26 @@ namespace DigesettAPP.Views;
 
 public partial class LoginPage : ContentPage
 {
-   
+
     public LoginPage(LoginViewModel vm)
     {
         InitializeComponent();
+        vm.LoginPage = this; // <-- ESTO ES LO QUE FALTA
         BindingContext = vm;
-        
-
     }
 
+
+    // Mostrar popup
+    public void MostrarPopup()
+    {
+        popup.Show();
+    }
+
+    // Ocultar popup
+    public void OcultarPopup()
+    {
+        popup.Dismiss();
+    }
 
     protected override void OnAppearing()
     {

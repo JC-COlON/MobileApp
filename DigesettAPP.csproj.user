@@ -41,6 +41,9 @@
     <MauiXaml Update="ViewCiudadano\PopupAgregarVehiculo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="ViewCiudadano\PopupCreadoExito.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="ViewCiudadano\PopupPagarCiudadano.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

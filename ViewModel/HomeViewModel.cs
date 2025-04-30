@@ -1,81 +1,4 @@
-﻿//using System.Net.Http;
-//using System.Text.Json;
-//using System.Collections.ObjectModel;
-//using System.IdentityModel.Tokens.Jwt;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Microsoft.Maui.Storage;
-//using CommunityToolkit.Mvvm.ComponentModel;
-
-//namespace DigesettAPP.ViewModels
-//{
-//    public partial class HomeViewModel : ObservableObject
-//    {
-//        private readonly HttpClient _httpClient;
-
-//        [ObservableProperty]
-//        private string formattedCardNumber = "****-****-****-****";
-
-//        [ObservableProperty]
-//        private string expirationDate = "MM/YY";
-
-//        public HomeViewModel()
-//        {
-//            _httpClient = new HttpClient();
-//            LoadCreditCard();
-//        }
-
-//        private async void LoadCreditCard()
-//        {
-//            try
-//            {
-//                var token = Preferences.Get("AuthToken", string.Empty);
-//                var handler = new JwtSecurityTokenHandler();
-//                var jwtToken = handler.ReadJwtToken(token);
-
-//                var cedula = jwtToken.Claims.FirstOrDefault(c =>
-//                    c.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber")?.Value;
-
-//                if (string.IsNullOrWhiteSpace(cedula))
-//                    return;
-
-//                var response = await _httpClient.GetAsync($"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedula}");
-
-//                if (response.IsSuccessStatusCode)
-//                {
-//                    var json = await response.Content.ReadAsStringAsync();
-//                    var parsed = JsonDocument.Parse(json);
-//                    var card = parsed.RootElement
-//                        .GetProperty("$values")[0];
-
-//                    var cardNumber = card.GetProperty("cardNumber").ToString();
-//                    var expiration = card.GetProperty("expirationDate").GetString();
-
-//                    FormattedCardNumber = MaskCardNumber(cardNumber);
-//                    ExpirationDate = expiration ?? "MM/YY";
-//                }
-//            }
-//            catch
-//            {
-//                // Puedes manejar errores aquí
-//            }
-//        }
-
-//        private string MaskCardNumber(string cardNumber)
-//        {
-//            if (cardNumber.Length < 4)
-//                return "****-****-****-****";
-
-//            var lastFour = cardNumber.Substring(cardNumber.Length - 4);
-//            return $"****-****-****-{lastFour}";
-//        }
-//    }
-//}
-
-
-
-
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text.Json;
 using System.Collections.ObjectModel;
 using System.IdentityModel.Tokens.Jwt;
@@ -91,25 +14,34 @@ namespace DigesettAPP.ViewModels
     {
         private readonly HttpClient _httpClient;
 
-        // ✅ Propiedades con backing field para evitar problemas de generación
-        private ObservableCollection<Ticket> _listaDeMultas = new();
-        public ObservableCollection<Ticket> ListaDeMultas
-        {
-            get => _listaDeMultas;
-            set => SetProperty(ref _listaDeMultas, value);
-        }
-
         private bool _hayMultas;
         public bool HayMultas
         {
             get => _hayMultas;
-            set => SetProperty(ref _hayMultas, value);
+            set
+            {
+                _hayMultas = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(NoHayMultas)); // Asegúrate de notificar que la propiedad NoHayMultas cambió
+            }
+        }
+
+        public bool NoHayMultas => !HayMultas;
+
+        private ObservableCollection<Ticket> _listaDeMultas;
+        public ObservableCollection<Ticket> ListaDeMultas
+        {
+            get => _listaDeMultas;
+            set
+            {
+                _listaDeMultas = value;
+                OnPropertyChanged();
+            }
         }
 
         public HomeViewModel()
         {
             _httpClient = new HttpClient();
-            LoadMultasPendientes();
         }
 
         private string ObtenerCedulaDelToken()
@@ -133,7 +65,7 @@ namespace DigesettAPP.ViewModels
             }
         }
 
-        private async void LoadMultasPendientes()
+        public async Task LoadMultasPendientes()
         {
             try
             {
@@ -153,30 +85,36 @@ namespace DigesettAPP.ViewModels
 
                     foreach (var item in lista.EnumerateArray())
                     {
-                        var multa = new Ticket
+                        try
                         {
-                            TicketId = item.GetProperty("ticketId").GetInt32(),
-                            Name = item.GetProperty("name").GetString(),
-                            LastName = item.GetProperty("lastName").GetString(),
-                            Brand = item.GetProperty("brand").GetString(),
-                            Model = item.GetProperty("model").GetString(),
-                            LicensePlate = item.GetProperty("licensePlate").GetString(),
-                            IncidentLocation = item.GetProperty("incidentLocation").GetString(),
-                            TicketDate = item.GetProperty("ticketDate").GetString()
-                        };
+                            var multa = new Ticket
+                            {
+                                TicketId = item.GetProperty("ticketId").GetInt32(),
+                                Name = item.GetProperty("name").GetString(),
+                                LastName = item.GetProperty("lastName").GetString(),
+                                Brand = item.GetProperty("brand").GetString(),
+                                Model = item.GetProperty("model").GetString(),
+                                LicensePlate = item.GetProperty("licensePlate").GetString(),
+                                IncidentLocation = item.GetProperty("incidentLocation").GetString(),
+                                TicketDate = item.GetProperty("ticketDate").GetString(),
+                            };
 
-                        multasTemporales.Add(multa);
+                            multasTemporales.Add(multa);
+                        }
+                        catch (Exception ex)
+                        {
+                            await Shell.Current.DisplayAlert("Error", $"Error parseando multa: {ex.Message}", "OK");
+                        }
                     }
 
-                    // Tomar solo las 2 últimas multas, ordenadas por fecha descendente
+                    // ✅ Ordenar y tomar las 2 más recientes
                     var ultimasDos = multasTemporales
-                        .OrderByDescending(m => DateTime.TryParse(m.TicketDate, out var date) ? date : DateTime.MinValue)
-                        .Take(2);
+                        .Where(m => DateTime.TryParse(m.TicketDate, out _))
+                        .OrderByDescending(m => DateTime.Parse(m.TicketDate))
+                        .Take(2)
+                        .ToList();
 
-                    ListaDeMultas.Clear();
-                    foreach (var multa in ultimasDos)
-                        ListaDeMultas.Add(multa);
-
+                    ListaDeMultas = new ObservableCollection<Ticket>(ultimasDos);
                     HayMultas = ListaDeMultas.Any();
                 }
                 else
@@ -184,11 +122,13 @@ namespace DigesettAPP.ViewModels
                     HayMultas = false;
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 HayMultas = false;
+                await Shell.Current.DisplayAlert("Error", $"Excepción al cargar multas: {ex.Message}", "OK");
             }
         }
+
 
     }
 }

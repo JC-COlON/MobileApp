@@ -96,8 +96,7 @@ public partial class Paso3Page : ContentPage
 
     private async void EnviarMulta(object sender, EventArgs e)
     {
-        loadingIndicator.IsVisible = true;
-        loadingIndicator.IsRunning = true;
+        LoadingOverlay.IsVisible = true;
 
         // Obtener los datos de las preferencias
         int userId = int.TryParse(Preferences.Get("UserId", "0"), out var uid) ? uid : 0;
@@ -111,19 +110,14 @@ public partial class Paso3Page : ContentPage
         string vehiclePlate = Preferences.Get("PlacaVehiculo", "");
         string brand = Preferences.Get("MarcaVehiculo", "");
         string model = Preferences.Get("ModeloVehiculo", "");
-        string infringedArticle = Preferences.Get("ArticuloInfringido", ""); // Este es el texto, no el ID
+        string infringedArticle = Preferences.Get("ArticuloInfringido", "");
         string observations = Preferences.Get("Observaciones", "");
         string agentNumber = Preferences.Get("NoAgente", "");
 
         int agentId = int.TryParse(Preferences.Get("UserIdAgente", "0"), out var aid) ? aid : 0;
-
-        // Convertir tipo de vehículo y artículo a sus IDs
         int tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
-
-        // Obtener el ID del artículo desde las preferencias
         int articuloInfringidoId = int.TryParse(Preferences.Get("ArticuloInfringidoId", "-1"), out var articleId) ? articleId : -1;
 
-        // Mensaje de confirmación
         var mensaje = $"ID del Usuario: {userId}\n" +
                       $"Zona del Incidente: {zone}\n" +
                       $"Nombre: {firstName}\n" +
@@ -158,12 +152,12 @@ public partial class Paso3Page : ContentPage
                 vehiclePlate = vehiclePlate,
                 brand = brand,
                 model = model,
-                infringedArticle = articuloInfringidoId, // Aquí envías el ID
+                infringedArticle = articuloInfringidoId,
                 incidentLocation = zone,
                 observations = observations,
-                photoUrl = "", // Si luego manejas fotos
+                photoUrl = "",
                 agentNumber = agentNumber,
-                status = "", // Puedes cambiarlo a "Pending", "Issued", etc.
+                status = "",
                 agentId = agentId
             };
 
@@ -171,7 +165,7 @@ public partial class Paso3Page : ContentPage
             {
                 var client = new HttpClient
                 {
-                    Timeout = TimeSpan.FromSeconds(120)
+                    Timeout = TimeSpan.FromSeconds(180)
                 };
 
                 var jsonContent = JsonConvert.SerializeObject(multa);
@@ -181,9 +175,7 @@ public partial class Paso3Page : ContentPage
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Limpiar preferencias
                     Preferences.Clear();
-
                     var popup = new PopupPage();
                     await Application.Current.MainPage.ShowPopupAsync(popup);
                 }
@@ -203,11 +195,8 @@ public partial class Paso3Page : ContentPage
             await Navigation.PopAsync();
         }
 
-        loadingIndicator.IsVisible = false;
-        loadingIndicator.IsRunning = false;
+        LoadingOverlay.IsVisible = false;
     }
-
-
 
 
 

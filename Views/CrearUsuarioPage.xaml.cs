@@ -6,25 +6,48 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
+using System.Net.Http.Headers;
+using CommunityToolkit.Maui.Views;
+using DigesettAPP.ViewCiudadano;
 
 namespace DigesettAPP.Views
 {
     public partial class CrearUsuarioPage : ContentPage
     {
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string Url = "https://d79f-200-215-234-53.ngrok-free.app/api/User/Create";
+        private const string Url = "https://digesett.somee.com/api/UserAccess/Create";
         private const string CedulaValidationUrl = "https://api.digital.gob.do/v3/cedulas";
 
-        public CrearUsuarioPage()
+        private bool isLoading = false;
+        public bool IsLoading
+        {
+            get => isLoading;
+            set
+            {
+                isLoading = value;
+                LoadingOverlay.IsVisible = value;
+            }
+        }
+
+
+        public CrearUsuarioPage(string cedula)
         {
             InitializeComponent();
 
-            // Deshabilita los campos al inicio
+            CedulaEntry.Text = cedula;
+
+            // Validación automática si tiene 11 dígitos
+            if (!string.IsNullOrEmpty(cedula) && cedula.Length == 11)
+            {
+                _ = ValidarCedula(cedula); // Ejecutar validación en segundo plano
+            }
+
             NombreEntry.IsEnabled = false;
             ApellidoEntry.IsEnabled = false;
             TelefonoEntry.IsEnabled = false;
             CrearUsuarioButton.IsEnabled = false;
         }
+
 
         // Evento TextChanged para validar la cédula automáticamente cuando tenga 11 dígitos
         private async void CedulaEntry_TextChanged(object sender, TextChangedEventArgs e)
@@ -91,7 +114,8 @@ namespace DigesettAPP.Views
         }
         private async void OnCrearUsuarioClicked(object sender, EventArgs e)
         {
-            // Validación de campos (sin cambios)
+            if (IsLoading) return;
+
             if (string.IsNullOrWhiteSpace(CedulaEntry.Text) ||
                 string.IsNullOrWhiteSpace(NombreEntry.Text) ||
                 string.IsNullOrWhiteSpace(ApellidoEntry.Text) ||
@@ -106,11 +130,11 @@ namespace DigesettAPP.Views
                 cedula = CedulaEntry.Text,
                 name = NombreEntry.Text,
                 lastname = ApellidoEntry.Text,
-                password = "",                     // Cambiado a cadena vacía
+                password = "",
                 rolId = 3,
-                email = "",                         // Cambiado a cadena vacía
+                email = "",
                 phone = TelefonoEntry.Text,
-                profileImg = "",                    // Cambiado a cadena vacía
+                profileImg = "",
                 nacionalityId = (int?)null,
                 birthdate = (DateTime?)null,
                 genderId = (int?)null,
@@ -122,24 +146,34 @@ namespace DigesettAPP.Views
                 statusId = 1
             };
 
+            string jsonPayload = JsonConvert.SerializeObject(nuevoUsuario, Formatting.Indented);
+            await DisplayAlert("JSON Enviado", jsonPayload, "OK");
+
             try
             {
-                // Serialización para mostrar (puede usar cualquier método)
-                string jsonBonito = Newtonsoft.Json.JsonConvert.SerializeObject(nuevoUsuario, Newtonsoft.Json.Formatting.Indented);
-                await DisplayAlert("JSON enviado", jsonBonito, "OK");
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
 
-                // Serialización para enviar (¡esto es lo importante!)
-                string json = System.Text.Json.JsonSerializer.Serialize(nuevoUsuario);
+                using var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(120)
+                };
 
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpResponseMessage response = await _httpClient.PostAsync(Url, content);
+                var content = new StringContent(
+                    jsonPayload,
+                    Encoding.UTF8,
+                    "application/json"
+                );
 
-                // Resto del código sin cambios...
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                var response = await client.PostAsync(Url, content);
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+
                 string responseContent = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("Éxito", "Usuario creado correctamente.", "OK");
+                    await App.Current.MainPage.ShowPopupAsync(new PopupCreadoExito());
 
                     var usuarioCreado = new Usuario
                     {
@@ -155,37 +189,18 @@ namespace DigesettAPP.Views
                 }
                 else
                 {
-                    try
-                    {
-                        var apiError = JsonConvert.DeserializeObject<ApiError>(responseContent);
-
-                        if (apiError?.Errors != null && apiError.Errors.Count > 0)
-                        {
-                            var erroresFormateados = apiError.Errors
-                                .Select(kvp => $"{kvp.Key}: {string.Join(", ", kvp.Value)}")
-                                .ToList();
-
-                            string mensajeError = string.Join("\n", erroresFormateados);
-
-                            await DisplayAlert("Errores de validación", mensajeError, "OK");
-                        }
-                        else
-                        {
-                            await DisplayAlert("Error del servidor", apiError?.Title ?? "Ocurrió un error desconocido.", "OK");
-                        }
-                    }
-                    catch
-                    {
-                        await DisplayAlert("Error", $"No se pudo crear el usuario.\nMensaje del servidor:\n{responseContent}", "OK");
-                    }
+                    await DisplayAlert("Error", $"No se pudo crear el usuario. Respuesta: {responseContent}", "OK");
                 }
+            }
+            catch (HttpRequestException ex)
+            {
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+                await DisplayAlert("Error de conexión", $"No se pudo conectar al servidor: {ex.Message}", "OK");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Excepción atrapada: {ex.Message}");
-                Console.WriteLine($"StackTrace: {ex.StackTrace}");
-
-                await DisplayAlert("Error", $"Ocurrió un problema: {ex.Message}", "OK");
+                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+                await DisplayAlert("Error inesperado", $"Ocurrió un error: {ex.Message}", "OK");
             }
         }
 

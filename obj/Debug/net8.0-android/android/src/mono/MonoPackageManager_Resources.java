@@ -40,6 +40,7 @@ public class MonoPackageManager_Resources {
 		"Syncfusion.Maui.GridCommon.dll",
 		"Syncfusion.Maui.Inputs.dll",
 		"Syncfusion.Maui.ListView.dll",
+		"Syncfusion.Maui.Popup.dll",
 		"System.Diagnostics.DiagnosticSource.dll",
 		"System.IdentityModel.Tokens.Jwt.dll",
 		"Xamarin.Android.Glide.dll",

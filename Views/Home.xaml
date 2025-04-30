@@ -73,45 +73,62 @@
                         </HorizontalStackLayout>
                     </ScrollView>
 
-                    <!--SERVICIOS-->
+                    <!-- SERVICIOS -->
                     <Grid RowSpacing="10" RowDefinitions="Auto,Auto" HorizontalOptions="Center" Grid.Row="3" Margin="0,50,0,0">
-                        <Label FontFamily="SfProTextRegular" Text="SERVICIOS" TextColor="Black" FontSize="17" Margin="0,0,0,10" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Start"/>
+                        <Label FontFamily="SfProTextRegular" Text="SERVICIOS" TextColor="Black" FontSize="17" Margin="-30,0,0,10" FontAttributes="Bold" Grid.Row="0" HorizontalOptions="Start"/>
+
                         <VerticalStackLayout Grid.Row="1" VerticalOptions="Center">
-                            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="20" RowDefinitions="Auto" VerticalOptions="Center">
-                                <!-- Frame 1 -->
-                                <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="#009C40" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
-                                    <Grid HorizontalOptions="Center">
-                                        <Label Text="" TextColor="White" FontSize="14" FontAttributes="Bold"/>
-                                        <ImageButton Source="lapiz.png" x:Name="GotoCrearMultas" Clicked="GotoCrearMultas_Clicked" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,4,0" />
-                                        
-                                    </Grid>
-                                    
-                                    
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="30" RowDefinitions="Auto" VerticalOptions="Center">
+
+                                <!-- Crear Multa -->
+                                <Frame Grid.Row="0" Grid.Column="0"
+                   BackgroundColor="#009C40"
+                   HeightRequest="140" WidthRequest="140"
+                   CornerRadius="15"
+                   BorderColor="Transparent"
+                   Padding="10">
+                                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <ImageButton Source="lapiz.png"
+                                 x:Name="GotoCrearMultas"
+                                 Clicked="GotoCrearMultas_Clicked"
+                                 WidthRequest="90" HeightRequest="90"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="Center"/>
+                                        <Label Text="Crear Multa"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontFamily="SfProTextRegular"/>
+                                    </VerticalStackLayout>
                                 </Frame>
 
-                                <!-- Frame 2 -->
-                                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#FD8402" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
-                                    <Grid HorizontalOptions="Center">
-                                        <Label Text="" TextColor="White" FontSize="14" FontAttributes="Bold"/>
-                                        <ImageButton Source="agregaruser.png" Clicked="GoCrearUsuarioPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,-10,0"/>
-                                    </Grid>
+                                <!-- Buscar Multa -->
+                                <Frame Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="#FD8402"
+                   HeightRequest="140" WidthRequest="140"
+                   CornerRadius="15"
+                   BorderColor="Transparent"
+                   Padding="10">
+                                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        <ImageButton Source="search.png"
+                                 Clicked="GoBuscarMultaPage"
+                                 WidthRequest="90" HeightRequest="90"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="Center"/>
+                                        <Label Text="Buscar Multa"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontFamily="SfProTextRegular"/>
+                                    </VerticalStackLayout>
                                 </Frame>
-                              
-
-                                <!-- Frame 3 -->
-                                <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="Black" HeightRequest="110" WidthRequest="110" CornerRadius="10" BorderColor="Transparent">
-                                    <Grid HorizontalOptions="Center">
-                                      
-                                        <ImageButton Source="search.png" Clicked="GoBuscarMultaPage" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="80" Margin="0,0,0,0"/>
-                                        
-                                    </Grid>
-                                </Frame>
-                                
 
                             </Grid>
-
                         </VerticalStackLayout>
                     </Grid>
+
                 </Grid>
             </StackLayout>
         </ScrollView>

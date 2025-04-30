@@ -109,7 +109,8 @@ namespace DigesettAPP.Views
                     if (registrar)
                     {
                         await Task.Delay(100);
-                        await Navigation.PushAsync(new CrearUsuarioPage());
+                        await Navigation.PushAsync(new CrearUsuarioPage(cedula));
+
                     }
                 }
             }
@@ -164,6 +165,10 @@ namespace DigesettAPP.Views
             Preferences.Set("Email", usuario.Email);  // Guarda el correo electrónico
         }
 
+        private void OnEmailChanged(object sender, TextChangedEventArgs e)
+        {
+            Preferences.Set("Email", e.NewTextValue);
+        }
 
         private void CargarDatosGuardados()
         {
