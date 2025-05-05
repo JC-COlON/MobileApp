@@ -11,10 +11,13 @@ public partial class PoputMultaPagadaExito : Popup
 
     private async void OnCloseButtonClicked(object sender, EventArgs e)
     {
-        // Cerrar el pop-up
         this.Close();
 
-        // Después de cerrar, redirigir a la página Home que tiene el TabBar
-        await Shell.Current.GoToAsync("ListaMultasParaPagar");
+        // Limpia la pila de navegación anterior usando Shell y ruta absoluta temporal
+        await Shell.Current.GoToAsync("//HomeViewCiudadano");
+
+        // Luego navega a la página deseada
+        await Shell.Current.GoToAsync(nameof(ListaMultasParaPagar));
     }
+
 }

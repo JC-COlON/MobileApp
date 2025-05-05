@@ -98,124 +98,127 @@ public partial class Paso3Page : ContentPage
     {
         LoadingOverlay.IsVisible = true;
 
-        // Obtener los datos de las preferencias
-        int userId = int.TryParse(Preferences.Get("UserId", "0"), out var uid) ? uid : 0;
-        string zone = Preferences.Get("LugarIncidente", "");
-        string firstName = Preferences.Get("Nombre", "");
-        string lastName = Preferences.Get("Apellido", "");
-        string phone = Preferences.Get("Telefono", "");
-        string email = Preferences.Get("Email", "");
-        string identification = Preferences.Get("Cedula", "");
-        string vehicleType = Preferences.Get("TipoVehiculo", "");
-        string vehiclePlate = Preferences.Get("PlacaVehiculo", "");
-        string brand = Preferences.Get("MarcaVehiculo", "");
-        string model = Preferences.Get("ModeloVehiculo", "");
-        string infringedArticle = Preferences.Get("ArticuloInfringido", "");
-        string observations = Preferences.Get("Observaciones", "");
-        string agentNumber = Preferences.Get("NoAgente", "");
-
-        int agentId = int.TryParse(Preferences.Get("UserIdAgente", "0"), out var aid) ? aid : 0;
-        int tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
-        int articuloInfringidoId = int.TryParse(Preferences.Get("ArticuloInfringidoId", "-1"), out var articleId) ? articleId : -1;
-
-        var mensaje = $"ID del Usuario: {userId}\n" +
-                      $"Zona del Incidente: {zone}\n" +
-                      $"Nombre: {firstName}\n" +
-                      $"Apellido: {lastName}\n" +
-                      $"Teléfono: {phone}\n" +
-                      $"Email: {email}\n" +
-                      $"Cédula: {identification}\n" +
-                      $"Tipo de Vehículo (ID): {tipoVehiculoId}\n" +
-                      $"Placa del Vehículo: {vehiclePlate}\n" +
-                      $"Marca del Vehículo: {brand}\n" +
-                      $"Modelo del Vehículo: {model}\n" +
-                      $"Artículo Infringido (ID): {articuloInfringidoId}\n" +
-                      $"Observaciones: {observations}\n" +
-                      $"Número de Agente: {agentNumber}\n" +
-                      $"ID del Agente: {agentId}\n\n" +
-                      $"¿Estás seguro de que deseas enviar esta multa?";
-
-        bool respuesta = await DisplayAlert("Confirmación de Envío", mensaje, "Enviar", "Cancelar");
-
-        if (respuesta)
+        try
         {
-            var multa = new
+            // Obtener los datos de las preferencias
+            int userId = int.TryParse(Preferences.Get("UserId", "0"), out var uid) ? uid : 0;
+            string zone = Preferences.Get("LugarIncidente", "");
+            string firstName = Preferences.Get("Nombre", "");
+            string lastName = Preferences.Get("Apellido", "");
+            string phone = Preferences.Get("Telefono", "");
+            string email = Preferences.Get("Email", "");
+            string identification = Preferences.Get("Cedula", "");
+            string vehicleType = Preferences.Get("TipoVehiculo", "");
+            string vehiclePlate = Preferences.Get("PlacaVehiculo", "");
+            string brand = Preferences.Get("MarcaVehiculo", "");
+            string model = Preferences.Get("ModeloVehiculo", "");
+            string observations = Preferences.Get("Observaciones", "");
+            string agentNumber = Preferences.Get("NoAgente", "");
+
+            int agentId = int.TryParse(Preferences.Get("UserIdAgente", "0"), out var aid) ? aid : 0;
+            int tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
+            int articuloInfringidoId = int.TryParse(Preferences.Get("ArticuloInfringidoId", "-1"), out var articleId) ? articleId : -1;
+
+            bool respuesta = await DisplayAlert("Confirmación de Envío", "¿Estás seguro de que deseas enviar esta multa?", "Enviar", "Cancelar");
+
+            if (respuesta)
             {
-                userId = userId,
-                zone = zone,
-                firstName = firstName,
-                lastName = lastName,
-                phone = phone,
-                email = email,
-                identification = identification,
-                vehicleTypeId = tipoVehiculoId,
-                vehiclePlate = vehiclePlate,
-                brand = brand,
-                model = model,
-                infringedArticle = articuloInfringidoId,
-                incidentLocation = zone,
-                observations = observations,
-                photoUrl = "",
-                agentNumber = agentNumber,
-                status = "",
-                agentId = agentId
-            };
-
-            var client = new HttpClient
-            {
-                Timeout = TimeSpan.FromSeconds(180)
-            };
-
-            var jsonContent = JsonConvert.SerializeObject(multa);
-            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-            int retries = 3;  // Número de intentos
-            HttpResponseMessage response = null;
-
-            for (int attempt = 1; attempt <= retries; attempt++)
-            {
-                try
+                var multa = new
                 {
-                    response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+                    userId = userId,
+                    zone = zone,
+                    firstName = firstName,
+                    lastName = lastName,
+                    phone = phone,
+                    email = email,
+                    identification = identification,
+                    vehicleTypeId = tipoVehiculoId,
+                    vehiclePlate = vehiclePlate,
+                    brand = brand,
+                    model = model,
+                    infringedArticle = articuloInfringidoId,
+                    incidentLocation = zone,
+                    observations = observations,
+                    photoUrl = "",
+                    agentNumber = agentNumber,
+                    status = "",
+                    agentId = agentId
+                };
 
-                    if (response.IsSuccessStatusCode)
+                var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(180)
+                };
+
+                var jsonContent = JsonConvert.SerializeObject(multa);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                int retries = 3;
+                HttpResponseMessage response = null;
+
+                for (int attempt = 1; attempt <= retries; attempt++)
+                {
+                    try
                     {
-                        Preferences.Clear();
-                        var popup = new PopupPage();
-                        await Application.Current.MainPage.ShowPopupAsync(popup);
-                        break; // Si la respuesta es exitosa, salir del bucle
-                    }
-                    else
-                    {
-                        var errorMessage = await response.Content.ReadAsStringAsync();
-                        if (attempt == retries)
+                        response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+
+                        if (response.IsSuccessStatusCode)
                         {
-                            await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                            LimpiarDatos();
+                            var popup = new PopupPage();
+                            await Application.Current.MainPage.ShowPopupAsync(popup);
+                            return; // Salir completamente después del éxito
+                        }
+                        else
+                        {
+                            var errorMessage = await response.Content.ReadAsStringAsync();
+                            if (attempt == retries)
+                            {
+                                await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    if (attempt == retries)
+                    catch (Exception ex)
                     {
-                        await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
-                    }
+                        if (attempt == retries)
+                        {
+                            await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+                        }
 
-                    await Task.Delay(1000 * attempt); // Retraso exponencial antes de reintentar
+                        await Task.Delay(1000 * attempt); // Espera progresiva
+                    }
                 }
             }
+            else
+            {
+                await Navigation.PopAsync();
+            }
         }
-        else
+        finally
         {
-            await Navigation.PopAsync();
+            LoadingOverlay.IsVisible = false;
         }
-
-        LoadingOverlay.IsVisible = false;
     }
 
 
 
 
+    private void LimpiarDatos()
+    {
+        Preferences.Remove("Cedula");
+        Preferences.Remove("Nombre");
+        Preferences.Remove("Apellido");
+        Preferences.Remove("Telefono");
+        Preferences.Remove("Email");
+
+        Preferences.Remove("LugarIncidente");
+        Preferences.Remove("ArticuloInfringido");
+        Preferences.Remove("PlacaVehiculo");
+        Preferences.Remove("ModeloVehiculo");
+        Preferences.Remove("MarcaVehiculo");
+        Preferences.Remove("TipoVehiculo");
+        Preferences.Remove("Observaciones");
+    }
 
 
 

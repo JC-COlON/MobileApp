@@ -216,7 +216,6 @@ namespace DigesettAPP.ViewModel
         }
 
 
-        // NUEVO: Método para pagar la multa
         public async Task PagarMulta()
         {
             if (TicketSeleccionado == null)
@@ -259,51 +258,76 @@ namespace DigesettAPP.ViewModel
             };
 
             string jsonPayload = JsonConvert.SerializeObject(payload, Formatting.Indented);
-            await App.Current.MainPage.DisplayAlert("JSON Enviado", jsonPayload, "OK");
+
+            // Mostrar el overlay de carga
+            // Mostrar el overlay de carga
+            IsLoading = true;
+
+
+            HttpResponseMessage response = null;
+            int maxRetries = 3;
 
             try
             {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
-
-                using var client = new HttpClient
+                for (int attempt = 1; attempt <= maxRetries; attempt++)
                 {
-                    Timeout = TimeSpan.FromSeconds(120) // ⬅️ Aquí agregamos el timeout
-                };
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    try
+                    {
+                        using var client = new HttpClient
+                        {
+                            Timeout = TimeSpan.FromSeconds(120)
+                        };
 
-                var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+                        var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+                        response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    var popup = new ViewCiudadano.PoputMultaPagadaExito();
-                    await App.Current.MainPage.ShowPopupAsync(popup);
-                }
-                else
-                {
-                    string errorContent = await response.Content.ReadAsStringAsync();
+                        if (response.IsSuccessStatusCode)
+                        {
+                            var popup = new ViewCiudadano.PoputMultaPagadaExito();
+                            await Application.Current.MainPage.ShowPopupAsync(popup);
+                            return; // ✅ Salimos completamente
+                        }
+                        else
+                        {
+                            string errorContent = await response.Content.ReadAsStringAsync();
 
-                    // Verifica también los headers y body enviados para debug completo
-                    var debugInfo = $"Status: {response.StatusCode}\n" +
-                                    $"Request Headers: {client.DefaultRequestHeaders}\n" +
-                                    $"Payload: {jsonPayload}\n" +
-                                    $"Response: {errorContent}";
+                            if (attempt == maxRetries)
+                            {
+                                var debugInfo = $"Status: {response.StatusCode}\n" +
+                                                $"Payload: {jsonPayload}\n" +
+                                                $"Response: {errorContent}";
 
-                    await App.Current.MainPage.DisplayAlert("Error al pagar", debugInfo, "OK");
+                                await App.Current.MainPage.DisplayAlert("Error al pagar", debugInfo, "OK");
+                            }
+                        }
+                    }
+                    catch (HttpRequestException ex)
+                    {
+                        if (attempt == maxRetries)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Error de conexión", $"No se pudo conectar con el servidor:\n{ex.Message}", "OK");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (attempt == maxRetries)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Error inesperado", $"Ocurrió un error:\n{ex.Message}", "OK");
+                        }
+                    }
+
+                    await Task.Delay(1000 * attempt); // espera progresiva
                 }
             }
-            catch (HttpRequestException ex)
+            finally
             {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await App.Current.MainPage.DisplayAlert("Error de conexión", $"No se pudo conectar con el servidor:\n{ex.Message}", "OK");
-            }
-            catch (Exception ex)
-            {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await App.Current.MainPage.DisplayAlert("Error inesperado", $"Ocurrió un error:\n{ex.Message}", "OK");
+                // Ocultar el overlay de carga
+                // Mostrar el overlay de carga
+                IsLoading = false;
+
             }
         }
 
