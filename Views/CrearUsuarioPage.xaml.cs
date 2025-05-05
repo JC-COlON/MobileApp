@@ -2,19 +2,17 @@
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using System.Net.Http.Headers;
 using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewCiudadano;
+using System.Net;
 
 namespace DigesettAPP.Views
 {
     public partial class CrearUsuarioPage : ContentPage
     {
-        private readonly HttpClient _httpClient = new HttpClient();
         private const string Url = "https://digesett.somee.com/api/UserAccess/Create";
         private const string CedulaValidationUrl = "https://api.digital.gob.do/v3/cedulas";
 
@@ -29,14 +27,19 @@ namespace DigesettAPP.Views
             }
         }
 
+        private readonly HttpClient _httpClient;
 
         public CrearUsuarioPage(string cedula)
         {
             InitializeComponent();
 
+            _httpClient = new HttpClient
+            {
+                Timeout = TimeSpan.FromSeconds(120)
+            };
+
             CedulaEntry.Text = cedula;
 
-            // Validación automática si tiene 11 dígitos
             if (!string.IsNullOrEmpty(cedula) && cedula.Length == 11)
             {
                 _ = ValidarCedula(cedula); // Ejecutar validación en segundo plano
@@ -48,20 +51,16 @@ namespace DigesettAPP.Views
             CrearUsuarioButton.IsEnabled = false;
         }
 
-
-        // Evento TextChanged para validar la cédula automáticamente cuando tenga 11 dígitos
         private async void CedulaEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             string cedula = CedulaEntry.Text?.Trim();
 
-            // Verifica si el texto tiene 11 dígitos
             if (cedula.Length == 11)
             {
                 await ValidarCedula(cedula);
             }
         }
 
-        // Método para validar la cédula
         private async Task ValidarCedula(string cedula)
         {
             if (string.IsNullOrWhiteSpace(cedula) || cedula.Length != 11)
@@ -89,10 +88,16 @@ namespace DigesettAPP.Views
                     DeshabilitarCampos();
                 }
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
                 Console.WriteLine($"Error validando cédula: {ex.Message}");
                 await DisplayAlert("Error", "Ocurrió un error validando la cédula. Intente de nuevo.", "OK");
+                DeshabilitarCampos();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error desconocido validando cédula: {ex.Message}");
+                await DisplayAlert("Error", "Ocurrió un error inesperado. Intente de nuevo.", "OK");
                 DeshabilitarCampos();
             }
         }
@@ -112,6 +117,7 @@ namespace DigesettAPP.Views
             TelefonoEntry.IsEnabled = false;
             CrearUsuarioButton.IsEnabled = false;
         }
+
         private async void OnCrearUsuarioClicked(object sender, EventArgs e)
         {
             if (IsLoading) return;
@@ -147,62 +153,74 @@ namespace DigesettAPP.Views
             };
 
             string jsonPayload = JsonConvert.SerializeObject(nuevoUsuario, Formatting.Indented);
-            await DisplayAlert("JSON Enviado", jsonPayload, "OK");
+            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-            try
+            await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
+
+            HttpResponseMessage response = null;
+            int retries = 3;  // Aumentamos los intentos
+
+            for (int attempt = 1; attempt <= retries; attempt++)
             {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = true);
-
-                using var client = new HttpClient
+                try
                 {
-                    Timeout = TimeSpan.FromSeconds(120)
+                    response = await _httpClient.PostAsync(Url, content);
+                    break; // éxito
+                }
+                catch (HttpRequestException ex)
+                {
+                    Console.WriteLine($"Error en intento {attempt}: {ex.Message}");
+
+                    if (attempt == retries)
+                    {
+                        await DisplayAlert("Error de conexión", "No se pudo conectar al servidor. Intente más tarde.", "OK");
+                        await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+                        return;
+                    }
+
+                    await Task.Delay(1000 * attempt); // Exponencial backoff: esperar más tiempo con cada intento
+                }
+                catch (WebException ex)
+                {
+                    Console.WriteLine($"Error WebException en intento {attempt}: {ex.Message}");
+
+                    if (attempt == retries)
+                    {
+                        await DisplayAlert("Error de red", "La conexión fue restablecida de manera inesperada. Intente más tarde.", "OK");
+                        await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+                        return;
+                    }
+
+                    await Task.Delay(1000 * attempt); // Exponencial backoff
+                }
+            }
+
+            await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
+
+            if (response != null && response.IsSuccessStatusCode)
+            {
+                // Aquí pasamos directamente `CedulaEntry.Text` al Popup
+                await App.Current.MainPage.ShowPopupAsync(new PopupCreadoExito(CedulaEntry.Text));
+
+                var usuarioCreado = new Usuario
+                {
+                    Cedula = CedulaEntry.Text,
+                    Name = NombreEntry.Text,
+                    LastName = ApellidoEntry.Text,
+                    Email = "",
+                    Phone = TelefonoEntry.Text
                 };
 
-                var content = new StringContent(
-                    jsonPayload,
-                    Encoding.UTF8,
-                    "application/json"
-                );
-
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-                var response = await client.PostAsync(Url, content);
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-
-                string responseContent = await response.Content.ReadAsStringAsync();
-
-                if (response.IsSuccessStatusCode)
-                {
-                    await App.Current.MainPage.ShowPopupAsync(new PopupCreadoExito());
-
-                    var usuarioCreado = new Usuario
-                    {
-                        Cedula = CedulaEntry.Text,
-                        Name = NombreEntry.Text,
-                        LastName = ApellidoEntry.Text,
-                        Email = "",
-                        Phone = TelefonoEntry.Text
-                    };
-
-                    await Navigation.PopAsync();
-                    MessagingCenter.Send(this, "UsuarioCreado", usuarioCreado);
-                }
-                else
-                {
-                    await DisplayAlert("Error", $"No se pudo crear el usuario. Respuesta: {responseContent}", "OK");
-                }
+                await Navigation.PopAsync();
+                MessagingCenter.Send(this, "UsuarioCreado", usuarioCreado);
             }
-            catch (HttpRequestException ex)
+            else
             {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await DisplayAlert("Error de conexión", $"No se pudo conectar al servidor: {ex.Message}", "OK");
-            }
-            catch (Exception ex)
-            {
-                await MainThread.InvokeOnMainThreadAsync(() => IsLoading = false);
-                await DisplayAlert("Error inesperado", $"Ocurrió un error: {ex.Message}", "OK");
+                string responseContent = response != null ? await response.Content.ReadAsStringAsync() : "Sin respuesta";
+                await DisplayAlert("Error", $"No se pudo crear el usuario. Respuesta: {responseContent}", "OK");
             }
         }
+
 
 
 

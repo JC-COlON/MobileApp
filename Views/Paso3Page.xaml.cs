@@ -161,33 +161,48 @@ public partial class Paso3Page : ContentPage
                 agentId = agentId
             };
 
-            try
+            var client = new HttpClient
             {
-                var client = new HttpClient
-                {
-                    Timeout = TimeSpan.FromSeconds(180)
-                };
+                Timeout = TimeSpan.FromSeconds(180)
+            };
 
-                var jsonContent = JsonConvert.SerializeObject(multa);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            var jsonContent = JsonConvert.SerializeObject(multa);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+            int retries = 3;  // Número de intentos
+            HttpResponseMessage response = null;
 
-                if (response.IsSuccessStatusCode)
-                {
-                    Preferences.Clear();
-                    var popup = new PopupPage();
-                    await Application.Current.MainPage.ShowPopupAsync(popup);
-                }
-                else
-                {
-                    var errorMessage = await response.Content.ReadAsStringAsync();
-                    await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
-                }
-            }
-            catch (Exception ex)
+            for (int attempt = 1; attempt <= retries; attempt++)
             {
-                await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+                try
+                {
+                    response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Preferences.Clear();
+                        var popup = new PopupPage();
+                        await Application.Current.MainPage.ShowPopupAsync(popup);
+                        break; // Si la respuesta es exitosa, salir del bucle
+                    }
+                    else
+                    {
+                        var errorMessage = await response.Content.ReadAsStringAsync();
+                        if (attempt == retries)
+                        {
+                            await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (attempt == retries)
+                    {
+                        await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+                    }
+
+                    await Task.Delay(1000 * attempt); // Retraso exponencial antes de reintentar
+                }
             }
         }
         else
@@ -197,6 +212,7 @@ public partial class Paso3Page : ContentPage
 
         LoadingOverlay.IsVisible = false;
     }
+
 
 
 

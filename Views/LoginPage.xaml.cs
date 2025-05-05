@@ -21,16 +21,25 @@ public partial class LoginPage : ContentPage
 
 
     // Mostrar popup
+    // Mostrar popup
     public void MostrarPopup()
     {
-        popup.Show();
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            popup.Show();
+        });
     }
 
     // Ocultar popup
     public void OcultarPopup()
     {
-        popup.Dismiss();
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            if (popup.IsOpen)
+                popup.Dismiss();
+        });
     }
+
 
     protected override void OnAppearing()
     {

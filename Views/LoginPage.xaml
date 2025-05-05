@@ -85,7 +85,7 @@
                              SizeFactor="2"></core:SfBusyIndicator>-->
 
         <sfPopup:SfPopup x:Name="popup" ShowHeader="True" HeightRequest="190" WidthRequest="200"
-                    HeaderTitle="Verificando..." AutoSizeMode="Height" StaysOpen="True">
+                    HeaderTitle="Verificando..." AutoSizeMode="Height" StaysOpen="False">
             <sfPopup:SfPopup.PopupStyle>
                 <sfPopup:PopupStyle PopupBackground="White" HeaderTextAlignment="Center" HeaderFontSize="18"
                                HeaderTextColor="#009C40" CornerRadius="16" />

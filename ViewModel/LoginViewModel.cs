@@ -60,11 +60,13 @@ namespace DigesettAPP.ViewModel
                     else
                     {
                         await Shell.Current.DisplayAlert("Error", "Usuario o contraseña incorrecta", "OK");
+                        LoginPage?.OcultarPopup();
                     }
                 }
                 else
                 {
                     await Shell.Current.DisplayAlert("Error", "Debe completar todos los campos.", "OK");
+                    LoginPage?.OcultarPopup();
                 }
             }
             catch (Exception ex)

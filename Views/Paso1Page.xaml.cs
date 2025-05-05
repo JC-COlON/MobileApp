@@ -110,8 +110,8 @@ namespace DigesettAPP.Views
                     {
                         await Task.Delay(100);
                         await Navigation.PushAsync(new CrearUsuarioPage(cedula));
-
                     }
+
                 }
             }
         }

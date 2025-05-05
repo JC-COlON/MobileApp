@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DigesettAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+63c3458cf1781e21615d740842402efd33910bc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+41bd5adf31ee24f4ffe2c7638d46df0c07a6e385")]
 [assembly: System.Reflection.AssemblyProductAttribute("DigesettAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DigesettAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
