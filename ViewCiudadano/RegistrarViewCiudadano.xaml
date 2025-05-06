@@ -19,22 +19,36 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-
+    <Grid>
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout >
+            <Grid HeightRequest="200">
+                <!-- Imagen de fondo (onda verde rotada) -->
+                <Image Source="wave.png"
+           Rotation="180"
+           Aspect="AspectFill"
+           HeightRequest="200"
+           HorizontalOptions="FillAndExpand"
+           VerticalOptions="FillAndExpand"
+                       />
 
-            <!-- Logo y título -->
-            <Image Source="ametlogo.png"
-             WidthRequest="100"
-             HeightRequest="100"
-             HorizontalOptions="Center" />
+                <!-- Contenido encima del wave -->
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image Source="ametlogo.png"
+               WidthRequest="125"
+               HeightRequest="125"
+               HorizontalOptions="Center" />
+                   
+                </StackLayout>
+            </Grid>
             <Label Text="Registrarse"
-             HorizontalOptions="Center"
-             FontSize="23"
-             TextColor="Black"
-             FontAttributes="Bold" />
+                HorizontalOptions="Center"
+                FontSize="23"
+                TextColor="Black"
+                FontAttributes="Bold"
+                   Margin="0,0,0,15"/>
 
-            <Grid x:Name="LoadingOverlay"
+            <!--<Grid x:Name="LoadingOverlay"
       BackgroundColor="White"
       IsVisible="{Binding IsLoading}"
       Grid.RowSpan="3"
@@ -52,12 +66,12 @@
                            WidthRequest="40"
                            HeightRequest="40"/>
                 </StackLayout>
-            </Grid>
+            </Grid>-->
 
 
             <!-- Formulario -->
             <Grid
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
         ColumnDefinitions="Auto, *, Auto"
         HorizontalOptions="Center">
 
@@ -75,7 +89,7 @@
            TextColor="Black"
            FontSize="16"
            Margin="10,0,0,-8"
-           MaxLength="11">  
+           MaxLength="11">
                         <Entry.Behaviors>
                             <toolkit:EventToCommandBehavior
             EventName="TextChanged"
@@ -126,11 +140,11 @@
         WidthRequest="285"
         HeightRequest="45"
         Margin="0,0,0,20">
-                    <Entry Placeholder="Contraseña"
+                    <Entry Placeholder="Contraseña (Min. 6 Caracteres)"
            Text="{Binding Password}"
            IsPassword="True"
            TextColor="Black"
-           FontSize="16"
+           FontSize="15"
            Margin="10,0,0,-8" />
                 </Border>
 
@@ -164,62 +178,134 @@
                  Keyboard="Email"
                  TextColor="Black"
                  FontSize="16"
-                 Margin="10,0,0,-8" />
+                 Margin="8,0,0,-8" />
                 </Border>
 
-                <!-- Teléfono (editable solo si es NUEVO usuario) -->
+                <!-- Teléfono (solo si es NUEVO usuario) -->
                 <Border StrokeShape="RoundRectangle 10"
-                StrokeThickness="1"
-                Stroke="#d9d0e3"
-                Grid.Row="7" Grid.Column="1"
-                WidthRequest="285"
-                HeightRequest="45"
-                Margin="0,0,0,20">
-
+        StrokeThickness="1"
+        Stroke="#d9d0e3"
+        Grid.Row="7"
+        Grid.Column="1"
+        WidthRequest="285"
+        HeightRequest="45"
+        Margin="0,0,0,20"
+        IsVisible="{Binding IsNewUser}">
                     <Entry 
-    Placeholder="Teléfono"
-    Text="{Binding Phone}"
-    TextColor="Black"
-    FontSize="16"
-    Margin="10,0,0,-8"
-    IsEnabled="{Binding IsNewUser}" 
-    Keyboard="Telephone" 
-   />
-
+        Placeholder="Teléfono"
+        Text="{Binding RawPhone}"
+        TextColor="Black"
+        FontSize="16"
+        Keyboard="Telephone"
+        Margin="10,0,0,-8"
+        MaxLength="10" />
                 </Border>
+
+                <!-- Teléfono enmascarado (solo si NO es nuevo) -->
+                <Border StrokeShape="RoundRectangle 10"
+        StrokeThickness="1"
+        Stroke="#d9d0e3"
+        Grid.Row="8"
+        Grid.Column="1"
+        WidthRequest="285"
+        HeightRequest="45"
+        Margin="0,0,0,20"
+        IsVisible="{Binding ShowPhoneConfirmation}">
+                    <Entry 
+        Placeholder="Teléfono"
+        Text="{Binding Phone}"
+        TextColor="Black"
+        FontSize="16"
+        IsReadOnly="True"
+        InputTransparent="True"
+        BackgroundColor="White"
+        Margin="10,0,0,-8" />
+                </Border>
+
 
                 <!-- Confirmar Teléfono completo (solo si EXISTE usuario) -->
                 <Border StrokeShape="RoundRectangle 10"
-                StrokeThickness="1"
-                Stroke="#d9d0e3"
-                Grid.Row="8" Grid.Column="1"
-                WidthRequest="285"
-                HeightRequest="45"
-                Margin="0,0,0,20"
-                IsVisible="{Binding ShowPhoneConfirmation}">
-                    <Entry Placeholder="Confirma tu teléfono completo"
-                 Text="{Binding ConfirmPhone}"
-                 Keyboard="Telephone"
-                 TextColor="Black"
-                 FontSize="15"
-                 Margin="10,0,0,-8" 
-                 MaxLength="10"
-                           />
+        StrokeThickness="1"
+        Stroke="#d9d0e3"
+        Grid.Row="10" Grid.Column="1"
+        WidthRequest="285"
+        HeightRequest="45"
+        Margin="0,0,0,20"
+        IsVisible="{Binding ShowPhoneConfirmation}">
+                    <Entry 
+        Placeholder="Confirma tu teléfono completo"
+        Text="{Binding ConfirmPhone}"
+        Keyboard="Telephone"
+        TextColor="Black"
+        FontSize="15"
+        Margin="10,0,0,-8" 
+        MaxLength="10" />
                 </Border>
+
 
             </Grid>
 
             <!-- Botón de registro -->
             <Button Text="Registrar"
-              TextColor="White"
-              Command="{Binding RegisterCommand}"
-              FontSize="18"
-              CornerRadius="11"
-              WidthRequest="285"
-              HeightRequest="50"
-              BackgroundColor="#008938"
-              HorizontalOptions="Center" />
+        TextColor="White"
+        Command="{Binding RegisterCommand}"
+        FontSize="18"
+        CornerRadius="11"
+        WidthRequest="285"
+        HeightRequest="50"
+        BackgroundColor="#008938"
+        HorizontalOptions="Center"
+        Margin="0,10,0,20"/>
 
-        </VerticalStackLayout>
+
+                <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto"
+      Grid.Row="1"
+      HorizontalOptions="Center"
+      Margin="0,10,0,0">
+
+                    <Label Grid.Column="0"
+           FontFamily="SfProTextRegular"
+           Text="¿Ya tienes una cuenta?"
+           TextColor="Black"
+           FontSize="13"
+           VerticalOptions="Center" />
+
+                    <Label Grid.Column="1"
+           FontFamily="SfProTextRegular"
+           FontAttributes="Bold"
+           Text="Ir al Login"
+           TextColor="#009C40"
+           FontSize="13"
+           VerticalOptions="Center"
+           Margin="6,0,0,0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoToRegister" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </Grid>
+
+
+
+
+
+            </VerticalStackLayout>
     </ScrollView>
+
+    <Grid IsVisible="{Binding IsLoading}"
+BackgroundColor="White"
+Opacity="0.9"
+VerticalOptions="FillAndExpand"
+HorizontalOptions="FillAndExpand"
+ZIndex="100"
+InputTransparent="False">
+        <ActivityIndicator IsRunning="True"
+                 WidthRequest="60"
+                 HeightRequest="60"
+                 Color="#009C40"
+                 VerticalOptions="Center"
+                 HorizontalOptions="Center"/>
+    </Grid>
+
+    </Grid>
 </ContentPage>

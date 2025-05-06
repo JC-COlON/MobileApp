@@ -9,5 +9,13 @@ namespace DigesettAPP.ViewCiudadano
             InitializeComponent();
             BindingContext = new RegistrarCiudadanoModel(); // <-- Enlaza el ViewModel
         }
+
+        private async void GoToRegister(object sender, TappedEventArgs e)
+        {
+            await Shell.Current.GoToAsync("//LoginPage");
+        }
+
+
+
     }
 }

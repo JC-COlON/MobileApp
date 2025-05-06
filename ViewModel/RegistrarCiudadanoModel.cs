@@ -97,15 +97,8 @@ namespace DigesettAPP.ViewModels
                 }
                 return _rawPhone;
             }
-            set
-            {
-                if (IsNewUser)
-                {
-                    _rawPhone = value;
-                    OnPropertyChanged(nameof(Phone));
-                }
-            }
         }
+
 
         private string _confirmPhone;
         public string ConfirmPhone
@@ -151,10 +144,14 @@ namespace DigesettAPP.ViewModels
             get => _isLoading;
             set
             {
-                _isLoading = value;
-                OnPropertyChanged();
+                if (_isLoading != value)
+                {
+                    _isLoading = value;
+                    OnPropertyChanged();
+                }
             }
         }
+
 
 
         public string ProfileImg { get => _profileImg; set { _profileImg = value; OnPropertyChanged(); } }
@@ -201,6 +198,8 @@ namespace DigesettAPP.ViewModels
             RegisterCommand = new Command(async () => await RegistrarCiudadanoAsync());
         }
 
+
+
         // Método para validar la cédula y cargar/prellenar datos del ciudadano
         private async Task OnCedulaChangedAsync(string cedulaTexto)
         {
@@ -216,16 +215,33 @@ namespace DigesettAPP.ViewModels
                 var ciudadano = await BuscarCiudadanoEnBackend(Cedula);
                 if (ciudadano != null)
                 {
-                    // Usuario ya registrado
+                    // 🚫 Verifica si ya completó su registro
+                    if (ciudadano.HasPassword)
+                    {
+                        bool volver = await Shell.Current.DisplayAlert(
+                            "Registro no permitido",
+                            "Este usuario ya ha completado su registro. Si olvidaste tu contraseña, puedes recuperarla desde la pantalla de inicio.\n\n¿Desea volver al inicio?",
+                            "Sí", "No");
+
+                        if (volver)
+                        {
+                            await Shell.Current.GoToAsync(".."); // Volver atrás
+                        }
+
+                        Cedula = "";
+                        return;
+                    }
+
+
+                    // Usuario registrado parcialmente → permitir completar
                     Name = ciudadano.Name;
                     LastName = ciudadano.LastName;
 
+                    IsNewUser = false;
+                    ShowPhoneConfirmation = true;
+
                     RawPhone = ciudadano.Phone;
-                    RawPhone = FormatearTelefono(RawPhone);
-                    MainThread.BeginInvokeOnMainThread(() =>
-                    {
-                        OnPropertyChanged(nameof(Phone));
-                    });
+                    OnPropertyChanged(nameof(Phone));
 
                     Email = ciudadano.Email;
                     GenderId = ciudadano.GenderId ?? 0;
@@ -236,10 +252,11 @@ namespace DigesettAPP.ViewModels
                     Height = ciudadano.Height;
                     WorkLocationId = ciudadano.WorkLocationId;
                     CivilStatusId = ciudadano.CivilStatusId;
+                
 
-                    IsNewUser = false;
-                    ShowPhoneConfirmation = true;
-                }
+            }
+
+
                 else
                 {
                     // Validar con la API externa
@@ -304,7 +321,7 @@ namespace DigesettAPP.ViewModels
         {
             try
             {
-                var url = $"https://digesett.somee.com/api/User/{cedula}";
+                var url = $"https://a775-200-215-234-53.ngrok-free.app/api/User/{cedula}";
                 var response = await _httpClient.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -350,13 +367,15 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            if (Phone.Length != 10)
+            if (_rawPhone.Length != 10)
             {
                 await Shell.Current.DisplayAlert("Teléfono inválido", "Ingrese un teléfono válido.", "OK");
                 return;
             }
 
+
             if (!string.IsNullOrWhiteSpace(ConfirmPhone) && _rawPhone != ConfirmPhone)
+
             {
                 await Shell.Current.DisplayAlert("Teléfono no coincide", "El número de teléfono confirmado no coincide con el ingresado.", "OK");
                 return;
@@ -392,13 +411,7 @@ namespace DigesettAPP.ViewModels
                 var json = System.Text.Json.JsonSerializer.Serialize(usuario, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
 
                 // Copiar JSON al portapapeles
-                await Clipboard.SetTextAsync(json);
 
-                // Mostrar alerta indicando que se copió
-                await Shell.Current.DisplayAlert("JSON copiado", "El JSON a enviar ha sido copiado al portapapeles. A continuación se muestra:", "OK");
-
-                // Mostrar el JSON (puede que se corte si es muy largo)
-                await Shell.Current.DisplayAlert("Contenido JSON", json, "OK");
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -464,6 +477,8 @@ namespace DigesettAPP.ViewModels
             public string Name { get; set; }
             public string LastName { get; set; }
             public string Phone { get; set; }
+            public string Password { get; set; } // <-- Agregado
+
             public string Email { get; set; }
             public string ProfileImg { get; set; }
             public int? NacionalityId { get; set; }
@@ -473,6 +488,8 @@ namespace DigesettAPP.ViewModels
             public decimal? Height { get; set; }
             public int? WorkLocationId { get; set; }
             public int? CivilStatusId { get; set; }
+            public bool HasPassword { get; set; } // NUEVO
+
         }
 
     }

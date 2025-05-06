@@ -11691,6 +11691,7 @@ public final class R {
     public static final int velocimetro=0x7f070144;
     public static final int vistodos=0x7f070145;
     public static final int volanteconmanos=0x7f070146;
+    public static final int wave=0x7f070147;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

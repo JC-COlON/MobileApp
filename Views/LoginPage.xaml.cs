@@ -66,13 +66,9 @@ public partial class LoginPage : ContentPage
 
     private async void GoToRegister(object sender, TappedEventArgs e)
     {
-
-
-        await Shell.Current.GoToAsync("RegistrarViewCiudadano");
-
-
-
+        await Shell.Current.GoToAsync("//RegistrarViewCiudadano");
     }
+
 
 
 }
