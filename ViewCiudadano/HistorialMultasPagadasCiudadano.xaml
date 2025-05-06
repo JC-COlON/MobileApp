@@ -5,7 +5,8 @@
              x:Class="DigesettAPP.ViewCiudadano.HistorialMultasPagadasCiudadano"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2021/maui/toolkit"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
-             Title="">
+             Title=""
+             >
 
 
 
@@ -20,6 +21,8 @@
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
                Margin="0,50,0,10"> </Label>
+
+     
         <!-- Cargando Overlay -->
         <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
@@ -28,10 +31,35 @@
             </StackLayout>
         </Grid>
 
+   
         <!-- ScrollView que contiene el CollectionView -->
         <ScrollView Grid.Row="1" Margin="0,25,0,0" VerticalOptions="FillAndExpand" HorizontalOptions="Center">
-            <CollectionView x:Name="TicketsCollectionView"
-                 ItemsSource="{Binding Tickets}"
+
+            <StackLayout Padding="10,0" Spacing="10">
+
+                <!-- SearchBar dentro del ScrollView -->
+                <Frame BorderColor="Black"
+                       BackgroundColor="#f5f5f5"
+                   CornerRadius="15"
+                   Padding="0"
+                   HasShadow="False"
+                   HeightRequest="50"
+                   WidthRequest="355"
+                   HorizontalOptions="Center"
+                       Margin="0,0,0,25">
+                    <SearchBar x:Name="TicketSearchBar" 
+           Placeholder="Buscar Multa..."
+           Text="{Binding SearchText}" 
+                      BackgroundColor="#f5f5f5"
+                      Margin="5,0"
+                           HeightRequest="46"
+                           WidthRequest="330"
+                           FontAttributes="Bold"
+                           FontSize="15"/>
+
+                </Frame>
+                <CollectionView x:Name="TicketsCollectionView"
+                 ItemsSource="{Binding TicketsFiltrados}"
                  SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -130,7 +158,7 @@
                                            Padding="10"
                                            BorderColor="#CCCCCC"
                                            HasShadow="True"
-                                               WidthRequest="350">
+                                               WidthRequest="340">
 
                                             <StackLayout Spacing="4">
 
@@ -174,6 +202,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            </StackLayout>
         </ScrollView>
 
     </Grid>

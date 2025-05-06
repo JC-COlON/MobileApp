@@ -23,10 +23,10 @@
                       RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
                       ColumnDefinitions="Auto, *, Auto">
 
-                    <Label Text="CREAR USUARIO"
+                    <Label Text="Crear Usuario"
                            Grid.Row="0"
                            Grid.Column="0"
-                           FontSize="22"
+                           FontSize="24"
                            TextColor="Black"
                            FontAttributes="Bold"
                            Margin="0,-40,0,25"

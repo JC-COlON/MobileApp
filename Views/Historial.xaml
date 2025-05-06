@@ -8,7 +8,7 @@
 
 
 
-        <Label Text="Mi Historial" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" Grid.Row="0" FontAttributes="Bold"/>
+        <Label Text="Historial de Multas" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black" Grid.Row="0" FontAttributes="Bold"/>
 
       
 

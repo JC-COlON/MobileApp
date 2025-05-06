@@ -11,6 +11,7 @@ namespace DigesettAPP.Views
         {
             InitializeComponent();
             BindingContext = new ListaMultaViewModel();
+
         }
 
         protected override void OnAppearing()

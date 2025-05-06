@@ -30,8 +30,22 @@ namespace DigesettAPP.ViewCiudadano
 
         private async void IrPerfilCiudadano(object sender, EventArgs e)
         {
+            var imageButton = (ImageButton)sender;
+
+            // Animación: escala y opacidad al hacer tap
+            await Task.WhenAll(
+                imageButton.ScaleTo(0.95, 100, Easing.CubicOut),
+                imageButton.FadeTo(0.8, 100)
+            );
+
+            await Task.WhenAll(
+                imageButton.ScaleTo(1, 100, Easing.CubicIn),
+                imageButton.FadeTo(1, 100)
+            );
+
             await Shell.Current.GoToAsync(nameof(PerfilPageCiudadano));
         }
+
 
         private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
         {

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -48,6 +49,50 @@ namespace DigesettAPP.ViewModel
             }
         }
 
+        private string _searchText;
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+                    OnPropertyChanged();
+                    DebounceSearch(); // 👈 Nuevo método
+                }
+            }
+        }
+
+        private CancellationTokenSource _debounceCts;
+        private async void DebounceSearch()
+        {
+            _debounceCts?.Cancel();
+            _debounceCts = new CancellationTokenSource();
+            var token = _debounceCts.Token;
+
+            try
+            {
+                await Task.Delay(300); // Espera 300ms antes de buscar
+                if (!token.IsCancellationRequested)
+                {
+                    FiltrarTickets(); // 👈 Llama al filtrado
+                }
+            }
+            catch { }
+        }
+
+
+        private ObservableCollection<Ticket> _ticketsFiltrados;
+        public ObservableCollection<Ticket> TicketsFiltrados
+        {
+            get => _ticketsFiltrados;
+            set
+            {
+                _ticketsFiltrados = value;
+                OnPropertyChanged();
+            }
+        }
 
 
 
@@ -106,6 +151,8 @@ namespace DigesettAPP.ViewModel
                                 .ToList();
 
                             Tickets = new ObservableCollection<Ticket>(orderedTickets);
+                            TicketsFiltrados = new ObservableCollection<Ticket>(orderedTickets); // 👈 Necesario para mostrar todos al inicio
+
                         }
                         else
                         {
@@ -239,6 +286,43 @@ namespace DigesettAPP.ViewModel
             }
         }
 
+        private void FiltrarTickets()
+        {
+            if (string.IsNullOrWhiteSpace(SearchText))
+            {
+                TicketsFiltrados = new ObservableCollection<Ticket>(Tickets);
+                return;
+            }
+
+            var searchLower = SearchText.Trim().ToLowerInvariant();
+            var filtrados = Tickets.AsEnumerable();
+
+            // Validar si el texto es una fecha en formato dd/MM/yyyy
+            if (DateTime.TryParseExact(
+                SearchText.Trim(),
+                "dd/MM/yyyy",
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out var fechaBuscada))
+            {
+                filtrados = filtrados.Where(t =>
+                    DateTime.TryParse(t.TicketDate, out var fechaTicket) &&
+                    fechaTicket.Date == fechaBuscada.Date);
+            }
+            else
+            {
+                filtrados = filtrados.Where(t =>
+                    t.TicketId.ToString().Contains(searchLower) ||
+                    t.Articulo?.ArticleNum?.ToLowerInvariant().Contains(searchLower) == true ||
+                    t.Articulo?.Description?.ToLowerInvariant().Contains(searchLower) == true ||
+                    t.LicensePlate?.ToLowerInvariant().Contains(searchLower) == true ||
+                    t.Zone?.ToLowerInvariant().Contains(searchLower) == true ||
+                    t.FormattedTicketDate.ToLowerInvariant().Contains(searchLower)
+                );
+            }
+
+            TicketsFiltrados = new ObservableCollection<Ticket>(filtrados);
+        }
 
 
         public class VehicleType

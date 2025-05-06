@@ -220,6 +220,13 @@ namespace DigesettAPP.ViewModels
 
         private async Task EnviarReview(Ticket ticket)
         {
+            // 🔴 Validar que se haya escrito un comentario
+            if (string.IsNullOrWhiteSpace(Comentario))
+            {
+                await App.Current.MainPage.DisplayAlert("Validación", "Debe escribir un comentario para enviar la reseña.", "OK");
+                return;
+            }
+
             // 🔵 Validar primero que el ticket tenga un agente válido
             if (ticket.Agente == null || ticket.Agente.UserId == 0)
             {
@@ -253,12 +260,9 @@ namespace DigesettAPP.ViewModels
             {
                 string json = JsonConvert.SerializeObject(review, Formatting.Indented);
 
-                // 🟡 Mostrar el JSON en un alert para depuración
-
-
                 using (HttpClient client = new HttpClient
                 {
-                    Timeout = TimeSpan.FromSeconds(120) // ⬅️ Aquí agregamos también el timeout
+                    Timeout = TimeSpan.FromSeconds(120)
                 })
                 {
                     string token = Preferences.Get("AuthToken", string.Empty);
@@ -313,6 +317,7 @@ namespace DigesettAPP.ViewModels
 
 
 
+
         private int ObtenerUserIdDesdeToken()
         {
             try
@@ -351,6 +356,15 @@ namespace DigesettAPP.ViewModels
                     {
                         bool yaCalificada = JsonConvert.DeserializeObject<bool>(json);
                         ticket.YaCalificada = yaCalificada;
+
+                        // 🔁 Forzar refresh del item completo en la lista
+                        var index = Tickets.IndexOf(ticket);
+                        if (index >= 0)
+                        {
+                            Tickets.RemoveAt(index);
+                            Tickets.Insert(index, ticket);
+                        }
+
 
                         // Eliminar el alert de "Multa calificada true"
                         // No mostramos nada aquí, solo actualizamos la propiedad

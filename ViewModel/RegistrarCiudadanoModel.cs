@@ -321,7 +321,7 @@ namespace DigesettAPP.ViewModels
         {
             try
             {
-                var url = $"https://a775-200-215-234-53.ngrok-free.app/api/User/{cedula}";
+                var url = $"https://digesett.somee.com/api/User/{cedula}";
                 var response = await _httpClient.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)

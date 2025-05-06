@@ -17,4 +17,7 @@ public partial class HistorialMultasPagadasCiudadano : ContentPage
         var viewModel = BindingContext as HistorialMultasPagasViewModel;
         viewModel?.CargarMultasCommand.Execute(null);  // Ejecutamos el comando al aparecer la página
     }
+
+ 
+
 }
