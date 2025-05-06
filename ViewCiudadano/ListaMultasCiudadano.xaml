@@ -26,7 +26,6 @@
 
 
 
-
     <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowDefinitions="Auto,*,Auto" Margin="0,0,0,0">
         <!-- Cargando Overlay -->
         <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
@@ -178,15 +177,14 @@
                                             </Frame>
 
                                         </Grid>
-
                                         <control:SfRating
-                                            ItemSize="25"
-                                            Value="{Binding Rating, Mode=TwoWay}">  
+                                        ItemSize="25"
+                                        Value="{Binding Rating, Mode=TwoWay}"
+                                        IsEnabled="{Binding EstaHabilitado}">
                                             <control:SfRating.RatingSettings>
                                                 <control:RatingSettings RatedFill="#FD8402" UnratedStroke="Black"/>
                                             </control:SfRating.RatingSettings>
                                         </control:SfRating>
-
 
                                         <!-- Comentario con botón enviar -->
                                         <Frame BackgroundColor="#F5F5F5"
@@ -198,28 +196,28 @@
                                             <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
                                                 <!-- Entry para el comentario -->
                                                 <Entry Placeholder="Escribe un comentario..."
-                                               Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, 
-                                                    Path=BindingContext.Comentario, Mode=TwoWay}"
-                                               FontSize="14"
-                                               BackgroundColor="Transparent"
-                                               TextColor="Black"
-                                               PlaceholderColor="Gray"
-                                               Grid.Column="0" />
-
+               Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.Comentario, Mode=TwoWay}"
+               IsEnabled="{Binding EstaHabilitado}"
+               FontSize="14"
+               BackgroundColor="Transparent"
+               TextColor="Black"
+               PlaceholderColor="Gray"
+               Grid.Column="0" />
 
                                                 <!-- Botón de enviar -->
                                                 <ImageButton Source="enviarcomentario.png"
-                                                 WidthRequest="28"
-                                                 HeightRequest="28"
-                                                 BackgroundColor="Transparent"
-                                                 Command="{Binding BindingContext.EnviarComentarioCommand, Source={x:Reference TicketsCollectionView}}"
-                                                 CommandParameter="{Binding .}"
-                                                 Grid.Column="1"
-                                                 HorizontalOptions="End"
-                                                 VerticalOptions="Center"/>
-
+                     WidthRequest="28"
+                     HeightRequest="28"
+                     BackgroundColor="Transparent"
+                     IsEnabled="{Binding EstaHabilitado}"
+                     Command="{Binding BindingContext.EnviarComentarioCommand, Source={x:Reference TicketsCollectionView}}"
+                     CommandParameter="{Binding .}"
+                     Grid.Column="1"
+                     HorizontalOptions="End"
+                     VerticalOptions="Center"/>
                                             </Grid>
                                         </Frame>
+
 
 
                                     </StackLayout>

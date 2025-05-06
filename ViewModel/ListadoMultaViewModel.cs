@@ -11,6 +11,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewCiudadano;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DigesettAPP.ViewModels
 {
@@ -28,16 +30,36 @@ namespace DigesettAPP.ViewModels
                 OnPropertyChanged();
             }
         }
+    
+
         private bool _isExpanded;
         public bool IsExpanded
         {
             get => _isExpanded;
             set
             {
-                _isExpanded = value;
-                OnPropertyChanged();
+                if (_isExpanded != value)
+                {
+                    _isExpanded = value;
+                    OnPropertyChanged();
+                }
             }
         }
+
+        private double _rating;
+        public double Rating
+        {
+            get => _rating;
+            set
+            {
+                if (_rating != value)
+                {
+                    _rating = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         private bool _isLoading;
         public bool IsLoading
         {
@@ -135,11 +157,7 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            // Construir la URL correctamente
             string url = $"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending";
-
-
-   
 
             try
             {
@@ -164,36 +182,15 @@ namespace DigesettAPP.ViewModels
                                 .ToList();
 
                             Tickets = new ObservableCollection<Ticket>(orderedTickets);
+
+                            // 🔹 Verificar si cada multa ya fue calificada
+                            await Task.WhenAll(Tickets.Select(ticket => VerificarSiMultaYaFueCalificada(ticket)));
                         }
                         else
                         {
                             await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
                             await Shell.Current.GoToAsync("..");
                         }
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
-                    {
-                        string mensajeApi = "No tienes multas pendientes por pagar.";
-                        try
-                        {
-                            dynamic errorObj = JsonConvert.DeserializeObject(jsonResponse);
-                            if (errorObj?.message != null)
-                            {
-                                mensajeApi = errorObj.message;
-                            }
-                        }
-                        catch
-                        {
-                            // ignorar si falla el parseo
-                        }
-
-                        await App.Current.MainPage.DisplayAlert("Sin multas", mensajeApi, "OK");
-                        await Shell.Current.GoToAsync("..");
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        await App.Current.MainPage.DisplayAlert("Sin multas", "Este Usuario NO tiene Multas Pendientes.", "OK");
-                        await Shell.Current.GoToAsync("..");
                     }
                     else
                     {
@@ -249,7 +246,7 @@ namespace DigesettAPP.ViewModels
                 string json = JsonConvert.SerializeObject(review, Formatting.Indented);
 
                 // 🟡 Mostrar el JSON en un alert para depuración
-                await App.Current.MainPage.DisplayAlert("JSON Enviado", json, "OK");
+
 
                 using (HttpClient client = new HttpClient
                 {
@@ -332,9 +329,12 @@ namespace DigesettAPP.ViewModels
         {
             try
             {
+                if (ticket.YaCalificada)
+                    return; // Si ya se verificó, no hacemos nada
+
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = $"https://1037-200-215-234-53.ngrok-free.app/api/Reviews/CheckReviewByTicket?ticketId={ticket.TicketId}";
+                    string url = $"https://digesett.somee.com/api/Reviews/GetTicketReviewStatus?ticketId={ticket.TicketId}";
 
                     HttpResponseMessage response = await client.GetAsync(url);
                     string json = await response.Content.ReadAsStringAsync();
@@ -344,7 +344,12 @@ namespace DigesettAPP.ViewModels
                         bool yaCalificada = JsonConvert.DeserializeObject<bool>(json);
                         ticket.YaCalificada = yaCalificada;
 
-                        OnPropertyChanged(nameof(Tickets)); // Para refrescar la UI si es necesario
+                        // Eliminar el alert de "Multa calificada true"
+                        // No mostramos nada aquí, solo actualizamos la propiedad
+                    }
+                    else
+                    {
+                        ticket.YaCalificada = false;
                     }
                 }
             }
@@ -354,6 +359,8 @@ namespace DigesettAPP.ViewModels
                 ticket.YaCalificada = false;
             }
         }
+
+
 
 
         // Método para obtener la cédula desde el token
@@ -410,64 +417,89 @@ namespace DigesettAPP.ViewModels
             public string LastName { get; set; }
         }
 
-        public class Ticket
-        {
-            public int TicketId { get; set; }
-            public string Zone { get; set; }
-            public string Name { get; set; }
-            public string LastName { get; set; }
-            public string Phone { get; set; }
-            public string Email { get; set; }
-            public string Identification { get; set; }
-            public string LicensePlate { get; set; }
-            public string Brand { get; set; }
-            public string Model { get; set; }
-            public string IncidentLocation { get; set; }
-            public string Observations { get; set; }
-            public string AgentNumber { get; set; }
-            public string TicketDate { get; set; }
-            public string Status { get; set; }
 
-            public Articulo Articulo { get; set; }
-            public Agente Agente { get; set; }
 
-            public bool IsExpanded { get; set; }
+        public class Ticket : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            public bool YaCalificada { get; set; }
+        public int TicketId { get; set; }
+        public string Zone { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Identification { get; set; }
+        public string LicensePlate { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string IncidentLocation { get; set; }
+        public string Observations { get; set; }
+        public string AgentNumber { get; set; }
+        public string TicketDate { get; set; }
+        public string Status { get; set; }
+
+        public Articulo Articulo { get; set; }
+        public Agente Agente { get; set; }
+
+        public bool IsExpanded { get; set; }
+
+            private bool _yaCalificada;
+            public bool YaCalificada
+            {
+                get => _yaCalificada;
+                set
+                {
+                    if (_yaCalificada != value)
+                    {
+                        _yaCalificada = value;
+                        OnPropertyChanged();
+                        OnPropertyChanged(nameof(EstaHabilitado)); // Se actualiza también la propiedad derivada
+                    }
+                }
+            }
+
+
+            // ✅ Nueva propiedad derivada
+
+            public bool EstaHabilitado => !YaCalificada;
 
 
             // ➕ Propiedades calculadas
             public string FullName => $"{Name} {LastName}";
 
-            public string ArticleFull => $" {Articulo?.ArticleNum} - {Articulo?.Description}";
+        public string ArticleFull => $" {Articulo?.ArticleNum} - {Articulo?.Description}";
 
-            public string VehicleInfo => $" {Brand}/{Model} - Placa: {LicensePlate}";
+        public string VehicleInfo => $" {Brand}/{Model} - Placa: {LicensePlate}";
 
-            public string AgentInfo => $" {Agente?.Name} {Agente?.LastName} - No Agente: {AgentNumber}";
+        public string AgentInfo => $" {Agente?.Name} {Agente?.LastName} - No Agente: {AgentNumber}";
 
-            public string FormattedTicketDate =>
-                DateTime.TryParse(TicketDate, out var date) ? date.ToString("dd/MM/yyyy") : string.Empty;
+        public string FormattedTicketDate =>
+            DateTime.TryParse(TicketDate, out var date) ? date.ToString("dd/MM/yyyy") : string.Empty;
 
-            public string LocationInfo => $"  {Zone} ";
+        public string LocationInfo => $"  {Zone} ";
 
-            public string PrecioInfo => $"{Articulo?.Price}";
+        public string PrecioInfo => $"{Articulo?.Price}";
 
-            private double _rating;
-            public double Rating
+        private double _rating;
+        public double Rating
+        {
+            get => _rating;
+            set
             {
-                get => _rating;
-                set
+                if (_rating != value)
                 {
                     _rating = value;
-                    // Solo aplica si implementas INotifyPropertyChanged en Ticket (ideal)
+                    OnPropertyChanged(); // ✅ para refrescar si cambia visualmente
                 }
             }
-
-
         }
+    }
 
 
-        public class TicketResponse
+    public class TicketResponse
         {
             [JsonProperty("$id")]
             public string Id { get; set; }
