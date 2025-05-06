@@ -13,6 +13,7 @@ using CommunityToolkit.Maui.Views;
 using DigesettAPP.ViewCiudadano;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Net;
 
 namespace DigesettAPP.ViewModels
 {
@@ -183,14 +184,19 @@ namespace DigesettAPP.ViewModels
 
                             Tickets = new ObservableCollection<Ticket>(orderedTickets);
 
-                            // 🔹 Verificar si cada multa ya fue calificada
                             await Task.WhenAll(Tickets.Select(ticket => VerificarSiMultaYaFueCalificada(ticket)));
                         }
                         else
                         {
-                            await App.Current.MainPage.DisplayAlert("Sin multas", "No tienes multas pendientes por pagar.", "OK");
+                            await App.Current.MainPage.DisplayAlert("Sin multas", "No tiene multas pendientes.", "OK");
                             await Shell.Current.GoToAsync("..");
                         }
+                    }
+                    else if (response.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        // 🔹 Mostrar mensaje personalizado si no hay multas
+                        await App.Current.MainPage.DisplayAlert("Sin multas", "No tiene multas pendientes.", "OK");
+                        await Shell.Current.GoToAsync("..");
                     }
                     else
                     {
@@ -207,6 +213,8 @@ namespace DigesettAPP.ViewModels
                 IsLoading = false;
             }
         }
+
+
 
 
 
@@ -532,7 +540,12 @@ namespace DigesettAPP.ViewModels
         });
 
 
-     
+        public class ApiErrorResponse
+        {
+            [JsonProperty("mensaje")]
+            public string mensaje { get; set; }
+        }
+
 
     }
 }

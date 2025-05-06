@@ -12,32 +12,59 @@ namespace DigesettAPP.ViewModels
 {
     public partial class HomeViewModel : ObservableObject
     {
-        private readonly HttpClient _httpClient;
+       
+            private readonly HttpClient _httpClient;
 
-        private bool _hayMultas;
-        public bool HayMultas
-        {
-            get => _hayMultas;
-            set
+            private bool _hayMultas;
+            public bool HayMultas
             {
-                _hayMultas = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(NoHayMultas)); // Asegúrate de notificar que la propiedad NoHayMultas cambió
+                get => _hayMultas;
+                set
+                {
+                    _hayMultas = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(NoHayMultas));
+                    OnPropertyChanged(nameof(MostrarMultas));
+                    OnPropertyChanged(nameof(MostrarTips));
+                }
             }
-        }
 
-        public bool NoHayMultas => !HayMultas;
-
-        private ObservableCollection<Ticket> _listaDeMultas;
-        public ObservableCollection<Ticket> ListaDeMultas
-        {
-            get => _listaDeMultas;
-            set
+            private bool _isLoading;
+            public bool IsLoading
             {
-                _listaDeMultas = value;
-                OnPropertyChanged();
+                get => _isLoading;
+                set
+                {
+                    _isLoading = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(NoHayMultas));
+                    OnPropertyChanged(nameof(MostrarMultas));
+                    OnPropertyChanged(nameof(MostrarTips));
+                }
             }
-        }
+
+            // Esta propiedad sigue siendo útil
+            public bool NoHayMultas => !HayMultas && !IsLoading;
+
+            // Propiedades nuevas para el control de visibilidad
+            public bool MostrarMultas => HayMultas && !IsLoading;
+            public bool MostrarTips => !HayMultas && !IsLoading;
+
+            private ObservableCollection<Ticket> _listaDeMultas;
+            public ObservableCollection<Ticket> ListaDeMultas
+            {
+                get => _listaDeMultas;
+                set
+                {
+                    _listaDeMultas = value;
+                    OnPropertyChanged();
+                }
+            }
+
+            // Constructor y lógica de carga...
+        
+
+
 
         public HomeViewModel()
         {
@@ -69,6 +96,8 @@ namespace DigesettAPP.ViewModels
         {
             try
             {
+                IsLoading = true;
+
                 var cedula = ObtenerCedulaDelToken();
                 if (string.IsNullOrEmpty(cedula)) return;
 
@@ -107,7 +136,6 @@ namespace DigesettAPP.ViewModels
                         }
                     }
 
-                    // ✅ Ordenar y tomar las 2 más recientes
                     var ultimasDos = multasTemporales
                         .Where(m => DateTime.TryParse(m.TicketDate, out _))
                         .OrderByDescending(m => DateTime.Parse(m.TicketDate))
@@ -126,6 +154,10 @@ namespace DigesettAPP.ViewModels
             {
                 HayMultas = false;
                 await Shell.Current.DisplayAlert("Error", $"Excepción al cargar multas: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsLoading = false;
             }
         }
 

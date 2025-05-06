@@ -22,6 +22,8 @@ namespace DigesettAPP.ViewModel
         // Cambié la propiedad Tarjetas para que sea directamente una lista de CreditCard
         public ObservableCollection<CreditCard> Tarjetas { get; set; } = new ObservableCollection<CreditCard>();
 
+        private bool _alertaMostrada = false;
+
         private bool _isLoading;
         public bool IsLoading
         {
@@ -43,8 +45,14 @@ namespace DigesettAPP.ViewModel
             _ = CargarTarjetas(); // carga al iniciar
         }
 
+
+
+
+
         private async Task CargarTarjetas()
         {
+            if (_alertaMostrada) return;
+
             string cedula = ObtenerCedulaDelToken();
             if (string.IsNullOrEmpty(cedula))
             {
@@ -62,38 +70,43 @@ namespace DigesettAPP.ViewModel
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await client.GetAsync($"{BaseUrl}/GetCreditCardsByCedula?cedula={cedula}");
+
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    if (!_alertaMostrada)
+                    {
+                        _alertaMostrada = true;
+
+                        var respuesta = await App.Current.MainPage.DisplayAlert(
+                            "No tiene tarjetas registradas",
+                            "¿Desea registrar una tarjeta?",
+                            "Sí",
+                            "No"
+                        );
+
+                        if (respuesta)
+                        {
+                            await Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
+                        }
+                        else
+                        {
+                            await Shell.Current.GoToAsync("..");
+                        }
+                    }
+
+                    return; // Terminar aquí para evitar cualquier otro mensaje
+                }
+
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
                     var tarjetas = JsonConvert.DeserializeObject<List<CreditCard>>(json);
                     Tarjetas = new ObservableCollection<CreditCard>(tarjetas ?? new List<CreditCard>());
-                    OnPropertyChanged(nameof(Tarjetas)); // Notificar que las tarjetas han cambiado
+                    OnPropertyChanged(nameof(Tarjetas));
                 }
-                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                {
-                    // Quitar el Device.BeginInvokeOnMainThread y usar await directamente
-                    var respuesta = await App.Current.MainPage.DisplayAlert(
-                        "No tiene tarjetas registradas",
-                        "¿Desea registrar una tarjeta?",
-                        "Sí",
-                        "No"
-                    );
-
-                    if (respuesta)
-                    {
-                        await Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
-                    }
-                    else
-                    {
-                        await Shell.Current.GoToAsync("..");
-                    }
-                }
-
-
-
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("Error", "No se pudieron cargar las tarjetas.", "OK");
+                    // ⚠️ Ya no mostramos alerta en caso de error si no es 404
                     await Shell.Current.GoToAsync("..");
                 }
             }

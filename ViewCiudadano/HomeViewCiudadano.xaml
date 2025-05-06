@@ -38,7 +38,16 @@
                     </StackLayout>
 
 
-                    <VerticalStackLayout IsVisible="{Binding HayMultas}" >
+                    <ActivityIndicator 
+                    IsVisible="{Binding IsLoading}" 
+                    IsRunning="{Binding IsLoading}" 
+                    Color="#009C40"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center" 
+                    Margin="0,50"/>
+
+
+                    <VerticalStackLayout IsVisible="{Binding MostrarMultas}" >
 
                         <!-- Título que solo se mostrará si hay multas -->
                         <Label Text="Multas Recientes"
@@ -125,7 +134,7 @@
 
 
 
-                    <VerticalStackLayout Margin="0,20,0,0" IsVisible="{Binding NoHayMultas}">
+                    <VerticalStackLayout Margin="0,20,0,0" IsVisible="{Binding MostrarTips}">
 
                         <CarouselView x:Name="carouselView" HeightRequest="200" >
                             <CarouselView.ItemsLayout>
