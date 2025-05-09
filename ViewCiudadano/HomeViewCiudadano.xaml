@@ -68,18 +68,19 @@
 
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Margin="10,0"
+                                    <Border Margin="10,0"        
                         StrokeShape="RoundRectangle 22"
-                        StrokeThickness="0"
+                        StrokeThickness="1"
                         Padding="15"
                         WidthRequest="325"
-                        HeightRequest="200">
+                        HeightRequest="200"
+                        Stroke="#009C40">
 
                                         <!-- Fondo con degradado -->
                                         <Border.Background>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                                <GradientStop Color="#FD8402" Offset="0.0" />
-                                                <GradientStop Color="#f5f5f5" Offset="1.0" />
+                                                <GradientStop Color="#E8F5E9" Offset="0.0" />
+                                                <GradientStop Color="#E8F5E9" Offset="1.0" />
                                             </LinearGradientBrush>
                                         </Border.Background>
 
@@ -111,9 +112,9 @@
                                                 Text="{Binding Model, StringFormat='{}{0}'}"
                                                 FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
 
-                                                <Label 
+                                                <!--<Label 
                                                 Text="{Binding LicensePlate, StringFormat=' {0}'}"
-                                                FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
+                                                FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />-->
                                             </HorizontalStackLayout>
 
 

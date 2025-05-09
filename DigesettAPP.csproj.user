@@ -113,6 +113,9 @@
     <MauiXaml Update="Views\OlvidelaContrasenaPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\PopupDetalleMulta.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\PopupPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

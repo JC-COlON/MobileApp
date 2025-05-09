@@ -225,7 +225,8 @@ namespace DigesettAPP.ViewModels
 
                         if (volver)
                         {
-                            await Shell.Current.GoToAsync(".."); // Volver atrás
+                            await Shell.Current.GoToAsync("//LoginPage");
+                           
                         }
 
                         Cedula = "";

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Microsoft.Maui.Storage;
 using DigesettAPP.Models;
+using CommunityToolkit.Maui.Views;
 
 namespace DigesettAPP.Views
 {
@@ -16,11 +17,15 @@ namespace DigesettAPP.Views
         public Historial()
         {
             InitializeComponent();
+            TicketsList.ItemTapped += TicketsList_ItemTapped;
         }
+
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            TicketSearchBar.Text = string.Empty;
+
             CargarHistorial();
         }
 
@@ -55,7 +60,10 @@ namespace DigesettAPP.Views
                         allTickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
 
                         // Ordenar los tickets por fecha en orden descendente (más reciente primero)
-                        allTickets = allTickets.OrderByDescending(ticket => ticket.FormattedDate).ToList();
+                        allTickets = allTickets
+    .OrderByDescending(t => DateTime.Parse(t.TicketDate))
+    .ToList();
+
 
                         // Asignar la lista ordenada como fuente de datos
                         TicketsList.ItemsSource = allTickets;
@@ -94,6 +102,19 @@ namespace DigesettAPP.Views
             );
 
             TicketsList.ItemsSource = filteredTickets;
+        }
+
+
+        private async void TicketsList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item is Ticket selectedTicket)
+            {
+                var popup = new PopupDetalleMulta(selectedTicket);
+                this.ShowPopup(popup);
+            }
+
+    // Deseleccionar el ítem para que pueda volver a tocarse después
+    ((ListView)sender).SelectedItem = null;
         }
 
 

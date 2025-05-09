@@ -139,7 +139,7 @@ namespace DigesettAPP.ViewModels
                     var ultimasDos = multasTemporales
                         .Where(m => DateTime.TryParse(m.TicketDate, out _))
                         .OrderByDescending(m => DateTime.Parse(m.TicketDate))
-                        .Take(2)
+                        .Take(5)
                         .ToList();
 
                     ListaDeMultas = new ObservableCollection<Ticket>(ultimasDos);

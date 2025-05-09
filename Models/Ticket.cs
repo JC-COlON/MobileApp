@@ -60,5 +60,6 @@ namespace DigesettAPP.Models
         public string TicketDetails => $"{Name} {LastName} - {LicensePlate} - {Brand}/{Model} - {FormattedDate}";
 
         public string FullName => $"{Name} {LastName}";
+        public string DatosVehiculos => $"{Brand} {Model}";
     }
 }

@@ -55,10 +55,11 @@
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="Tarjeta: " FontAttributes="Bold"/>
-                                                <Span Text="{Binding NumeroTarjeta}" />
+                                                <Span Text="{Binding NumeroTarjeta}" TextColor="{Binding ColorNumeroTarjeta}" />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
+
                                     <Label FontSize="14">
                                         <Label.FormattedText>
                                             <FormattedString>
@@ -124,7 +125,8 @@
                             BackgroundColor="#009C40"
                             FontAttributes="Bold"
                             FontSize="18"
-                            Clicked="OnPagarButtonClicked" />
+                            Clicked="OnPagarButtonClicked"
+                            IsEnabled="{Binding PuedePagar}"/>
 
                         <Label Text="Volver atrás" HorizontalOptions="End" TextColor="Gray">
                             <Label.GestureRecognizers>

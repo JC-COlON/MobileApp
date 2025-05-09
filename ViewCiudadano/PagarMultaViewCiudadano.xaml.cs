@@ -32,6 +32,16 @@ namespace DigesettAPP.ViewCiudadano
             BindingContext = _viewModel;
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (_viewModel != null)
+                await _viewModel.PrepararVista(); // Esto activa el flujo de tarjeta
+        }
+
+
+
         // Manejo del evento para elegir nueva tarjeta
         private void ElegirNuevaTarjeta_Tapped(object sender, TappedEventArgs e)
         {

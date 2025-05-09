@@ -1,5 +1,9 @@
 ﻿using CommunityToolkit.Maui.Views;
 using System.Net.Http.Json;
+using System;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using DigesettAPP.Models; // Asegúrate de que aquí esté tu clase Vehicle, o crea una local
 
 namespace DigesettAPP.ViewCiudadano
 {
@@ -11,12 +15,12 @@ namespace DigesettAPP.ViewCiudadano
         {
             InitializeComponent();
             Placa = placa;
-            PlacaEntry.Text = Placa;  // Aquí asignamos la placa al Entry en el popup
+            PlacaEntry.Text = Placa;  // Asigna la placa al Entry
         }
 
         private async void OnGuardarClicked(object sender, EventArgs e)
         {
-            // Validaciones una por una
+            // Validaciones
             if (string.IsNullOrWhiteSpace(PlacaEntry.Text))
             {
                 await App.Current.MainPage.DisplayAlert("Campo requerido", "La placa es obligatoria.", "OK");
@@ -67,15 +71,27 @@ namespace DigesettAPP.ViewCiudadano
             {
                 using var client = new HttpClient
                 {
-                    Timeout = TimeSpan.FromSeconds(120) // ⬅️ Aquí le agregas también el Timeout de 2 minutos
+                    Timeout = TimeSpan.FromSeconds(120)
                 };
+
                 var url = "https://digesett.somee.com/api/VehicleInfo/AddVehicle";
                 var response = await client.PostAsJsonAsync(url, nuevoVehiculo);
 
                 if (response.IsSuccessStatusCode)
                 {
                     await App.Current.MainPage.DisplayAlert("Éxito", "Vehículo agregado correctamente.", "OK");
-                    Close();
+
+                    // Devuelve el vehículo como resultado del popup
+                    var vehiculoAgregado = new Vehicle
+                    {
+                        LicensePlate = PlacaEntry.Text.Trim(),
+                        Brand = MarcaEntry.Text.Trim(),
+                        Model = ModeloEntry.Text.Trim(),
+                        Color = ColorEntry.Text.Trim(),
+                        Year = parsedYear
+                    };
+
+                    Close(vehiculoAgregado); // ← Esto envía los datos al cerrar
                 }
                 else
                 {
@@ -88,10 +104,9 @@ namespace DigesettAPP.ViewCiudadano
             }
         }
 
-
         private void OnCancelarClicked(object sender, EventArgs e)
         {
-            Close();
+            Close(); // Cierra sin retornar nada
         }
     }
 }

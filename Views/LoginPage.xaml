@@ -26,7 +26,7 @@
                     <Label Text="Usuario" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="user.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Image Source="user.png" Aspect="AspectFill" HeightRequest="25" WidthRequest="25" Margin="5" VerticalOptions="Center"/>
                             <Entry TextColor="Black" Text="{Binding Cedula}" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center"
                                    HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" MaxLength="11" Keyboard="Numeric"/>
                         </StackLayout>
@@ -38,7 +38,7 @@
                     <Label Text="Contraseña" FontAttributes="Bold" TextColor="Black" FontSize="16"  HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="passwordcandado.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Image Source="passwordcandado.png" Aspect="AspectFill" HeightRequest="25" WidthRequest="25" Margin="5" VerticalOptions="Center"/>
                             <Entry Text="{Binding Password}" IsPassword="True" TextColor="Black" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontFamily="poppins-light.ttf"/>
                         </StackLayout>
                     </Frame>

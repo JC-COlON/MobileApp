@@ -139,14 +139,14 @@
                                             <Label Text="Calificar Multa"
                                            FontSize="18"
                                            FontAttributes="Bold"
-                                           TextColor="#009C40"
+                                           TextColor="#FD8402"
                                            VerticalOptions="Center"
                                            Grid.Column="1"
                                                    Margin="0,45,0,0"/>
 
                                             <!-- Botón con el precio -->
                                             <!-- Botón con el precio -->
-                                            <Frame BackgroundColor="#E8F5E9"
+                                            <Frame BackgroundColor="#009C40"
                                                CornerRadius="12"
                                                Padding="12"
                                                Margin="10,-40,0,0"
@@ -154,14 +154,15 @@
                                                HorizontalOptions="End"
                                                WidthRequest="120"
                                                HeightRequest="45"
-                                               Grid.Column="2">
+                                               Grid.Column="2"
+                                                BorderColor="#009C40">
 
                                                 <StackLayout>
                                                     <!-- Mostramos el precio -->
                                                     <Label Text="{Binding Articulo.Price, StringFormat='RD${0:F2}'}"
                                                    FontSize="12"
                                                    FontAttributes="Bold"
-                                                   TextColor="Black"
+                                                   TextColor="White"
                                                    HorizontalOptions="Center">
                                                         
                                                     </Label>

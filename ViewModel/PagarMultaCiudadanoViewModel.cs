@@ -11,7 +11,8 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Storage;
 using Newtonsoft.Json;
 using CommunityToolkit.Maui.Views;
-using System.Text; // NUEVO: para usar ShowPopupAsync
+using System.Text;
+using System.Net; // NUEVO: para usar ShowPopupAsync
 
 namespace DigesettAPP.ViewModel
 {
@@ -22,6 +23,7 @@ namespace DigesettAPP.ViewModel
         private string _correo;
         private string _numeroTarjeta;
         private string _expiracion;
+        private bool _yaMostroAlerta = false;
 
         public string NombreCompleto
         {
@@ -66,6 +68,23 @@ namespace DigesettAPP.ViewModel
             }
         }
 
+        private Color _colorNumeroTarjeta = Colors.Black;
+        public Color ColorNumeroTarjeta
+        {
+            get => _colorNumeroTarjeta;
+            set
+            {
+                _colorNumeroTarjeta = value;
+                OnPropertyChanged();
+            }
+        }
+        private bool _puedePagar;
+        public bool PuedePagar
+        {
+            get => _puedePagar;
+            set { _puedePagar = value; OnPropertyChanged(); }
+        }
+
 
         // Al inicio del ViewModel:
         private Ticket _ticketSeleccionado;
@@ -74,6 +93,12 @@ namespace DigesettAPP.ViewModel
             get => _ticketSeleccionado;
             set { _ticketSeleccionado = value; OnPropertyChanged(); }
         }
+        public async Task PrepararVista()
+        {
+            _yaMostroAlerta = false;
+            await CargarUltimaTarjeta();
+        }
+       
 
         public string Expiracion
         {
@@ -128,6 +153,7 @@ namespace DigesettAPP.ViewModel
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await client.GetAsync(url);
+
                 if (response.IsSuccessStatusCode)
                 {
                     string json = await response.Content.ReadAsStringAsync();
@@ -139,29 +165,46 @@ namespace DigesettAPP.ViewModel
                         string num = ultimaTarjeta.CardNumber.ToString();
                         NumeroTarjeta = $"**** **** **** {num.Substring(num.Length - 4)}";
                         Expiracion = $" {ultimaTarjeta.ExpirationDate}";
+                        CardId = ultimaTarjeta.CardId;
+                        PuedePagar = true;
+                        ColorNumeroTarjeta = Colors.Black;
+                        return;
+                    }
+                }
 
-                        // Asignamos el CardId a la propiedad en ViewModel
-                        CardId = ultimaTarjeta.CardId;  // Aquí es donde asignas el CardId
-                        Console.WriteLine($"ID de la tarjeta seleccionada: {CardId}");  // Solo para depurar, puedes eliminarlo luego.
-                    }
-                    else
-                    {
-                        NumeroTarjeta = "No hay tarjetas registradas";
-                        Expiracion = string.Empty;
-                    }
-                }
-                else
+                // Si llega aquí, no hay tarjeta
+                NumeroTarjeta = "No hay tarjeta registrada";
+                Expiracion = string.Empty;
+                PuedePagar = false;
+                ColorNumeroTarjeta = Colors.Red;
+
+                // Mostrar alerta solo una vez por carga
+                if (!_yaMostroAlerta)
                 {
-                    NumeroTarjeta = "Error cargando tarjeta";
-                    Expiracion = "";
+                    _yaMostroAlerta = true;
+
+                    bool registrar = await Application.Current.MainPage.DisplayAlert(
+                        "Sin tarjeta registrada",
+                        "Usted no tiene tarjeta registrada para proceder con el pago.\n¿Desea registrar una?",
+                        "Sí", "No");
+
+                    if (registrar)
+                        await Shell.Current.GoToAsync("AgregarTarjetaCiudadano");
+                    else
+                        await Shell.Current.GoToAsync("..");
                 }
+
             }
             catch (Exception ex)
             {
-                NumeroTarjeta = "Error de conexión";
+                NumeroTarjeta = "Error al cargar";
+                Expiracion = string.Empty;
+                PuedePagar = false;
                 Console.WriteLine($"Error cargando tarjeta: {ex.Message}");
             }
         }
+
+
 
 
 

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="DigesettAPP.Views.PopupDetalleMulta" >
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="12" BackgroundColor="White">
+            <Label Text="Detalle de Multa" FontSize="22" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+
+            <Frame CornerRadius="12" BackgroundColor="White" Padding="10" WidthRequest="380">
+                <StackLayout Spacing="8">
+
+                    <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
+                        <Label Text="Número de multa: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding TicketNumber}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Zona del Incidente: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding Zone}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Nombre del ciudadano: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding FullName}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Artículo Infringido: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding ArticuloFull}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Datos del Vehículo: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding DatosVehiculos}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Placa del vehículo: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding LicensePlate}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Fecha de la multa: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding FormattedDate}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
+                        <Label Text="Monto: " FontAttributes="Bold" LineBreakMode="WordWrap" HorizontalOptions="Start"/>
+                        <Label Text="{Binding ArticuloPrecio}" TextColor="Black" LineBreakMode="WordWrap" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+            <Button Text="Cerrar" BackgroundColor="#FD8402" TextColor="White" Clicked="OnCloseClicked" CornerRadius="10" />
+        </StackLayout>
+    </ScrollView>
+
+
+
+</toolkit:Popup>

@@ -140,77 +140,124 @@ namespace DigesettAPP.Views
             }
         }
 
-        private async void BuscarVehiculoPorPlaca(object sender, FocusEventArgs e)
-        {
-            var placa = placaVehiculoEntry.Text?.Trim();
+        private System.Timers.Timer placaTimer;
+        private const int delayBusquedaMs = 600; // Tiempo de espera tras dejar de escribir
 
-            if (string.IsNullOrEmpty(placa))
+        private void OnPlacaTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textoActual = e.NewTextValue?.Trim().ToUpper();
+
+            // Reiniciar el temporizador cada vez que cambia el texto
+            placaTimer?.Stop();
+            placaTimer?.Dispose();
+
+            if (string.IsNullOrEmpty(textoActual) || textoActual.Length < 5)
                 return;
 
-            try
+            placaTimer = new System.Timers.Timer(delayBusquedaMs)
             {
-                using (HttpClient client = new HttpClient())
+                AutoReset = false
+            };
+
+            placaTimer.Elapsed += async (s, args) =>
+            {
+                // Ejecutar en el hilo de la UI
+                MainThread.BeginInvokeOnMainThread(async () =>
                 {
-                    string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
-                    var response = await client.GetAsync(url);
+                    await BuscarVehiculoPorPlaca(textoActual);
+                });
+            };
 
-                    if (response.IsSuccessStatusCode)
+            placaTimer.Start();
+        }
+
+        private async Task BuscarVehiculoPorPlaca(string placa)
+{
+    if (string.IsNullOrEmpty(placa))
+        return;
+
+    try
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
+            var response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+
+                var resultado = JsonSerializer.Deserialize<VehicleResponse>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                var vehiculo = resultado?.Vehicles?.Values?.FirstOrDefault();
+
+                if (vehiculo != null)
+                {
+                    marcaVehiculoEntry.Text = vehiculo.Brand;
+                    modeloVehiculoEntry.Text = vehiculo.Model;
+                }
+                else
+                {
+                    bool registrar = await DisplayAlert(
+                        "Vehículo no encontrado",
+                        "¿Desea registrar este vehículo?",
+                        "Sí", "No");
+
+                    if (registrar)
                     {
-                        var json = await response.Content.ReadAsStringAsync();
-
-                        var resultado = JsonSerializer.Deserialize<VehicleResponse>(json, new JsonSerializerOptions
-                        {
-                            PropertyNameCaseInsensitive = true
-                        });
-
-                        var vehiculo = resultado?.Vehicles?.Values?.FirstOrDefault();
-
-                        if (vehiculo != null)
-                        {
-                            marcaVehiculoEntry.Text = vehiculo.Brand;
-                            modeloVehiculoEntry.Text = vehiculo.Model;
-                            // Puedes usar también vehiculo.Color, vehiculo.Year, etc.
-                        }
-                        else
-                        {
-                            bool registrar = await App.Current.MainPage.DisplayAlert(
-                                "Vehículo no encontrado",
-                                "¿Desea registrar este vehículo?",
-                                "Sí", "No");
-
-                            if (registrar)
-                            {
-                                // Aquí pasamos la placa al constructor del popup
                                 var popup = new PopupAgregarVehiculo(placa);
-                                await App.Current.MainPage.ShowPopupAsync(popup);
+                                var result = await App.Current.MainPage.ShowPopupAsync(popup);
+
+                                if (result is Vehicle nuevoVehiculo)
+                                {
+                                    // Asigna los datos del vehículo recién creado
+                                    placaVehiculoEntry.Text = nuevoVehiculo.LicensePlate;
+                                    marcaVehiculoEntry.Text = nuevoVehiculo.Brand;
+                                    modeloVehiculoEntry.Text = nuevoVehiculo.Model;
+                                    // Si tienes campos para color o año, también los puedes llenar aquí
+                                }
+
                             }
                         }
-                    }
-                    else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                    {
-                        bool registrar = await App.Current.MainPage.DisplayAlert(
-                            "Vehículo no encontrado",
-                            "¿Desea registrar este vehículo?",
-                            "Sí", "No");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                bool registrar = await DisplayAlert(
+                    "Vehículo no encontrado",
+                    "¿Desea registrar este vehículo?",
+                    "Sí", "No");
 
-                        if (registrar)
-                        {
-                            // Aquí pasamos la placa al constructor del popup
+                if (registrar)
+                {
                             var popup = new PopupAgregarVehiculo(placa);
-                            await App.Current.MainPage.ShowPopupAsync(popup);
+                            var result = await App.Current.MainPage.ShowPopupAsync(popup);
+
+                            if (result is Vehicle nuevoVehiculo)
+                            {
+                                // Asigna los datos del vehículo recién creado
+                                placaVehiculoEntry.Text = nuevoVehiculo.LicensePlate;
+                                marcaVehiculoEntry.Text = nuevoVehiculo.Brand;
+                                modeloVehiculoEntry.Text = nuevoVehiculo.Model;
+                                // Si tienes campos para color o año, también los puedes llenar aquí
+                            }
+
                         }
                     }
-                    else
-                    {
-                        await DisplayAlert("Error", "No se pudo obtener la información del vehículo.", "OK");
-                    }
-                }
-            }
-            catch (Exception ex)
+            else
             {
-                await DisplayAlert("Error", $"Ocurrió un error al buscar la placa: {ex.Message}", "OK");
+                await DisplayAlert("Error", "No se pudo obtener la información del vehículo.", "OK");
             }
         }
+    }
+    catch (Exception ex)
+    {
+        await DisplayAlert("Error", $"Ocurrió un error al buscar la placa: {ex.Message}", "OK");
+    }
+}
+
 
 
 
