@@ -302,6 +302,8 @@ namespace DigesettAPP.ViewModel
 
             string jsonPayload = JsonConvert.SerializeObject(payload, Formatting.Indented);
 
+            await App.Current.MainPage.DisplayAlert("Datos a Enviar", jsonPayload, "OK");
+
             // Mostrar el overlay de carga
             // Mostrar el overlay de carga
             IsLoading = true;

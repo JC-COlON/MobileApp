@@ -49,6 +49,7 @@ namespace DigesettAPP.ViewModel
 
 
 
+
         private async Task CargarTarjetas()
         {
             if (_alertaMostrada) return;
@@ -104,6 +105,7 @@ namespace DigesettAPP.ViewModel
                     Tarjetas = new ObservableCollection<CreditCard>(tarjetas ?? new List<CreditCard>());
                     OnPropertyChanged(nameof(Tarjetas));
                 }
+
                 else
                 {
                     // ⚠️ Ya no mostramos alerta en caso de error si no es 404

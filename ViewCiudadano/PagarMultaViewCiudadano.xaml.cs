@@ -45,7 +45,8 @@ namespace DigesettAPP.ViewCiudadano
         // Manejo del evento para elegir nueva tarjeta
         private void ElegirNuevaTarjeta_Tapped(object sender, TappedEventArgs e)
         {
-            var popup = new PoputSeleccionarMetodoPago();
+            var popup = new PoputSeleccionarMetodoPago(_viewModel);
+
             Application.Current.MainPage.ShowPopupAsync(popup);
         }
 
