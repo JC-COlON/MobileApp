@@ -561,5 +561,18 @@ namespace DigesettAPP.ViewModels
         }
 
 
+        public async Task InicializarDesdeParametro(int ticketId)
+        {
+            await CargarMultas();
+
+            var multa = Tickets?.FirstOrDefault(t => t.TicketId == ticketId);
+            if (multa != null)
+            {
+                multa.IsExpanded = true;
+                await VerificarSiMultaYaFueCalificada(multa);
+            }
+        }
+
+
     }
 }

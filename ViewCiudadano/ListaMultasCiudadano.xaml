@@ -79,6 +79,16 @@
                                 <syncfusion:SfExpander.Content>
                                     <StackLayout Padding="20,10" Spacing="8">
 
+                                        <!-- Numero de la multa -->
+                                        <Label FontSize="12" TextColor="Black">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Numero de la Multa #: " FontAttributes="Bold" />
+                                                    <Span Text="{Binding TicketId}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
                                         <!-- Zona / Lugar del Incidente -->
                                         <Label FontSize="12" TextColor="Black">
                                             <Label.FormattedText>
@@ -148,34 +158,43 @@
                                             <!-- Botón con el precio -->
                                             <Frame BackgroundColor="#009C40"
                                                CornerRadius="12"
-                                               Padding="12"
+                                               Padding="8"
                                                Margin="10,-40,0,0"
                                                HasShadow="True"
                                                HorizontalOptions="End"
-                                               WidthRequest="120"
+                                               WidthRequest="140"
                                                HeightRequest="45"
                                                Grid.Column="2"
-                                                BorderColor="#009C40">
+                                               BorderColor="#009C40">
 
-                                                <StackLayout>
-                                                    <!-- Mostramos el precio -->
-                                                    <Label Text="{Binding Articulo.Price, StringFormat='RD${0:F2}'}"
-                                                   FontSize="12"
-                                                   FontAttributes="Bold"
-                                                   TextColor="White"
-                                                   HorizontalOptions="Center">
-                                                        
-                                                    </Label>
+                                                <!-- Layout horizontal para ícono y texto -->
+                                                <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center"
+                                                 Spacing="6">
+
+                                                    <!-- Ícono (puede ser un archivo local o de recursos) -->
+                                                    <Image Source="money_sendwhite.png"  
+                                                        WidthRequest="25"
+                                                       HeightRequest="25"
+                                                       VerticalOptions="Center" />
+
+                                                        <!-- Precio -->
+                                                        <Label Text="{Binding Articulo.Price, StringFormat='RD${0:F2}'}"
+                                                       FontSize="12"
+                                                       FontAttributes="Bold"
+                                                       TextColor="White"
+                                                       VerticalOptions="Center" />
                                                 </StackLayout>
 
-
-                                                <!-- TapGestureRecognizer para ir a la pantalla de pago -->
+                                                <!-- Tap para ir a pagar -->
                                                 <Frame.GestureRecognizers>
                                                     <TapGestureRecognizer
-                                                        Command="{Binding BindingContext.IrAPagarMultaCommand, Source={x:Reference TicketsCollectionView}}"
-                                                        CommandParameter="{Binding .}" />
+                                                    Command="{Binding BindingContext.IrAPagarMultaCommand, Source={x:Reference TicketsCollectionView}}"
+                                                    CommandParameter="{Binding .}" />
                                                 </Frame.GestureRecognizers>
                                             </Frame>
+
 
                                         </Grid>
                                         <control:SfRating

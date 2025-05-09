@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DigesettAPP.Converters"
              x:Class="DigesettAPP.ViewCiudadano.HomeViewCiudadano"
+             xmlns:vm="clr-namespace:DigesettAPP.ViewModels"
              BackgroundColor="White"
              Title="">
 
@@ -46,25 +47,24 @@
                     VerticalOptions="Center" 
                     Margin="0,50"/>
 
-
-                    <VerticalStackLayout IsVisible="{Binding MostrarMultas}" >
-
+               
+                    <VerticalStackLayout IsVisible="{Binding MostrarMultas}">
                         <!-- Título que solo se mostrará si hay multas -->
                         <Label Text="Multas Recientes"
-                           TextColor="Black"
-                           FontFamily="SfProTextRegular"
-                           FontSize="20"
-                           Margin="15,30,0,-40"
-                           FontAttributes="Bold"
-                           Grid.Row="0"/>
+           TextColor="Black"
+           FontFamily="SfProTextRegular"
+           FontSize="20"
+           Margin="15,30,0,-40"
+           FontAttributes="Bold"
+           Grid.Row="0" />
 
                         <!-- Lista de multas -->
                         <CollectionView 
-                        x:Name="listViewMultaPAY"
-                        ItemsSource="{Binding ListaDeMultas}"
-                        ItemsLayout="HorizontalList"
-                        HorizontalScrollBarVisibility="Never"
-                        Margin="10,50,10,0">
+        x:Name="listViewMultaPAY"
+        ItemsSource="{Binding ListaDeMultas}"
+        ItemsLayout="HorizontalList"
+        HorizontalScrollBarVisibility="Never"
+        Margin="10,50,10,0">
 
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
@@ -75,6 +75,13 @@
                         WidthRequest="325"
                         HeightRequest="200"
                         Stroke="#009C40">
+
+                                        <!-- Tap para navegar al detalle -->
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HomeViewModel}}, Path=VerDetalleMultaCommand}" 
+                            CommandParameter="{Binding .}" />
+                                        </Border.GestureRecognizers>
 
                                         <!-- Fondo con degradado -->
                                         <Border.Background>
@@ -99,24 +106,13 @@
                                                 <Label Text="{Binding IncidentLocation}" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
                                             </HorizontalStackLayout>
 
+                                            <!-- Vehículo -->
                                             <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
                                                 <Image Source="carblack.png" HeightRequest="25" WidthRequest="25" />
                                                 <Label Text="Vehículo:" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" FontAttributes="Bold"/>
-
-                                                <!-- Combinar Marca, Modelo y Placa -->
-                                                <Label 
-                                                Text="{Binding Brand, StringFormat='{}{0}'}"
-                                                FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
-
-                                                <Label 
-                                                Text="{Binding Model, StringFormat='{}{0}'}"
-                                                FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
-
-                                                <!--<Label 
-                                                Text="{Binding LicensePlate, StringFormat=' {0}'}"
-                                                FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />-->
+                                                <Label Text="{Binding Brand}" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
+                                                <Label Text="{Binding Model}" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
                                             </HorizontalStackLayout>
-
 
                                             <!-- Fecha -->
                                             <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
@@ -131,6 +127,7 @@
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </VerticalStackLayout>
+
 
 
 
@@ -273,7 +270,7 @@
                         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto" ColumnSpacing="15">
                             <!-- multas -->
                             <Border HeightRequest="110" BackgroundColor="#f5f5f5" Grid.Column="0"  
-    StrokeThickness="0" StrokeShape="RoundRectangle 12">
+                                     StrokeThickness="0" StrokeShape="RoundRectangle 12">
                                 <Border.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="IrAverMultass" />
                                 </Border.GestureRecognizers>
@@ -281,7 +278,7 @@
                                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
                                     <ImageButton Source="document_filledgrenn" HeightRequest="45" WidthRequest="45" />
                                     <Label FontFamily="SfProTextRegular" Text="Multas" TextColor="#025825" HorizontalOptions="Center"
-           VerticalOptions="Center" FontAttributes="Bold" />
+                                        VerticalOptions="Center" FontAttributes="Bold" />
                                 </VerticalStackLayout>
                             </Border>
 

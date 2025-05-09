@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.Maui.Storage;
 using CommunityToolkit.Mvvm.ComponentModel;
 using DigesettAPP.Models;
+using System.Windows.Input;
+using DigesettAPP.Views;
 
 namespace DigesettAPP.ViewModels
 {
@@ -70,6 +72,25 @@ namespace DigesettAPP.ViewModels
         {
             _httpClient = new HttpClient();
         }
+
+        public ICommand VerDetalleMultaCommand => new Command<Ticket>(async (ticket) =>
+        {
+            if (ticket == null) return;
+
+            IsLoading = true;
+
+            // Esperar brevemente para dejar que la UI actualice el spinner
+            await Task.Yield();
+            await Task.Delay(300); // Esto da tiempo a que el spinner se muestre correctamente
+
+            // Navegación
+            await Shell.Current.GoToAsync($"{nameof(ListaMultasCiudadano)}?ticketId={ticket.TicketId}");
+
+            // No se pone IsLoading = false porque cambiarás de página
+        });
+
+
+
 
         private string ObtenerCedulaDelToken()
         {
