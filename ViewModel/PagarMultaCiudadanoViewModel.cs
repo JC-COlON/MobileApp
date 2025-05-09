@@ -143,64 +143,80 @@ namespace DigesettAPP.ViewModel
 
         private async Task CargarUltimaTarjeta()
         {
-            try
+            const int maxIntentos = 3;
+            const int milisegundosEsperaBase = 1000;
+
+            for (int intento = 1; intento <= maxIntentos; intento++)
             {
-                var cedulaLimpia = Cedula.Replace("Cédula: ", "").Trim();
-                string url = $"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
-
-                using var client = new HttpClient();
-                string token = Preferences.Get("AuthToken", string.Empty);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                var response = await client.GetAsync(url);
-
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    string json = await response.Content.ReadAsStringAsync();
-                    var tarjetas = JsonConvert.DeserializeObject<List<CreditCard>>(json);
+                    var cedulaLimpia = Cedula.Replace("Cédula: ", "").Trim();
+                    string url = $"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
 
-                    var ultimaTarjeta = tarjetas?.LastOrDefault();
-                    if (ultimaTarjeta != null)
+                    using var client = new HttpClient();
+                    string token = Preferences.Get("AuthToken", string.Empty);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    var response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
                     {
-                        string num = ultimaTarjeta.CardNumber.ToString();
-                        NumeroTarjeta = $"**** **** **** {num.Substring(num.Length - 4)}";
-                        Expiracion = $" {ultimaTarjeta.ExpirationDate}";
-                        CardId = ultimaTarjeta.CardId;
-                        PuedePagar = true;
-                        ColorNumeroTarjeta = Colors.Black;
-                        return;
+                        string json = await response.Content.ReadAsStringAsync();
+                        var tarjetas = JsonConvert.DeserializeObject<List<CreditCard>>(json);
+
+                        var ultimaTarjeta = tarjetas?.LastOrDefault();
+                        if (ultimaTarjeta != null)
+                        {
+                            string num = ultimaTarjeta.CardNumber.ToString();
+                            NumeroTarjeta = $"**** **** **** {num.Substring(num.Length - 4)}";
+                            Expiracion = $" {ultimaTarjeta.ExpirationDate}";
+                            CardId = ultimaTarjeta.CardId;
+                            PuedePagar = true;
+                            ColorNumeroTarjeta = Colors.Black;
+                            return;
+                        }
+                    }
+
+                    // Si no hay tarjeta
+                    NumeroTarjeta = "No hay tarjeta registrada";
+                    Expiracion = string.Empty;
+                    PuedePagar = false;
+                    ColorNumeroTarjeta = Colors.Red;
+
+                    if (!_yaMostroAlerta)
+                    {
+                        _yaMostroAlerta = true;
+
+                        bool registrar = await Application.Current.MainPage.DisplayAlert(
+                            "Sin tarjeta registrada",
+                            "Usted no tiene tarjeta registrada para proceder con el pago.\n¿Desea registrar una?",
+                            "Sí", "No");
+
+                        if (registrar)
+                            await Shell.Current.GoToAsync("AgregarTarjetaCiudadano");
+                        else
+                            await Shell.Current.GoToAsync("..");
+                    }
+
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[Intento {intento}] Error cargando tarjeta: {ex.Message}");
+
+                    if (intento == maxIntentos)
+                    {
+                        NumeroTarjeta = "Error al cargar";
+                        Expiracion = string.Empty;
+                        PuedePagar = false;
+
+                        await Application.Current.MainPage.DisplayAlert("Error", "No se pudo cargar la tarjeta. Intente más tarde.", "OK");
+                    }
+                    else
+                    {
+                        await Task.Delay(milisegundosEsperaBase * intento); // espera progresiva
                     }
                 }
-
-                // Si llega aquí, no hay tarjeta
-                NumeroTarjeta = "No hay tarjeta registrada";
-                Expiracion = string.Empty;
-                PuedePagar = false;
-                ColorNumeroTarjeta = Colors.Red;
-
-                // Mostrar alerta solo una vez por carga
-                if (!_yaMostroAlerta)
-                {
-                    _yaMostroAlerta = true;
-
-                    bool registrar = await Application.Current.MainPage.DisplayAlert(
-                        "Sin tarjeta registrada",
-                        "Usted no tiene tarjeta registrada para proceder con el pago.\n¿Desea registrar una?",
-                        "Sí", "No");
-
-                    if (registrar)
-                        await Shell.Current.GoToAsync("AgregarTarjetaCiudadano");
-                    else
-                        await Shell.Current.GoToAsync("..");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                NumeroTarjeta = "Error al cargar";
-                Expiracion = string.Empty;
-                PuedePagar = false;
-                Console.WriteLine($"Error cargando tarjeta: {ex.Message}");
             }
         }
 
@@ -210,53 +226,70 @@ namespace DigesettAPP.ViewModel
 
         public async Task CargarMultaPorId(int ticketId)
         {
-            try
+            const int maxIntentos = 3;
+            const int milisegundosEsperaBase = 1000;
+
+            for (int intento = 1; intento <= maxIntentos; intento++)
             {
-                IsLoading = true; // Mostrar el loading
-
-                string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
-                using var client = new HttpClient();
-                string token = Preferences.Get("AuthToken", string.Empty);
-
-                if (string.IsNullOrEmpty(token))
+                try
                 {
-                    await App.Current.MainPage.DisplayAlert("Error", "No hay token de autenticación disponible.", "OK");
-                    return;
-                }
+                    IsLoading = true; // Mostrar el loading
 
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                var response = await client.GetAsync(url);
+                    string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
+                    using var client = new HttpClient();
+                    string token = Preferences.Get("AuthToken", string.Empty);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    var ticket = JsonConvert.DeserializeObject<Ticket>(json);
-
-                    if (ticket != null)
+                    if (string.IsNullOrEmpty(token))
                     {
-                        TicketSeleccionado = ticket;
-                        OnPropertyChanged(nameof(TicketSeleccionado));
+                        await App.Current.MainPage.DisplayAlert("Error", "No hay token de autenticación disponible.", "OK");
+                        return;
+                    }
+
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    var response = await client.GetAsync(url);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        var ticket = JsonConvert.DeserializeObject<Ticket>(json);
+
+                        if (ticket != null)
+                        {
+                            TicketSeleccionado = ticket;
+                            OnPropertyChanged(nameof(TicketSeleccionado));
+                            return; // Éxito, salir
+                        }
+                        else
+                        {
+                            await App.Current.MainPage.DisplayAlert("Advertencia", "La respuesta de la API no contenía una multa válida.", "OK");
+                            return;
+                        }
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("Advertencia", "La respuesta de la API no contenía una multa válida.", "OK");
+                        if (intento == maxIntentos)
+                        {
+                            string errorMsg = await response.Content.ReadAsStringAsync();
+                            await App.Current.MainPage.DisplayAlert("Error en la API", $"StatusCode: {response.StatusCode}\nMensaje: {errorMsg}", "OK");
+                        }
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    string errorMsg = await response.Content.ReadAsStringAsync();
-                    await App.Current.MainPage.DisplayAlert("Error en la API", $"StatusCode: {response.StatusCode}\nMensaje: {errorMsg}", "OK");
+                    if (intento == maxIntentos)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Excepción", $"Error al obtener la multa:\n{ex.Message}", "OK");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Excepción", $"Error al obtener la multa:\n{ex.Message}", "OK");
-            }
-            finally
-            {
-                IsLoading = false; // Ocultar el loading
+                finally
+                {
+                    IsLoading = false; // Ocultar el loading
+                }
+
+                await Task.Delay(milisegundosEsperaBase * intento); // espera progresiva
             }
         }
+
 
 
         public async Task PagarMulta()

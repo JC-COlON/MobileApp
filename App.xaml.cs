@@ -18,9 +18,9 @@ namespace DigesettAPP
             Preferences.Clear();
 
 
-            //Shell.Current.GoToAsync(nameof(HistorialMultasPagadasCiudadano));
+            Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
 
-            //Shell.Current.GoToAsync($"//{nameof(RegistrarViewCiudadano)}");
+            //Shell.Current.GoToAsync($"//{nameof(AgregarTarjetaCiudadano)}");
 
 
             //MainPage.Dispatcher.Dispatch(async () =>

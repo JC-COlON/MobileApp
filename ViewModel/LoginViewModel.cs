@@ -31,7 +31,12 @@ namespace DigesettAPP.ViewModel
 
                     User user = await loginservice.Login(Cedula, Password);
 
-
+                    // Intentar una segunda vez si no se logró
+                    if (user == null)
+                    {
+                        await Task.Delay(1000); // espera breve por si hay latencia de red
+                        user = await loginservice.Login(Cedula, Password);
+                    }
 
                     if (user != null)
                     {
@@ -55,6 +60,7 @@ namespace DigesettAPP.ViewModel
                                 await Shell.Current.DisplayAlert("Acceso Denegado", "No tiene permisos para acceder a esta aplicación.", "OK");
                                 break;
                         }
+
                         LoginPage?.OcultarPopup(); // Oculta el popup después del login
                     }
                     else
@@ -71,10 +77,11 @@ namespace DigesettAPP.ViewModel
             }
             catch (Exception ex)
             {
-                LoginPage?.OcultarPopup(); // Asegúrate de ocultarlo si hay error
+                LoginPage?.OcultarPopup();
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
 
 
         public void LimpiarCampos()
