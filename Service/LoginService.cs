@@ -16,7 +16,7 @@ namespace DigesettAPP.Service
             try
             {
                 var client = new HttpClient();
-                string Url = "https://digesett.somee.com/api/UserAccess/Login";
+                string Url = "https://a775-200-215-234-53.ngrok-free.app/api/UserAccess/Login";
 
                 var loginData = new { Cedula = cedula, Password = password };
                 var content = new StringContent(JsonConvert.SerializeObject(loginData), Encoding.UTF8, "application/json");

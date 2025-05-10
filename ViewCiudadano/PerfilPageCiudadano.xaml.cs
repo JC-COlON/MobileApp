@@ -1,4 +1,5 @@
-﻿using DigesettAPP.Views;
+﻿using CommunityToolkit.Maui.Views;
+using DigesettAPP.Views;
 using System.IdentityModel.Tokens.Jwt;
 
 
@@ -6,11 +7,25 @@ namespace DigesettAPP.ViewCiudadano;
 
 public partial class PerfilPageCiudadano : ContentPage
 {
-	public PerfilPageCiudadano()
-	{
-		InitializeComponent();
+    public PerfilPageCiudadano()
+    {
+        InitializeComponent();
         MostrarInformacionUsuario();
+
+        // Suscribirse al mensaje "PerfilActualizado"
+        MessagingCenter.Subscribe<object>(this, "PerfilActualizado", (sender) => {
+            MostrarInformacionUsuario();
+        });
     }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        // Desuscribirse del mensaje para evitar fugas de memoria
+        MessagingCenter.Unsubscribe<object>(this, "PerfilActualizado");
+    }
+
+
 
 
 
@@ -101,6 +116,21 @@ public partial class PerfilPageCiudadano : ContentPage
     {
         await Navigation.PushAsync(new SobreApp());
     }
+
+    private async void IrEditar(object sender, EventArgs e)
+    {
+        var popup = new PopupEditarCiudadano();
+        var resultado = await App.Current.MainPage.ShowPopupAsync(popup);
+
+        if (resultado is bool actualizado && actualizado)
+        {
+            // Recarga completa de la página
+            await Navigation.PushAsync(new PerfilPageCiudadano());
+            Navigation.RemovePage(this); // Quita la anterior de la pila
+        }
+    }
+
+
 
     private async void IrAChangePassword(object sender, EventArgs e)
     {

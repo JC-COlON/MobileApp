@@ -148,54 +148,70 @@
 
 
 
-                                        
-                               
 
 
-                                        <!-- 🔽 Información de Pago (con Frame) -->
-                                        <Frame BackgroundColor="#E8F5E9"
-                                           CornerRadius="8"
-                                           Padding="10"
-                                           BorderColor="#CCCCCC"
-                                           HasShadow="True"
+
+
+                                            <!-- 🔽 Información de Pago (con Frame) -->
+                                            <Frame BackgroundColor="#E8F5E9"
+                                               CornerRadius="8"
+                                               Padding="10"
+                                               BorderColor="#CCCCCC"
+                                               HasShadow="True"
                                                WidthRequest="340">
 
-                                            <StackLayout Spacing="4">
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <!-- Para texto -->
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <!-- Para imagen -->
+                                                    </Grid.ColumnDefinitions>
 
-                                                <Label FontSize="12" TextColor="Black">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="Número del Pago #: " FontAttributes="Bold" />
-                                                            <Span Text="{Binding PaymentId}" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
+                                                    <!-- Columna de Texto -->
+                                                    <StackLayout Grid.Column="0" Spacing="4">
+                                                        <Label FontSize="12" TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Número del Pago #: " FontAttributes="Bold" />
+                                                                    <Span Text="{Binding PaymentId}" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
 
-                                                <Label FontSize="12" TextColor="Black">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="Monto Pagado: " FontAttributes="Bold" />
-                                                            <Span Text="{Binding PaymentAmount, StringFormat='RD${0:N2}'}" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
+                                                        <Label FontSize="12" TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Monto Pagado: " FontAttributes="Bold" />
+                                                                    <Span Text="{Binding PaymentAmount, StringFormat='RD${0:N2}'}" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
 
-                                                <Label FontSize="12" TextColor="Black">
-                                                    <Label.FormattedText>
-                                                        <FormattedString>
-                                                            <Span Text="Fecha de Pago: " FontAttributes="Bold" />
-                                                            <Span Text="{Binding PaymentDateFormatted}" />
-                                                        </FormattedString>
-                                                    </Label.FormattedText>
-                                                </Label>
+                                                        <Label FontSize="12" TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="Fecha de Pago: " FontAttributes="Bold" />
+                                                                    <Span Text="{Binding PaymentDateFormatted}" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </StackLayout>
 
-                                            </StackLayout>
+                                                    <!-- Columna de Imagen -->
+                                                    <Image Grid.Column="1"
+                                                   Source="check.png"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   HeightRequest="75"
+                                                   WidthRequest="75"
+                                                   Margin="10,0,0,0"/>
+                                                </Grid>
+                                            </Frame>
 
-                                        </Frame>
 
 
-
-                                    </StackLayout>
+                                        </StackLayout>
                                 </syncfusion:SfExpander.Content>
                             </syncfusion:SfExpander>
                         </Border>

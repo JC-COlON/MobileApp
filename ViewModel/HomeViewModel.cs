@@ -122,7 +122,7 @@ namespace DigesettAPP.ViewModels
                 var cedula = ObtenerCedulaDelToken();
                 if (string.IsNullOrEmpty(cedula)) return;
 
-                var url = $"https://digesett.somee.com/api/Ticket/Pending/{cedula}";
+                var url = $"https://a775-200-215-234-53.ngrok-free.app/api/Ticket/Pending/{cedula}";
                 var response = await _httpClient.GetAsync(url);
 
                 if (response.IsSuccessStatusCode)

@@ -38,6 +38,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\change.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\check.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\chevron_leftgreen.png
@@ -51,6 +52,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\document_filledgrenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\edit.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\editblack.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\exitundraw.png
@@ -112,6 +114,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\change.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\check.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\chevron_leftgreen.png
@@ -125,6 +128,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\document_filledgrenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\edit.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\editblack.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\exitundraw.png
@@ -186,6 +190,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\change.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\check.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\chevron_leftgreen.png
@@ -199,6 +204,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\document_filledgrenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\edit.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\editblack.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\exitundraw.png
@@ -260,6 +266,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\change.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\check.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\chevron_leftgreen.png
@@ -273,6 +280,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\document_filledgrenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\edit.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\editblack.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\exitundraw.png
@@ -334,6 +342,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\caricon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\carta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\cedula.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\change.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\check.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_down.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_left.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\chevron_leftgreen.png
@@ -347,6 +356,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\delete.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\documenticon.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\document_filledgrenn.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\edit.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\editblack.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\email.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\enviarcomentario.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\exitundraw.png

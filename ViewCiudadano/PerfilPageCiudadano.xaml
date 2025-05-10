@@ -28,15 +28,15 @@
             <!-- Nombre completo (Nombre + Apellido) -->
             <Label x:Name="UsuarioNombreLabel" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,20" TextColor="Black" FontAttributes="Bold"/>
 
-            <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,-10,45,0" CornerRadius="12" HeightRequest="300" WidthRequest="400">
-                <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
+            <Frame BorderColor="#D9D0E3" BackgroundColor="White" Margin="50,-10,45,0" CornerRadius="12" HeightRequest="250" WidthRequest="400">
+                <StackLayout VerticalOptions="CenterAndExpand" Padding="0">
 
 
                     <!-- Segundo campo: Cédula y su dato -->
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
                         <Image Source="cedula.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" Margin="0,0,10,0" />
-                        <Label Text="Cédula:" FontSize="16" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
-                        <Label x:Name="CedulaLabel" Text="{Binding Cedula}" FontSize="16" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" />
+                        <Label Text="Cédula:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                        <Label x:Name="CedulaLabel" Text="{Binding Cedula}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" />
                     </StackLayout>
 
 
@@ -44,14 +44,14 @@
                     <!-- Tercer campo: Lugar de trabajo y su dato -->
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
                         <Image Source="telefono.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" Margin="0,0,10,0" />
-                        <Label Text="Telefono:" FontSize="16" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
-                        <Label x:Name="telefonolabel" Text="{Binding Telefono}" FontSize="16" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
+                        <Label Text="Telefono:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                        <Label x:Name="telefonolabel" Text="{Binding Telefono}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
                         <Image Source="correo.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Center" Margin="0,0,10,0" />
-                        <Label Text="Email:" FontSize="16" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
-                        <Label x:Name="emaillabel" Text="{Binding Email}" FontSize="16" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" HorizontalOptions="FillAndExpand" />
+                        <Label Text="Email:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
+                        <Label x:Name="emaillabel" Text="{Binding Email}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0" HorizontalOptions="FillAndExpand" />
                     </StackLayout>
 
 
@@ -73,6 +73,17 @@
 
                     <!-- Opción 1 -->
                     <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
+                        <Image Source="editblack.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
+                        <Label Text="Editar " Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0"/>
+                        <Image Source="flecha.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" VerticalOptions="Center"/>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="IrEditar"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                <!-- Opción 2 -->
+                    <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
                         <Image Source="change.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
                         <Label Text="Cambiar Contrasena" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0"/>
                         <Image Source="flecha.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" VerticalOptions="Center"/>
@@ -82,7 +93,7 @@
                         </Grid.GestureRecognizers>
                     </Grid>
 
-                    <!-- Opción 2 -->
+                    <!-- Opción 3 -->
                     <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
                         <Image Source="about.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
                         <Label Text="Sobre la APP" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0"/>
@@ -93,7 +104,7 @@
                         </Grid.GestureRecognizers>
                     </Grid>
 
-                    <!-- Opción 3 -->
+                    <!-- Opción 4 -->
                     <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,0,0,0">
                         <Image Source="salirrrr.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
                         <Label Text="Salir" Grid.Column="1" FontSize="16" VerticalOptions="Center" Margin="10,0" TextColor="Red"/>

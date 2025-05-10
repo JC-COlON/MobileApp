@@ -18,14 +18,14 @@ namespace DigesettAPP
             Preferences.Clear();
 
 
-            Shell.Current.GoToAsync(nameof(AgregarTarjetaCiudadano));
+            //Shell.Current.GoToAsync(nameof(PerfilPageCiudadano));
 
             //Shell.Current.GoToAsync($"//{nameof(AgregarTarjetaCiudadano)}");
 
 
             //MainPage.Dispatcher.Dispatch(async () =>
             //{
-            //    var popup = new PopupAgregarVehiculo();
+            //    var popup = new PopupEditarCiudadano();
             //    await MainPage.ShowPopupAsync(popup);
             //});
 

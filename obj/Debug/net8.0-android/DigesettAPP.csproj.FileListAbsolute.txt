@@ -1542,3 +1542,13 @@ C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetiz
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\wave.png
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\wave.png
 C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\wave.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\editblack.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\editblack.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\editblack.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\editblack.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\editblack.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\check.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\check.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\check.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\check.png
+C:\Users\Junior Colon\Desktop\Web\DigesettAPP\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\check.png

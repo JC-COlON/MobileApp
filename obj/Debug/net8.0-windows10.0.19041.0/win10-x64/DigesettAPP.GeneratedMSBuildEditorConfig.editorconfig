@@ -111,6 +111,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PerfilPageCiudadano.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PerfilPageCiudadano.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupActualizadoCorrectamente.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupActualizadoCorrectamente.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PopupActualizadoCorrectamente.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PopupActualizadoCorrectamente.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupAgregarVehiculo.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupAgregarVehiculo.xaml
@@ -122,6 +128,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupCreadoExito.xaml
 build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PopupCreadoExito.xaml
 build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PopupCreadoExito.xaml
+
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupEditarCiudadano.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.ViewCiudadano.PopupEditarCiudadano.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewCiudadano\PopupEditarCiudadano.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewCiudadano\PopupEditarCiudadano.xaml
 
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/ViewCiudadano/PopupPagarCiudadano.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
