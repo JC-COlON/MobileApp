@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace DigesettAPP.ViewCiudadano;
 
@@ -30,13 +31,29 @@ public partial class PopupEditarCiudadano : Popup
             var correo = CorreoEntry.Text?.Trim();
             var telefono = TelefonoEntry.Text?.Trim();
 
+            // 🛑 Validaciones de campos vacíos
             if (string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(telefono))
             {
                 await Application.Current.MainPage.DisplayAlert("Advertencia", "Correo y teléfono no pueden estar vacíos.", "OK");
                 return;
             }
 
-            // 🔄 Traer los datos actuales para no sobrescribir Name y LastName
+            // 📧 Validación de formato de correo
+            var emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            if (!emailRegex.IsMatch(correo))
+            {
+                await Application.Current.MainPage.DisplayAlert("Email inválido", "Ingrese un email válido en el formato ejemplo@dominio.com", "OK");
+                return;
+            }
+
+            // 📞 Validación de longitud del teléfono
+            if (telefono.Length != 10 || !telefono.All(char.IsDigit))
+            {
+                await Application.Current.MainPage.DisplayAlert("Teléfono inválido", "El número debe tener exactamente 10 dígitos.", "OK");
+                return;
+            }
+
+            // 🔄 Obtener datos actuales
             var datosActuales = await ObtenerDatosUsuario(cedula);
             if (datosActuales == null)
             {
@@ -49,15 +66,15 @@ public partial class PopupEditarCiudadano : Popup
                 Cedula = cedula,
                 Email = correo,
                 Phone = telefono,
-                Name = datosActuales.Name,       // Preservar
-                Lastname = datosActuales.Lastname // Preservar
+                Name = datosActuales.Name,
+                Lastname = datosActuales.Lastname
             };
 
             var json = JsonSerializer.Serialize(datos);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             using var client = new HttpClient();
-            var response = await client.PutAsync($"https://a775-200-215-234-53.ngrok-free.app/api/User/UpdateCiudadanoAPP/{cedula}", content);
+            var response = await client.PutAsync($"https://e359-38-158-200-68.ngrok-free.app/api/User/UpdateCiudadanoAPP/{cedula}", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -72,17 +89,26 @@ public partial class PopupEditarCiudadano : Popup
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Información actualizada correctamente.", "OK");
 
-                // 🔔 Enviar mensaje para recargar perfil
-                MessagingCenter.Send<object>(this, "PerfilActualizado");
-
-                await CloseAsync();
-
+                // ✅ Cerrar popup y devolver "true"
+                Close(true);
             }
-
             else
             {
                 var errorBody = await response.Content.ReadAsStringAsync();
-                await Application.Current.MainPage.DisplayAlert("Error", $"No se pudo actualizar la información.\n{errorBody}", "OK");
+
+                if (errorBody.Contains("unique_telefono", StringComparison.OrdinalIgnoreCase))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Teléfono duplicado", "Este número ya está registrado.", "OK");
+                }
+                else if (errorBody.Contains("unique_correo", StringComparison.OrdinalIgnoreCase))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Correo duplicado", "Este correo ya está registrado.", "OK");
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "No se pudo actualizar la información. Verifique los datos ingresados.", "OK");
+                }
+
             }
         }
         catch (Exception ex)
@@ -127,7 +153,7 @@ public partial class PopupEditarCiudadano : Popup
         try
         {
             using var client = new HttpClient();
-            var response = await client.GetAsync($"https://a775-200-215-234-53.ngrok-free.app/api/User/{cedula}");
+            var response = await client.GetAsync($"https://e359-38-158-200-68.ngrok-free.app/api/User/{cedula}");
 
             if (response.IsSuccessStatusCode)
             {

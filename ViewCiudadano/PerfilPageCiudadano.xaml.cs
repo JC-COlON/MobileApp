@@ -119,16 +119,14 @@ public partial class PerfilPageCiudadano : ContentPage
 
     private async void IrEditar(object sender, EventArgs e)
     {
-        var popup = new PopupEditarCiudadano();
-        var resultado = await App.Current.MainPage.ShowPopupAsync(popup);
+        var result = await App.Current.MainPage.ShowPopupAsync(new PopupEditarCiudadano());
 
-        if (resultado is bool actualizado && actualizado)
+        if (result is true) // ✅ Si se devolvió true, recargar info
         {
-            // Recarga completa de la página
-            await Navigation.PushAsync(new PerfilPageCiudadano());
-            Navigation.RemovePage(this); // Quita la anterior de la pila
+            MostrarInformacionUsuario(); // 🔁 Recarga los datos en la vista de perfil
         }
     }
+
 
 
 
