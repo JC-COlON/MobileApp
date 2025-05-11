@@ -95,6 +95,9 @@
     <MauiXaml Update="Views\ChangePassword.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\CrearNuevaContrasena.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\CrearUsuarioPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -129,6 +132,9 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Views\SobreApp.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\VerificarCodigo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

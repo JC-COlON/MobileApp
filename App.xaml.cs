@@ -18,9 +18,9 @@ namespace DigesettAPP
             Preferences.Clear();
 
 
-            //Shell.Current.GoToAsync(nameof(PerfilPageCiudadano));
+            //Shell.Current.GoToAsync(nameof(VerificarCodigo));
 
-            //Shell.Current.GoToAsync($"//{nameof(AgregarTarjetaCiudadano)}");
+            //Shell.Current.GoToAsync($"//{nameof(VerificarCodigo)}");
 
 
             //MainPage.Dispatcher.Dispatch(async () =>
@@ -35,7 +35,7 @@ namespace DigesettAPP
             //MainPage.Dispatcher.Dispatch(async () =>
             //{
             //    // Navegar a la página de inicio directamente
-            //    await Shell.Current.GoToAsync("//HomeViewCiudadano");
+            //    await Shell.Current.GoToAsync("//CambiarLaContrasena");
             //});
 
 

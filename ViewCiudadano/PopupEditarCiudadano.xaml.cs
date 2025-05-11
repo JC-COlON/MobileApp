@@ -74,7 +74,7 @@ public partial class PopupEditarCiudadano : Popup
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             using var client = new HttpClient();
-            var response = await client.PutAsync($"https://e359-38-158-200-68.ngrok-free.app/api/User/UpdateCiudadanoAPP/{cedula}", content);
+            var response = await client.PutAsync($"https://5fce-200-215-234-53.ngrok-free.app/api/User/UpdateCiudadanoAPP/{cedula}", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -153,7 +153,7 @@ public partial class PopupEditarCiudadano : Popup
         try
         {
             using var client = new HttpClient();
-            var response = await client.GetAsync($"https://e359-38-158-200-68.ngrok-free.app/api/User/{cedula}");
+            var response = await client.GetAsync($"https://5fce-200-215-234-53.ngrok-free.app/api/User/{cedula}");
 
             if (response.IsSuccessStatusCode)
             {

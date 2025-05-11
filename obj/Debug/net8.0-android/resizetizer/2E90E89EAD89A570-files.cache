@@ -1,9 +1,11 @@
 ﻿obj\Debug\net8.0-android\resizetizer\r\drawable\ametlogo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\blackcard.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\celulartachado.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\checkotp.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\cinturonseguridad.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\femenina.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\fondo2.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\forgotpassword.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\historial.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\historialatras.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\iconhistory.png
@@ -13,6 +15,7 @@ obj\Debug\net8.0-android\resizetizer\r\drawable\logoamet.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\passwordcandado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\passwordmaui.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\perfil.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\resetpasswordnew.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\semaforo.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\tarjeta.png
 obj\Debug\net8.0-android\resizetizer\r\drawable\undrawaccess.png
@@ -80,6 +83,8 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\ojoabierto.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\ojocerrado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\placa.png
@@ -156,6 +161,8 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\ojoabierto.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\ojocerrado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\placa.png
@@ -232,6 +239,8 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\ojoabierto.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\ojocerrado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\placa.png
@@ -308,6 +317,8 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\ojoabierto.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\ojocerrado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\placa.png
@@ -384,6 +395,8 @@ obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\money_sendwhite.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notification.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\notificationss.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\nuevacontrasena.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\ojoabierto.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\ojocerrado.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\pen.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\phone.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\placa.png

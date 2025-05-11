@@ -221,6 +221,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.ChangePa
 build_metadata.AdditionalFiles.TargetPath = Views\ChangePassword.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ChangePassword.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/CrearNuevaContrasena.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.CrearNuevaContrasena.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CrearNuevaContrasena.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CrearNuevaContrasena.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/CrearUsuarioPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.CrearUsuarioPage.xaml
@@ -298,3 +304,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.SobreApp.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SobreApp.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SobreApp.xaml
+
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/VerificarCodigo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.VerificarCodigo.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\VerificarCodigo.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\VerificarCodigo.xaml

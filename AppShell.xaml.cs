@@ -23,6 +23,11 @@ namespace DigesettAPP
             Routing.RegisterRoute(nameof(ListaMultasParaPagar), typeof(ListaMultasParaPagar));
             Routing.RegisterRoute(nameof(ListadoTarjetasCiudadano), typeof(ListadoTarjetasCiudadano));
             Routing.RegisterRoute(nameof(PagarMultaViewCiudadano), typeof(PagarMultaViewCiudadano));
+            Routing.RegisterRoute(nameof(CambiarLaContrasena), typeof(CambiarLaContrasena));
+            Routing.RegisterRoute(nameof(VerificarCodigo), typeof(VerificarCodigo));
+            Routing.RegisterRoute(nameof(CrearNuevaContrasena), typeof(CrearNuevaContrasena));
+            
+
 
 
 

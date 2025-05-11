@@ -2,90 +2,100 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.OlvidelaContrasenaPage"
-             Padding="20, 0" 
+             Padding="20,0"
              BackgroundColor="White">
 
-    <!-- Contenedor para centrar el card -->
-    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <Grid>
 
-        <!-- Frame que simula el card, personalizado en tamaño y ubicación -->
-        <Frame BorderColor="#FD8402" BackgroundColor="White" Padding="20" CornerRadius="10" HasShadow="True"
-               WidthRequest="350" HeightRequest="400" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-50,0,0">
+        <!-- Contenido principal -->
+        <ScrollView>
+            <VerticalStackLayout Spacing="25" Padding="0,25,0,0">
 
-            <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
-
-                <!-- Imagen arriba del formulario -->
-                <Image Source="carta.svg"
-                       WidthRequest="80"
-                       HeightRequest="80"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center" />
-
-                <!-- Título del formulario -->
+                <!-- Título encima del círculo -->
                 <Label 
                     Text="Verifica tu Email"
-                    FontSize="Large"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Start" 
+                    FontSize="24"
                     FontAttributes="Bold"
                     FontFamily="poppins-bold.ttf"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
                     Margin="0,0,0,20"/>
 
-                <!-- Texto debajo del título -->
-             
+                <!-- Círculo con imagen -->
+                <Grid HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+                    <Frame
+                        BackgroundColor="#B3EFD1"  
+                        CornerRadius="100"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HasShadow="False"
+                        Padding="0">
+                        <Image Source="forgotpassword.svg"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Margin="20,0,0,10"/>
+                    </Frame>
+                </Grid>
 
-                <!-- Campo de entrada del correo con borde -->
-                <Frame BorderColor="#FD8402" CornerRadius="10" Padding="5" HasShadow="False"
-                         WidthRequest="295" HeightRequest="50">
-                    
+                <!-- Texto explicativo -->
+                <Label 
+                    Text="Ingresa tu correo electrónico y te enviaremos un código para restablecer tu contraseña."
+                    FontSize="12"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap"
+                    MaxLines="2"
+                    Padding="20,0"
+                    />
+
+                <!-- Campo de entrada -->
+                <Frame BorderColor="#009C40" CornerRadius="10" Padding="5" HasShadow="False"
+                       WidthRequest="295" HeightRequest="50" HorizontalOptions="Center" Margin="0,20,0,0">
                     <Entry x:Name="EmailEntry" 
-           Placeholder="Ingresa tu correo electrónico" 
-           Keyboard="Email" 
-           Margin="5,-5,0,-14"
-           WidthRequest="270"
-           BackgroundColor="Transparent"
-                   FontSize="16"
-                           
-            />
+                           Placeholder="Ingresa tu correo electrónico" 
+                           Keyboard="Email" 
+                           Margin="5,-5,0,-14"
+                           WidthRequest="270"
+                           BackgroundColor="Transparent"
+                           FontSize="16"
+                           TextColor="Black"/>
                 </Frame>
 
-
-
-                <!-- Botón para enviar las instrucciones -->
-                <Button Text="Enviar "
-                        BackgroundColor="#FD8402" 
+                <!-- Botón -->
+                <Button Text="Enviar"
+                        BackgroundColor="#009C40" 
                         TextColor="White"
                         CornerRadius="10"
                         Padding="10, 0"
                         WidthRequest="270"
                         FontAttributes="Bold"
-                        Margin="0,25,0,0"
                         FontSize="Medium"
-                        Clicked="OnEnviarClicked"/>
-
-                <!-- Texto de reenviar correo -->
-                <!--<Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="¿No recibiste ningún correo? " />
-                            <Span Text="Reenviar"
-                  TextColor="#FD8402"
-                  FontAttributes="Bold">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnReenviarTapped"/>
-                                </Span.GestureRecognizers>
-                            </Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>-->
-
+                        HorizontalOptions="Center"
+                        Clicked="OnEnviarClicked"
+                        Margin="0,50,0,0"/>
             </VerticalStackLayout>
-            
-            
-        </Frame>
-    </Grid>
+        </ScrollView>
 
+        <!-- Overlay de carga -->
+        <Grid x:Name="LoadingOverlay"
+              IsVisible="False"
+              BackgroundColor="White"
+              Opacity="0.9"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              ZIndex="100"
+              InputTransparent="False">
+            <ActivityIndicator IsRunning="True"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               Color="#009C40"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+        </Grid>
+
+    </Grid>
 </ContentPage>

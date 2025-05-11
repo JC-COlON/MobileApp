@@ -16,7 +16,7 @@ namespace DigesettAPP.Service
             try
             {
                 var client = new HttpClient();
-                string Url = "https://e359-38-158-200-68.ngrok-free.app/api/UserAccess/Login";
+                string Url = "https://5fce-200-215-234-53.ngrok-free.app/api/UserAccess/Login";
 
                 var loginData = new { Cedula = cedula, Password = password };
                 var content = new StringContent(JsonConvert.SerializeObject(loginData), Encoding.UTF8, "application/json");
@@ -56,7 +56,7 @@ namespace DigesettAPP.Service
                 string token = Preferences.Get("AuthToken", string.Empty);
                 if (string.IsNullOrEmpty(token)) return;
 
-                string url = $"https://e359-38-158-200-68.ngrok-free.app/api/User/{cedula}";
+                string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/User/{cedula}";
 
                 using (HttpClient client = new HttpClient())
                 {
