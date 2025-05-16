@@ -35,9 +35,14 @@
 
                 <!-- Info -->
                 <VerticalStackLayout Padding="10">
-                    <Label Text="Zona / Lugar del Incidente" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Label Text="Zona" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
                     <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
                         <Label x:Name="zoneLabel" Text="Zone: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Lugar del Incidente" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="lugarincidenteLabel" Text="Lugar del incidente: string" FontSize="18"/>
                     </Frame>
 
                     <Label Text="Cedula" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>

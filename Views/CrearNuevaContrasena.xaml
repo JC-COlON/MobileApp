@@ -49,7 +49,7 @@
                                VerticalOptions="Center" />
                     </Frame>
                     <ImageButton x:Name="OjoNuevaContrasena"
-                                 Source="ojocerrado.png"
+                                 Source="ojoabierto.png"
                                  BackgroundColor="Transparent"
                                  WidthRequest="30" HeightRequest="30"
                                  HorizontalOptions="End"

@@ -299,6 +299,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.PoputCam
 build_metadata.AdditionalFiles.TargetPath = Views\PoputCambiarContrasena.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\PoputCambiarContrasena.xaml
 
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/PoputSeleccionarLugar.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.PoputSeleccionarLugar.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PoputSeleccionarLugar.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PoputSeleccionarLugar.xaml
+
+[C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/PoputSeleccionarZona.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.PoputSeleccionarZona.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PoputSeleccionarZona.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PoputSeleccionarZona.xaml
+
 [C:/Users/Junior Colon/Desktop/Web/DigesettAPP/Views/SobreApp.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DigesettAPP.Views.SobreApp.xaml

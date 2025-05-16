@@ -24,7 +24,8 @@ public partial class Paso3Page : ContentPage
         InitializeComponent();
 
         // Cargar los datos de las preferencias y asignarlos a los Labels
-        zoneLabel.Text = Preferences.Get("LugarIncidente", "No especificado");
+        zoneLabel.Text = Preferences.Get("Zona", "No especificado");
+        lugarincidenteLabel.Text = Preferences.Get("LugarInfraccion", "No especificado");
         firstNameLabel.Text = Preferences.Get("Nombre", "No especificado");
         lastNameLabel.Text = Preferences.Get("Apellido", "No especificado");
         phoneLabel.Text = Preferences.Get("Telefono", "No especificado");
@@ -102,7 +103,8 @@ public partial class Paso3Page : ContentPage
         {
             // Obtener los datos de las preferencias
             int userId = int.TryParse(Preferences.Get("UserId", "0"), out var uid) ? uid : 0;
-            string zone = Preferences.Get("LugarIncidente", "");
+            string zone = Preferences.Get("Zona", "");
+            string lugarInfraccion = Preferences.Get("LugarInfraccion", "");
             string firstName = Preferences.Get("Nombre", "");
             string lastName = Preferences.Get("Apellido", "");
             string phone = Preferences.Get("Telefono", "");
@@ -137,7 +139,7 @@ public partial class Paso3Page : ContentPage
                     brand = brand,
                     model = model,
                     infringedArticle = articuloInfringidoId,
-                    incidentLocation = zone,
+                    incidentLocation = lugarInfraccion,
                     observations = observations,
                     photoUrl = "",
                     agentNumber = agentNumber,
@@ -145,12 +147,16 @@ public partial class Paso3Page : ContentPage
                     agentId = agentId
                 };
 
+                var jsonContent = JsonConvert.SerializeObject(multa, Formatting.Indented); // Indentado para legibilidad
+
+                // Mostrar el JSON en un DisplayAlert antes de enviarlo
+                await DisplayAlert("JSON a Enviar", jsonContent, "Continuar");
+
                 var client = new HttpClient
                 {
                     Timeout = TimeSpan.FromSeconds(180)
                 };
 
-                var jsonContent = JsonConvert.SerializeObject(multa);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
                 int retries = 3;
@@ -160,7 +166,7 @@ public partial class Paso3Page : ContentPage
                 {
                     try
                     {
-                        response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+                        response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/CreateMultaEnviarEmail", content);
 
                         if (response.IsSuccessStatusCode)
                         {
@@ -172,10 +178,38 @@ public partial class Paso3Page : ContentPage
                         else
                         {
                             var errorMessage = await response.Content.ReadAsStringAsync();
-                            if (attempt == retries)
+
+                            try
                             {
+                                // Intentar deserializar el contenido como error de validación
+                                var errorObj = JsonConvert.DeserializeObject<ValidationErrorResponse>(errorMessage);
+
+                                if (errorObj?.Errors != null && errorObj.Errors.Count > 0)
+                                {
+                                    var detalles = new StringBuilder();
+                                    foreach (var kvp in errorObj.Errors)
+                                    {
+                                        // Convertir claves como "AgentNumber" a un texto más legible
+                                        string campo = TraducirCampo(kvp.Key);
+                                        foreach (var msg in kvp.Value)
+                                        {
+                                            detalles.AppendLine($"- {campo}: {msg}");
+                                        }
+                                    }
+
+                                    await DisplayAlert("Error de validación", detalles.ToString(), "Aceptar");
+                                }
+                                else
+                                {
+                                    await DisplayAlert("Error", "Hubo un error desconocido al registrar la multa.", "Aceptar");
+                                }
+                            }
+                            catch
+                            {
+                                // Si no se puede interpretar el error, mostrar el mensaje plano
                                 await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
                             }
+
                         }
                     }
                     catch (Exception ex)
@@ -203,6 +237,7 @@ public partial class Paso3Page : ContentPage
 
 
 
+
     private void LimpiarDatos()
     {
         Preferences.Remove("Cedula");
@@ -220,6 +255,33 @@ public partial class Paso3Page : ContentPage
         Preferences.Remove("Observaciones");
     }
 
+    public class ValidationErrorResponse
+    {
+        [JsonProperty("errors")]
+        public Dictionary<string, string[]> Errors { get; set; }
+    }
+
+    private string TraducirCampo(string key)
+    {
+        return key switch
+        {
+            "AgentNumber" => "No. de Agente",
+            "userId" => "Usuario",
+            "zone" => "Zona",
+            "firstName" => "Nombre",
+            "lastName" => "Apellido",
+            "phone" => "Teléfono",
+            "email" => "Correo electrónico",
+            "identification" => "Cédula",
+            "vehicleTypeId" => "Tipo de Vehículo",
+            "vehiclePlate" => "Placa del Vehículo",
+            "brand" => "Marca del Vehículo",
+            "model" => "Modelo del Vehículo",
+            "infringedArticle" => "Artículo infringido",
+            "incidentLocation" => "Lugar del incidente",
+            _ => key // Por si hay campos desconocidos
+        };
+    }
 
 
 }

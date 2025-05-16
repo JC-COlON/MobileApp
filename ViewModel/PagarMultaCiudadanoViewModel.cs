@@ -151,7 +151,7 @@ namespace DigesettAPP.ViewModel
                 try
                 {
                     var cedulaLimpia = Cedula.Replace("Cédula: ", "").Trim();
-                    string url = $"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
+                    string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
 
                     using var client = new HttpClient();
                     string token = Preferences.Get("AuthToken", string.Empty);
@@ -235,7 +235,7 @@ namespace DigesettAPP.ViewModel
                 {
                     IsLoading = true; // Mostrar el loading
 
-                    string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
+                    string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/{ticketId}";
                     using var client = new HttpClient();
                     string token = Preferences.Get("AuthToken", string.Empty);
 
@@ -360,7 +360,7 @@ namespace DigesettAPP.ViewModel
                         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                         var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-                        response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
+                        response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Payment/PayTicket", content);
 
                         if (response.IsSuccessStatusCode)
                         {

@@ -12,7 +12,7 @@ namespace DigesettAPP.Views
 {
     public partial class Historial : ContentPage
     {
-        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket?NoAgente=";
+        private const string BaseUrl = "https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket?NoAgente=";
 
         public Historial()
         {

@@ -3,6 +3,7 @@ using DigesettAPP.Models;
 using DigesettAPP.ViewCiudadano;
 using DigesettAPP.Views;
 using Microsoft.Maui.Storage;
+using PoputSeleccionarLugar = DigesettAPP.Views.PoputSeleccionarLugar;
 
 namespace DigesettAPP
 {
@@ -18,14 +19,14 @@ namespace DigesettAPP
             Preferences.Clear();
 
 
-            //Shell.Current.GoToAsync(nameof(VerificarCodigo));
+            Shell.Current.GoToAsync(nameof(CrearNuevaContrasena));
 
             //Shell.Current.GoToAsync($"//{nameof(VerificarCodigo)}");
 
 
             //MainPage.Dispatcher.Dispatch(async () =>
             //{
-            //    var popup = new PopupEditarCiudadano();
+            //    var popup = new PoputSeleccionarZona();
             //    await MainPage.ShowPopupAsync(popup);
             //});
 
@@ -35,7 +36,7 @@ namespace DigesettAPP
             //MainPage.Dispatcher.Dispatch(async () =>
             //{
             //    // Navegar a la página de inicio directamente
-            //    await Shell.Current.GoToAsync("//CambiarLaContrasena");
+            //    await Shell.Current.GoToAsync("//Paso3Page");
             //});
 
 

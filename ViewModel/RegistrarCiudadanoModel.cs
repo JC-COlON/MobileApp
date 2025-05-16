@@ -420,11 +420,11 @@ namespace DigesettAPP.ViewModels
 
                 if (IsNewUser)
                 {
-                    response = await _httpClient.PostAsync("https://digesett.somee.com/api/UserAccess/Register", content);
+                    response = await _httpClient.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/UserAccess/Register", content);
                 }
                 else
                 {
-                    response = await _httpClient.PutAsync($"https://digesett.somee.com/api/User/UpdateCiudadano/{Cedula}", content);
+                    response = await _httpClient.PutAsync($"https://5fce-200-215-234-53.ngrok-free.app/api/User/UpdateCiudadano/{Cedula}", content);
                 }
 
                 if (response.IsSuccessStatusCode)

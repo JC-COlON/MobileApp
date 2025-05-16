@@ -220,6 +220,12 @@
 	  <MauiXaml Update="Views\PoputCambiarContrasena.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PoputSeleccionarLugar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PoputSeleccionarZona.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SobreApp.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

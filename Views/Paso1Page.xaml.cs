@@ -41,7 +41,7 @@ namespace DigesettAPP.Views
         {
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync($"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}");
+                var response = await client.GetAsync($"https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket?Cedula={cedula}");
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();

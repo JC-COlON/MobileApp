@@ -13,7 +13,7 @@ namespace DigesettAPP.Views
 {
     public partial class CrearUsuarioPage : ContentPage
     {
-        private const string Url = "https://digesett.somee.com/api/UserAccess/Create";
+        private const string Url = "https://5fce-200-215-234-53.ngrok-free.app/api/UserAccess/Create";
         private const string CedulaValidationUrl = "https://api.digital.gob.do/v3/cedulas";
 
         private bool isLoading = false;

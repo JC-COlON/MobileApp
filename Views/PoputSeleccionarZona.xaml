@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:vm="clr-namespace:DigesettAPP.ViewModel"
+               x:Class="DigesettAPP.Views.PoputSeleccionarZona">
+
+    <toolkit:Popup.BindingContext>
+        <vm:SeleccionarZonaViewModel />
+    </toolkit:Popup.BindingContext>
+
+    <Grid>
+        <StackLayout Padding="20" BackgroundColor="White" WidthRequest="320" Spacing="15">
+            <Label Text="Selecciona la zona"
+                   FontAttributes="Bold"
+                   FontSize="15"
+                   HorizontalOptions="Center" />
+
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="0" HasShadow="False" HeightRequest="35">
+                <SearchBar Placeholder="Buscar zona..."
+                           Text="{Binding SearchText}"
+                           BackgroundColor="White"
+                           Margin="5,0"
+                           HeightRequest="30" />
+            </Frame>
+
+            <CollectionView ItemsSource="{Binding FilteredZones}"
+                            HeightRequest="450"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BackgroundColor="#f9f9f9"
+                                   CornerRadius="10"
+                                   Padding="10"
+                                   Margin="0,5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:SeleccionarZonaViewModel}}, Path=ToggleExpandCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <Label Text="{Binding DisplayText}" FontSize="14" TextColor="Black" />
+                            </Frame>
+
+                            <StackLayout Padding="10,0,10,10"
+                                         IsVisible="{Binding IsExpanded}"
+                                         BackgroundColor="#f0f0f0"
+                                         Spacing="5">
+                                <Label Text="Selecciona el Lugar:" FontAttributes="Bold" FontSize="13" Margin="0,10,0,0"/>
+                                <CollectionView ItemsSource="{Binding Locations}" SelectionMode="None">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame BackgroundColor="White" Padding="5" CornerRadius="5" Margin="0,2">
+                                                <Frame.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="OficinaSeleccionada" />
+                                                </Frame.GestureRecognizers>
+                                                <Label Text="{Binding Name}" FontSize="13" TextColor="Black"/>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Cerrar"
+                    Clicked="CerrarPopup"
+                    BackgroundColor="#009C40"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <Grid x:Name="LoadingOverlay"
+              BackgroundColor="#f5f5f5"
+              IsVisible="{Binding IsLoading}"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              ZIndex="2">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#009C40" />
+                <Label Text="Cargando..." />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</toolkit:Popup>

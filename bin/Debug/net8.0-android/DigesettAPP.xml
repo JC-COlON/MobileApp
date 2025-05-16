@@ -50,6 +50,36 @@
         <member name="P:DigesettAPP.ViewModel.LoginViewModel.EntrarCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DigesettAPP.ViewModel.LoginViewModel.Entrar"/>.</summary>
         </member>
+        <member name="T:DigesettAPP.ViewModel.SeleccionarLugarViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarLugarViewModel.IsLoading">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarLugarViewModel.isLoading"/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarLugarViewModel.Locations">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarLugarViewModel.locations"/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarLugarViewModel.FilteredLocation">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarLugarViewModel.filteredLocation"/>
+        </member>
+        <member name="T:DigesettAPP.ViewModel.SeleccionarZonaViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarZonaViewModel.IsLoading">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarZonaViewModel.isLoading"/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarZonaViewModel.Zones">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarZonaViewModel.zones"/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.SeleccionarZonaViewModel.FilteredZones">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.SeleccionarZonaViewModel.filteredZones"/>
+        </member>
+        <member name="T:DigesettAPP.ViewModel.ZoneModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:DigesettAPP.ViewModel.ZoneModel.IsExpanded">
+            <inheritdoc cref="F:DigesettAPP.ViewModel.ZoneModel.isExpanded"/>
+        </member>
         <member name="T:SeleccionarArticuloViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -222,6 +252,21 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilteredArticles">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilteredArticles" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Locations">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Locations" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilteredLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilteredLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Zones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Zones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilteredZones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilteredZones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -254,6 +299,21 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilteredArticles">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilteredArticles" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Locations">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Locations" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilteredLocation">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilteredLocation" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Zones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Zones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilteredZones">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilteredZones" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
         </member>
     </members>
 </doc>

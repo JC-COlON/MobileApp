@@ -25,7 +25,7 @@ namespace DigesettAPP.Views;
 
         try
         {
-            string url = $"https://digesett.somee.com/api/Ticket/Pending/{cedula}";
+            string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/Pending/{cedula}";
 
 
             using var httpClient = new HttpClient();

@@ -2,7 +2,8 @@
 using DigesettAPP.ViewCiudadano;
 using DigesettAPP.Models;
 using System.Text.Json;
-using System.Text.Json.Serialization; // Asegúrate de que este espacio de nombres esté presente para la clase 'Article'
+using System.Text.Json.Serialization;
+using DigesettAPP.ViewModel; // Asegúrate de que este espacio de nombres esté presente para la clase 'Article'
 
 namespace DigesettAPP.Views
 {
@@ -37,7 +38,8 @@ namespace DigesettAPP.Views
             Preferences.Set("TipoVehiculo", tipoVehiculoPicker.SelectedItem?.ToString());
 
             // Guardar otros campos
-            Preferences.Set("LugarIncidente", lugarIncidenteEntry.Text);
+            Preferences.Set("Zona", zonaSeleccionadoLabel.Text);
+            Preferences.Set("LugarInfraccion", lugarInfraccionEntry.Text);
             Preferences.Set("PlacaVehiculo", placaVehiculoEntry.Text);
             Preferences.Set("ModeloVehiculo", modeloVehiculoEntry.Text);
             Preferences.Set("MarcaVehiculo", marcaVehiculoEntry.Text);
@@ -46,8 +48,7 @@ namespace DigesettAPP.Views
 
         private void CargarDatosGuardadosPaso2()
         {
-            // Cargar el texto guardado en lugar del ID
-            lugarIncidenteEntry.Text = Preferences.Get("LugarIncidente", string.Empty);
+           
 
             // Recuperar el artículo infringido guardado y mostrar el texto correspondiente
             var articuloInfringidoText = Preferences.Get("ArticuloInfringido", string.Empty);
@@ -66,15 +67,20 @@ namespace DigesettAPP.Views
             tipoVehiculoPicker.SelectedItem = tipoVehiculoText;
 
             ObservacionesEntry.Text = Preferences.Get("Observaciones", string.Empty);
+            zonaSeleccionadoLabel.Text = Preferences.Get("ZonaSeleccionada", "Selecciona la Zona");
+            zonaSeleccionadoLabel.TextColor = Colors.Black;
+
+            lugarInfraccionEntry.Text = Preferences.Get("LugarInfraccion", string.Empty);
+
         }
 
         // Método de validación
         private bool ValidarFormulario()
         {
             // Comprobar los campos obligatorios
-            if (string.IsNullOrEmpty(lugarIncidenteEntry.Text))
+            if (string.IsNullOrEmpty(zonaSeleccionadoLabel.Text))
             {
-                DisplayAlert("Error", "'Zona / Lugar del Incidente' obligatorio", "OK");
+                DisplayAlert("Error", "'Zona es obligatoria", "OK");
                 return false;
             }
             else if (articuloSeleccionado == null) // Validación de que se haya seleccionado un artículo
@@ -140,6 +146,32 @@ namespace DigesettAPP.Views
             }
         }
 
+        private async void AbrirPopupZona(object sender, EventArgs e)
+        {
+            var popup = new PoputSeleccionarZona();
+            var result = await this.ShowPopupAsync(popup); // Espera el resultado del popup
+
+            if (result is LocationModel lugarSeleccionado)
+            {
+                // Buscar la zona que contiene ese lugar
+                var viewModel = popup.BindingContext as SeleccionarZonaViewModel;
+                var zonaSeleccionada = viewModel?.Zones.FirstOrDefault(z => z.Locations.Any(l => l.LocationId == lugarSeleccionado.LocationId));
+
+                if (zonaSeleccionada != null)
+                {
+                    zonaSeleccionadoLabel.Text = zonaSeleccionada.Name;
+                    zonaSeleccionadoLabel.TextColor = Colors.Black;
+
+                    lugarInfraccionEntry.Text = lugarSeleccionado.Name;
+
+                    // También puedes guardar en Preferences si deseas persistencia
+                    Preferences.Set("ZonaSeleccionada", zonaSeleccionada.Name);
+                    Preferences.Set("LugarSeleccionado", lugarSeleccionado.Name);
+                }
+            }
+        }
+
+
         private System.Timers.Timer placaTimer;
         private const int delayBusquedaMs = 600; // Tiempo de espera tras dejar de escribir
 
@@ -180,7 +212,7 @@ namespace DigesettAPP.Views
     {
         using (HttpClient client = new HttpClient())
         {
-            string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
+            string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/VehicleInfo/SearchByLicensePlate/{placa}";
             var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)

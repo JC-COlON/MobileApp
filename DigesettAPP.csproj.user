@@ -131,6 +131,12 @@
     <MauiXaml Update="Views\PoputCambiarContrasena.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\PoputSeleccionarLugar.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\PoputSeleccionarZona.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\SobreApp.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

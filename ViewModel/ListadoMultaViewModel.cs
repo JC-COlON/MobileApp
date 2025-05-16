@@ -19,7 +19,7 @@ namespace DigesettAPP.ViewModels
 {
     public class ListaMultaViewModel : BindableObject
     {
-        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/Pending";
+        private const string BaseUrl = "https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/Pending";
         private ObservableCollection<Ticket> _tickets;
 
         public ObservableCollection<Ticket> Tickets
@@ -158,7 +158,7 @@ namespace DigesettAPP.ViewModels
                 return;
             }
 
-            string url = $"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending";
+            string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending";
 
             try
             {
@@ -269,7 +269,7 @@ namespace DigesettAPP.ViewModels
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                    var response = await client.PostAsync("https://digesett.somee.com/api/Reviews/AddReviewForTicket", content);
+                    var response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Reviews/AddReviewForTicket", content);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -347,7 +347,7 @@ namespace DigesettAPP.ViewModels
 
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = $"https://digesett.somee.com/api/Reviews/GetTicketReviewStatus?ticketId={ticket.TicketId}";
+                    string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/Reviews/GetTicketReviewStatus?ticketId={ticket.TicketId}";
 
                     HttpResponseMessage response = await client.GetAsync(url);
                     string json = await response.Content.ReadAsStringAsync();

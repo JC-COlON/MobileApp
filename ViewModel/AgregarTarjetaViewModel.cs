@@ -195,7 +195,7 @@ namespace DigesettAPP.ViewModels
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                     // Intentar realizar la solicitud hasta el número máximo de reintentos
-                    var response = await _httpClient.PostAsync("https://digesett.somee.com/api/CreditCard", content);
+                    var response = await _httpClient.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/CreditCard", content);
 
                     if (response.IsSuccessStatusCode)
                     {
