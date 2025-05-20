@@ -101,6 +101,22 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Syncfusion.Maui.Core": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
+            "Syncfusion.Maui.Expander": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Popup": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.6.1, )"
@@ -190,6 +206,22 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Syncfusion.Maui.Core": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
+            "Syncfusion.Maui.Expander": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Popup": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.6.1, )"
@@ -267,6 +299,22 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Syncfusion.Maui.Core": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
+            "Syncfusion.Maui.Expander": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Popup": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.6.1, )"
@@ -338,6 +386,22 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Syncfusion.Maui.Core": {
+              "target": "Package",
+              "version": "[29.1.40, )"
+            },
+            "Syncfusion.Maui.Expander": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.1.38, )"
+            },
+            "Syncfusion.Maui.Popup": {
+              "target": "Package",
+              "version": "[29.1.40, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

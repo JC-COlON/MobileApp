@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DigesettAPP.ViewCiudadano.PoputTarjetaEliminadaExito">
+
+    <!-- Contenido del Pop-up -->
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+
+
+        <!-- Título del pop-up -->
+        <Label Text="¡Tarjeta Eliminada Correctamente!"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"/>
+
+        <!-- Imagen en el Pop-up -->
+
+
+        <!-- Botón para cerrar el pop-up -->
+        <Button Text="Aceptar" Clicked="OnCloseButtonClicked" BackgroundColor="Black" Margin="0,40,0,0"/>
+    </StackLayout>
+</toolkit:Popup>

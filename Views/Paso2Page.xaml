@@ -56,32 +56,64 @@
                 FontFamily="poppins-bold.ttf"/>
 
             <StackLayout Padding="10">
-                <Label Text="Zona / Lugar del Incidente" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
+
+                <StackLayout Padding="10">
+                    <!-- Zona -->
+                    <Label Text="Zona" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0" >
+
+                        <Grid HeightRequest="50" WidthRequest="330">
+                            <Label x:Name="zonaSeleccionadoLabel"
+                Text="Selecciona la zona de la infraccion"
+                TextColor="Gray"
+                VerticalOptions="Center"
+                Margin="10,0"
+                FontSize="14"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPopupZona" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="Lugar de la Infraccion" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,5,0,5" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                    <Entry x:Name="lugarIncidenteEntry" TextColor="Black" FontSize="16" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                    <Entry x:Name="lugarInfraccionEntry" TextColor="Black" FontSize="14" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"   />
                 </Frame>
 
                 <StackLayout Padding="10">
                     <!-- Artículo Infringido -->
                     <Label Text="Artículo Infringido" FontSize="Small" TextColor="Black" Margin="-10,5,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
-                    <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                        <Picker x:Name="articuloInfringidoPicker" Title="Selecciona el artículo infringido" BackgroundColor="White" TextColor="Black" HeightRequest="40" HorizontalOptions="Fill" VerticalOptions="Center" Margin="0,0,0,0"/>
+                    <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0" >
+
+                        <Grid HeightRequest="50" WidthRequest="330">
+                            <Label x:Name="articuloSeleccionadoLabel"
+                Text="Selecciona el artículo Infringido"
+                TextColor="Gray"
+                VerticalOptions="Center"
+                Margin="10,0"
+                FontSize="14"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AbrirPopupArticulo" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
                     </Frame>
                 </StackLayout>
 
+
                 <Label Text="Placa del Vehiculo" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,5,0,5" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                    <Entry x:Name="placaVehiculoEntry" TextColor="Black" FontSize="16" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                    <Entry x:Name="placaVehiculoEntry" TextColor="Black" FontSize="14" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19"  TextChanged="OnPlacaTextChanged" />
                 </Frame>
 
                 <Label Text="Marca del Vehiculo" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                    <Entry x:Name="marcaVehiculoEntry" TextColor="Black" FontSize="16" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                    <Entry x:Name="marcaVehiculoEntry" TextColor="Black" FontSize="14" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
                 </Frame>
 
                 <Label Text="Modelo del Vehiculo" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                    <Entry x:Name="modeloVehiculoEntry" TextColor="Black" FontSize="16" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                    <Entry x:Name="modeloVehiculoEntry" TextColor="Black" FontSize="14" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
                 </Frame>
 
                
@@ -96,7 +128,7 @@
 
                 <Label Text="Observaciones" TextColor="Black" FontSize="Small" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" Grid.Row="4" Grid.Column="0" CornerRadius="10" WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
-                    <Entry x:Name="ObservacionesEntry" TextColor="Black" FontSize="16" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
+                    <Entry x:Name="ObservacionesEntry" TextColor="Black" FontSize="14" WidthRequest="325" TranslationY="10" Margin="0,-30,0,-19" />
                 </Frame>
             </StackLayout>
 

@@ -1,67 +1,30 @@
+Ôªøusing CommunityToolkit.Maui.Views;
+using DigesettAPP.ViewCiudadano;
+using DigesettAPP.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using DigesettAPP.ViewModel; // Aseg√∫rate de que este espacio de nombres est√© presente para la clase 'Article'
+
 namespace DigesettAPP.Views
 {
     public partial class Paso2Page : ContentPage
     {
         private Multa _multa;
+        private Article articuloSeleccionado; // Variable para almacenar el art√≠culo seleccionado
 
         public Paso2Page(Multa multa)
         {
             InitializeComponent();
             _multa = multa;
 
-            // Definir las opciones del Picker para tipo de vehÌculo
+            // Definir las opciones del Picker para tipo de veh√≠culo (el Picker para tipo de veh√≠culo a√∫n es necesario)
             tipoVehiculoPicker.ItemsSource = new List<string>
             {
                 "Motocicleta",
-                "AutomÛvil",
+                "Autom√≥vil",
                 "Camioneta",
-                "Autob˙s",
+                "Autob√∫s",
                 "Otros"
-            };
-
-            // Definir las opciones del Picker para artÌculo infringido
-            articuloInfringidoPicker.ItemsSource = new List<string>
-            {
-                "ART 29 : Sin licencia",
-                "ART 40-41 : Licencia vencida",
-                "ART 47-7 : No portar licencia",
-                "ART 146/02 : Sin marbete de seguro",
-                "ART 27-3 : Sin matrÌcula",
-                "ART 27-4 : Sin placa",
-                "ART 110 : Sin revista",
-                "ART 1 LEY513 : Sin tablilla",
-                "ART 135C : Sin casco",
-                "ART 33-77 : Pirata no rotulÛ",
-                "ART 88 : ObstrucciÛn al tr·nsito",
-                "ART 81 : Sitio (zona) prohibido",
-                "ART 97 : SeÒales de tr·nsito",
-                "ART 97-A : Violar seÒal de pare",
-                "ART 76-C : Viraje en U",
-                "ART 27-22 : Una placa",
-                "ART 27-2 : Uso distinto de matrÌcula",
-                "ART 27-27 : Color distinto de matrÌcula",
-                "ART 174 : Personas sobre la carga",
-                "ART 162 : Ruido",
-                "ART 74-H : Ceder paso a vehÌculo de emergencia",
-                "ART 27-4 : No exhibir la placa en su lugar",
-                "ART 144 : Luz delantera apagada",
-                "ART 145 : Luz trasera",
-                "ART 158 : Espejo retrovisor",
-                "ART 164-B : Extinguidor",
-                "ART 164 AP 200 : BotiquÌn",
-                "ART 171 A-3 : Bandera roja",
-                "ART 173-G : Plataforma y timbre",
-                "ART 173-D : PeÛn",
-                "ART 164-D : Tri·ngulo",
-                "ART 130 LEY 241 : Ventas vÌas p˙blicas",
-                "ART 130 : Lanzar desperdicios en vÌas p˙blicas",
-                "ART 62 : Velocidad muy reducida",
-                "ART 5 : GuÌa a la izquierda",
-                "ART 27 Y 47 : Actos prohibidos",
-                "ART 161 : Sin cinturÛn",
-                "ART 96-B-1 : Luz roja",
-                "ART 1 LEY 143-01 : Uso del celular",
-                "ART 106 : NiÒos menores en el asiento delantero"
             };
 
             // Cargar los datos guardados, si existen
@@ -70,12 +33,13 @@ namespace DigesettAPP.Views
 
         private void GuardarDatosPaso2()
         {
-            // Guardar el texto seleccionado en lugar del ID
-            Preferences.Set("ArticuloInfringido", articuloInfringidoPicker.SelectedItem?.ToString());
+            // Guardar el art√≠culo seleccionado en lugar del ID del Picker
+            Preferences.Set("ArticuloInfringido", articuloSeleccionado?.DisplayText); // Almacena el texto de DisplayText del art√≠culo seleccionado
             Preferences.Set("TipoVehiculo", tipoVehiculoPicker.SelectedItem?.ToString());
 
             // Guardar otros campos
-            Preferences.Set("LugarIncidente", lugarIncidenteEntry.Text);
+            Preferences.Set("Zona", zonaSeleccionadoLabel.Text);
+            Preferences.Set("LugarInfraccion", lugarInfraccionEntry.Text);
             Preferences.Set("PlacaVehiculo", placaVehiculoEntry.Text);
             Preferences.Set("ModeloVehiculo", modeloVehiculoEntry.Text);
             Preferences.Set("MarcaVehiculo", marcaVehiculoEntry.Text);
@@ -84,51 +48,59 @@ namespace DigesettAPP.Views
 
         private void CargarDatosGuardadosPaso2()
         {
-            // Cargar el texto guardado en lugar del ID
-            lugarIncidenteEntry.Text = Preferences.Get("LugarIncidente", string.Empty);
+           
 
-            // Recuperar el texto del Picker desde las preferencias y seleccionar el Ìtem correspondiente
+            // Recuperar el art√≠culo infringido guardado y mostrar el texto correspondiente
             var articuloInfringidoText = Preferences.Get("ArticuloInfringido", string.Empty);
-            articuloInfringidoPicker.SelectedItem = articuloInfringidoText;
+            if (!string.IsNullOrEmpty(articuloInfringidoText))
+            {
+                articuloSeleccionadoLabel.Text = articuloInfringidoText;
+                articuloSeleccionadoLabel.TextColor = Colors.Black; // Cambia el color si ya est√° seleccionado
+            }
 
             placaVehiculoEntry.Text = Preferences.Get("PlacaVehiculo", string.Empty);
             modeloVehiculoEntry.Text = Preferences.Get("ModeloVehiculo", string.Empty);
             marcaVehiculoEntry.Text = Preferences.Get("MarcaVehiculo", string.Empty);
 
-            // Recuperar el texto del tipo de vehÌculo y seleccionarlo
+            // Recuperar el texto del tipo de veh√≠culo y seleccionarlo
             var tipoVehiculoText = Preferences.Get("TipoVehiculo", string.Empty);
             tipoVehiculoPicker.SelectedItem = tipoVehiculoText;
 
             ObservacionesEntry.Text = Preferences.Get("Observaciones", string.Empty);
+            zonaSeleccionadoLabel.Text = Preferences.Get("ZonaSeleccionada", "Selecciona la Zona");
+            zonaSeleccionadoLabel.TextColor = Colors.Black;
+
+            lugarInfraccionEntry.Text = Preferences.Get("LugarInfraccion", string.Empty);
+
         }
 
-        // MÈtodo de validaciÛn
+        // M√©todo de validaci√≥n
         private bool ValidarFormulario()
         {
             // Comprobar los campos obligatorios
-            if (string.IsNullOrEmpty(lugarIncidenteEntry.Text))
+            if (string.IsNullOrEmpty(zonaSeleccionadoLabel.Text))
             {
-                DisplayAlert("Error", "'Zona / Lugar del Incidente' obligatorio", "OK");
+                DisplayAlert("Error", "'Zona es obligatoria", "OK");
                 return false;
             }
-            else if (articuloInfringidoPicker.SelectedIndex == -1)
+            else if (articuloSeleccionado == null) // Validaci√≥n de que se haya seleccionado un art√≠culo
             {
-                DisplayAlert("Error", "'ArtÌculo Infringido' obligatorio", "OK");
+                DisplayAlert("Error", "'Art√≠culo Infringido' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(placaVehiculoEntry.Text))
             {
-                DisplayAlert("Error", "'Placa del VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Placa del Veh√≠culo' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(marcaVehiculoEntry.Text))
             {
-                DisplayAlert("Error", "'Marca del VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Marca del Veh√≠culo' obligatorio", "OK");
                 return false;
             }
             else if (string.IsNullOrEmpty(tipoVehiculoPicker.SelectedItem?.ToString()))
             {
-                DisplayAlert("Error", "'Tipo de VehÌculo' obligatorio", "OK");
+                DisplayAlert("Error", "'Tipo de Veh√≠culo' obligatorio", "OK");
                 return false;
             }
 
@@ -137,14 +109,13 @@ namespace DigesettAPP.Views
 
         private async void IrAtras2(object sender, EventArgs e)
         {
-            // Validar el formulario antes de retroceder
-            if (ValidarFormulario())
-            {
-                // Guardar los datos antes de retroceder
-                GuardarDatosPaso2();
-                await Shell.Current.GoToAsync(nameof(Paso3Page));
-            }
+            // NO validar al retroceder
+            // Guardar los datos antes de retroceder si quieres, pero sin validar
+            GuardarDatosPaso2();
+            await Navigation.PopAsync(); // ‚Üê Regresa a la p√°gina anterior
         }
+
+
 
         private async void IrPaso3(object sender, EventArgs e)
         {
@@ -156,5 +127,199 @@ namespace DigesettAPP.Views
                 await Navigation.PushAsync(new Paso3Page());
             }
         }
+
+        // M√©todo para abrir el popup de selecci√≥n de art√≠culo
+        private async void AbrirPopupArticulo(object sender, EventArgs e)
+        {
+            var popup = new PoputSeleccionarArticulo();
+            var result = await this.ShowPopupAsync(popup); // Espera el resultado
+
+            if (result is Article selectedArticle)
+            {
+                articuloSeleccionado = selectedArticle; // Asigna el art√≠culo seleccionado
+                articuloSeleccionadoLabel.Text = selectedArticle.DisplayText; // Muestra el texto del art√≠culo en el Label
+                articuloSeleccionadoLabel.TextColor = Colors.Black; // Cambia el color a negro si se selecciona un art√≠culo
+
+                // Guardar el texto y el ID del art√≠culo seleccionado en Preferences
+                Preferences.Set("ArticuloInfringido", selectedArticle.DisplayText);  // Guardar el texto para mostrarlo
+                Preferences.Set("ArticuloInfringidoId", selectedArticle.articleId.ToString()); // Guardar el ID para enviarlo
+            }
+        }
+
+        private async void AbrirPopupZona(object sender, EventArgs e)
+        {
+            var popup = new PoputSeleccionarZona();
+            var result = await this.ShowPopupAsync(popup); // Espera el resultado del popup
+
+            if (result is LocationModel lugarSeleccionado)
+            {
+                // Buscar la zona que contiene ese lugar
+                var viewModel = popup.BindingContext as SeleccionarZonaViewModel;
+                var zonaSeleccionada = viewModel?.Zones.FirstOrDefault(z => z.Locations.Any(l => l.LocationId == lugarSeleccionado.LocationId));
+
+                if (zonaSeleccionada != null)
+                {
+                    zonaSeleccionadoLabel.Text = zonaSeleccionada.Name;
+                    zonaSeleccionadoLabel.TextColor = Colors.Black;
+
+                    lugarInfraccionEntry.Text = lugarSeleccionado.Name;
+
+                    // Tambi√©n puedes guardar en Preferences si deseas persistencia
+                    Preferences.Set("ZonaSeleccionada", zonaSeleccionada.Name);
+                    Preferences.Set("LugarSeleccionado", lugarSeleccionado.Name);
+                }
+            }
+        }
+
+
+        private System.Timers.Timer placaTimer;
+        private const int delayBusquedaMs = 600; // Tiempo de espera tras dejar de escribir
+
+        private void OnPlacaTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textoActual = e.NewTextValue?.Trim().ToUpper();
+
+            // Reiniciar el temporizador cada vez que cambia el texto
+            placaTimer?.Stop();
+            placaTimer?.Dispose();
+
+            if (string.IsNullOrEmpty(textoActual) || textoActual.Length < 5)
+                return;
+
+            placaTimer = new System.Timers.Timer(delayBusquedaMs)
+            {
+                AutoReset = false
+            };
+
+            placaTimer.Elapsed += async (s, args) =>
+            {
+                // Ejecutar en el hilo de la UI
+                MainThread.BeginInvokeOnMainThread(async () =>
+                {
+                    await BuscarVehiculoPorPlaca(textoActual);
+                });
+            };
+
+            placaTimer.Start();
+        }
+
+        private async Task BuscarVehiculoPorPlaca(string placa)
+{
+    if (string.IsNullOrEmpty(placa))
+        return;
+
+    try
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
+            var response = await client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+
+                var resultado = JsonSerializer.Deserialize<VehicleResponse>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                var vehiculo = resultado?.Vehicles?.Values?.FirstOrDefault();
+
+                if (vehiculo != null)
+                {
+                    marcaVehiculoEntry.Text = vehiculo.Brand;
+                    modeloVehiculoEntry.Text = vehiculo.Model;
+                }
+                else
+                {
+                    bool registrar = await DisplayAlert(
+                        "Veh√≠culo no encontrado",
+                        "¬øDesea registrar este veh√≠culo?",
+                        "S√≠", "No");
+
+                    if (registrar)
+                    {
+                                var popup = new PopupAgregarVehiculo(placa);
+                                var result = await App.Current.MainPage.ShowPopupAsync(popup);
+
+                                if (result is Vehicle nuevoVehiculo)
+                                {
+                                    // Asigna los datos del veh√≠culo reci√©n creado
+                                    placaVehiculoEntry.Text = nuevoVehiculo.LicensePlate;
+                                    marcaVehiculoEntry.Text = nuevoVehiculo.Brand;
+                                    modeloVehiculoEntry.Text = nuevoVehiculo.Model;
+                                    // Si tienes campos para color o a√±o, tambi√©n los puedes llenar aqu√≠
+                                }
+
+                            }
+                        }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                bool registrar = await DisplayAlert(
+                    "Veh√≠culo no encontrado",
+                    "¬øDesea registrar este veh√≠culo?",
+                    "S√≠", "No");
+
+                if (registrar)
+                {
+                            var popup = new PopupAgregarVehiculo(placa);
+                            var result = await App.Current.MainPage.ShowPopupAsync(popup);
+
+                            if (result is Vehicle nuevoVehiculo)
+                            {
+                                // Asigna los datos del veh√≠culo reci√©n creado
+                                placaVehiculoEntry.Text = nuevoVehiculo.LicensePlate;
+                                marcaVehiculoEntry.Text = nuevoVehiculo.Brand;
+                                modeloVehiculoEntry.Text = nuevoVehiculo.Model;
+                                // Si tienes campos para color o a√±o, tambi√©n los puedes llenar aqu√≠
+                            }
+
+                        }
+                    }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo obtener la informaci√≥n del veh√≠culo.", "OK");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        await DisplayAlert("Error", $"Ocurri√≥ un error al buscar la placa: {ex.Message}", "OK");
     }
 }
+
+
+
+
+
+
+
+
+
+    }
+}
+
+public class VehicleResponse
+{
+    public VehiclesWrapper Vehicles { get; set; }
+}
+
+public class VehiclesWrapper
+{
+    [JsonPropertyName("$values")]
+    public List<Vehicle> Values { get; set; }
+}
+
+public class Vehicle
+{
+    public int VehicleInfoId { get; set; }
+    public string LicensePlate { get; set; }
+    public string Brand { get; set; }
+    public string Model { get; set; }
+    public string Color { get; set; }
+    public int Year { get; set; }
+}
+
+

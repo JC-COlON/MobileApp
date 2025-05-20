@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DigesettAPP.ViewCiudadano.PoputSeleccionarMetodoPago"
+               xmlns:local="clr-namespace:DigesettAPP.ViewModel">
+
+    <Grid>
+        <!-- Contenido principal del popup -->
+        <StackLayout Padding="20" BackgroundColor="White" WidthRequest="320" Spacing="15">
+            <Label Text="Elige el Metodo de pago"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+            <CollectionView ItemsSource="{Binding Tarjetas}" HeightRequest="250">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <!-- Tarjeta visual -->
+                            <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10" Margin="0,5">
+                                <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
+                                    <Image Source="tarjeta.png" WidthRequest="40" HeightRequest="30"/>
+
+                                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label Text="{Binding CardNumberMasked}" FontSize="14" TextColor="Black"/>
+                                        <Label Text="{Binding ExpirationDateInfo}" FontSize="13" TextColor="Gray"/>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Botón invisible encima -->
+                            <Button BackgroundColor="Transparent"
+                        CommandParameter="{Binding .}"
+                        Clicked="OnCardClicked"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Label Text="Agregar nueva tarjeta"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="End">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AgregarNuevaTarjeta_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button Text="Cerrar"
+                    Clicked="CerrarPopup"
+                    BackgroundColor="#009C40"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <!-- Overlay de carga -->
+        <Grid x:Name="LoadingOverlay"
+              BackgroundColor="#f5f5f5"
+              IsVisible="{Binding IsLoading}"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              ZIndex="2">
+            <StackLayout HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="10">
+                <Image Source="loadinglogo.png" WidthRequest="80" HeightRequest="80"/>
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#009C40" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</toolkit:Popup>

@@ -66,7 +66,7 @@
                 <Frame BackgroundColor="White" BorderColor="#D9D0E3" CornerRadius="10" 
                        WidthRequest="335" HeightRequest="45" Margin="0,5,0,0">
                     <Entry x:Name="EmailEntry" TextColor="Black" FontSize="15" WidthRequest="325" 
-                           TranslationY="10" Margin="0,-30,0,-19" Keyboard="Email" IsEnabled="False" />
+                           TranslationY="10" Margin="0,-30,0,-19" Keyboard="Email" IsEnabled="False" TextChanged="OnEmailChanged" />
                 </Frame>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,8">

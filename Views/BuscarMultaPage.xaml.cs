@@ -25,7 +25,8 @@ namespace DigesettAPP.Views;
 
         try
         {
-            string url = $"https://digesett.somee.com/api/Ticket/FilterOrGetTicket?Cedula={cedula}&Estado=pending&Hidden=0";
+            string url = $"https://digesett.somee.com/api/Ticket/Pending/{cedula}";
+
 
             using var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(url);
@@ -51,10 +52,12 @@ namespace DigesettAPP.Views;
             {
                 var multas = result.Select(x => new MultaResultado
                 {
+                    Nombre = $"{x.name} {x.lastName}", // <-- Aquí formamos el nombre completo
                     Fecha = DateTime.Parse(x.ticketDate).ToString("dd/MM/yyyy"),
                     Articulo = $"{x.articulo.articleNum} - {x.articulo.description}",
                     Zona = x.zone
                 }).ToList();
+
 
                 MultasCollectionView.ItemsSource = multas;
             }
@@ -86,23 +89,28 @@ namespace DigesettAPP.Views;
 
 
     public class MultaApiData
-        {
-            public string ticketDate { get; set; }
-            public string incidentLocation { get; set; }
-            public string zone { get; set; }
-            public Articulo articulo { get; set; }
-        }
+    {
+        public string name { get; set; }
+        public string lastName { get; set; } // <-- Este es nuevo
+        public string ticketDate { get; set; }
+        public string incidentLocation { get; set; }
+        public string zone { get; set; }
+        public Articulo articulo { get; set; }
+    }
 
-        public class Articulo
+
+    public class Articulo
         {
             public string articleNum { get; set; }
             public string description { get; set; }
         }
 
-        public class MultaResultado
-        {
-            public string Fecha { get; set; }
-            public string Articulo { get; set; }
-            public string Zona { get; set; }
-        }
+    public class MultaResultado
+    {
+        public string Nombre { get; set; } // <--- Esta es la que se usa en el XAML
+        public string Fecha { get; set; }
+        public string Articulo { get; set; }
+        public string Zona { get; set; }
     }
+
+}

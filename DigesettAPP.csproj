@@ -22,7 +22,7 @@
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 
 		<!-- Display name -->
-		<ApplicationTitle>AgenteAPP</ApplicationTitle>
+		<ApplicationTitle>DigesettAPP</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.digesettapp</ApplicationId>
@@ -82,17 +82,99 @@
     <MauiFont Include="Resources\Fonts\Poppins-Bold.ttf" />
     <MauiFont Include="Resources\Fonts\Poppins-Medium.ttf" />
     <MauiFont Include="Resources\Fonts\Poppins-Light.ttf" />
+    <PackageReference Include="Syncfusion.Maui.Core" Version="29.1.40" />
+    <PackageReference Include="Syncfusion.Maui.Expander" Version="29.1.38" />
+    <PackageReference Include="Syncfusion.Maui.Inputs" Version="29.1.38" />
+    <PackageReference Include="Syncfusion.Maui.Popup" Version="29.1.40" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.6.1" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ViewCiudadano\PagarMultaViewCiudadano.xaml.cs">
+	    <DependentUpon>PagarMultaViewCiudadano.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\OlvidelaContrasenaPage.xaml.cs">
 	    <DependentUpon>OlvidelaContrasenaPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="ViewCiudadano\AgregarTarjetaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\HistorialMultasPagadasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\HomeViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\ListadoTarjetasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\ListaMultasCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\ListaMultasParaPagar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\MultaNotificacionCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PagarMultaViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PerfilPageCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupActualizadoCorrectamente.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupAgregarVehiculo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupCreadoExito.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupEditarCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PopupPagarCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputDetallePagoCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputExitoReview.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputInformacionRating.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputMultaPagadaExito.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputPagarMultaCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputRegistradoCorrectamente.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputSeleccionarArticulo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputSeleccionarMetodoPago.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputTarjetaAgregada.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\PoputTarjetaEliminadaExito.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewCiudadano\RegistrarViewCiudadano.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\BuscarMultaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -100,6 +182,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ChangePassword.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CrearNuevaContrasena.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\CrearUsuarioPage.xaml">
@@ -126,13 +211,25 @@
 	  <MauiXaml Update="Views\OlvidelaContrasenaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PopupDetalleMulta.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PopupPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PoputCambiarContrasena.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PoputSeleccionarLugar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PoputSeleccionarZona.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SobreApp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\VerificarCodigo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -2,14 +2,19 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DigesettAPP"
+             xmlns:converter="clr-namespace:DigesettAPP.Converters"
              x:Class="DigesettAPP.App">
+
     <Application.Resources>
         <ResourceDictionary>
+            <!-- ✅ Aquí se agregan tus diccionarios de estilos -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-
             </ResourceDictionary.MergedDictionaries>
+
+            <!-- ✅ Aquí agregas tu convertidor -->
+            <converter:BoolToArrowConverter x:Key="BoolToArrowConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

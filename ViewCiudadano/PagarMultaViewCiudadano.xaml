@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigesettAPP.ViewCiudadano.PagarMultaViewCiudadano"
+             BackgroundColor="White">
+
+    <Grid>
+        <!-- Capa base: contenido principal -->
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <Label Text="Pago de Multa" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,-25,0,0"/>
+
+                <!-- Frame Principal -->
+                <Frame BackgroundColor="White" CornerRadius="15" Padding="15" HasShadow="True">
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- Frame 1: Datos del Usuario -->
+                        <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Información Personal" FontAttributes="Bold" FontSize="16"/>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Nombre: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding NombreCompleto}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Cédula: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Cedula}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Correo: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Correo}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Frame 2: Datos de la Tarjeta -->
+                        <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10" Margin="0,-10,0,0">
+                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="15">
+                                <Image Source="tarjeta.png" WidthRequest="60" HeightRequest="40" VerticalOptions="Center" Margin="0,-20,0,0" />
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label FontSize="14">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Tarjeta: " FontAttributes="Bold"/>
+                                                <Span Text="{Binding NumeroTarjeta}" TextColor="{Binding ColorNumeroTarjeta}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label FontSize="14">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Exp: " FontAttributes="Bold"/>
+                                                <Span Text="{Binding Expiracion}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="Elegir otra tarjeta" TextColor="Gray" HorizontalOptions="End" FontSize="12">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ElegirNuevaTarjeta_Tapped" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Frame 3: Datos de la Multa -->
+                        <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10" Margin="0,-10,0,0">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="Detalles de la Multa" FontAttributes="Bold" FontSize="16"/>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Lugar: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding TicketSeleccionado.Zone}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Fecha: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding TicketSeleccionado.FormattedDate}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label FontSize="14">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Artículo infringido: " FontAttributes="Bold"/>
+                                            <Span Text="{Binding TicketSeleccionado.ArticuloFull}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Frame 4: Monto a Pagar -->
+                        <Frame BackgroundColor="#f9f9f9" CornerRadius="10" Padding="10" Margin="0,-10">
+                            <HorizontalStackLayout>
+                                <Label Text="Total a pagar:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center"/>
+                                <Label Text="{Binding TicketSeleccionado.ArticuloPrecio}" 
+                                       FontSize="21" 
+                                       TextColor="Green"
+                                       Margin="10,0,0,0"
+                                       FontAttributes="Bold"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+
+                        <Button 
+                            Text="PAGAR"
+                            BackgroundColor="#009C40"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            Clicked="OnPagarButtonClicked"
+                            IsEnabled="{Binding PuedePagar}"/>
+
+                        <Label Text="Volver atrás" HorizontalOptions="End" TextColor="Gray">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Volveratras" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Overlay de carga: encima de todo -->
+        <Grid x:Name="LoadingOverlay"
+              IsVisible="{Binding IsLoading}"
+              BackgroundColor="White"
+              Opacity="0.8"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              ZIndex="100"
+              InputTransparent="True">
+            <ActivityIndicator IsRunning="True"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               Color="#009C40"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

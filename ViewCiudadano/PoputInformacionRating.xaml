@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DigesettAPP.ViewCiudadano.PoputInformacionRating">
+
+    <!-- Contenido del Pop-up -->
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White"
+                 WidthRequest="300" Spacing="20">
+
+        <!-- Título del pop-up -->
+        <Label Text="Información sobre el Rating"
+               HorizontalTextAlignment="Center"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Black" />
+
+        <!-- Cuerpo del mensaje -->
+        <Label Text="La calificación (rating) que está por asignar se aplica exclusivamente al agente que gestionó esta multa. "
+               FontSize="Medium"
+               TextColor="Black"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Por favor, sea justo al calificar, ya que esto ayuda a mejorar la calidad del servicio ofrecido por nuestros agentes."
+               FontSize="Small"
+               TextColor="Gray"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Botón para cerrar el pop-up -->
+        <Button Text="Aceptar"
+                Clicked="ClosePopup"
+                BackgroundColor="#009C40"
+                TextColor="White"
+                Margin="0,20,0,0"/>
+    </StackLayout>
+</toolkit:Popup>

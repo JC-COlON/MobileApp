@@ -1,6 +1,9 @@
-﻿using DigesettAPP.Models;
+﻿using CommunityToolkit.Maui.Views;
+using DigesettAPP.Models;
+using DigesettAPP.ViewCiudadano;
 using DigesettAPP.Views;
 using Microsoft.Maui.Storage;
+using PoputSeleccionarLugar = DigesettAPP.Views.PoputSeleccionarLugar;
 
 namespace DigesettAPP
 {
@@ -11,7 +14,15 @@ namespace DigesettAPP
         public App()
         {
             InitializeComponent();
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzgyMTc3OEAzMjM5MmUzMDJlMzAzYjMyMzkzYld1RmdmVFF2eXl0cmM5L08zN0RkMHlTTDRkaEpHRVFhdGV1bDR3U2h5N2s9");
             MainPage = new AppShell();
+            Preferences.Clear();
+
+
+   
+
+
+
         }
 
         // Este método se llama cuando la app se pone en segundo plano (o está por cerrarse)

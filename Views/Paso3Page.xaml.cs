@@ -24,7 +24,8 @@ public partial class Paso3Page : ContentPage
         InitializeComponent();
 
         // Cargar los datos de las preferencias y asignarlos a los Labels
-        zoneLabel.Text = Preferences.Get("LugarIncidente", "No especificado");
+        zoneLabel.Text = Preferences.Get("Zona", "No especificado");
+        lugarincidenteLabel.Text = Preferences.Get("LugarInfraccion", "No especificado");
         firstNameLabel.Text = Preferences.Get("Nombre", "No especificado");
         lastNameLabel.Text = Preferences.Get("Apellido", "No especificado");
         phoneLabel.Text = Preferences.Get("Telefono", "No especificado");
@@ -96,149 +97,190 @@ public partial class Paso3Page : ContentPage
 
     private async void EnviarMulta(object sender, EventArgs e)
     {
-        // Muestra el ActivityIndicator
-        loadingIndicator.IsVisible = true;
-        loadingIndicator.IsRunning = true;
+        LoadingOverlay.IsVisible = true;
 
-        // Obtener los datos de las preferencias
-        var userId = Preferences.Get("UserId", "No disponible");
-        var zone = Preferences.Get("LugarIncidente", "No especificado");
-        var firstName = Preferences.Get("Nombre", "No especificado");
-        var lastName = Preferences.Get("Apellido", "No especificado");
-        var phone = Preferences.Get("Telefono", "No especificado");
-        var email = Preferences.Get("Email", "No especificado");
-        var identification = Preferences.Get("Cedula", "No especificado");
-        var vehicleType = Preferences.Get("TipoVehiculo", "No especificado");
-        var vehiclePlate = Preferences.Get("PlacaVehiculo", "No especificado");
-        var brand = Preferences.Get("MarcaVehiculo", "No especificado");
-        var model = Preferences.Get("ModeloVehiculo", "No especificado");
-        var infringedArticle = Preferences.Get("ArticuloInfringido", "No especificado");
-        var observations = Preferences.Get("Observaciones", "No especificado");
-        var agentNumber = Preferences.Get("NoAgente", "No disponible");
-
-        // Obtener el userId del agente (de un claim del token)
-        var userIdAgente = Preferences.Get("UserIdAgente", "No disponible");
-
-        // Convertir el tipo de vehículo a ID (si está guardado como texto)
-        var tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
-
-        // Convertir el artículo infringido a ID (si está guardado como texto)
-        var articuloInfringidoId = DataPicker.articuloInfringidoMap.ContainsKey(infringedArticle) ? DataPicker.articuloInfringidoMap[infringedArticle] : -1;
-
-        // Construir el mensaje para el alerta, mostrando solo los valores con ID
-        var mensaje = $"ID del Usuario: {userId}\n" +
-                      $"Zona del Incidente: {zone}\n" +
-                      $"Nombre: {firstName}\n" +
-                      $"Apellido: {lastName}\n" +
-                      $"Teléfono: {phone}\n" +
-                      $"Email: {email}\n" +
-                      $"Cédula: {identification}\n" +
-                      $"Tipo de Vehículo (ID): {tipoVehiculoId}\n" +
-                      $"Placa del Vehículo: {vehiclePlate}\n" +
-                      $"Marca del Vehículo: {brand}\n" +
-                      $"Modelo del Vehículo: {model}\n" +
-                      $"Artículo Infringido (ID): {articuloInfringidoId}\n" +
-                      $"Observaciones: {observations}\n" +
-                      $"Número de Agente: {agentNumber}\n" +
-                      $"ID del Agente: {userIdAgente}\n\n" +
-                      $"¿Estás seguro de que deseas enviar esta multa?";
-
-        // Mostrar el mensaje en un alerta de confirmación
-        bool respuesta = await DisplayAlert(
-            "Confirmación de Envío",
-            mensaje,
-            "Enviar",
-            "Cancelar");
-
-        // Si el usuario hace clic en "Enviar", proceder con el envío
-        if (respuesta)
+        try
         {
-            // Construir el objeto Multa que se enviará a la API
-            var multa = new
-            {
-                userId = userId, // ID del usuario (agente o administrador)
-                zone = zone, // Zona
-                firstName = firstName,
-                lastName = lastName,
-                phone = phone,
-                email = email,
-                identification = identification,
-                vehicleTypeId = tipoVehiculoId, // Solo el ID del tipo de vehículo
-                vehiclePlate = vehiclePlate,
-                brand = brand,
-                model = model,
-                infringedArticle = articuloInfringidoId, // Solo el ID del artículo infringido
-                incidentLocation = zone, // Ubicación del incidente
-                observations = observations,
-                photoUrl = "", // Si tienes una foto para enviar, se puede incluir aquí
-                agentNumber = agentNumber,
-                status = "", // Aquí puedes agregar el estado de la multa si corresponde
-                agentId = userIdAgente // El ID del agente (del claim)
-            };
+            // Obtener los datos de las preferencias
+            int userId = int.TryParse(Preferences.Get("UserId", "0"), out var uid) ? uid : 0;
+            string zone = Preferences.Get("Zona", "");
+            string lugarInfraccion = Preferences.Get("LugarInfraccion", "");
+            string firstName = Preferences.Get("Nombre", "");
+            string lastName = Preferences.Get("Apellido", "");
+            string phone = Preferences.Get("Telefono", "");
+            string email = Preferences.Get("Email", "");
+            string identification = Preferences.Get("Cedula", "");
+            string vehicleType = Preferences.Get("TipoVehiculo", "");
+            string vehiclePlate = Preferences.Get("PlacaVehiculo", "");
+            string brand = Preferences.Get("MarcaVehiculo", "");
+            string model = Preferences.Get("ModeloVehiculo", "");
+            string observations = Preferences.Get("Observaciones", "");
+            string agentNumber = Preferences.Get("NoAgente", "");
 
-            // Enviar la solicitud POST a la API
-            try
+            int agentId = int.TryParse(Preferences.Get("UserIdAgente", "0"), out var aid) ? aid : 0;
+            int tipoVehiculoId = DataPicker.tipoVehiculoMap.ContainsKey(vehicleType) ? DataPicker.tipoVehiculoMap[vehicleType] : -1;
+            int articuloInfringidoId = int.TryParse(Preferences.Get("ArticuloInfringidoId", "-1"), out var articleId) ? articleId : -1;
+
+            bool respuesta = await DisplayAlert("Confirmación de Envío", "¿Estás seguro de que deseas enviar esta multa?", "Enviar", "Cancelar");
+
+            if (respuesta)
             {
-                var client = new HttpClient();
-                var jsonContent = JsonConvert.SerializeObject(multa);
+                var multa = new
+                {
+                    userId = userId,
+                    zone = zone,
+                    firstName = firstName,
+                    lastName = lastName,
+                    phone = phone,
+                    email = email,
+                    identification = identification,
+                    vehicleTypeId = tipoVehiculoId,
+                    vehiclePlate = vehiclePlate,
+                    brand = brand,
+                    model = model,
+                    infringedArticle = articuloInfringidoId,
+                    incidentLocation = lugarInfraccion,
+                    observations = observations,
+                    photoUrl = "",
+                    agentNumber = agentNumber,
+                    status = "",
+                    agentId = agentId
+                };
+
+                var jsonContent = JsonConvert.SerializeObject(multa, Formatting.Indented); // Indentado para legibilidad
+
+
+
+                var client = new HttpClient
+                {
+                    Timeout = TimeSpan.FromSeconds(180)
+                };
+
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
+                int retries = 3;
+                HttpResponseMessage response = null;
 
-                
-
-                if (response.IsSuccessStatusCode)
+                for (int attempt = 1; attempt <= retries; attempt++)
                 {
-                    // Limpiar los datos guardados en Preferences
-                    Preferences.Remove("UserId");
-                    Preferences.Remove("LugarIncidente");
-                    Preferences.Remove("Nombre");
-                    Preferences.Remove("Apellido");
-                    Preferences.Remove("Telefono");
-                    Preferences.Remove("Email");
-                    Preferences.Remove("Cedula");
-                    Preferences.Remove("TipoVehiculo");
-                    Preferences.Remove("PlacaVehiculo");
-                    Preferences.Remove("MarcaVehiculo");
-                    Preferences.Remove("ModeloVehiculo");
-                    Preferences.Remove("ArticuloInfringido");
-                    Preferences.Remove("Observaciones");
-                    Preferences.Remove("NoAgente");
-                    Preferences.Remove("UserIdAgente");
+                    try
+                    {
+                        response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
 
-                    // Mostrar el pop-up de éxito
-                    var popup = new PopupPage();
-                    await Application.Current.MainPage.ShowPopupAsync(popup);
-                }
-                else
-                {
-                    // Hubo un error al registrar la multa
-                    var errorMessage = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine($"Error al registrar la multa: {errorMessage}");
-                    await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                        if (response.IsSuccessStatusCode)
+                        {
+                            LimpiarDatos();
+                            var popup = new PopupPage();
+                            await Application.Current.MainPage.ShowPopupAsync(popup);
+                            return; // Salir completamente después del éxito
+                        }
+                        else
+                        {
+                            var errorMessage = await response.Content.ReadAsStringAsync();
+
+                            try
+                            {
+                                // Intentar deserializar el contenido como error de validación
+                                var errorObj = JsonConvert.DeserializeObject<ValidationErrorResponse>(errorMessage);
+
+                                if (errorObj?.Errors != null && errorObj.Errors.Count > 0)
+                                {
+                                    var detalles = new StringBuilder();
+                                    foreach (var kvp in errorObj.Errors)
+                                    {
+                                        // Convertir claves como "AgentNumber" a un texto más legible
+                                        string campo = TraducirCampo(kvp.Key);
+                                        foreach (var msg in kvp.Value)
+                                        {
+                                            detalles.AppendLine($"- {campo}: {msg}");
+                                        }
+                                    }
+
+                                    await DisplayAlert("Error de validación", detalles.ToString(), "Aceptar");
+                                }
+                                else
+                                {
+                                    await DisplayAlert("Error", "Hubo un error desconocido al registrar la multa.", "Aceptar");
+                                }
+                            }
+                            catch
+                            {
+                                // Si no se puede interpretar el error, mostrar el mensaje plano
+                                await DisplayAlert("Error", $"Hubo un error al registrar la multa: {errorMessage}", "Aceptar");
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (attempt == retries)
+                        {
+                            await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+                        }
+
+                        await Task.Delay(1000 * attempt); // Espera progresiva
+                    }
                 }
             }
-            catch (Exception ex)
+            else
             {
-                // Manejo de errores en caso de que falle la conexión o la solicitud
-                Console.WriteLine($"Error de conexión: {ex.Message}");
-                await DisplayAlert("Error", $"No se pudo conectar con el servidor. Error: {ex.Message}", "Aceptar");
+                await Navigation.PopAsync();
             }
         }
-        else
+        finally
         {
-            // Si el usuario presiona "Cancelar", regresa a la página anterior
-            await Navigation.PopAsync();
+            LoadingOverlay.IsVisible = false;
         }
-
-        // Ocultar el ActivityIndicator
-        loadingIndicator.IsVisible = false;
-        loadingIndicator.IsRunning = false;
     }
 
 
 
 
+
+    private void LimpiarDatos()
+    {
+        Preferences.Remove("Cedula");
+        Preferences.Remove("Nombre");
+        Preferences.Remove("Apellido");
+        Preferences.Remove("Telefono");
+        Preferences.Remove("Email");
+
+        Preferences.Remove("LugarIncidente");
+        Preferences.Remove("ArticuloInfringido");
+        Preferences.Remove("PlacaVehiculo");
+        Preferences.Remove("ModeloVehiculo");
+        Preferences.Remove("MarcaVehiculo");
+        Preferences.Remove("TipoVehiculo");
+        Preferences.Remove("Observaciones");
+    }
+
+    public class ValidationErrorResponse
+    {
+        [JsonProperty("errors")]
+        public Dictionary<string, string[]> Errors { get; set; }
+    }
+
+    private string TraducirCampo(string key)
+    {
+        return key switch
+        {
+            "AgentNumber" => "No. de Agente",
+            "userId" => "Usuario",
+            "zone" => "Zona",
+            "firstName" => "Nombre",
+            "lastName" => "Apellido",
+            "phone" => "Teléfono",
+            "email" => "Correo electrónico",
+            "identification" => "Cédula",
+            "vehicleTypeId" => "Tipo de Vehículo",
+            "vehiclePlate" => "Placa del Vehículo",
+            "brand" => "Marca del Vehículo",
+            "model" => "Modelo del Vehículo",
+            "infringedArticle" => "Artículo infringido",
+            "incidentLocation" => "Lugar del incidente",
+            _ => key // Por si hay campos desconocidos
+        };
+    }
 
 
 }

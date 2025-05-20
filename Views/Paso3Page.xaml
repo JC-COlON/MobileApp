@@ -1,113 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.Paso3Page">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="15">
-            <!-- Identificador de formularios multipasos -->
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                <!-- Paso 1 -->
-                
-                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
-                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
-                    <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center" 
-                           FontSize="Medium" TextColor="White"/>
-                </Frame>
-                <!-- Línea -->
-                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
-                         VerticalOptions="Center"/>
-                <!-- Paso 2 -->
-                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
-                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
-                    <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center" 
-                           FontSize="Medium" TextColor="White"/>
-                </Frame>
-                <!-- Línea -->
-                <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" 
-                         VerticalOptions="Center"/>
-                <!-- Paso 3 -->
-                <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
-                       HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
-                    <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center" 
-                           FontSize="Medium" TextColor="White"/>
-                </Frame>
-            </StackLayout>
-
-            <!-- Título del formulario -->
-            <Label 
-                Text="Confirmación"
-                FontSize="Medium"
-                HorizontalOptions="Center"
-                VerticalOptions="Start" 
-                Margin="0,30,0,10"
-                FontAttributes="Bold"
-                FontFamily="poppins-bold.ttf"/>
-
-            <!-- Información del usuario -->
-            <VerticalStackLayout Padding="10">
-                <Label Text="Zona / Lugar del Incidente" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="zoneLabel" Text="Zone: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Nombre" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="firstNameLabel" Text="First Name: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Apellido" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="lastNameLabel" Text="Last Name: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Telefono" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="phoneLabel" Text="Phone: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Email" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="emailLabel" Text="Email: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Cedula" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="identificationLabel" Text="Identification: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Tipo de Vehiculo" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="vehicleTypeLabel" Text="Vehicle Type ID: 0" FontSize="18"/>
-                </Frame>
-                <Label Text="Placa del vehiculo" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="vehiclePlateLabel" Text="Vehicle Plate: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Marca del Vehiculo" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="brandLabel" Text="Brand: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Modelo del Vehiculo" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="modelLabel" Text="Model: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Articulo Infringido" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="infringedArticleLabel" Text="Infringed Article: 0" FontSize="18"/>
-                </Frame>
-                <Label Text="Observaciones" TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5" HeightRequest="100">
-                    <Label x:Name="observationsLabel" Text="Observations: string" FontSize="18"/>
-                </Frame>
-                <Label Text="Agente No." TextColor="Black" FontSize="14" HorizontalOptions="Start" Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" FontAttributes="Bold" FontFamily="poppins-bold.ttf" />
-                <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
-                    <Label x:Name="agentNumberLabel" Text="Agent Number: string" FontSize="18"/>
-                </Frame>
-
-
-
-                <!-- Botones -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20,0,0">
-                    <Button Text="Atrás" BackgroundColor="Gray" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="IrAtras"/>
-                    <Button Text="Enviar" BackgroundColor="#009C40" TextColor="White" FontSize="Medium" FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand" Clicked="EnviarMulta"/>
-
-                    <ActivityIndicator x:Name="loadingIndicator" IsVisible="False" IsRunning="False" />
+    <Grid>
+        <!-- Contenido principal -->
+        <ScrollView>
+            <VerticalStackLayout Padding="15">
+                <!-- Barra de pasos -->
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                           HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                        <Label Text="1" HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="Medium" TextColor="White"/>
+                    </Frame>
+                    <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" VerticalOptions="Center"/>
+                    <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                           HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                        <Label Text="2" HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="Medium" TextColor="White"/>
+                    </Frame>
+                    <BoxView BackgroundColor="#009C40" HeightRequest="2" WidthRequest="90" VerticalOptions="Center"/>
+                    <Frame BorderColor="Black" CornerRadius="50" Padding="0" Margin="0"
+                           HeightRequest="40" WidthRequest="40" BackgroundColor="#009C40">
+                        <Label Text="3" HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="Medium" TextColor="White"/>
+                    </Frame>
                 </StackLayout>
+
+                <!-- Título -->
+                <Label Text="Confirmación" FontSize="Medium" HorizontalOptions="Center"
+                       VerticalOptions="Start" Margin="0,30,0,10"
+                       FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+
+                <!-- Info -->
+                <VerticalStackLayout Padding="10">
+                    <Label Text="Zona" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="zoneLabel" Text="Zone: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Lugar del Incidente" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="lugarincidenteLabel" Text="Lugar del incidente: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Cedula" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="identificationLabel" Text="Identification: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Nombre" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="firstNameLabel" Text="First Name: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Apellido" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="lastNameLabel" Text="Last Name: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Telefono" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="phoneLabel" Text="Phone: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Email" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="emailLabel" Text="Email: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Tipo de Vehiculo" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="vehicleTypeLabel" Text="Vehicle Type ID: 0" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Placa del vehiculo" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="vehiclePlateLabel" Text="Vehicle Plate: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Marca del Vehiculo" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="brandLabel" Text="Brand: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Modelo del Vehiculo" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="modelLabel" Text="Model: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Articulo Infringido" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="infringedArticleLabel" Text="Infringed Article: 0" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Observaciones" FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5" HeightRequest="100">
+                        <Label x:Name="observationsLabel" Text="Observations: string" FontSize="18"/>
+                    </Frame>
+
+                    <Label Text="Agente No." FontAttributes="Bold" FontFamily="poppins-bold.ttf"/>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5">
+                        <Label x:Name="agentNumberLabel" Text="Agent Number: string" FontSize="18"/>
+                    </Frame>
+
+                    <!-- Botones -->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,20,0,0">
+                        <Button Text="Atrás" BackgroundColor="Gray" TextColor="White" FontSize="Medium"
+                                FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand"
+                                Clicked="IrAtras"/>
+                        <Button Text="Enviar" BackgroundColor="#009C40" TextColor="White" FontSize="Medium"
+                                FontAttributes="Bold" WidthRequest="150" HorizontalOptions="StartAndExpand"
+                                Clicked="EnviarMulta"/>
+                    </StackLayout>
+                </VerticalStackLayout>
             </VerticalStackLayout>
-        </VerticalStackLayout>
-    </ScrollView>
+        </ScrollView>
+
+        <!-- Overlay de carga -->
+        <Grid x:Name="LoadingOverlay"
+              IsVisible="False"
+              BackgroundColor="White"
+              Opacity="0.9"
+              VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              ZIndex="100"
+              InputTransparent="False">
+            <ActivityIndicator IsRunning="True"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               Color="#009C40"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
 </ContentPage>

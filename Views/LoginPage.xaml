@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DigesettAPP.Views.LoginPage"
              xmlns:viewmodel="clr-namespace:DigesettAPP.ViewModel"
+              xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+              xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
               x:DataType="viewmodel:LoginViewModel"
              BackgroundColor="White"
              Title="">
@@ -10,7 +12,7 @@
 
 
 
-    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,80,0,100">
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,50,0,100">
 
         <StackLayout Grid.Row="0" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
 
@@ -20,13 +22,13 @@
                 <Image Source="logoamet.png" Grid.Row="0" Grid.ColumnSpan="2" WidthRequest="230" HeightRequest="230" HorizontalOptions="Center" />
 
                 <!-- Entry para Usuario -->
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,60,0,0">
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
                     <Label Text="Usuario" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="user.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Image Source="user.png" Aspect="AspectFill" HeightRequest="25" WidthRequest="25" Margin="5" VerticalOptions="Center"/>
                             <Entry TextColor="Black" Text="{Binding Cedula}" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center"
-                                   HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" MaxLength="11" />
+                                   HorizontalOptions="FillAndExpand" FontFamily="OpenSans-Regular.ttf" MaxLength="11" Keyboard="Numeric"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
@@ -36,7 +38,7 @@
                     <Label Text="Contraseña" FontAttributes="Bold" TextColor="Black" FontSize="16"  HorizontalOptions="Start" Margin="10,0,0,10" FontFamily="poppins-bold.ttf"/>
                     <Frame BackgroundColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="10">
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="passwordcandado.png" Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="5" VerticalOptions="Center"/>
+                            <Image Source="passwordcandado.png" Aspect="AspectFill" HeightRequest="25" WidthRequest="25" Margin="5" VerticalOptions="Center"/>
                             <Entry Text="{Binding Password}" IsPassword="True" TextColor="Black" FontSize="14" WidthRequest="250" Margin="0,0,20,0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontFamily="poppins-light.ttf"/>
                         </StackLayout>
                     </Frame>
@@ -58,8 +60,43 @@
                 <!-- Botón Entrar -->
                 <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Entrar" Command="{Binding EntrarCommand}" FontSize="16"
                     CornerRadius="10" WidthRequest="285" HeightRequest="45" BackgroundColor="#009C40" TextColor="White"
-                    HorizontalOptions="Center" Margin="0,50,0,0" Padding="0,5" />
+                    HorizontalOptions="Center" Margin="0,40,10,0" Padding="0,5" />
             </Grid>
         </StackLayout>
+
+        <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, Auto" Grid.Row="1" Margin="180,010,0,0" HorizontalOptions="Center">
+
+            <Label FontFamily="SfProTextRegular" Text="¿No tienes una cuenta?" TextColor="Black" FontSize="13"  Grid.Row="1" Grid.Column="0"  Margin="0,0,0,0"   />
+
+            <Label FontFamily="SfProTextRegular" FontAttributes="Bold"  Text="Crear Cuenta" TextColor="#009C40" FontSize="13" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"  VerticalOptions="End"  >
+
+                <Label.GestureRecognizers>
+              <TapGestureRecognizer Tapped="GoToRegister" />
+          </Label.GestureRecognizers>
+
+            </Label>
+
+        </Grid>
+        <!--<core:SfBusyIndicator IsRunning="True"
+                             AnimationType="Cupertino"
+                             Title="Verificando..."
+                            
+                             IndicatorColor="#009C40"
+                             SizeFactor="2"></core:SfBusyIndicator>-->
+
+        <sfPopup:SfPopup x:Name="popup" ShowHeader="True" HeightRequest="190" WidthRequest="200"
+                    HeaderTitle="Verificando..." AutoSizeMode="Height" StaysOpen="False">
+            <sfPopup:SfPopup.PopupStyle>
+                <sfPopup:PopupStyle PopupBackground="White" HeaderTextAlignment="Center" HeaderFontSize="18"
+                               HeaderTextColor="#009C40" CornerRadius="16" />
+            </sfPopup:SfPopup.PopupStyle>
+            <sfPopup:SfPopup.ContentTemplate>
+                <DataTemplate>
+                    <ActivityIndicator IsRunning="True" Color="#009C40" HeightRequest="65" WidthRequest="85" />
+                </DataTemplate>
+            </sfPopup:SfPopup.ContentTemplate>
+        </sfPopup:SfPopup>
     </Grid>
+   
+  
 </ContentPage>

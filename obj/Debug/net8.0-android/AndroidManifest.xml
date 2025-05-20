@@ -9,7 +9,7 @@
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:allowBackup="true" android:icon="@mipmap/logo" android:supportsRtl="true" android:usesCleartextTraffic="true" android:name="crc649f79e8cb867fcf47.MainApplication" android:label="AgenteAPP" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:allowBackup="true" android:icon="@mipmap/logo" android:supportsRtl="true" android:usesCleartextTraffic="true" android:name="crc649f79e8cb867fcf47.MainApplication" android:label="DigesettAPP" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask">
       <!-- Configuración de Deep Link -->
       <intent-filter>

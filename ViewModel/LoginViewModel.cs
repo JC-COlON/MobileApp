@@ -1,6 +1,4 @@
-﻿
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DigesettAPP.Models;
 using DigesettAPP.Service;
@@ -19,6 +17,9 @@ namespace DigesettAPP.ViewModel
 
         readonly ILoginRepository loginservice = new LoginService();
 
+        public LoginPage LoginPage { get; set; }
+
+
         [RelayCommand]
         public async Task Entrar()
         {
@@ -26,44 +27,61 @@ namespace DigesettAPP.ViewModel
             {
                 if (!string.IsNullOrWhiteSpace(Cedula) && !string.IsNullOrWhiteSpace(Password))
                 {
+                    LoginPage?.MostrarPopup(); // Muestra el popup
+
                     User user = await loginservice.Login(Cedula, Password);
+
+                    // Intentar una segunda vez si no se logró
+                    if (user == null)
+                    {
+                        await Task.Delay(1000); // espera breve por si hay latencia de red
+                        user = await loginservice.Login(Cedula, Password);
+                    }
 
                     if (user != null)
                     {
-                        if (user.Rol != "Agente") // Verifica que el usuario sea un agente
-                        {
-                            await Shell.Current.DisplayAlert("Acceso Denegado", "Solo los agentes pueden acceder a esta aplicación.", "OK");
-                            return; // Sale del método sin permitir el acceso
-                        }
-
                         if (Preferences.ContainsKey(nameof(App.user)))
-                        {
                             Preferences.Remove(nameof(App.user));
-                        }
 
                         string userDetails = JsonConvert.SerializeObject(user);
                         Preferences.Set(nameof(App.user), userDetails);
-
                         App.user = user;
 
-                        // Navegar a la página principal
-                        await Shell.Current.GoToAsync("//MainHome");
+                        switch (user.Rol?.ToLower())
+                        {
+                            case "agente":
+                                await Shell.Current.GoToAsync("//MainHome");
+                                break;
+                            case "ciudadano":
+                            case "administrador":
+                                await Shell.Current.GoToAsync("//HomeViewCiudadano");
+                                break;
+                            default:
+                                await Shell.Current.DisplayAlert("Acceso Denegado", "No tiene permisos para acceder a esta aplicación.", "OK");
+                                break;
+                        }
+
+                        LoginPage?.OcultarPopup(); // Oculta el popup después del login
                     }
                     else
                     {
-                        await Shell.Current.DisplayAlert("Error", "Usuario o Contraseña Incorrecta", "OK");
+                        await Shell.Current.DisplayAlert("Error", "Usuario o contraseña incorrecta", "OK");
+                        LoginPage?.OcultarPopup();
                     }
                 }
                 else
                 {
-                    await Shell.Current.DisplayAlert("Error", "Campos Necesarios", "OK");
+                    await Shell.Current.DisplayAlert("Error", "Debe completar todos los campos.", "OK");
+                    LoginPage?.OcultarPopup();
                 }
             }
             catch (Exception ex)
             {
+                LoginPage?.OcultarPopup();
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
         }
+
 
 
         public void LimpiarCampos()
@@ -72,5 +90,4 @@ namespace DigesettAPP.ViewModel
             Password = string.Empty;
         }
     }
-
 }

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DigesettAPP.ViewModels"
+             x:Class="DigesettAPP.ViewCiudadano.ListaMultasParaPagar">
+
+    <ContentPage.BindingContext>
+        <vm:ListaMultasParaPagarViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <!-- Grid para el overlay de carga -->
+        <Grid x:Name="LoadingOverlay" BackgroundColor="#f5f5f5" IsVisible="{Binding IsLoading}" Grid.RowSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ZIndex="2">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+                <Image Source="loadinglogo.png" WidthRequest="80" HeightRequest="80"/>
+                <ActivityIndicator IsRunning="{Binding IsLoading}" Color="#009C40" />
+            </StackLayout>
+        </Grid>
+
+        <!-- Contenido de la página con scroll -->
+        <ScrollView>
+            <VerticalStackLayout Padding="20">
+                <Label Text="Multas Pendientes" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,-25,0,25"/>
+
+                <!-- Listado de multas -->
+                <CollectionView ItemsSource="{Binding Multas}" SelectionMode="Single" SelectedItem="{Binding SelectedTicket}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="10" BorderColor="#009C40" HasShadow="True" WidthRequest="350" BackgroundColor="#E8F5E9">
+                                <Grid ColumnDefinitions="*,*,Auto" VerticalOptions="Center">
+                                    <!-- Columna 1: Multa y Monto -->
+                                    <VerticalStackLayout Grid.Column="0" Spacing="4">
+                                        <Label Text="{Binding TicketId, StringFormat='Multa #{0}'}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               TextColor="Black" />
+                                        <Label Text="{Binding PrecioInfo, StringFormat=' RD${0:N2}'}"
+                                               FontSize="14"
+                                               TextColor="#388E3C"
+                                               Margin="0,5,0,0"/>
+                                    </VerticalStackLayout>
+
+                                    <!-- Columna 2: Fecha -->
+                                    <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
+                                        <Label Text="{Binding Fecha, StringFormat='Fecha: {0}'}"
+                                               FontSize="14"
+                                               TextColor="Gray" />
+                                    </VerticalStackLayout>
+
+                                    <!-- Columna 3: Imagen y 'Pagar' -->
+                                    <VerticalStackLayout Grid.Column="2" Spacing="2" HorizontalOptions="Center">
+                                        <Image Source="money_send.png"
+                                               WidthRequest="40"
+                                               HeightRequest="40">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnMoneyIconTapped" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                        <Label Text="Pagar"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               TextColor="Black"
+                                               HorizontalTextAlignment="Center" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
