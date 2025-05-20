@@ -61,10 +61,11 @@
                             </HorizontalStackLayout>
 
                             <!-- Artículo Infringido -->
-                            <HorizontalStackLayout>
-                                <Label Text="Artículo Infringido: " FontAttributes="Bold" />
-                                <Label Text="{Binding Articulo}" />
-                            </HorizontalStackLayout>
+                            <VerticalStackLayout>
+                                <Label Text="Artículo Infringido:" FontAttributes="Bold" />
+                                <Label Text="{Binding Articulo}" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+
 
                             <!-- Zona / Lugar de la Infracción -->
                             <HorizontalStackLayout>

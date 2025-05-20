@@ -7,12 +7,13 @@ using Newtonsoft.Json;
 using Microsoft.Maui.Storage;
 using DigesettAPP.Models;
 using CommunityToolkit.Maui.Views;
+using System.Net;
 
 namespace DigesettAPP.Views
 {
     public partial class Historial : ContentPage
     {
-        private const string BaseUrl = "https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/FilterOrGetTicket?NoAgente=";
+        private const string BaseUrl = "https://digesett.somee.com/api/Ticket/FilterOrGetTicket?NoAgente=";
 
         public Historial()
         {
@@ -56,17 +57,21 @@ namespace DigesettAPP.Views
 
                     if (response.IsSuccessStatusCode)
                     {
-                        // Deserializar los tickets obtenidos del JSON
                         allTickets = JsonConvert.DeserializeObject<List<Ticket>>(jsonResponse);
-
-                        // Ordenar los tickets por fecha en orden descendente (más reciente primero)
                         allTickets = allTickets
-    .OrderByDescending(t => DateTime.Parse(t.TicketDate))
-    .ToList();
+                            .OrderByDescending(t => DateTime.Parse(t.TicketDate))
+                            .ToList();
 
-
-                        // Asignar la lista ordenada como fuente de datos
                         TicketsList.ItemsSource = allTickets;
+                    }
+                    else if (response.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        // Caso especial: no hay multas para este agente
+                        TicketsList.ItemsSource = new List<Ticket>();
+                        await DisplayAlert("Información", "Este agente no ha puesto ninguna multa.", "OK");
+                        await Task.Delay(200);
+                        await Shell.Current.GoToAsync("//MainHome");
+
                     }
                     else
                     {
@@ -85,6 +90,7 @@ namespace DigesettAPP.Views
                 LoadingOverlay.IsVisible = false;
             }
         }
+
 
 
         private void OnSearchTextChanged(object sender, TextChangedEventArgs e)

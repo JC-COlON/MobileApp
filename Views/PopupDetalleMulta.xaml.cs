@@ -1,5 +1,7 @@
 using CommunityToolkit.Maui.Views;
 using DigesettAPP.Models;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace DigesettAPP.Views
 {
@@ -15,5 +17,9 @@ namespace DigesettAPP.Views
         {
             Close();
         }
+
+
+        
+
     }
 }

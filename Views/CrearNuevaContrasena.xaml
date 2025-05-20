@@ -101,7 +101,7 @@
 
         <!-- Overlay de carga -->
         <Grid x:Name="LoadingOverlay"
-              BackgroundColor="#80000000"
+              BackgroundColor="White"
               IsVisible="False"
               VerticalOptions="FillAndExpand"
               HorizontalOptions="FillAndExpand"

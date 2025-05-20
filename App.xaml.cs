@@ -19,25 +19,7 @@ namespace DigesettAPP
             Preferences.Clear();
 
 
-            Shell.Current.GoToAsync(nameof(CrearNuevaContrasena));
-
-            //Shell.Current.GoToAsync($"//{nameof(VerificarCodigo)}");
-
-
-            //MainPage.Dispatcher.Dispatch(async () =>
-            //{
-            //    var popup = new PoputSeleccionarZona();
-            //    await MainPage.ShowPopupAsync(popup);
-            //});
-
-
-            // Navegar a la página de "HomeViewCiudadano" al iniciar la app
-
-            //MainPage.Dispatcher.Dispatch(async () =>
-            //{
-            //    // Navegar a la página de inicio directamente
-            //    await Shell.Current.GoToAsync("//Paso3Page");
-            //});
+   
 
 
 

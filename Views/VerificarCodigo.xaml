@@ -5,12 +5,10 @@
              BackgroundColor="White"
              Padding="20,0">
 
-    <AbsoluteLayout>
-
+    <Grid>
         <!-- CONTENIDO PRINCIPAL -->
         <ScrollView>
-            <VerticalStackLayout Spacing="25" Padding="0,10,0,0" HorizontalOptions="Center">
-
+            <VerticalStackLayout Spacing="25" Padding="0,10,0,0" HorizontalOptions="Center" VerticalOptions="Start">
                 <!-- Título -->
                 <Label Text="Ingresa el código de verificación"
                        FontSize="24"
@@ -121,16 +119,16 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- OVERLAY DE CARGA -->
+        <!-- OVERLAY DE CARGA ENCIMA DEL CONTENIDO -->
         <Grid x:Name="LoadingOverlay"
-              BackgroundColor="#80000000"
-              AbsoluteLayout.LayoutBounds="0,0,1,1"
-              AbsoluteLayout.LayoutFlags="All"
-              IsVisible="False">
+              BackgroundColor="White"
+              IsVisible="False"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
+              ZIndex="1">
             <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="15">
                 <Image Source="digesettlogo.png"
                        WidthRequest="80"
@@ -142,7 +140,5 @@
                                    HeightRequest="50"/>
             </VerticalStackLayout>
         </Grid>
-
-    </AbsoluteLayout>
-
+    </Grid>
 </ContentPage>

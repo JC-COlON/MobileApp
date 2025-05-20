@@ -151,7 +151,7 @@ namespace DigesettAPP.ViewModel
                 try
                 {
                     var cedulaLimpia = Cedula.Replace("Cédula: ", "").Trim();
-                    string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
+                    string url = $"https://digesett.somee.com/api/CreditCard/GetCreditCardsByCedula?cedula={cedulaLimpia}";
 
                     using var client = new HttpClient();
                     string token = Preferences.Get("AuthToken", string.Empty);
@@ -235,7 +235,7 @@ namespace DigesettAPP.ViewModel
                 {
                     IsLoading = true; // Mostrar el loading
 
-                    string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/{ticketId}";
+                    string url = $"https://digesett.somee.com/api/Ticket/{ticketId}";
                     using var client = new HttpClient();
                     string token = Preferences.Get("AuthToken", string.Empty);
 
@@ -335,15 +335,10 @@ namespace DigesettAPP.ViewModel
 
             string jsonPayload = JsonConvert.SerializeObject(payload, Formatting.Indented);
 
-            await App.Current.MainPage.DisplayAlert("Datos a Enviar", jsonPayload, "OK");
-
-            // Mostrar el overlay de carga
-            // Mostrar el overlay de carga
             IsLoading = true;
-
-
             HttpResponseMessage response = null;
             int maxRetries = 3;
+            bool pagoExitoso = false;
 
             try
             {
@@ -353,33 +348,41 @@ namespace DigesettAPP.ViewModel
                     {
                         using var client = new HttpClient
                         {
-                            Timeout = TimeSpan.FromSeconds(120)
+                            Timeout = TimeSpan.FromSeconds(60)
                         };
 
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                         var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-                        response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Payment/PayTicket", content);
+                        response = await client.PostAsync("https://digesett.somee.com/api/Payment/PayTicket", content);
+
+                        var responseContent = await response.Content.ReadAsStringAsync();
 
                         if (response.IsSuccessStatusCode)
                         {
-                            var popup = new ViewCiudadano.PoputMultaPagadaExito();
-                            await Application.Current.MainPage.ShowPopupAsync(popup);
-                            return; // ✅ Salimos completamente
+                            pagoExitoso = true;
+                            break;
                         }
-                        else
+                        else if (responseContent.Contains("ya ha sido pagada", StringComparison.OrdinalIgnoreCase))
                         {
-                            string errorContent = await response.Content.ReadAsStringAsync();
+                            pagoExitoso = true;
+                            break;
+                        }
+                        else if (attempt == maxRetries)
+                        {
+                            var debugInfo = $"Status: {response.StatusCode}\n" +
+                                            $"Payload: {jsonPayload}\n" +
+                                            $"Response: {responseContent}";
 
-                            if (attempt == maxRetries)
-                            {
-                                var debugInfo = $"Status: {response.StatusCode}\n" +
-                                                $"Payload: {jsonPayload}\n" +
-                                                $"Response: {errorContent}";
-
-                                await App.Current.MainPage.DisplayAlert("Error al pagar", debugInfo, "OK");
-                            }
+                            await App.Current.MainPage.DisplayAlert("Error al pagar", debugInfo, "OK");
+                        }
+                    }
+                    catch (TaskCanceledException tex)
+                    {
+                        if (attempt == maxRetries)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Tiempo de espera agotado", "El servidor tardó demasiado en responder.", "OK");
                         }
                     }
                     catch (HttpRequestException ex)
@@ -397,17 +400,21 @@ namespace DigesettAPP.ViewModel
                         }
                     }
 
-                    await Task.Delay(1000 * attempt); // espera progresiva
+                    await Task.Delay(1000 * attempt); // espera progresiva entre intentos
+                }
+
+                if (pagoExitoso)
+                {
+                    var popup = new ViewCiudadano.PoputMultaPagadaExito();
+                    await Application.Current.MainPage.ShowPopupAsync(popup);
                 }
             }
             finally
             {
-                // Ocultar el overlay de carga
-                // Mostrar el overlay de carga
                 IsLoading = false;
-
             }
         }
+
 
 
 

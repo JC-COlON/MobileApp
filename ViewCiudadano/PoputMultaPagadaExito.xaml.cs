@@ -13,11 +13,8 @@ public partial class PoputMultaPagadaExito : Popup
     {
         this.Close();
 
-        // Limpia la pila de navegación anterior usando Shell y ruta absoluta temporal
-        await Shell.Current.GoToAsync("//HomeViewCiudadano");
+        await Shell.Current.GoToAsync("../..");
 
-        // Luego navega a la página deseada
-        await Shell.Current.GoToAsync(nameof(ListaMultasParaPagar));
     }
 
 }

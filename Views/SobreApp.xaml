@@ -26,13 +26,13 @@
             <Label TextColor="Black"  Text="Se otorga al usuario una licencia no exclusiva, no transferible y revocable para utilizar la aplicación para sus propósitos personales y no comerciales." />
 
             <Label Text="3. Propiedad Intelectual" FontAttributes="Bold" TextColor="Black" />
-            <Label TextColor="Black"  Text="Todo el contenido de la aplicación, incluyendo pero no limitado a texto, gráficos, imágenes, logotipos, íconos y software, es propiedad de [Tu nombre o empresa] y está protegido por las leyes de derechos de autor." />
+            <Label TextColor="Black"  Text="Todo el contenido de la aplicación, incluyendo pero no limitado a texto, gráficos, imágenes, logotipos, íconos y software, es propiedad de Digesett y está protegido por las leyes de derechos de autor." />
 
             <Label Text="4. Política de Privacidad" FontAttributes="Bold" TextColor="Black" />
-            <Label TextColor="Black"  Text="Nos comprometemos a proteger la privacidad de nuestros usuarios. [Breve descripción de cómo se manejan los datos personales]." />
+            <Label TextColor="Black"  Text="Nos comprometemos a proteger la privacidad de nuestros usuarios. " />
 
             <Label Text="5. Limitación de Responsabilidad" FontAttributes="Bold" TextColor="Black" />
-            <Label TextColor="Black"  Text="[Nombre de tu app] no se hace responsable de ningún daño directo o indirecto derivado del uso de la aplicación." />
+            <Label TextColor="Black"  Text="DigesettApp no se hace responsable de ningún daño directo o indirecto derivado del uso de la aplicación." />
 
             <Label Text="6. Cambios en los Términos" FontAttributes="Bold" TextColor="Black" />
             <Label TextColor="Black"  Text="Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos inmediatamente después de su publicación en la aplicación." />

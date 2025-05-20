@@ -44,7 +44,7 @@ public partial class VerificarCodigo : ContentPage
     private async void OnVerificarClicked(object sender, EventArgs e)
     {
         string otpCode = Digit1.Text + Digit2.Text + Digit3.Text + Digit4.Text + Digit5.Text + Digit6.Text;
-        string email = Preferences.Get("CorreoParaOtp", string.Empty); // <-- Asegúrate que este valor se guarda antes
+        string email = Preferences.Get("CorreoParaOtp", string.Empty);
 
         if (otpCode.Length != 6 || string.IsNullOrEmpty(email))
         {
@@ -52,9 +52,7 @@ public partial class VerificarCodigo : ContentPage
             return;
         }
 
-        // Mostrar overlay de carga
         LoadingOverlay.IsVisible = true;
-
         Preferences.Set("otpCode", otpCode);
 
         var payload = new
@@ -63,33 +61,71 @@ public partial class VerificarCodigo : ContentPage
             otpCode = otpCode
         };
 
-        var json = JsonSerializer.Serialize(payload);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-
         try
         {
-            using var httpClient = new HttpClient();
-            var response = await httpClient.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/User/verify-otp", content);
+            using var httpClient = new HttpClient
+            {
+                Timeout = TimeSpan.FromSeconds(10)
+            };
 
-            if (response.IsSuccessStatusCode)
+            HttpResponseMessage response = null;
+            bool success = false;
+            int attempt = 0;
+            int maxRetries = 3;
+
+            while (attempt < maxRetries && !success)
+            {
+                try
+                {
+                    var json = JsonSerializer.Serialize(payload);
+                    using var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    response = await httpClient.PostAsync("https://digesett.somee.com/api/User/verify-otp", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        success = true;
+                        break;
+                    }
+                    else
+                    {
+                        var error = await response.Content.ReadAsStringAsync();
+                        await DisplayAlert("Error", $"Código incorrecto o expirado: {error}", "OK");
+                        break; // No reintentar si el código es incorrecto
+                    }
+                }
+                catch (HttpRequestException)
+                {
+                    attempt++;
+                    if (attempt < maxRetries)
+                        await Task.Delay(1000);
+                }
+                catch (TaskCanceledException)
+                {
+                    attempt++;
+                    if (attempt < maxRetries)
+                        await Task.Delay(1000);
+                }
+            }
+
+            if (success)
             {
                 await DisplayAlert("Éxito", "Código verificado correctamente.", "OK");
                 await Shell.Current.GoToAsync(nameof(CrearNuevaContrasena));
             }
-            else
+            else if (response == null || !response.IsSuccessStatusCode)
             {
-                var error = await response.Content.ReadAsStringAsync();
-                await DisplayAlert("Error", $"Verificación fallida: {error}", "OK");
+                await DisplayAlert("Error", "No se pudo verificar el código después de varios intentos. Verifica tu conexión.", "OK");
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"Hubo un problema al verificar el código: {ex.Message}", "OK");
+            await DisplayAlert("Error", $"Hubo un problema inesperado: {ex.Message}", "OK");
         }
         finally
         {
-            // Ocultar overlay de carga
             LoadingOverlay.IsVisible = false;
         }
     }
+
 }

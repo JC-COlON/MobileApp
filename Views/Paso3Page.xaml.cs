@@ -149,8 +149,7 @@ public partial class Paso3Page : ContentPage
 
                 var jsonContent = JsonConvert.SerializeObject(multa, Formatting.Indented); // Indentado para legibilidad
 
-                // Mostrar el JSON en un DisplayAlert antes de enviarlo
-                await DisplayAlert("JSON a Enviar", jsonContent, "Continuar");
+
 
                 var client = new HttpClient
                 {
@@ -166,7 +165,7 @@ public partial class Paso3Page : ContentPage
                 {
                     try
                     {
-                        response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/CreateMultaEnviarEmail", content);
+                        response = await client.PostAsync("https://digesett.somee.com/api/Ticket/CreateMultaEnviarEmail", content);
 
                         if (response.IsSuccessStatusCode)
                         {

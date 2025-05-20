@@ -60,29 +60,20 @@
                 </StackLayout>
 
 
-                <!-- Tercer campo: Lugar de trabajo y su dato -->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,0,0,23">
-                    <Image Source="lugartrabajo.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Margin="0,0,10,0" />
-                    <Label Text="Lugar de Trabajo:" FontSize="14" TextColor="Black" VerticalOptions="Center" FontAttributes="Bold" />
-                    <Label x:Name="CiudadLabel" Text="{Binding Ciudad}" FontSize="14" TextColor="Black" VerticalOptions="Center" Margin="10,0,0,0"/>
-                </StackLayout>
+                <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Center" Margin="0,0,0,23">
+                    <Image Source="lugartrabajo.png" HeightRequest="24"  WidthRequest="24" Margin="0,0,5,0" />
+
+                    <Label Text="Lugar de Trabajo:" FontSize="14"  TextColor="Black"  FontAttributes="Bold"  Margin="0,0,5,0" />
+
+                    <Label Text="{Binding Ciudad}"  FontSize="14"  TextColor="Black" LineBreakMode="WordWrap"  HorizontalOptions="StartAndExpand"  FlexLayout.Basis="0"  FlexLayout.Grow="1" x:Name="CiudadLabel"/>
+                </FlexLayout>
+
+
+
 
             </StackLayout>
 
         </Frame>
-
-
-
-
-
-
-
-        <!-- Sobre app -->
-
-        <!--<StackLayout  Orientation="Horizontal" Margin="33,50,0,0">
-            <Label Text="Sobre la app" FontSize="17" VerticalOptions="Center" TextColor="Black"  />
-            <ImageButton x:Name="IrAVErSobreApp"  Source="chevron_right" HeightRequest="30" WidthRequest="30" Margin="180,0,0,0" Clicked="IrASobreApp"/>
-        </StackLayout>-->
 
 
 

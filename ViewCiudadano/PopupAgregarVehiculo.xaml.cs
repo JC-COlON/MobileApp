@@ -74,7 +74,7 @@ namespace DigesettAPP.ViewCiudadano
                     Timeout = TimeSpan.FromSeconds(120)
                 };
 
-                var url = "https://5fce-200-215-234-53.ngrok-free.app/api/VehicleInfo/AddVehicle";
+                var url = "https://digesett.somee.com/api/VehicleInfo/AddVehicle";
                 var response = await client.PostAsJsonAsync(url, nuevoVehiculo);
 
                 if (response.IsSuccessStatusCode)

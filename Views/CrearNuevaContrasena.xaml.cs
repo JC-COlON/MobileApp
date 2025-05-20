@@ -84,7 +84,7 @@ public partial class CrearNuevaContrasena : ContentPage
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             using var client = new HttpClient();
-            var response = await client.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/User/reset-passwordotp", content);
+            var response = await client.PostAsync("https://digesett.somee.com/api/User/reset-passwordotp", content);
 
             if (response.IsSuccessStatusCode)
             {

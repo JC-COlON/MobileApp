@@ -55,7 +55,10 @@
                 </StackLayout>
             </Frame>
 
-            <Button Text="Cerrar" BackgroundColor="#FD8402" TextColor="White" Clicked="OnCloseClicked" CornerRadius="10" />
+            <Button Text="Cerrar" BackgroundColor="#009C40" TextColor="White" Clicked="OnCloseClicked" CornerRadius="10" />
+           
+
+
         </StackLayout>
     </ScrollView>
 

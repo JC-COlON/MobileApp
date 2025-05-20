@@ -212,7 +212,7 @@ namespace DigesettAPP.Views
     {
         using (HttpClient client = new HttpClient())
         {
-            string url = $"https://5fce-200-215-234-53.ngrok-free.app/api/VehicleInfo/SearchByLicensePlate/{placa}";
+            string url = $"https://digesett.somee.com/api/VehicleInfo/SearchByLicensePlate/{placa}";
             var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)

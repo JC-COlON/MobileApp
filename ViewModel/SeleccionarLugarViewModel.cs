@@ -46,7 +46,7 @@ namespace DigesettAPP.ViewModel
             {
                 IsLoading = true;
 
-                var response = await _httpClient.GetStringAsync("https://5fce-200-215-234-53.ngrok-free.app/api/Ticket/alllocation");
+                var response = await _httpClient.GetStringAsync("https://digesett.somee.com/api/Ticket/alllocation");
 
                 var jObject = JsonConvert.DeserializeObject<JObject>(response);
                 var officesArray = jObject["$values"];

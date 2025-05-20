@@ -420,20 +420,22 @@ namespace DigesettAPP.ViewModels
 
                 if (IsNewUser)
                 {
-                    response = await _httpClient.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/UserAccess/Register", content);
+                    response = await _httpClient.PostAsync("https://digesett.somee.com/api/UserAccess/Register", content);
                 }
                 else
                 {
-                    response = await _httpClient.PutAsync($"https://5fce-200-215-234-53.ngrok-free.app/api/User/UpdateCiudadano/{Cedula}", content);
+                    response = await _httpClient.PutAsync($"https://digesett.somee.com/api/User/UpdateCiudadano/{Cedula}", content);
                 }
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // Mensaje de éxito no se mostrará en un alert
-                    // Solo mostramos el pop-up
                     var popup = new PoputRegistradoCorrectamente();
                     await App.Current.MainPage.ShowPopupAsync(popup);  // Mostrar el pop-up de éxito
+
+                    // ✅ Limpiar los campos del formulario
+                    LimpiarFormulario();
                 }
+
                 else
                 {
                     var error = await response.Content.ReadAsStringAsync();
@@ -469,6 +471,30 @@ namespace DigesettAPP.ViewModels
         }
 
 
+
+
+        private void LimpiarFormulario()
+        {
+            Cedula = "";
+            Name = "";
+            LastName = "";
+            Password = "";
+            ConfirmPassword = "";
+            RawPhone = "";
+            ConfirmPhone = "";
+            Email = "";
+            ProfileImg = "";
+            NacionalityId = null;
+            Birthdate = null;
+            GenderId = 0;
+            BloodTypeId = null;
+            Height = null;
+            WorkLocationId = null;
+            CivilStatusId = null;
+
+            IsNewUser = true;
+            ShowPhoneConfirmation = false;
+        }
 
 
 

@@ -71,7 +71,7 @@ public partial class ChangePassword : ContentPage
 
         try
         {
-            var response = await httpClient.PostAsync("https://5fce-200-215-234-53.ngrok-free.app/api/User/change-password", content);
+            var response = await httpClient.PostAsync("https://digesett.somee.com/api/User/change-password", content);
 
             if (response.IsSuccessStatusCode)
             {
