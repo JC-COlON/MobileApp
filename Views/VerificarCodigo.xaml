@@ -112,9 +112,9 @@
                             <Span Text="Reenviar"
                                   TextColor="#009C40"
                                   FontAttributes="Bold">
-                                <!--<Span.GestureRecognizers>
+                                <Span.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="OnReenviarTapped"/>
-                                </Span.GestureRecognizers>-->
+                                </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>
                     </Label.FormattedText>

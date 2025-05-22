@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Frame BackgroundColor="#009C40" Margin="0,-10,0,0" WidthRequest="460" CornerRadius="65" HeightRequest="180">
+        <Frame BackgroundColor="#009C40" Margin="0,-10,0,0" WidthRequest="480" CornerRadius="65" HeightRequest="185">
 
         </Frame>
         <!-- Encabezado con imagen y título -->

@@ -149,7 +149,7 @@ public partial class Paso3Page : ContentPage
 
                 var jsonContent = JsonConvert.SerializeObject(multa, Formatting.Indented); // Indentado para legibilidad
 
-
+                //await DisplayAlert("JSON a Enviar", jsonContent, "Aceptar");
 
                 var client = new HttpClient
                 {

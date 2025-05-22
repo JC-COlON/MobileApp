@@ -128,4 +128,56 @@ public partial class VerificarCodigo : ContentPage
         }
     }
 
+
+
+
+    private async void OnReenviarTapped(object sender, EventArgs e)
+    {
+        string email = Preferences.Get("CorreoParaOtp", string.Empty);
+
+        if (string.IsNullOrEmpty(email))
+        {
+            await DisplayAlert("Error", "No se encontró un correo para reenviar el código.", "OK");
+            return;
+        }
+
+        LoadingOverlay.IsVisible = true;
+
+        var payload = new
+        {
+            emailAddress = email
+        };
+
+        try
+        {
+            using var httpClient = new HttpClient();
+            var json = JsonSerializer.Serialize(payload);
+
+
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await httpClient.PostAsync("https://digesett.somee.com/api/User/request-otp", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                await DisplayAlert("Código reenviado", "Revisa tu correo para el nuevo código.", "OK");
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                await DisplayAlert("Error", $"No se pudo reenviar el código: {error}", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Error de red: {ex.Message}", "OK");
+        }
+        finally
+        {
+            LoadingOverlay.IsVisible = false;
+        }
+    }
+
+
+
 }

@@ -102,7 +102,7 @@
                                             <!-- Zona -->
                                             <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
                                                 <Image Source="locationblack.png" HeightRequest="25" WidthRequest="25" />
-                                                <Label Text="Zona:" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" FontAttributes="Bold"/>
+                                                <Label Text="Lugar:" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" FontAttributes="Bold"/>
                                                 <Label Text="{Binding IncidentLocation}" FontSize="14" TextColor="Black" FontFamily="SfProTextRegular" />
                                             </HorizontalStackLayout>
 
